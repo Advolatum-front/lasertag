@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <header className="header"></header>
+        <header className="header">Тестиурем шрифт</header>
         <main className="main"></main>
         <footer className="footer"></footer>
       </BrowserRouter>
