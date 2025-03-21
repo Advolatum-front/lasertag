@@ -1,0 +1,988 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"onc",
+				"onclick"
+			],
+			[
+				"dowlo",
+				"downloadFileEveryNIds"
+			],
+			[
+				"dow",
+				"downloadFileEveryNIds"
+			],
+			[
+				"loc",
+				"localEndVal"
+			],
+			[
+				"lo",
+				"localStartVal"
+			],
+			[
+				"do",
+				"dowloadedFilesCount"
+			],
+			[
+				"fo",
+				"formattedDate"
+			],
+			[
+				"end",
+				"endDateString"
+			],
+			[
+				"sta",
+				"startDateString"
+			],
+			[
+				"get",
+				"getCurrentDateTime"
+			],
+			[
+				"me",
+				"messageText"
+			],
+			[
+				"mes",
+				"messageText"
+			],
+			[
+				"en",
+				"endVal"
+			],
+			[
+				"зн",
+				"Значения"
+			],
+			[
+				"err",
+				"errorCondition"
+			],
+			[
+				"text",
+				"textContent"
+			],
+			[
+				"file",
+				"fileName"
+			],
+			[
+				"mess",
+				"messagesArray"
+			],
+			[
+				"con",
+				"controlPanel"
+			],
+			[
+				"cons",
+				"console"
+			],
+			[
+				"e",
+				"endVal"
+			],
+			[
+				"co",
+				"count"
+			],
+			[
+				"pro",
+				"processeIdsCount"
+			],
+			[
+				"tex",
+				"textContent"
+			],
+			[
+				"fil",
+				"filename"
+			],
+			[
+				"UR",
+				"URLBase"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"lin",
+				"linear-gradient()"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"line",
+				"linear-gradient()"
+			],
+			[
+				"tra",
+				"transition"
+			],
+			[
+				"tds",
+				"text-decoration-style"
+			],
+			[
+				"un",
+				"underline"
+			],
+			[
+				"dire",
+				"flex-direction"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"dir",
+				"flex-direction"
+			],
+			[
+				"и",
+				"имя"
+			],
+			[
+				"fle",
+				"flex-grow"
+			],
+			[
+				"coun",
+				"counter-increment"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"pi",
+				"prettierignore\tPrettier ignore next node (JsPrettier)"
+			],
+			[
+				"siz",
+				"font-size"
+			],
+			[
+				"sec",
+				"section"
+			],
+			[
+				"head",
+				"header__socials"
+			],
+			[
+				"list-st",
+				"list-style"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"posi",
+				"background-position"
+			],
+			[
+				"f",
+				"for"
+			],
+			[
+				"shad",
+				"box-shadow"
+			],
+			[
+				"colum",
+				"column-count"
+			],
+			[
+				"wr",
+				"flex-wrap"
+			],
+			[
+				"bac",
+				"background-image"
+			],
+			[
+				"di",
+				"flex-direction"
+			],
+			[
+				"mr",
+				"margin-left"
+			],
+			[
+				"si",
+				"font-size"
+			],
+			[
+				"hea",
+				"section__header"
+			],
+			[
+				"bg",
+				"background"
+			],
+			[
+				"alig",
+				"align-self"
+			],
+			[
+				"auto",
+				"auto-fit"
+			],
+			[
+				"sty",
+				"list-style-type"
+			],
+			[
+				"u",
+				"equipment"
+			],
+			[
+				"ro",
+				"rotateZ()"
+			],
+			[
+				"just",
+				"justify-content"
+			],
+			[
+				"dr",
+				"flex-direction"
+			],
+			[
+				"UT",
+				"auto"
+			],
+			[
+				"ali",
+				"align-self"
+			],
+			[
+				"pop",
+				"popup"
+			],
+			[
+				"flex",
+				"flex-direction"
+			],
+			[
+				"po",
+				"popup__form"
+			],
+			[
+				"rgb",
+				"rgba()"
+			],
+			[
+				"cont",
+				"content"
+			],
+			[
+				"styl",
+				"font-style"
+			],
+			[
+				"na",
+				"navy"
+			],
+			[
+				"style",
+				"font-style"
+			],
+			[
+				"o",
+				"bold"
+			],
+			[
+				"cell",
+				"cellspacing"
+			],
+			[
+				"cel",
+				"cellpadding"
+			],
+			[
+				"ce",
+				"cellspacing"
+			],
+			[
+				"dar",
+				"darkgoldenrod"
+			],
+			[
+				"sel",
+				"align-self"
+			],
+			[
+				"poit",
+				"pointer-events"
+			],
+			[
+				"poi",
+				"pointer-events"
+			],
+			[
+				"fla",
+				"flattenArray"
+			],
+			[
+				"ma",
+				"matrix2"
+			],
+			[
+				"mat",
+				"matrix1"
+			],
+			[
+				"ta",
+				"TABLE_SIZE"
+			],
+			[
+				"tab",
+				"tableCell"
+			],
+			[
+				"da",
+				"darkorange"
+			],
+			[
+				"big",
+				"bigBaseArea"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"sma",
+				"smallBaseSide"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"auq",
+				"aquamarine"
+			],
+			[
+				"wh",
+				"white"
+			],
+			[
+				"curre",
+				"currentRecordVals"
+			],
+			[
+				"most",
+				"mostBuyedProductsList"
+			],
+			[
+				"mo",
+				"mostBuyedProductsList"
+			],
+			[
+				"pr",
+				"product"
+			],
+			[
+				"curr",
+				"currentRecordVals"
+			],
+			[
+				"s",
+				"sum"
+			],
+			[
+				"row",
+				"purchasedTableRow"
+			],
+			[
+				"pur",
+				"purchasedTable"
+			],
+			[
+				"pu",
+				"purchasedTableHeader"
+			],
+			[
+				"pre",
+				"priceTable"
+			],
+			[
+				"darkg",
+				"darkgray"
+			],
+			[
+				"aqu",
+				"aquamarine"
+			],
+			[
+				"au",
+				"aquamarine"
+			],
+			[
+				"daro",
+				"darkorange"
+			],
+			[
+				"tras",
+				"transition"
+			],
+			[
+				"len",
+				"maxlength"
+			],
+			[
+				"fonw",
+				"font-weight"
+			],
+			[
+				"ch",
+				"popup-checkbox"
+			],
+			[
+				"bacd",
+				"background-color"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"grid-te",
+				"grid-template-columns"
+			],
+			[
+				"sc",
+				"scaleX()"
+			],
+			[
+				"grow",
+				"flex-grow"
+			],
+			[
+				"in",
+				"invert()"
+			],
+			[
+				"admin",
+				"admin-workspace__search-form"
+			],
+			[
+				"borderr",
+				"border-right"
+			],
+			[
+				"cn",
+				"content"
+			],
+			[
+				"ra",
+				"translate()"
+			],
+			[
+				"b",
+				"border"
+			],
+			[
+				"rota",
+				"rotateZ()"
+			],
+			[
+				"ima",
+				"background-image"
+			],
+			[
+				"align",
+				"align-self"
+			],
+			[
+				"r",
+				"rgba()"
+			],
+			[
+				"traf",
+				"transform"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"unfo",
+				"Code Folding: Unfold All"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"case",
+				"Convert Case: dash-case"
+			],
+			[
+				"trail",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"pret",
+				"JsPrettier: Format Code"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"vue",
+				"Set Syntax: Vue Component"
+			],
+			[
+				"unf",
+				"Code Folding: Unfold All"
+			],
+			[
+				"instal p",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 258.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/lasertag/lasertag"
+	],
+	"file_history":
+	[
+		"/D/Вадим/фриланс/2024/_STUDWORK/user710838 (Мария Богуш)/23 марта/Проект/src/components/forms/MakeOrderForm/index.jsx",
+		"/D/apricode_work/awesome-people/package.json",
+		"/D/Вадим/фриланс/2024/_STUDWORK/user710838 (Мария Богуш)/23 марта/Проект/package.json",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/13 марта/Решение/тестим/m=6.txt",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/13 марта/Решение/тестим/m=5.txt",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/13 марта/Решение/тестим/m=4.txt",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/13 марта/Решение/тестим/m=3.txt",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/13 марта/Решение/тестим/m=2.txt",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/1 марта/Решение/программа/Unit1.pas",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/13 марта/Решение/Крамер поможет/крамер поможет.pas",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/13 марта/Решение/Крамер поможет/крамер поможет.txt",
+		"/D/Вадим/фриланс/2022/Мария Беляева/+ 9 декабря/Решение/Project1.dpr",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Nata0301/7 марта/Сайт/car.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Nata0301/7 марта/Сайт/car.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Nata0301/7 марта/Решение/car.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Nata0301/7 марта/Решение/car.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Nata0301/7 марта/Решение/car.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Korzhik/22 февраля/Решение/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Korzhik/22 февраля/Решение/script/script.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/Мои скрипты/thread_renamer.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/Мои скрипты/Добавление кнопки удалить пост.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Korzhik/22 февраля/Решение/скрипт.js",
+		"/C/Users/Vadim/Downloads/1-10000.txt",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/Korzhik/22 февраля/Решение/сохраняем хранителей.js",
+		"/D/111/index.html",
+		"/D/Вадим/фриланс/2022/Глеб Брыкин/+ 18 июня/+5/Решение/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/Мои скрипты/сохраняем хранителей.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/Мои скрипты/Удалить как спам.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/15 февраля/Решение/сайт/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/Мои скрипты/Автоподстановка причины выдачи нарушения.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/15 февраля/Решение/сайт/styles/vars.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/15 февраля/Решение/сайт/styles/main.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/15 февраля/Решение/сайт/styles/adaptive/1024-1359.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/15 февраля/Решение/сайт/styles/index.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/15 февраля/Решение/сайт/styles/adaptive/1024-1279.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/15 февраля/Решение/сайт/scripts/popup.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/styles/main.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/15 февраля/Решение/сайт/styles/fonts.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/styles/index.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/styles/adaptive/1024-1280.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/styles/slider.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/styles/vars.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/scripts/popup.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/scripts/scroll-to-top.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/scripts/slider.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/styles/adaptive/1024-1063.css",
+		"/D/Вадим/фриланс/2023/_STUDWORK/191abc (Антон)/+ Создание мультимедийного ресурса Ч.4/styles/index.css",
+		"/C/Users/Vadim/AppData/Roaming/Sublime Text/Packages/User/JsPrettier.sublime-settings",
+		"/C/Users/Vadim/AppData/Roaming/Sublime Text/Packages/JsPrettier/JsPrettier.sublime-settings",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/ПедагогиКо/8 февраля/Решение/Сайт/styles/fonts.css",
+		"/C/Users/Vadim/Downloads/lab0401_frontend-template/04frontend-template/README.md",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/categories/misc.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/categories/drinks.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/categories/bakery.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/exam.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/head.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/main.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/categories/salads.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/categories/second-courses.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/categories/first-courses.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/menu.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Зачётная работа/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Контрольная работа/Контрольная работа.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 3, Формы/blank.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/items/globus.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/left.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/items/no-item.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/items/exercise-book.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/items/paper.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/items/ruller.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/items/notebooks.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/На карта.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/right.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 2, Активные рисунки/lab_3-2.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 3/Часть 1, Графика/lab_3-1.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/lab_2-2.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/main.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/head.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/index.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 1, таблицы/lab_2-1.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/head.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/main.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/days/d6.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/days/d5.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/days/d4.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/days/d3.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/days/d2.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/1.3.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 2/Часть 2, фреймы/s1.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 1/lab_1-1.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 1/лаб 1-3.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 1/Лаб 1-2.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 1/Лаб 1-1.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/absolut_/4 февраля/Решение/программа/Unit1.pas",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/runa12346/5 февраля/Решение/Лаб 1/blank.html",
+		"/D/Вадим/фриланс/2014/Алеся Лазарева/TASK.PAS",
+		"/D/Вадим/фриланс/2013/Александр (без фамилии)/Выполнение/Zhiteli.pas",
+		"/D/Вадим/фриланс/2014/Алёна Смолина/3_15/Task_3_15.pas",
+		"/C/Users/Vadim/Desktop/Купить.txt",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/Сделал.txt",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/education.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/styles/styles.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/scripts/university.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/districts.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 5/scripts/script.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/scripts/histogram.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/scripts/anthem.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/Примеры/saytprimer/css.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/Примеры/saytprimer/kino.htm",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/scripts/swiper.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 5/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/Примеры/8-zadanie/dz.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/САЙТ/attractions.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 2/scripts/script.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 2 не готова/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 2 не готова/scripts/script.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 3/styles/styles.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 3/scripts/functions.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 3/scripts/script.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 3/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 2 не готова/styles/styles.css",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/Примеры/6-zadanie/6 задание/secondTask.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 4/index.html",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 4/scripts/script.js",
+		"/D/YandexDisk/НЕСИНХРОНИЗИРОВАННАЯ ПАПКА/sync/фриланс/2025/_STUDWORK/user275154/21 января/РЕШЕНИЕ/лр 2/styles/styles.css"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 430.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			",",
+			"Май",
+			"Декабрь",
+			"Апрель",
+			"Январь",
+			"Февраль",
+			"Март",
+			",",
+			"^(\\w+) (\\d\\d)",
+			"Январь 01",
+			"^(\\w+) (\\d\\d)",
+			"воскресенье",
+			"вторник",
+			"четверг",
+			"суббота",
+			"пятница, ",
+			"понедельник, ",
+			"среда",
+			"1",
+			" >",
+			"count",
+			"downloadMessagesByRange",
+			"executeScript",
+			"https://github.com/Vadim-Moshev/programmersforum/raw/master/thread_renamer.user.js",
+			"pop",
+			"messageTable",
+			"Table",
+			"downloadMessageTableById",
+			"countField",
+			"executeScript",
+			"startValField.value",
+			"start",
+			"countValField",
+			"MESSAGE_ID",
+			"filename",
+			"i",
+			"span",
+			"getValue",
+			"null",
+			"endVal",
+			" || 1099630",
+			"startVal",
+			"downloadMessage",
+			"setTi",
+			"downLoadAllStories",
+			"red",
+			"avatars-list__photo",
+			"footer",
+			"contac",
+			"header__nav",
+			"soc",
+			"popup-container__form",
+			"order",
+			"order-tour-form__text-field",
+			"form",
+			"orderCallbackCheckbox",
+			"orederCallbackCheckbox",
+			"section",
+			"<section>",
+			"name",
+			"button",
+			"order-tour-form__button",
+			"header",
+			"1px",
+			"30",
+			"fff",
+			"<p>",
+			"<div>",
+			"<li>",
+			"ul",
+			"p",
+			"--tours-tile-size",
+			"туры",
+			"18px",
+			"caveat",
+			"#fff",
+			"нами",
+			"column",
+			"577",
+			"3",
+			"1",
+			"63",
+			"prod",
+			"equipment",
+			"300px",
+			"494",
+			"hover",
+			"332",
+			"carousel__item-shade",
+			"state",
+			"подпис",
+			"подписа",
+			"z-in",
+			"centra",
+			"bg-ellipse",
+			"ul",
+			"z-in",
+			"header",
+			";\n",
+			"ellipse",
+			"ellip",
+			"web",
+			"pngwebp",
+			"png",
+			"50%",
+			"translateY(-50%) ",
+			"50%",
+			"section__filter-button",
+			"button__load-more",
+			"fff",
+			"32",
+			" ",
+			"20px",
+			"501212",
+			"----content-width",
+			"1280px"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"$2 $1",
+			"$2$1"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 146.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "lasertag.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"goodIt",
+				"src\\components\\GoodItem.vue"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 111.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

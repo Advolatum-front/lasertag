@@ -1,0 +1,30 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0e141c;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  background-color: red;
+  height: 50px;
+}
+
+.main {
+  flex: auto;
+  color: black;
+  background-color: wheat;
+}
+
+.footer {
+  background-color: red;
+  height: 50px;
+}
