@@ -1,4 +1,67 @@
 .header {
-  background-color: red;
-  height: 50px;
+  padding: 6px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav-list {
+  display: flex;
+  list-style: none;
+}
+
+.header__nav-link {
+  padding: 17px 37px;
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-size: 24px;
+  transition: color 0.3s linear;
+}
+
+.header__nav-link:hover {
+  color: var(--light-blue);
+}
+
+.header__burger-menu {
+  display: none;
+}
+
+.header__profile-pic path {
+  fill: var(--dark-blue);
+  transition: fill 0.2s linear;
+}
+
+.header__profile-pic:hover path {
+  fill: var(--light-blue);
+}
+
+@media (max-width: 1599px) and (min-width: 1152px) {
+  .header__nav-link {
+    padding: 17px 20px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1151px) and (min-width: 800px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__burger-menu {
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    padding: 20px 30px;
+    gap: 10px;
+    background: none;
+    border: 1px solid var(--dark-blue);
+    border-radius: 10px;
+  }
+
+  .header__burger-bar {
+    height: 5px;
+    /*    width: 100%;*/
+
+    background-color: var(--dark-blue);
+  }
 }

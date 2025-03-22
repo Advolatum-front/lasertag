@@ -5,7 +5,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #0e141c;
   height: 100%;
   font-family: var(--montserrat);
 }

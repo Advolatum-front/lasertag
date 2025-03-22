@@ -1,4 +1,8 @@
 :root {
   --open-sans: "Open Sans", sans-serif;
   --montserrat: "Montserrat", sans-serif;
+
+  --dark-blue: #0c00ad;
+  --medium-blue: #0053f4;
+  --light-blue: #00bbff;
 }
