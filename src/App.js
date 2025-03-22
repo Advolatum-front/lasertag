@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import Header from "./components/Header";
+
 import Page1 from "./pages/Page1";
 import Page2 from "./pages/Page2";
 
@@ -10,7 +12,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <header className="header">Тестиурем шрифт</header>
+        <Header />
         <main className="main">
           <Routes>
             <Route exact path="/" element={<Page1 />} />

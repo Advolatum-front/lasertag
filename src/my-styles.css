@@ -17,11 +17,6 @@ body {
   margin: 0 auto;
 }
 
-.header {
-  background-color: red;
-  height: 50px;
-}
-
 .main {
   flex: auto;
   color: black;
