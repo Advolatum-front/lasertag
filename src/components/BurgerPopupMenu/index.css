@@ -6,10 +6,16 @@
   right: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .header__popup-nav-list {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding-top: 100px;
+  align-items: center;
+  gap: 30px;
 }
 
 .header__close-popup-menu {
@@ -36,4 +42,12 @@
 
 .header__close-popup-menu:after {
   transform: rotateZ(-45deg);
+}
+
+.header__popp-nav-link {
+  padding: 17px 37px;
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-size: 36px;
+  transition: color 0.3s linear;
 }
