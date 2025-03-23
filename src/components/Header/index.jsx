@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 
-import pathToSmallLogo from "../../img/small-logo.png";
+import BurgerPopupMenu from "../BurgerPopupMenu";
 
+import pathToSmallLogo from "../../img/small-logo.png";
 import { ReactComponent as ProfilePic } from "../../svg/profile-link-def.svg";
 
 import "./index.css";
@@ -49,6 +50,7 @@ const Header = () => {
       <Link to="/">
         <ProfilePic className="header__profile-pic" />
       </Link>
+      <BurgerPopupMenu />
     </header>
   );
 };
