@@ -1,4 +1,5 @@
 .header__burger-popup-menu {
+  display: initial;
   position: fixed;
   background-color: royalblue;
   left: 0;
@@ -13,7 +14,8 @@
   display: flex;
   flex-direction: column;
   list-style: none;
-  padding-top: 100px;
+  padding: 100px 0 0;
+  margin: 0;
   align-items: center;
   gap: 30px;
 }
@@ -50,4 +52,16 @@
   color: var(--dark-blue);
   font-size: 36px;
   transition: color 0.3s linear;
+}
+
+@media (min-width: 959px) {
+  .header__burger-popup-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .header__close-popup-menu {
+    right: 33px;
+  }
 }
