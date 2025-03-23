@@ -1,0 +1,27 @@
+.contacts {
+  padding: 212px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.contacts__baddge {
+  display: flex;
+  align-items: stretch;
+  width: 1467px;
+  position: relative;
+  border: 1px solid red;
+  background-image: url("../../img/contacts/contacts-bg.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 center;
+}
+
+.contacts__photo {
+  position: relative;
+  bottom: 0;
+}
+
+.contacts__info {
+  background-color: #f00;
+  color: #fff;
+}
