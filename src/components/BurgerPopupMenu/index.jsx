@@ -36,7 +36,7 @@ const BurgerPopupMenu = (props) => {
           </Link>
         </li>
         <li>
-          <Link to="/" className="header__popp-nav-link">
+          <Link to="/contacts" className="header__popp-nav-link">
             Контакты
           </Link>
         </li>
