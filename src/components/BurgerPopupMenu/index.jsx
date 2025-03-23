@@ -4,10 +4,13 @@ import "./index.css";
 
 const popupContainer = document.getElementById("popup");
 
-const BurgerPopupMenu = () => {
-  const dd = <div className="pop"></div>;
+const BurgerPopupMenu = (props) => {
+  const { open, onClosePopupMenu } = props;
+  const popupMenu = (
+    <div className="pop" onClick={() => onClosePopupMenu()}></div>
+  );
 
-  return createPortal(dd, popupContainer);
+  return open ? createPortal(popupMenu, popupContainer) : null;
 };
 
 export default BurgerPopupMenu;

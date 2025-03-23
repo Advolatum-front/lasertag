@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import BurgerPopupMenu from "../BurgerPopupMenu";
 
@@ -8,6 +9,8 @@ import { ReactComponent as ProfilePic } from "../../svg/profile-link-def.svg";
 import "./index.css";
 
 const Header = () => {
+  const [popupMenuOpened, setPopupMenuOpened] = useState(false);
+
   return (
     <header className="header">
       <Link to="/" className="header__logo">
@@ -42,7 +45,10 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <button className="header__burger-menu">
+      <button
+        className="header__burger-menu"
+        onClick={() => setPopupMenuOpened(true)}
+      >
         <i className="header__burger-bar"></i>
         <i className="header__burger-bar"></i>
         <i className="header__burger-bar"></i>
@@ -50,7 +56,10 @@ const Header = () => {
       <Link to="/">
         <ProfilePic className="header__profile-pic" />
       </Link>
-      <BurgerPopupMenu />
+      <BurgerPopupMenu
+        open={popupMenuOpened}
+        onClosePopupMenu={() => setPopupMenuOpened(false)}
+      />
     </header>
   );
 };
