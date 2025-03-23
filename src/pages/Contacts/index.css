@@ -6,22 +6,44 @@
 
 .contacts__baddge {
   display: flex;
+  position: relative;
   align-items: stretch;
   width: 1467px;
-  position: relative;
-  border: 1px solid red;
   background-image: url("../../img/contacts/contacts-bg.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 0 center;
+  overflow: hidden;
+  border-radius: 0 0 150px 0;
 }
 
 .contacts__photo {
   position: relative;
   bottom: 0;
+  margin-right: auto;
+  left: 418px;
 }
 
 .contacts__info {
+  position: relative;
   background-color: #f00;
   color: #fff;
+  padding: 140px 9px;
+  text-align: right;
+  width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contacts__status {
+  font-size: 22px;
+  font-weight: 600;
+  width: 505px;
+}
+
+.contacts__fullname {
+  text-transform: uppercase;
+  font-family: var(--open-sans);
+  font-size: 45px;
 }
