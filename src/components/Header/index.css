@@ -55,7 +55,14 @@
   }
 }
 
-@media (max-width: 1151px) and (min-width: 800px) {
+@media (max-width: 1151px) and (min-width: 960px) {
+  .header__nav-link {
+    padding: 17px 10px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 959px) {
   .header__nav {
     display: none;
   }
