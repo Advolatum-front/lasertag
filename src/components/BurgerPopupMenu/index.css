@@ -1,8 +1,39 @@
-.pop {
-  position: absolute;
-  width: 50px;
-  height: 50px;
+.header__burger-popup-menu {
+  position: fixed;
   background-color: royalblue;
-  left: 50%;
-  top: 50%;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.header__popup-nav-list {
+  display: none;
+}
+
+.header__close-popup-menu {
+  position: absolute;
+  background: none;
+  border: none;
+  right: 106px;
+  top: 33px;
+}
+
+.header__close-popup-menu:before,
+.header__close-popup-menu:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 5px;
+  height: 40px;
+  background-color: var(--dark-blue);
+}
+
+.header__close-popup-menu:before {
+  transform: rotateZ(45deg);
+}
+
+.header__close-popup-menu:after {
+  transform: rotateZ(-45deg);
 }
