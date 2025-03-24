@@ -1,5 +1,5 @@
 .documents-container {
   background-image: url("../../img/documents/document-bg.webp");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
