@@ -19,7 +19,7 @@ const Header = () => {
       <nav className="header__nav">
         <ul className="header__nav-list">
           <li>
-            <Link to="/" className="header__nav-link">
+            <Link to="/documents" className="header__nav-link">
               Документы
             </Link>
           </li>

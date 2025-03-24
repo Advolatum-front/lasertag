@@ -11,7 +11,7 @@ const Footer = () => {
         <img src={pathToBigLogo} alt="" className="footer__logo" />
         <ul className="footer__menu">
           <li>
-            <Link to="/" className="footer__menu-link">
+            <Link to="/documents" className="footer__menu-link">
               Документы
             </Link>
           </li>
