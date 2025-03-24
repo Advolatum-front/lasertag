@@ -90,26 +90,16 @@
 }
 
 @media (max-width: 1599px) and (min-width: 1152px) {
-  .footer {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: stretch;
-    gap: 30px;
-  }
-
-  .footer__menu {
-    flex-direction: row;
-    gap: 50px;
-  }
-
   .footer__logo-and-menu {
-    gap: 0px;
-    margin-right: 0;
+    gap: 40px;
   }
 
   .footer__logo {
-    width: 150px;
-    margin-right: auto;
+    width: 200px;
+  }
+
+  .footer__feedback-form-header {
+    font-size: 30px;
   }
 }
 
