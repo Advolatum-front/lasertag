@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
+import "./index.css";
+
 const Documents = () => {
-  return <Link to="/page1">Документы</Link>;
+  return <article className="documents-container">Документы</article>;
 };
 
 export default Documents;
