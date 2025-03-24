@@ -2,4 +2,29 @@
   background-image: url("../../img/documents/document-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: var(--open-sans);
+}
+
+.documents-container__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.documents-container__list-item {
+  padding-top: 222px;
+}
+
+.documents-container__doc-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.documents-container__doc-header {
+  text-transform: uppercase;
+  color: var(--medium-blue);
+  font-size: 36px;
 }

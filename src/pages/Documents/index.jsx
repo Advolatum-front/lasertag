@@ -7,7 +7,7 @@ const Documents = () => {
     <article className="documents-container">
       <ul className="documents-container__list">
         <li className="documents-container__list-item">
-          <div className="documents-container__doc-item-1">
+          <div className="documents-container__doc-wrapper">
             <div className="documents-container__doc-header">
               Устав организации
             </div>
