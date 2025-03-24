@@ -17,7 +17,6 @@
 
 .contacts__photo {
   position: absolute;
-  /*  bottom: 0;*/
   margin-right: auto;
   left: 418px;
   height: 580px;
@@ -29,7 +28,6 @@
   color: #fff;
   padding: 140px 9px;
   text-align: right;
-  /*  width: 580px;*/
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -194,31 +192,39 @@
 
   .contacts__baddge {
     width: 90vw;
+    padding-top: 200px;
   }
 
   .contacts__photo {
-    left: 77px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 255px;
+    top: 0;
   }
 
   .contacts__info {
     padding: 10px;
-    border-radius: 0 0 75px 0;
+    border-radius: 0 30px 0 0;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .contacts__status {
-    font-size: 16px;
-    font-weight: 600;
     width: auto;
+    font-size: 16px;
   }
 
   .contacts__fullname {
-    text-transform: uppercase;
-    font-family: var(--open-sans);
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .contacts__list-link {
     font-size: 20px;
+  }
+
+  .contacts__list-link {
+    font-size: 20px;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
   }
 }
