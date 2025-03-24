@@ -34,6 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  gap: 30px;
 }
 
 .contacts__status {
@@ -45,5 +46,24 @@
 .contacts__fullname {
   text-transform: uppercase;
   font-family: var(--open-sans);
-  font-size: 45px;
+  font-size: 35px;
+}
+
+.contacts__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__list-link {
+  color: #fff;
+  font-size: 32px;
+  text-decoration: none;
+  transition: color 0.2s linear;
+}
+
+.contacts__list-link:hover {
+  color: var(--light-blue);
 }
