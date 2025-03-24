@@ -7,21 +7,20 @@
 .contacts__baddge {
   display: flex;
   position: relative;
-  align-items: stretch;
+  align-items: flex-end;
   width: 1467px;
   background-image: url("../../img/contacts/contacts-bg.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 0 center;
-  overflow: hidden;
-  border-radius: 0 0 150px 0;
 }
 
 .contacts__photo {
-  position: relative;
-  bottom: 0;
+  position: absolute;
+  /*  bottom: 0;*/
   margin-right: auto;
   left: 418px;
+  height: 580px;
 }
 
 .contacts__info {
@@ -35,6 +34,8 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 30px;
+  margin-left: auto;
+  border-radius: 0 0 150px 0;
 }
 
 .contacts__status {
