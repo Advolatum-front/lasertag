@@ -29,7 +29,7 @@
   color: #fff;
   padding: 140px 9px;
   text-align: right;
-  width: 580px;
+  /*  width: 580px;*/
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -71,4 +71,154 @@
 
 .contacts__list-link:hover {
   color: var(--light-blue);
+}
+
+@media (max-width: 1600px) and (min-width: 1366px) {
+  .contacts__baddge {
+    width: 1280px;
+  }
+
+  .contacts__photo {
+    left: 244px;
+    height: 595px;
+  }
+
+  .contacts {
+    padding: 100px 0;
+  }
+}
+
+@media (max-width: 1365px) and (min-width: 1180px) {
+  .contacts__baddge {
+    width: 1024px;
+  }
+
+  .contacts__photo {
+    left: 110px;
+    height: 455px;
+  }
+
+  .contacts {
+    padding: 100px 0;
+  }
+
+  .contacts__info {
+    padding: 70px 20px;
+  }
+}
+
+@media (max-width: 1179px) and (min-width: 960px) {
+  .contacts__baddge {
+    width: 768px;
+  }
+
+  .contacts__photo {
+    left: 192px;
+    height: 250px;
+  }
+
+  .contacts {
+    padding: 100px 0;
+  }
+
+  .contacts__info {
+    padding: 35px 20px;
+    border-radius: 0 0 75px 0;
+  }
+
+  .contacts__status {
+    font-size: 16px;
+    font-weight: 600;
+    width: 400px;
+  }
+
+  .contacts__fullname {
+    text-transform: uppercase;
+    font-family: var(--open-sans);
+    font-size: 24px;
+  }
+
+  .contacts__list-link {
+    font-size: 20px;
+  }
+
+  .contacts__link-ico {
+    width: 25px;
+  }
+}
+
+@media (max-width: 959px) and (min-width: 768px) {
+  .contacts {
+    padding: 30px 0;
+  }
+
+  .contacts__baddge {
+    width: 680px;
+  }
+
+  .contacts__photo {
+    left: 77px;
+    height: 255px;
+  }
+
+  .contacts__status {
+    font-size: 16px;
+    font-weight: 600;
+    width: 400px;
+  }
+
+  .contacts__fullname {
+    text-transform: uppercase;
+    font-family: var(--open-sans);
+    font-size: 24px;
+  }
+
+  .contacts__list-link {
+    font-size: 20px;
+  }
+
+  .contacts__info {
+    padding: 10px 20px;
+    border-radius: 0 0 75px 0;
+  }
+
+  .contacts__link-ico {
+    width: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contacts {
+    padding: 30px 0;
+  }
+
+  .contacts__baddge {
+    width: 90vw;
+  }
+
+  .contacts__photo {
+    left: 77px;
+    height: 255px;
+  }
+
+  .contacts__info {
+    padding: 10px;
+    border-radius: 0 0 75px 0;
+  }
+
+  .contacts__status {
+    font-size: 16px;
+    font-weight: 600;
+    width: auto;
+  }
+
+  .contacts__fullname {
+    text-transform: uppercase;
+    font-family: var(--open-sans);
+    font-size: 24px;
+  }
+
+  .contacts__list-link {
+    font-size: 20px;
+  }
 }
