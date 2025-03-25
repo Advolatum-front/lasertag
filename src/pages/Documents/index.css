@@ -92,18 +92,18 @@
   }
 
   .documents-container__list-item-1 {
-    padding-top: 14vw;
+    padding-top: 10vw;
   }
 
   .documents-container__list-item-2 {
-    padding: 35vw 0 20vw 0;
+    padding: 35vw 0 10vw 0;
   }
 
   .documents-container__document,
   .documents-container__document-2 {
     align-items: flex-start;
     gap: 20px;
-    width: 400px;
+    width: 500px;
   }
 
   .documents-container__document-2 {
@@ -130,7 +130,7 @@
   }
 
   .documents-container__list-item-2 {
-    padding: 35vw 0 20vw 0;
+    padding: 35vw 0 10vw 0;
   }
 
   .document-block__description {
@@ -166,7 +166,7 @@
   }
 
   .documents-container__list-item-2 {
-    padding: 40vw 0 20vw 0;
+    padding: 50vw 0 10vw 0;
   }
 
   .document-block__description,
