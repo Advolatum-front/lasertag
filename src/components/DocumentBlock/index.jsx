@@ -4,6 +4,7 @@ import "./index.css";
 
 const DocumentBlock = (props) => {
   const {
+    wrapperClass,
     headerClass,
     headerContent,
     descriptionClass,
@@ -13,7 +14,7 @@ const DocumentBlock = (props) => {
   } = props;
 
   return (
-    <div className="document-block">
+    <div className={wrapperClass}>
       <div className={headerClass}>{headerContent}</div>
       <div className={descriptionClass}>{descriptionContent}</div>
       <Link to={link} className={linkClass}>

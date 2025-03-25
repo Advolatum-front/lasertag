@@ -8,6 +8,7 @@ const Documents = () => {
       <ul className="documents-container__list">
         <li className="documents-container__list-item-1">
           <DocumentBlock
+            wrapperClass="documents-container__document"
             headerContent="Устав организации"
             headerClass="document-block__header"
             descriptionClass="document-block__description"
@@ -19,6 +20,7 @@ const Documents = () => {
         </li>
         <li className="documents-container__list-item-2">
           <DocumentBlock
+            wrapperClass="documents-container__document"
             headerContent="Устав организации"
             headerClass="document-block__header--white"
             descriptionClass="document-block__description--white"
