@@ -20,14 +20,14 @@ const Documents = () => {
         </li>
         <li className="documents-container__list-item-2">
           <DocumentBlock
-            wrapperClass="documents-container__document"
+            wrapperClass="documents-container__document-2"
             headerContent="Устав организации"
-            headerClass="document-block__header--white"
-            descriptionClass="document-block__description--white"
+            headerClass="document-block__header-2"
+            descriptionClass="document-block__description-2"
             descriptionContent="Краткое описание устава организации с некоторыми подробностями для
         масштабности текста"
             link="/"
-            linkClass="document-block__link--white"
+            linkClass="document-block__link-2"
           />
         </li>
       </ul>
