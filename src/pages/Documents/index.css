@@ -43,4 +43,10 @@
   padding: 14px 34px;
   background-color: var(--medium-blue);
   border-radius: 20px;
+  transition: transform 0.2s linear;
+  transform: scale(1);
+}
+
+.documents-container__doc-link:hover {
+  transform: scale(1.05);
 }
