@@ -1,0 +1,33 @@
+.documents-container__doc-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 42px;
+  width: 476px;
+  color: var(--medium-blue);
+}
+
+.documents-container__doc-header {
+  text-transform: uppercase;
+  font-size: 36px;
+}
+
+.documents-container__doc-description {
+  font-size: 24px;
+  text-align: right;
+}
+
+.documents-container__doc-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 14px 34px;
+  background-color: var(--medium-blue);
+  border-radius: 20px;
+  transition: transform 0.2s linear;
+  transform: scale(1);
+}
+
+.documents-container__doc-link:hover {
+  transform: scale(1.05);
+}
