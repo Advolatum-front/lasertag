@@ -6,7 +6,7 @@ import "./index.css";
 const popupContainer = document.getElementById("popup");
 
 const BurgerPopupMenu = (props) => {
-  const { open, onClosePopupMenu } = props;
+  const { open, onClosePopupMenu, onNavigate } = props;
   const popupMenu = (
     <nav className="header__burger-popup-menu">
       <button
@@ -16,27 +16,47 @@ const BurgerPopupMenu = (props) => {
       ></button>
       <ul className="header__popup-nav-list">
         <li>
-          <Link to="/documents" className="header__popp-nav-link">
+          <Link
+            to="/documents"
+            className="header__popp-nav-link"
+            onClick={() => onNavigate()}
+          >
             Документы
           </Link>
         </li>
         <li>
-          <Link to="/" className="header__popp-nav-link">
+          <Link
+            to="/"
+            className="header__popp-nav-link"
+            onClick={() => onNavigate()}
+          >
             Новости
           </Link>
         </li>
         <li>
-          <Link to="/" className="header__popp-nav-link">
+          <Link
+            to="/"
+            className="header__popp-nav-link"
+            onClick={() => onNavigate()}
+          >
             Мероприятия
           </Link>
         </li>
         <li>
-          <Link to="/" className="header__popp-nav-link">
+          <Link
+            to="/"
+            className="header__popp-nav-link"
+            onClick={() => onNavigate()}
+          >
             Галерея
           </Link>
         </li>
         <li>
-          <Link to="/contacts" className="header__popp-nav-link">
+          <Link
+            to="/contacts"
+            className="header__popp-nav-link"
+            onClick={() => onNavigate()}
+          >
             Контакты
           </Link>
         </li>

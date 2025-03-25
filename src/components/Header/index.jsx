@@ -59,6 +59,7 @@ const Header = () => {
       <BurgerPopupMenu
         open={popupMenuOpened}
         onClosePopupMenu={() => setPopupMenuOpened(false)}
+        onNavigate={() => setPopupMenuOpened(false)}
       />
     </header>
   );
