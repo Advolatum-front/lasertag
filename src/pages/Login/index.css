@@ -1,0 +1,165 @@
+.login-wrapper {
+  position: relative;
+  padding: 10vw 0 10vw 261px;
+  font-family: var(--open-sans);
+}
+
+.login-wrapper__form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.login-wrapper__form-header {
+  text-transform: uppercase;
+  color: var(--medium-blue);
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.login-wrapper__form-tip {
+  font-size: 20px;
+  color: var(--light-blue);
+}
+
+.login-wrapper__submit {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 30px;
+  border: none;
+  background-color: var(--light-blue);
+  border-radius: 20px;
+  align-self: flex-start;
+  padding: 23px 32px;
+}
+
+.login-wrapper__link {
+  text-decoration: none;
+  color: var(--medium-blue);
+  font-size: 28px;
+}
+
+.login-wrapper__bg {
+  position: absolute;
+  background-image: url("../../img/restore-password/restore-bg.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 987px;
+  height: 900px;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@media (max-width: 1740px) {
+  .login-wrapper__form-header {
+    font-size: 28px;
+  }
+
+  .login-wrapper__bg {
+    width: 700px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .login-wrapper__form-header {
+    font-size: 26px;
+  }
+
+  .login-wrapper__bg {
+    width: 672px;
+  }
+
+  .login-wrapper {
+    padding: 10vw 0 3vw 261px;
+  }
+
+  .login-wrapper__link {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1296px) {
+  .login-wrapper {
+    padding: 3vw 0 3vw 261px;
+  }
+
+  .login-wrapper__form-header {
+    font-size: 25px;
+  }
+
+  .login-wrapper__bg {
+    width: 500px;
+    height: 456px;
+  }
+
+  .login-wrapper__form {
+    gap: 20px;
+  }
+
+  .login-wrapper__submit {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1152px) {
+  .login-wrapper__bg {
+    width: 444px;
+    height: 405px;
+  }
+
+  .login-wrapper__form-header {
+    font-size: 22px;
+  }
+
+  .login-wrapper__form-tip {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .login-wrapper__form-header {
+    font-size: 16px;
+  }
+
+  .login-wrapper__form-tip {
+    font-size: 13px;
+  }
+
+  .login-wrapper__submit {
+    font-size: 12px;
+    padding: 15px 32px;
+  }
+
+  .login-wrapper__link {
+    font-size: 15px;
+  }
+
+  .login-wrapper__bg {
+    width: 400px;
+    height: 365px;
+  }
+}
+
+@media (max-width: 960px) {
+  .login-wrapper {
+    padding: 20px 0;
+  }
+
+  .login-wrapper__form {
+    width: 90vw;
+    gap: 15px;
+    margin: 0 auto;
+  }
+
+  .login-wrapper__form-header {
+    font-size: 20px;
+  }
+
+  .login-wrapper__bg {
+    display: none;
+  }
+}

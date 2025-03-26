@@ -8,6 +8,7 @@ import Page2 from "./pages/Page2";
 import Contacts from "./pages/Contacts";
 import Documents from "./pages/Documents";
 import RestorePassword from "./pages/RestorePassword";
+import Login from "./pages/Login";
 
 import "./App.css";
 import "./my-styles.css";
@@ -28,6 +29,7 @@ function App() {
               element={<RestorePassword />}
             />
             <Route exact path="/contacts" element={<Contacts />} />
+            <Route exact path="/login" element={<Login />} />
             <Route exact path="/documents" element={<Documents />} />
           </Routes>
         </main>
