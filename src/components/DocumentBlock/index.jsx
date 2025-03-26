@@ -28,9 +28,7 @@ const DocumentBlock = (props) => {
     <div className={wrapperClass}>
       <div className={headerClass}>{headerContent}</div>
       <div className={descriptionClass}>{descriptionContent}</div>
-      <Link to={link} className={linkClass}>
-        Читать подробнее
-      </Link>
+      {linkToDocument}
     </div>
   );
 };
