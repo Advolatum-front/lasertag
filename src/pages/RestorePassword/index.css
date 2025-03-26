@@ -1,10 +1,165 @@
 .restore-wrapper {
-  width: 1270px;
-  margin: 0 auto;
   position: relative;
-  padding: 332px 0 339px;
+  padding: 10vw 0 10vw 261px;
+  font-family: var(--open-sans);
 }
-/*
-import restoreBg from "../../img/restore-password/restore-bg.webp";
 
-*/
+.restore-wrapper__form {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+
+.restore-wrapper__form-header {
+  text-transform: uppercase;
+  color: var(--medium-blue);
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.restore-wrapper__form-tip {
+  font-size: 20px;
+  color: var(--light-blue);
+}
+
+.restore-wrapper__submit {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 30px;
+  border: none;
+  background-color: var(--light-blue);
+  border-radius: 20px;
+  align-self: flex-start;
+  padding: 23px 32px;
+}
+
+.restore-wrapper__link {
+  text-decoration: none;
+  color: var(--medium-blue);
+  font-size: 28px;
+}
+
+.restore-wrapper__bg {
+  position: absolute;
+  background-image: url("../../img/restore-password/restore-bg.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 987px;
+  height: 900px;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+}
+
+@media (max-width: 1740px) {
+  .restore-wrapper__form-header {
+    font-size: 28px;
+  }
+
+  .restore-wrapper__bg {
+    width: 700px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .restore-wrapper__form-header {
+    font-size: 26px;
+  }
+
+  .restore-wrapper__bg {
+    width: 672px;
+  }
+
+  .restore-wrapper {
+    padding: 10vw 0 3vw 261px;
+  }
+
+  .restore-wrapper__link {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1296px) {
+  .restore-wrapper {
+    padding: 3vw 0 3vw 261px;
+  }
+
+  .restore-wrapper__form-header {
+    font-size: 25px;
+  }
+
+  .restore-wrapper__bg {
+    width: 500px;
+    height: 456px;
+  }
+
+  .restore-wrapper__form {
+    gap: 20px;
+  }
+
+  .restore-wrapper__submit {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1152px) {
+  .restore-wrapper__bg {
+    width: 444px;
+    height: 405px;
+  }
+
+  .restore-wrapper__form-header {
+    font-size: 22px;
+  }
+
+  .restore-wrapper__form-tip {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .restore-wrapper__form-header {
+    font-size: 16px;
+  }
+
+  .restore-wrapper__form-tip {
+    font-size: 13px;
+  }
+
+  .restore-wrapper__submit {
+    font-size: 12px;
+    padding: 15px 32px;
+  }
+
+  .restore-wrapper__link {
+    font-size: 15px;
+  }
+
+  .restore-wrapper__bg {
+    width: 400px;
+    height: 365px;
+  }
+}
+
+@media (max-width: 960px) {
+  .restore-wrapper {
+    padding: 20px 0;
+  }
+
+  .restore-wrapper__form {
+    width: 90vw;
+    gap: 15px;
+    margin: 0 auto;
+  }
+
+  .restore-wrapper__form-header {
+    font-size: 20px;
+  }
+
+  .restore-wrapper__bg {
+    display: none;
+  }
+}

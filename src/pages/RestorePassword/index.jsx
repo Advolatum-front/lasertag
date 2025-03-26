@@ -21,9 +21,11 @@ const RestorePassword = () => {
         </div>
         <LabeledInput type="email" label="E-mail" required />
         <button type="submit" className="restore-wrapper__submit">
-          Отправить
+          Сбросить пароль
         </button>
-        <Link to="/">Я вспомнил(а) пароль</Link>
+        <Link to="/" className="restore-wrapper__link">
+          Я вспомнил(а) пароль
+        </Link>
       </form>
       <div className="restore-wrapper__bg"></div>
     </div>
