@@ -10,8 +10,19 @@ const DocumentBlock = (props) => {
     descriptionClass,
     descriptionContent,
     link,
+    href,
     linkClass,
   } = props;
+
+  const linkToDocument = link ? (
+    <Link to={link} className={linkClass}>
+      Читать подробнее
+    </Link>
+  ) : (
+    <a href={href} className={linkClass}>
+      Читать подробнее
+    </a>
+  );
 
   return (
     <div className={wrapperClass}>
