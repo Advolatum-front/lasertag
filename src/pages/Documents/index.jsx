@@ -14,7 +14,7 @@ const Documents = () => {
             descriptionClass="document-block__description"
             descriptionContent="Краткое описание устава организации с некоторыми подробностями для
         масштабности текста"
-            link="/"
+            href="docs/ustav.pdf"
             linkClass="document-block__link"
           />
         </li>
@@ -26,7 +26,7 @@ const Documents = () => {
             descriptionClass="document-block__description-2"
             descriptionContent="Краткое описание устава организации с некоторыми подробностями для
         масштабности текста"
-            link="/"
+            href="docs/ustav.pdf"
             linkClass="document-block__link-2"
           />
         </li>
