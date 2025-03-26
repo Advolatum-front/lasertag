@@ -1,6 +1,6 @@
 .login-wrapper {
   position: relative;
-  padding: 10vw 0 10vw 261px;
+  padding: 20px 0 50px 261px;
   font-family: var(--open-sans);
 }
 
@@ -8,53 +8,64 @@
   width: 30vw;
   display: flex;
   flex-direction: column;
-  gap: 38px;
+  gap: 20px;
 }
 
 .login-wrapper__form-header {
   text-transform: uppercase;
   color: var(--medium-blue);
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 600;
 }
 
-.login-wrapper__form-tip {
-  font-size: 20px;
-  color: var(--light-blue);
+.login-wrapper__links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-wrapper__link-item {
+  text-decoration: none;
+  color: var(--medium-blue);
+  font-size: 16px;
+  transition: color 0.2s linear;
+}
+
+.login-wrapper__link-item:hover {
+  color: var(--dark-blue);
 }
 
 .login-wrapper__submit {
   cursor: pointer;
   text-transform: uppercase;
   color: #fff;
-  font-size: 30px;
+  font-size: 18px;
   border: none;
   background-color: var(--light-blue);
   border-radius: 20px;
   align-self: flex-start;
-  padding: 23px 32px;
+  padding: 16px 13px;
+  transition: background-color 0.2s linear;
 }
 
-.login-wrapper__link {
-  text-decoration: none;
-  color: var(--medium-blue);
-  font-size: 28px;
+.login-wrapper__submit:hover {
+  background-color: var(--dark-blue);
 }
 
 .login-wrapper__bg {
+  --width: 440px;
+  --height: calc(var(--width) * 1.044);
   position: absolute;
-  background-image: url("../../img/restore-password/restore-bg.webp");
+  background-image: url("../../img/login/login-bg.webp");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 987px;
-  height: 900px;
-  right: 0;
-  bottom: 0;
-  top: 0;
+  width: var(--width);
+  height: var(--height);
+  right: 122px;
+  bottom: -13px;
   z-index: -1;
 }
 
-@media (max-width: 1740px) {
+/*@media (max-width: 1740px) {
   .login-wrapper__form-header {
     font-size: 28px;
   }
@@ -114,19 +125,11 @@
   .login-wrapper__form-header {
     font-size: 22px;
   }
-
-  .login-wrapper__form-tip {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 1024px) {
   .login-wrapper__form-header {
     font-size: 16px;
-  }
-
-  .login-wrapper__form-tip {
-    font-size: 13px;
   }
 
   .login-wrapper__submit {
@@ -163,3 +166,4 @@
     display: none;
   }
 }
+*/
