@@ -1,3 +1,7 @@
+:root {
+  --input-float-size: 14px;
+}
+
 .float-label {
   display: flex;
   flex-direction: column;
@@ -8,25 +12,25 @@
 .float-label__input {
   color: var(--dark-blue);
   width: calc(100% - 16px - 10px - 2px);
-  height: 40px;
-  padding: 14px 16px 0 10px;
+  height: 35px;
+  padding: 6px 16px 0 10px;
   outline: 0;
   border: 1px solid var(--light-blue);
   border-radius: 20px;
   background: #fff;
   font-family: var(--open-sans);
-  font-size: 16px;
+  font-size: var(--input-float-size);
 }
 
 .float-label__label {
-  font-size: 16px;
+  font-size: var(--input-float-size);
   font-family: var(--open-sans);
   padding: 0 12px;
   color: var(--medium-blue);
   opacity: 0.8;
   pointer-events: none;
   position: absolute;
-  transform: translate(0, 18px) scale(1);
+  transform: translate(0, 10px) scale(1);
   transform-origin: top left;
   transition: all 0.2s ease-out;
 }
@@ -39,5 +43,5 @@
 
 .float-label:focus-within label,
 .float-label .active {
-  transform: translate(0, 9px) scale(0.75);
+  transform: translate(1px, 6px) scale(0.75);
 }
