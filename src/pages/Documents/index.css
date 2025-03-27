@@ -131,8 +131,17 @@
   .documents-container__list {
     display: flex;
     flex-direction: column;
-    background-color: black;
     gap: 30px;
+  }
+
+  .document-block__header-2,
+  .document-block__description-2 {
+    color: var(--medium-blue);
+  }
+
+  .document-block__link-2 {
+    background-color: var(--medium-blue);
+    color: #fff;
   }
 
   .document-block__link,
@@ -145,117 +154,3 @@
     text-align: left;
   }
 }
-
-/*@media (max-width: 1559px) and (min-width: 1152px) {
-  :root {
-    --header-font-size: 22px;
-    --description-font-size: 18px;
-  }
-
-  .documents-container__list-item-1 {
-    padding-top: 10vw;
-  }
-
-  .documents-container__list-item-2 {
-    padding: 35vw 0 10vw 0;
-  }
-
-  .documents-container__document,
-  .documents-container__document-2 {
-    align-items: flex-start;
-    gap: 20px;
-    width: 500px;
-  }
-
-  .documents-container__document-2 {
-    align-items: flex-end;
-  }
-
-  .document-block__description {
-    text-align: left;
-  }
-
-  .document-block__description-2 {
-    text-align: right;
-  }
-}
-
-@media (max-width: 1151px) {
-  :root {
-    --header-font-size: 20px;
-    --description-font-size: 16px;
-  }
-
-  .documents-container__list-item-1 {
-    padding-top: 5vw;
-  }
-
-  .documents-container__list-item-2 {
-    padding: 35vw 0 10vw 0;
-  }
-
-  .document-block__description {
-    text-align: left;
-  }
-
-  .document-block__description-2 {
-    text-align: right;
-  }
-
-  .documents-container__document,
-  .documents-container__document-2 {
-    align-items: flex-start;
-    gap: 20px;
-    width: 350px;
-  }
-
-  .documents-container__document-2 {
-    align-items: flex-end;
-  }
-}
-
-@media (max-width: 768px) {
-  .documents-container__document,
-  .documents-container__document-2 {
-    align-items: center;
-    width: 300px;
-    gap: 10px;
-  }
-
-  .documents-container__list-item-1 {
-    padding-top: 0;
-  }
-
-  .documents-container__list-item-2 {
-    padding: 50vw 0 10vw 0;
-  }
-
-  .document-block__description,
-  .document-block__description-2 {
-    text-align: left;
-  }
-}
-
-@media (max-width: 640px) {
-  .documents-container__list {
-    flex-direction: column;
-    align-items: center;
-    gap: 100px;
-    padding: 20px 0;
-  }
-
-  .documents-container__list-item-2 {
-    padding: 0;
-  }
-
-  .document-block__header-2,
-  .document-block__description-2 {
-    color: var(--medium-blue);
-  }
-
-  .document-block__link-2 {
-    background-color: var(--medium-blue);
-    color: #fff;
-  }
-}
-*/
