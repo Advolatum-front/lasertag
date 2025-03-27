@@ -5,6 +5,7 @@ import "./index.css";
 const Documents = () => {
   return (
     <article className="documents-container">
+      <div className="documents-container__bg"></div>
       <ul className="documents-container__list">
         <li className="documents-container__list-item-1">
           <DocumentBlock

@@ -1,14 +1,28 @@
 :root {
-  --header-font-size: 36px;
-  --description-font-size: 24px;
+  --header-font-size: 24px;
+  --description-font-size: 18px;
 }
 
 .documents-container {
+  position: relative;
+  font-family: var(--open-sans);
+  padding: 0 20px;
+  padding-bottom: 10vw;
+  overflow: hidden;
+}
+
+.documents-container__bg {
+  --width: 93vw;
+  --height: calc(var(--width) * 0.744);
+  position: absolute;
+  right: 0;
+  width: var(--width);
+  height: var(--height);
   background-image: url("../../img/documents/document-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: var(--open-sans);
-  padding: 0 20px;
+  background-position: 0 -124px;
+  z-index: -1;
 }
 
 .documents-container__document,
@@ -17,7 +31,7 @@
   flex-direction: column;
   align-items: flex-end;
   gap: 20px;
-  width: 635px;
+  width: 30vw;
 }
 
 .documents-container__document-2 {
@@ -29,15 +43,17 @@
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
+  /*  justify-content: space-around;*/
 }
 
 .documents-container__list-item-1 {
-  padding-top: 10vw;
+  margin-left: 3vw;
+  margin-top: 6vw;
 }
 
 .documents-container__list-item-2 {
-  padding: 20vw 0 20vw 0;
+  margin-left: 20vw;
+  margin-top: 35vw;
 }
 
 .document-block__header,
@@ -45,6 +61,7 @@
   text-transform: uppercase;
   font-size: var(--header-font-size);
   color: var(--medium-blue);
+  font-weight: 600;
 }
 
 .document-block__header-2 {
@@ -85,7 +102,51 @@
   transform: scale(1.05);
 }
 
-@media (max-width: 1559px) and (min-width: 1152px) {
+@media (max-width: 1365px) {
+  /*  documents-container*/
+
+  .documents-container__list-item-2 {
+    margin-left: 24vw;
+    margin-top: 24vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .documents-container__bg {
+    display: none;
+  }
+
+  .documents-container__document,
+  .documents-container__document-2 {
+    width: auto;
+    align-items: flex-start;
+  }
+
+  .documents-container__list-item-1,
+  .documents-container__list-item-2 {
+    margin: 0 auto;
+    width: 90vw;
+  }
+
+  .documents-container__list {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    gap: 30px;
+  }
+
+  .document-block__link,
+  .document-block__link-2 {
+    align-self: center;
+  }
+
+  .document-block__description,
+  .document-block__description-2 {
+    text-align: left;
+  }
+}
+
+/*@media (max-width: 1559px) and (min-width: 1152px) {
   :root {
     --header-font-size: 22px;
     --description-font-size: 18px;
@@ -197,3 +258,4 @@
     color: #fff;
   }
 }
+*/
