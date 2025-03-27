@@ -43,7 +43,6 @@
   margin: 0;
   padding: 0;
   display: flex;
-  /*  justify-content: space-around;*/
 }
 
 .documents-container__list-item-1 {
@@ -103,8 +102,6 @@
 }
 
 @media (max-width: 1365px) {
-  /*  documents-container*/
-
   .documents-container__list-item-2 {
     margin-left: 24vw;
     margin-top: 24vw;
