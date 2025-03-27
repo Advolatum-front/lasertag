@@ -1,7 +1,9 @@
 .login-wrapper {
   position: relative;
-  padding: 40px 0 80px 261px;
+  padding: 20px 0 0 261px;
   font-family: var(--open-sans);
+  display: flex;
+  align-items: center;
 }
 
 .login-wrapper__form {
@@ -21,6 +23,7 @@
 .login-wrapper__links {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .login-wrapper__link-item {
@@ -52,6 +55,8 @@
 }
 
 .login-wrapper__bg {
+  --width: 40vw;
+  --height: calc(var(--width) * 1.044);
   /* Такой подход делает так, чтобы при изменении ширины блока
 его высота изменялась пропорциональному ему
 1.044 — это результат деления высоты картинки login-bg на её ширину
@@ -59,18 +64,14 @@
 просмотра. За это отвечают единицы vw (от Vieport Width).
 1 vw = 1 процент от ширины области просмотра.*/
 
-  --width: 35vw;
-  --height: calc(var(--width) * 1.044);
-  position: absolute;
   background-image: url("../../img/login/login-bg.webp");
   background-size: contain;
   background-repeat: no-repeat;
   width: var(--width);
   height: var(--height);
   right: 122px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: -1;
+  margin-top: -100px;
+  margin-left: 160px;
 }
 
 @media (max-width: 960px) {

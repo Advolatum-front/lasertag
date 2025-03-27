@@ -18,7 +18,7 @@ const Login = () => {
 
         <div className="login-wrapper__links">
           <Link to="/restorepassword" className="login-wrapper__link-item">
-            Забыли пароль
+            Забыли пароль?
           </Link>
           <Link to="/registration" className="login-wrapper__link-item">
             Нет аккаунта?
