@@ -1,6 +1,6 @@
 .login-wrapper {
   position: relative;
-  padding: 20px 0 50px 261px;
+  padding: 40px 0 80px 261px;
   font-family: var(--open-sans);
 }
 
@@ -52,7 +52,14 @@
 }
 
 .login-wrapper__bg {
-  --width: 440px;
+  /* Такой подход делает так, чтобы при изменении ширины блока
+его высота изменялась пропорциональному ему
+1.044 — это результат деления высоты картинки login-bg на её ширину
+(три знака после запятой) А ширина блока зависит от ширины области
+просмотра. За это отвечают единицы vw (от Vieport Width).
+1 vw = 1 процент от ширины области просмотра.*/
+
+  --width: 35vw;
   --height: calc(var(--width) * 1.044);
   position: absolute;
   background-image: url("../../img/login/login-bg.webp");
@@ -61,109 +68,22 @@
   width: var(--width);
   height: var(--height);
   right: 122px;
-  bottom: -13px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: -1;
-}
-
-/*@media (max-width: 1740px) {
-  .login-wrapper__form-header {
-    font-size: 28px;
-  }
-
-  .login-wrapper__bg {
-    width: 700px;
-  }
-}
-
-@media (max-width: 1366px) {
-  .login-wrapper__form-header {
-    font-size: 26px;
-  }
-
-  .login-wrapper__bg {
-    width: 672px;
-  }
-
-  .login-wrapper {
-    padding: 10vw 0 3vw 261px;
-  }
-
-  .login-wrapper__link {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 1296px) {
-  .login-wrapper {
-    padding: 3vw 0 3vw 261px;
-  }
-
-  .login-wrapper__form-header {
-    font-size: 25px;
-  }
-
-  .login-wrapper__bg {
-    width: 500px;
-    height: 456px;
-  }
-
-  .login-wrapper__form {
-    gap: 20px;
-  }
-
-  .login-wrapper__submit {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 1152px) {
-  .login-wrapper__bg {
-    width: 444px;
-    height: 405px;
-  }
-
-  .login-wrapper__form-header {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .login-wrapper__form-header {
-    font-size: 16px;
-  }
-
-  .login-wrapper__submit {
-    font-size: 12px;
-    padding: 15px 32px;
-  }
-
-  .login-wrapper__link {
-    font-size: 15px;
-  }
-
-  .login-wrapper__bg {
-    width: 400px;
-    height: 365px;
-  }
 }
 
 @media (max-width: 960px) {
   .login-wrapper {
-    padding: 20px 0;
+    padding: 80px 0;
   }
 
   .login-wrapper__form {
     width: 90vw;
-    gap: 15px;
     margin: 0 auto;
-  }
-
-  .login-wrapper__form-header {
-    font-size: 20px;
   }
 
   .login-wrapper__bg {
     display: none;
   }
 }
-*/
