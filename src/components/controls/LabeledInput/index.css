@@ -12,7 +12,7 @@
 .float-label__input {
   color: var(--dark-blue);
   width: calc(100% - 16px - 10px - 2px);
-  height: 35px;
+  height: 37px;
   padding: 6px 16px 0 10px;
   outline: 0;
   border: 1px solid var(--light-blue);
@@ -30,7 +30,7 @@
   opacity: 0.8;
   pointer-events: none;
   position: absolute;
-  transform: translate(0, 10px) scale(1);
+  transform: translate(0, 12px) scale(1);
   transform-origin: top left;
   transition: all 0.2s ease-out;
 }
@@ -43,5 +43,5 @@
 
 .float-label:focus-within label,
 .float-label .active {
-  transform: translate(1px, 6px) scale(0.75);
+  transform: translate(4px, 3px) scale(0.75);
 }

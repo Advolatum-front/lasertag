@@ -8,9 +8,11 @@ const LabeledInput = (props) => {
   const [isActive, setIsActive] = useState(false);
   const [value, setValue] = useState("");
 
-  const labelClassName = isActive
-    ? "float-label__label active"
-    : "float-label__label";
+  const labelClassName =
+    isActive || type === "date"
+      ? "float-label__label active"
+      : "float-label__label";
+
   const floatLabelClass = widthClass
     ? `float-label ${widthClass}`
     : "float-label";
