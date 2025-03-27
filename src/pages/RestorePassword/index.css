@@ -1,162 +1,95 @@
 .restore-wrapper {
   position: relative;
-  padding: 10vw 0 10vw 261px;
+  padding: 20px 0 20px 261px;
   font-family: var(--open-sans);
+  display: flex;
+  align-items: center;
 }
 
 .restore-wrapper__form {
   width: 30vw;
   display: flex;
   flex-direction: column;
-  gap: 38px;
+  gap: 20px;
 }
 
 .restore-wrapper__form-header {
   text-transform: uppercase;
   color: var(--medium-blue);
-  font-size: 35px;
+  font-size: 20px;
   font-weight: 600;
 }
 
 .restore-wrapper__form-tip {
-  font-size: 20px;
   color: var(--light-blue);
+  font-size: 16px;
+}
+
+.restore-wrapper__link {
+  color: var(--medium-blue);
+  font-weight: 600;
+  transition: color 0.2s linear;
+  text-decoration: none;
+}
+
+.restore-wrapper__link:hover {
+  color: var(--dark-blue);
+}
+
+.restore-wrapper__link-item {
+  text-decoration: none;
+  color: var(--medium-blue);
+  font-size: 16px;
+  transition: color 0.2s linear;
+}
+
+.restore-wrapper__link-item:hover {
+  color: var(--dark-blue);
 }
 
 .restore-wrapper__submit {
   cursor: pointer;
   text-transform: uppercase;
   color: #fff;
-  font-size: 30px;
+  font-size: 18px;
   border: none;
   background-color: var(--light-blue);
   border-radius: 20px;
   align-self: flex-start;
-  padding: 23px 32px;
+  padding: 16px 13px;
+  transition: background-color 0.2s linear;
 }
 
-.restore-wrapper__link {
-  text-decoration: none;
-  color: var(--medium-blue);
-  font-size: 28px;
+.restore-wrapper__submit:hover {
+  background-color: var(--dark-blue);
 }
 
 .restore-wrapper__bg {
-  position: absolute;
+  --width: 37vw;
+  --height: calc(var(--width) * 0.912);
+  /* Такой подход делает так, чтобы при изменении ширины блока
+его высота изменялась пропорциональному ему
+0.912 — это результат деления высоты картинки restore-bg на её ширину
+(три знака после запятой) А ширина блока зависит от ширины области
+просмотра. За это отвечают единицы vw (от Vieport Width).
+1 vw = 1 процент от ширины области просмотра.*/
+
   background-image: url("../../img/restore-password/restore-bg.webp");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 987px;
-  height: 900px;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: -1;
-}
-
-@media (max-width: 1740px) {
-  .restore-wrapper__form-header {
-    font-size: 28px;
-  }
-
-  .restore-wrapper__bg {
-    width: 700px;
-  }
-}
-
-@media (max-width: 1366px) {
-  .restore-wrapper__form-header {
-    font-size: 26px;
-  }
-
-  .restore-wrapper__bg {
-    width: 672px;
-  }
-
-  .restore-wrapper {
-    padding: 10vw 0 3vw 261px;
-  }
-
-  .restore-wrapper__link {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 1296px) {
-  .restore-wrapper {
-    padding: 3vw 0 3vw 261px;
-  }
-
-  .restore-wrapper__form-header {
-    font-size: 25px;
-  }
-
-  .restore-wrapper__bg {
-    width: 500px;
-    height: 456px;
-  }
-
-  .restore-wrapper__form {
-    gap: 20px;
-  }
-
-  .restore-wrapper__submit {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 1152px) {
-  .restore-wrapper__bg {
-    width: 444px;
-    height: 405px;
-  }
-
-  .restore-wrapper__form-header {
-    font-size: 22px;
-  }
-
-  .restore-wrapper__form-tip {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .restore-wrapper__form-header {
-    font-size: 16px;
-  }
-
-  .restore-wrapper__form-tip {
-    font-size: 13px;
-  }
-
-  .restore-wrapper__submit {
-    font-size: 12px;
-    padding: 15px 32px;
-  }
-
-  .restore-wrapper__link {
-    font-size: 15px;
-  }
-
-  .restore-wrapper__bg {
-    width: 400px;
-    height: 365px;
-  }
+  width: var(--width);
+  height: var(--height);
+  margin-left: auto;
 }
 
 @media (max-width: 960px) {
   .restore-wrapper {
-    padding: 20px 0;
+    padding: 80px 0;
   }
 
   .restore-wrapper__form {
     width: 90vw;
-    gap: 15px;
     margin: 0 auto;
-  }
-
-  .restore-wrapper__form-header {
-    font-size: 20px;
   }
 
   .restore-wrapper__bg {
