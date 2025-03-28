@@ -9,6 +9,7 @@ import Contacts from "./pages/Contacts";
 import Documents from "./pages/Documents";
 import RestorePassword from "./pages/RestorePassword";
 import Login from "./pages/Login";
+import Registration from "./pages/Registration";
 
 import "./App.css";
 import "./my-styles.css";
@@ -31,6 +32,7 @@ function App() {
             <Route exact path="/contacts" element={<Contacts />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/documents" element={<Documents />} />
+            <Route exact path="/registration" element={<Registration />} />
           </Routes>
         </main>
         <Footer />
