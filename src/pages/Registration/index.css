@@ -46,3 +46,22 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+
+.registration__submit-form {
+  display: block;
+  margin-left: auto;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  background-color: var(--light-blue);
+  border-radius: 20px;
+  align-self: flex-start;
+  padding: 16px 13px;
+  transition: background-color 0.2s linear;
+}
+
+.registration__submit-form:hover {
+  background-color: var(--dark-blue);
+}
