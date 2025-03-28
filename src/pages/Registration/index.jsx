@@ -40,7 +40,10 @@ const Registration = () => {
             id="passwordconfirm"
           />
           <div className="registration__additional-panel">
-            <StyledCheckbox caption="аааа" />
+            <StyledCheckbox
+              caption="Согласие на обработку персональных данных"
+              className="registration__personal-data"
+            />
             <Link to="/login" className="registration__link-to-login">
               Есть аккаунт?
             </Link>
