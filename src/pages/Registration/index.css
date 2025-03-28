@@ -1,0 +1,27 @@
+.registration {
+  background-image: url("../../img/registration/registration-bg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 150px 0;
+}
+
+.registration__form {
+  width: 70vw;
+  margin: 0 auto;
+  font-family: var(--open-sans);
+  color: var(--medium-blue);
+}
+
+.registration__form-header {
+  text-transform: uppercase;
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.registration__fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
