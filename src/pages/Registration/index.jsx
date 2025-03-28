@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
+import StyledCheckbox from "../../components/controls/StyledCheckbox";
 
 import "./index.css";
 
@@ -38,7 +39,12 @@ const Registration = () => {
             label="Повторите пароль"
             id="passwordconfirm"
           />
-          <LabeledInput required type="text" label="ААА" id="аааа" />
+          <div className="registration__additional-panel">
+            <StyledCheckbox caption="аааа" />
+            <Link to="/login" className="registration__link-to-login">
+              Есть аккаунт?
+            </Link>
+          </div>
         </div>
         <button type="submit" className="registration__submit-form">
           Зарегистрироваться
