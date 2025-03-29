@@ -10,6 +10,7 @@ import Documents from "./pages/Documents";
 import RestorePassword from "./pages/RestorePassword";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
+import AlbumSelector from "./pages/AlbumSelector";
 
 import "./App.css";
 import "./my-styles.css";
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/documents" element={<Documents />} />
             <Route exact path="/registration" element={<Registration />} />
+            <Route exact path="/gallery" element={<AlbumSelector />} />
           </Routes>
         </main>
         <Footer />
