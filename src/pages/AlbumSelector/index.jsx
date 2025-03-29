@@ -5,17 +5,20 @@ import { Link } from "react-router-dom";
 const AlbumSelector = () => {
   return (
     <>
-      <ul className="gallery-navigator">
-        <li className="gallery-navigator__list-item">
-          <Link className="gallery-navigator__link">Фото</Link>
-        </li>
-        <li className="gallery-navigator__list-item">
-          <Link className="gallery-navigator__link">Видео</Link>
-        </li>
-        <li className="gallery-navigator__list-item">
-          <Link className="gallery-navigator__link">Избранное</Link>
-        </li>
-      </ul>
+      <div className="gallery-navigator">
+        <ul className="gallery-navigator__list">
+          <li className="gallery-navigator__list-item">
+            <Link className="gallery-navigator__link">Фото</Link>
+          </li>
+          <li className="gallery-navigator__list-item">
+            <Link className="gallery-navigator__link">Видео</Link>
+          </li>
+          <li className="gallery-navigator__list-item">
+            <Link className="gallery-navigator__link">Избранное</Link>
+          </li>
+        </ul>
+      </div>
+
       <ul className="albums-list">
         <li className="albums-list__item">
           <Link className="albums-list__cover-container">

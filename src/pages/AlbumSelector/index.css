@@ -1,6 +1,7 @@
 .gallery-navigator {
   padding: 0;
   margin: 0;
+  padding: 0 100px;
   list-style: none;
   display: flex;
   background-image: url("../../img/gallery/category-switch-bg.webp");
