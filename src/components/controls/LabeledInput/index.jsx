@@ -3,7 +3,15 @@ import { useState } from "react";
 import "./index.css";
 
 const LabeledInput = (props) => {
-  const { required, type = "text", id, onInput, widthClass, label } = props;
+  const {
+    required,
+    type = "text",
+    id,
+    onInput,
+    className,
+    label,
+    tabIndex = 0,
+  } = props;
 
   const [isActive, setIsActive] = useState(false);
   const [value, setValue] = useState("");
@@ -13,8 +21,8 @@ const LabeledInput = (props) => {
       ? "float-label__label active"
       : "float-label__label";
 
-  const floatLabelClass = widthClass
-    ? `float-label ${widthClass}`
+  const floatLabelClass = className
+    ? `float-label ${className}`
     : "float-label";
 
   const requiredMarker = required && (
@@ -49,6 +57,7 @@ const LabeledInput = (props) => {
         onChange={(e) => handleTextChange(e.target.value)}
         onInput={(e) => handleTextInput(e.target.value)}
         className="float-label__input"
+        tabIndex={tabIndex}
       />
 
       <label className={labelClassName} htmlFor={id}>
