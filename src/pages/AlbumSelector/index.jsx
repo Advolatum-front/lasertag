@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-// import "./index.css";
+import "./index.css";
 
 const AlbumSelector = () => {
   return (
@@ -8,13 +8,17 @@ const AlbumSelector = () => {
       <div className="gallery-navigator">
         <ul className="gallery-navigator__list">
           <li className="gallery-navigator__list-item">
-            <Link className="gallery-navigator__link">Фото</Link>
+            <span className="gallery-navigator__link-active">Фото</span>
           </li>
           <li className="gallery-navigator__list-item">
-            <Link className="gallery-navigator__link">Видео</Link>
+            <Link to="/" className="gallery-navigator__link">
+              Видео
+            </Link>
           </li>
           <li className="gallery-navigator__list-item">
-            <Link className="gallery-navigator__link">Избранное</Link>
+            <Link to="/" className="gallery-navigator__link">
+              Избранное
+            </Link>
           </li>
         </ul>
       </div>
