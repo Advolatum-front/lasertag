@@ -1,28 +1,13 @@
 import { Link } from "react-router-dom";
 
+import GalleryNavigator from "../../components/GalleryNavigator";
+
 import "./index.css";
 
 const AlbumSelector = () => {
   return (
     <>
-      <div className="gallery-navigator">
-        <ul className="gallery-navigator__list">
-          <li className="gallery-navigator__list-item">
-            <span className="gallery-navigator__link-active">Фото</span>
-          </li>
-          <li className="gallery-navigator__list-item">
-            <Link to="/" className="gallery-navigator__link">
-              Видео
-            </Link>
-          </li>
-          <li className="gallery-navigator__list-item">
-            <Link to="/" className="gallery-navigator__link">
-              Избранное
-            </Link>
-          </li>
-        </ul>
-      </div>
-
+      <GalleryNavigator />
       <ul className="albums-list">
         <li className="albums-list__item">
           <Link className="albums-list__cover-container">
