@@ -2,7 +2,7 @@
   background-image: url("../../img/registration/registration-bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center 0;
   padding: 150px 0;
 }
 
@@ -17,6 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 45px;
 }
 
 .registration__personal-data {
