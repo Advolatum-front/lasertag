@@ -2,9 +2,15 @@ import { Link } from "react-router-dom";
 
 import "./index.css";
 
-const GalleryNavigator = () => {
+const GalleryNavigator = (props) => {
+  const { className } = props;
+
+  const galleryNavigatorClassName = className
+    ? `gallery-navigator ${className}`
+    : `gallery-navigator`;
+
   return (
-    <div className="gallery-navigator">
+    <div className={galleryNavigatorClassName}>
       <ul className="gallery-navigator__list">
         <li className="gallery-navigator__list-item">
           <span className="gallery-navigator__link-active">Фото</span>
