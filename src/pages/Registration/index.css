@@ -11,6 +11,8 @@
   margin: 0 auto;
   font-family: var(--open-sans);
   color: var(--medium-blue);
+  display: flex;
+  flex-direction: column;
 }
 
 .registration__additional-panel {
@@ -24,11 +26,17 @@
   width: 235px;
 }
 
-.registration__link-to-login {
+.registration__link-to-login-start,
+.registration__link-to-login-end {
   text-decoration: none;
   color: var(--medium-blue);
   font-size: 16px;
   transition: color 0.2s linear;
+}
+
+.registration__link-to-login-start {
+  margin-bottom: 15px;
+  display: none;
 }
 
 .registration__link-to-login:hover {
@@ -38,7 +46,7 @@
 .registration__form-header {
   text-transform: uppercase;
   font-size: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   font-weight: 600;
 }
 
@@ -66,4 +74,79 @@
 
 .registration__submit-form:hover {
   background-color: var(--dark-blue);
+}
+
+@media (max-width: 960px) {
+  .registration {
+    padding: 80px 0;
+  }
+
+  .registration__fields {
+    display: flex;
+    flex-direction: column;
+  }
+  .registration__additional-panel {
+    order: 10;
+  }
+
+  .registration__link-to-login-start {
+    display: inline;
+  }
+
+  .registration__link-to-login-end {
+    display: none;
+  }
+
+  .registration__personal-data {
+    width: 75%;
+  }
+
+  .registration__form {
+    width: 90vw;
+  }
+
+  .name {
+    order: 1;
+  }
+
+  .surname {
+    order: 2;
+  }
+
+  .country {
+    order: 3;
+  }
+
+  .city {
+    order: 4;
+  }
+
+  .birthdate {
+    order: 5;
+  }
+
+  .email {
+    order: 6;
+  }
+  .phone {
+    order: 7;
+  }
+
+  .password {
+    order: 8;
+  }
+
+  .passwordconfirm {
+    order: 9;
+  }
+
+  .registration__submit-form {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration__link-to-login {
+    display: none;
+  }
 }

@@ -14,6 +14,7 @@ const Registration = () => {
     <div className="registration">
       <form className="registration__form" onSubmit={submitForm}>
         <div className="registration__form-header">Регистрация</div>
+        <Link className="registration__link-to-login-start">Есть аккаунт?</Link>
         <div className="registration__fields">
           <LabeledInput
             required
@@ -21,6 +22,7 @@ const Registration = () => {
             label="Имя"
             id="name"
             tabIndex="1"
+            className="name"
           />
           <LabeledInput
             required
@@ -28,6 +30,7 @@ const Registration = () => {
             label="Email"
             id="email"
             tabIndex="6"
+            className="email"
           />
 
           <LabeledInput
@@ -36,6 +39,7 @@ const Registration = () => {
             label="Фамилия"
             id="surname"
             tabIndex="2"
+            className="surname"
           />
           <LabeledInput
             required
@@ -43,6 +47,7 @@ const Registration = () => {
             label="Телефон"
             id="phone"
             tabIndex="7"
+            className="phone"
           />
 
           <LabeledInput
@@ -50,6 +55,7 @@ const Registration = () => {
             type="text"
             label="Страна"
             id="country"
+            className="country"
             tabIndex="3"
           />
           <LabeledInput
@@ -57,6 +63,7 @@ const Registration = () => {
             type="password"
             label="Пароль"
             id="password"
+            className="password"
             tabIndex="8"
           />
 
@@ -65,6 +72,7 @@ const Registration = () => {
             type="text"
             label="Населённый пункт"
             id="city"
+            className="city"
             tabIndex="4"
           />
           <LabeledInput
@@ -72,6 +80,7 @@ const Registration = () => {
             type="password"
             label="Повторите пароль"
             id="passwordconfirm"
+            className="passwordconfirm"
             tabIndex="9"
           />
 
@@ -80,6 +89,7 @@ const Registration = () => {
             type="date"
             label="Дата рождения"
             id="birthdate"
+            className="birthdate"
             tabIndex="5"
           />
 
@@ -89,7 +99,7 @@ const Registration = () => {
               className="registration__personal-data"
               tabIndex="10"
             />
-            <Link to="/login" className="registration__link-to-login">
+            <Link to="/login" className="registration__link-to-login-end">
               Есть аккаунт?
             </Link>
           </div>
