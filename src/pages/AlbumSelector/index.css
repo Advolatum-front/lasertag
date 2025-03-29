@@ -1,0 +1,10 @@
+.gallery-navigator {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  background-image: url("../../img/gallery/category-switch-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
