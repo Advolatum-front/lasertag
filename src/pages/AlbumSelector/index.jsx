@@ -17,7 +17,7 @@ const AlbumSelector = () => {
               className="albums-list__cover"
             />
           </Link>
-          <Link className="albums-list__link">Фото с региона</Link>
+          <Link className="albums-list__link link-1">Фото с региона</Link>
         </li>
         <li className="albums-list__item">
           <Link className="albums-list__cover-container">
@@ -27,7 +27,7 @@ const AlbumSelector = () => {
               className="albums-list__cover"
             />
           </Link>
-          <Link className="albums-list__link">Фото с региона</Link>
+          <Link className="albums-list__link link-2">Фото с региона</Link>
         </li>
         <li className="albums-list__item">
           <Link className="albums-list__cover-container">
@@ -37,7 +37,7 @@ const AlbumSelector = () => {
               className="albums-list__cover"
             />
           </Link>
-          <Link className="albums-list__link">Фото с региона</Link>
+          <Link className="albums-list__link link-3">Фото с региона</Link>
         </li>
       </ul>
     </>
