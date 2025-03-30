@@ -6,8 +6,8 @@
 
 import "./index.css";
 
-const GallerySlider = () => {
+const GallerySliderPage = () => {
   return <p>тут слайдер</p>;
 };
 
-export default GallerySlider;
+export default GallerySliderPage;
