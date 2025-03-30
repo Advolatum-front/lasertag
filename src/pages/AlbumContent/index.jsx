@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { ReactComponent as Arrow } from "../../svg/arrow.svg";
+
 import GalleryNavigator from "../../components/GalleryNavigator";
 
 import "./index.css";
@@ -9,7 +11,8 @@ const AlbumContent = () => {
     <>
       <GalleryNavigator className="gallery-navigator-mb" />
       <Link to="/" className="back-to-albums-link">
-        Фото с региона
+        <Arrow className="back-to-albums-link__arrow" />
+        <span>Фото с региона:</span>
       </Link>
       <ul className="thumbnail-list">
         <li className="thumbnail-list__list-item">

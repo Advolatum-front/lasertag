@@ -1,3 +1,43 @@
+.back-to-albums-link {
+  position: relative;
+  display: flex;
+  font-size: 20px;
+  background-color: #fff;
+  color: var(--medium-blue);
+  border: 3px solid var(--light-blue);
+  width: 20vw;
+  height: 60px;
+  border-radius: 20px;
+  margin: -8vw 0 20px 1vw;
+  padding: 0 20px;
+  text-decoration: none;
+  align-items: center;
+  justify-content: space-between;
+  transition:
+    background-color 0.2s linear,
+    color 0.2s linear;
+}
+
+.back-to-albums-link__arrow {
+  position: relative;
+  left: 0px;
+  transition: left 0.3s ease-out;
+}
+
+.back-to-albums-link:hover {
+  background-color: var(--medium-blue);
+  color: #fff;
+}
+
+.back-to-albums-link:hover path {
+  fill: #fff;
+}
+
+.back-to-albums-link:hover .back-to-albums-link__arrow {
+  fill: #fff;
+  left: -5px;
+}
+
 @media (max-width: 1024px) {
   :root {
     --link-font-size: 24px;
