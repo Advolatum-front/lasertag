@@ -1,3 +1,17 @@
+:root {
+  --thumbnails-per-row: 6;
+  --list-padding-x: 15px;
+  --thumbnails-gap: 10px;
+  --thumbnail-height: 130px;
+  --thumbnails-list-width: 90vw;
+  --thumbnail-width: calc(
+    (
+        var(--thumbnails-list-width) - 2 * var(--list-padding-x) -
+          var(--thumbnails-gap) * (var(--thumbnails-per-row) - 1)
+      ) / var(--thumbnails-per-row)
+  );
+}
+
 .back-to-albums-link {
   position: relative;
   display: flex;
@@ -36,6 +50,30 @@
 .back-to-albums-link:hover .back-to-albums-link__arrow {
   fill: #fff;
   left: -5px;
+}
+
+.thumbnails-list {
+  margin: 0 auto 20px;
+  padding: var(--list-padding-x);
+  gap: var(--thumbnails-gap);
+  background-color: #f1f1f1;
+  list-style: none;
+  width: var(--thumbnails-list-width);
+  display: grid;
+  grid-template-columns: repeat(
+    var(--thumbnails-per-row),
+    var(--thumbnail-width)
+  );
+  border-radius: 20px;
+  align-items: center;
+  height: 300px;
+  overflow: auto;
+}
+
+.thumbnails-list__thumbnail {
+  width: var(--thumbnail-width);
+  height: var(--thumbnail-height);
+  border-radius: 10px;
 }
 
 @media (max-width: 1024px) {
