@@ -1,0 +1,9 @@
+@media (max-width: 1024px) {
+  :root {
+    --link-font-size: 24px;
+  }
+
+  .gallery-navigator-mb {
+    margin-bottom: 20px;
+  }
+}
