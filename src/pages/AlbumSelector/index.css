@@ -1,3 +1,7 @@
+:root {
+  --link-font-size: 18px;
+}
+
 .albums-list {
   margin: 0 auto 30px;
   padding: 0;
@@ -22,6 +26,7 @@
 .albums-list__link {
   --height: 6vw;
   --width: calc(var(--height) * 2.769);
+  font-size: var(--link-font-size);
   width: var(--width);
   height: var(--height);
   background-image: url("../../img/gallery/album-link-bg-1.webp");
@@ -50,4 +55,54 @@
   background-image: url("../../img/gallery/album-link-bg-3.webp");
   --height: 7vw;
   --width: calc(var(--height) * 2.457);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --link-font-size: 24px;
+  }
+
+  .gallery-navigator-mb {
+    margin-bottom: 20px;
+  }
+
+  .albums-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .albums-list__item {
+    width: 90vw;
+  }
+
+  .albums-list__link {
+    --height: 168px;
+  }
+
+  .albums-list__link.link-2 {
+    --height: 168px;
+  }
+
+  .albums-list__link.link-3 {
+    --height: 168px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --link-font-size: 22px;
+  }
+
+  .albums-list__link {
+    --height: 25vw;
+  }
+
+  .albums-list__link.link-2 {
+    --height: 20vw;
+  }
+
+  .albums-list__link.link-3 {
+    --height: 28vw;
+  }
 }

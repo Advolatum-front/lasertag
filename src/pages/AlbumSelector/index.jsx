@@ -7,7 +7,7 @@ import "./index.css";
 const AlbumSelector = () => {
   return (
     <>
-      <GalleryNavigator />
+      <GalleryNavigator className="gallery-navigator-mb" />
       <ul className="albums-list">
         <li className="albums-list__item">
           <Link className="albums-list__cover-container">
@@ -27,7 +27,7 @@ const AlbumSelector = () => {
               className="albums-list__cover"
             />
           </Link>
-          <Link className="albums-list__link link-2">Фото с региона</Link>
+          <Link className="albums-list__link link-2">Фото с области</Link>
         </li>
         <li className="albums-list__item">
           <Link className="albums-list__cover-container">
