@@ -22,7 +22,7 @@ const AlbumSelector = () => {
         <li className="albums-list__item">
           <Link className="albums-list__cover-container">
             <img
-              src="/img/gallery/album-selector/photo/cover-1.webp"
+              src="/img/gallery/album-selector/photo/cover-2.webp"
               alt=""
               className="albums-list__cover"
             />
@@ -32,7 +32,7 @@ const AlbumSelector = () => {
         <li className="albums-list__item">
           <Link className="albums-list__cover-container">
             <img
-              src="/img/gallery/album-selector/photo/cover-1.webp"
+              src="/img/gallery/album-selector/photo/cover-3.webp"
               alt=""
               className="albums-list__cover"
             />
