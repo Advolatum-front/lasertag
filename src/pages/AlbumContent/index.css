@@ -78,10 +78,36 @@
 
 @media (max-width: 1024px) {
   :root {
-    --link-font-size: 24px;
+    --thumbnails-per-row: 4;
   }
 
-  .gallery-navigator-mb {
-    margin-bottom: 20px;
+  .back-to-albums-link {
+    margin-top: 0;
+    width: 40vw;
+  }
+
+  .thumbnails-list {
+    height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --thumbnails-per-row: 2;
+  }
+
+  .back-to-albums-link {
+    width: 80vw;
+    margin: 0 auto 20px;
+  }
+
+  .thumbnails-list {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 460px) {
+  :root {
+    --thumbnails-per-row: 1;
   }
 }
