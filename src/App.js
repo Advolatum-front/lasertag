@@ -11,6 +11,7 @@ import RestorePassword from "./pages/RestorePassword";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
 import AlbumSelector from "./pages/AlbumSelector";
+import AlbumContent from "./pages/AlbumContent";
 
 import "./App.css";
 import "./my-styles.css";
@@ -35,6 +36,7 @@ function App() {
             <Route exact path="/documents" element={<Documents />} />
             <Route exact path="/registration" element={<Registration />} />
             <Route exact path="/gallery" element={<AlbumSelector />} />
+            <Route exact path="/gallery/album" element={<AlbumContent />} />
           </Routes>
         </main>
         <Footer />
