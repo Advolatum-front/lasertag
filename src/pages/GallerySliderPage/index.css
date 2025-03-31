@@ -13,6 +13,11 @@
 .gallery-slider__slide {
   position: relative;
   overflow: hidden;
+  cursor: grab;
+}
+
+.gallery-slider__slide:active {
+  cursor: grabbing;
 }
 
 .gallery-slider__blured-bg {
@@ -21,7 +26,7 @@
   top: 0;
   bottom: 0;
   right: 0;
-  transform: scale(2);
+  transform: scale(4);
   filter: blur(25px);
   z-index: 1;
 }
@@ -45,6 +50,7 @@
   border-radius: 20px;
   padding-top: 5px;
   z-index: 3;
+  cursor: default;
 }
 
 .gallery-slider__button-like,
@@ -66,4 +72,16 @@
 .gallery-slider__button-like .heart-liked path {
   fill: var(--dark-blue);
   stroke: var(--dark-blue);
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --content-height: 50vw;
+  }
+}
+
+@media (max-width: 960px) {
+  :root {
+    --content-height: 70vw;
+  }
 }
