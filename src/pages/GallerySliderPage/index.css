@@ -20,18 +20,27 @@
   cursor: grabbing;
 }
 
-.gallery-slider__blured-bg {
+.gallery-slider__image-bg,
+.gallery-slider__video-bg {
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   right: 0;
-  transform: scale(4);
-  filter: blur(25px);
   z-index: 1;
 }
 
-.gallery-slider__picture {
+.gallery-slider__image-bg {
+  transform: scale(4);
+  filter: blur(25px);
+}
+
+.gallery-slider__video-bg {
+  background-color: #000;
+}
+
+.gallery-slider__picture,
+.gallery-slider__video {
   position: relative;
   max-width: 100%;
   height: var(--content-height);

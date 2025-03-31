@@ -29,7 +29,7 @@ const GallerySliderPage = () => {
           <img
             src="/img/gallery/photo/albums/1/big/photo-1.jpg"
             alt=""
-            className="gallery-slider__blured-bg"
+            className="gallery-slider__image-bg"
           />
           <img
             src="/img/gallery/photo/albums/1/big/photo-1.jpg"
@@ -49,13 +49,27 @@ const GallerySliderPage = () => {
           <img
             src="/img/gallery/photo/albums/1/big/photo-2.jpg"
             alt=""
-            className="gallery-slider__blured-bg"
+            className="gallery-slider__image-bg"
           />
           <img
             src="/img/gallery/photo/albums/1/big/photo-2.jpg"
             alt=""
             className="gallery-slider__picture"
           />
+          <div className="gallery-slider__panel">
+            <button className="gallery-slider__button-like liked">
+              <Heart className="heart" />
+            </button>
+            <button className="gallery-slider__button-close">
+              <Cross className="cross" />
+            </button>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="gallery-slider__slide">
+          <div className="gallery-slider__video-bg"></div>
+          <video controls className="gallery-slider__picture  ">
+            <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
+          </video>
           <div className="gallery-slider__panel">
             <button className="gallery-slider__button-like liked">
               <Heart className="heart" />
