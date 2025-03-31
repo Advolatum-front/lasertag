@@ -2,14 +2,42 @@
   --content-height: 30vw;
 }
 
-.mySwiper {
-  width: 90vw;
+.gallery-slider {
+  width: 95vw;
   height: var(--content-height);
   margin-bottom: 30px;
   text-align: center;
+  background-color: #bebebe;
+  border-radius: 20px;
 }
 
-.im {
+.gallery-slider__slide {
+  position: relative;
+}
+
+.gallery-slider__picture {
   max-width: 100%;
   height: var(--content-height);
+  border-radius: 20px;
+}
+
+.gallery-slider__panel {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 147px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding-top: 5px;
+}
+
+.gallery-slider__button-like,
+.gallery-slider__button-close {
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 }
