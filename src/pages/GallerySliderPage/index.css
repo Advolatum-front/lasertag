@@ -1,0 +1,15 @@
+:root {
+  --content-height: 30vw;
+}
+
+.mySwiper {
+  width: 90vw;
+  height: var(--content-height);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.im {
+  max-width: 100%;
+  height: var(--content-height);
+}

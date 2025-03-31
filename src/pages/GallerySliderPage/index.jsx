@@ -16,25 +16,28 @@ const GallerySliderPage = () => {
   return (
     <>
       <Swiper
-        slidesPerView={2}
+        autoHeight={false}
+        slidesPerView={1}
         spaceBetween={30}
         loop={true}
-        pagination={{
-          clickable: true,
-        }}
         navigation={true}
         modules={[Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="/img/gallery/photo/albums/1/big/photo-1.jpg"
+            alt=""
+            className="im"
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            src="/img/gallery/photo/albums/1/big/photo-2.jpg"
+            alt=""
+            className="im"
+          />
+        </SwiperSlide>
       </Swiper>
     </>
   );
