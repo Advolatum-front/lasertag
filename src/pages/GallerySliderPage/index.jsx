@@ -29,6 +29,11 @@ const GallerySliderPage = () => {
           <img
             src="/img/gallery/photo/albums/1/big/photo-1.jpg"
             alt=""
+            className="gallery-slider__blured-bg"
+          />
+          <img
+            src="/img/gallery/photo/albums/1/big/photo-1.jpg"
+            alt=""
             className="gallery-slider__picture"
           />
           <div className="gallery-slider__panel">
@@ -41,6 +46,11 @@ const GallerySliderPage = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="gallery-slider__slide">
+          <img
+            src="/img/gallery/photo/albums/1/big/photo-2.jpg"
+            alt=""
+            className="gallery-slider__blured-bg"
+          />
           <img
             src="/img/gallery/photo/albums/1/big/photo-2.jpg"
             alt=""

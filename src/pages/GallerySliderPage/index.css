@@ -7,18 +7,33 @@
   height: var(--content-height);
   margin-bottom: 30px;
   text-align: center;
-  background-color: #bebebe;
+  /*  background-color: #bebebe;*/
   border-radius: 20px;
+  /*  overflow: hidden;*/
 }
 
 .gallery-slider__slide {
   position: relative;
+  overflow: hidden;
+}
+
+.gallery-slider__blured-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transform: scale(2);
+  filter: blur(25px);
+  z-index: 1;
 }
 
 .gallery-slider__picture {
+  position: relative;
   max-width: 100%;
   height: var(--content-height);
   border-radius: 20px;
+  z-index: 2;
 }
 
 .gallery-slider__panel {
@@ -31,6 +46,7 @@
   background-color: #ffffff;
   border-radius: 20px;
   padding-top: 5px;
+  z-index: 3;
 }
 
 .gallery-slider__button-like,
