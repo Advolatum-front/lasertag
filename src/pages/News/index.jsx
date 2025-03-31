@@ -14,11 +14,20 @@ const News = () => {
       <h1 className="news__section-header">Новости</h1>
       <Swiper
         slidesPerView={3}
-        spaceBetween={2}
+        spaceBetween={1}
         loop={false}
-        navigation={true}
+        navigation={{
+          nextEl: ".custom-next",
+          prevEl: ".custom-prev",
+        }}
         modules={[Navigation]}
         className="news__slider"
+        onInit={(swiper) => {
+          swiper.params.navigation.nextEl = ".custom-next";
+          swiper.params.navigation.prevEl = ".custom-prev";
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
       >
         <SwiperSlide className="news__news-item">
           <div className="news__news-wrapper">
@@ -93,6 +102,10 @@ const News = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+      <div className="custom-navigation">
+        <button className="custom-prev">Назад</button>
+        <button className="custom-next">Вперед</button>
+      </div>
     </section>
   );
 };

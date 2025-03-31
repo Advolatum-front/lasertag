@@ -2,14 +2,14 @@
   background-image: url("../../img/news/news-bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center -69px;
-  padding: 15px 10vw 300px;
+  background-position: center -115px;
+  padding: 15px 10vw 150px;
   font-family: var(--open-sans);
 }
 
 .news__slider {
   width: 80vw;
-  padding: 0 30px;
+  margin-left: 20px;
 }
 
 .news__section-header {
@@ -17,6 +17,20 @@
   font-size: 45px;
   text-transform: uppercase;
   margin: 0 0 15px;
+}
+
+.custom-prev,
+.custom-next {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.custom-prev:hover,
+.custom-next:hover {
+  background-color: #0056b3;
 }
 
 .news__news-wrapper {
