@@ -56,6 +56,14 @@ const GallerySliderPage = () => {
             alt=""
             className="gallery-slider__picture"
           />
+          <div className="gallery-slider__panel">
+            <button className="gallery-slider__button-like liked">
+              <Heart className="heart" />
+            </button>
+            <button className="gallery-slider__button-close">
+              <Cross className="cross" />
+            </button>
+          </div>
         </SwiperSlide>
       </Swiper>
     </>
