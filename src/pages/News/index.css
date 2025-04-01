@@ -132,6 +132,6 @@
   transition: background-color 0.2s linear;
 }
 
-.news__news-link:hover {
+.news__card-link:hover {
   background-color: var(--medium-blue);
 }
