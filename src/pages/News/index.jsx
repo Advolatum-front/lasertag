@@ -18,7 +18,11 @@ const News = () => {
     },
     1280: {
       slidesPerView: 3,
-      spaceBetween: 10,
+      spaceBetween: 30,
+    },
+    1600: {
+      slidesPerView: 4,
+      spaceBetween: 30,
     },
   };
 
@@ -29,19 +33,20 @@ const News = () => {
         slidesPerView={1}
         spaceBetween={10}
         loop={false}
+        modules={[Navigation]}
+        navigation={true}
+        className="news__slider"
+        breakpoints={breakpoints}
         navigation={{
           nextEl: ".custom-next",
           prevEl: ".custom-prev",
         }}
-        modules={[Navigation]}
-        className="news__slider"
         onInit={(swiper) => {
           swiper.params.navigation.nextEl = ".custom-next";
           swiper.params.navigation.prevEl = ".custom-prev";
           swiper.navigation.init();
           swiper.navigation.update();
         }}
-        breakpoints={breakpoints}
       >
         <SwiperSlide>
           <div className="news__news-card">

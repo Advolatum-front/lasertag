@@ -9,7 +9,8 @@
 
 .news__slider {
   width: 80vw;
-  margin-left: 20px;
+  margin: 0 auto;
+  /*  outline: 2px solid black;*/
 }
 
 .news__section-header {
@@ -133,4 +134,20 @@
 
 .news__card-link:hover {
   background-color: var(--medium-blue);
+}
+
+@media (max-width: 1280px) {
+  .news__slider {
+    width: 66vw;
+  }
+}
+
+@media (max-width: 960px) {
+  .news__slider {
+    width: 45vw;
+  }
+
+  .news__news-card {
+    width: 95%;
+  }
 }
