@@ -31,7 +31,7 @@ const News = () => {
           swiper.navigation.update();
         }}
       >
-        <SwiperSlide className="news__news-item">
+        <SwiperSlide>
           <div className="news__news-wrapper">
             <div className="news__news-header">Региональные соревнования</div>
             <Link className="news__news-image-container">
@@ -49,7 +49,7 @@ const News = () => {
             <Link className="news__news-link">Подробнее</Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="news__news-item">
+        <SwiperSlide>
           <div className="news__news-wrapper">
             <div className="news__news-header">Региональные соревнования</div>
             <Link className="news__news-image-container">
@@ -67,7 +67,7 @@ const News = () => {
             <Link className="news__news-link">Подробнее</Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="news__news-item">
+        <SwiperSlide>
           <div className="news__news-wrapper">
             <div className="news__news-header">Региональные соревнования</div>
             <Link className="news__news-image-container">
@@ -85,7 +85,7 @@ const News = () => {
             <Link className="news__news-link">Подробнее</Link>
           </div>
         </SwiperSlide>
-        <SwiperSlide className="news__news-item">
+        <SwiperSlide>
           <div className="news__news-wrapper">
             <div className="news__news-header">Региональные соревнования</div>
             <Link className="news__news-image-container">
