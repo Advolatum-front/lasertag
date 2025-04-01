@@ -33,8 +33,8 @@ const News = () => {
       >
         <SwiperSlide>
           <div className="news__news-card">
-            <div className="news__news-header">Региональные соревнования</div>
-            <Link className="news__news-image-container">
+            <div className="news__card-header">Региональные соревнования</div>
+            <Link>
               <img
                 src="/news/small/news-1.webp"
                 alt=""
@@ -51,8 +51,8 @@ const News = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="news__news-card">
-            <div className="news__news-header">Региональные соревнования</div>
-            <Link className="news__news-image-container">
+            <div className="news__card-header">Региональные соревнования</div>
+            <Link>
               <img
                 src="/news/small/news-1.webp"
                 alt=""
@@ -69,8 +69,8 @@ const News = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="news__news-card">
-            <div className="news__news-header">Региональные соревнования</div>
-            <Link className="news__news-image-container">
+            <div className="news__card-header">Региональные соревнования</div>
+            <Link>
               <img
                 src="/news/small/news-1.webp"
                 alt=""
@@ -87,8 +87,8 @@ const News = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="news__news-card">
-            <div className="news__news-header">Региональные соревнования</div>
-            <Link className="news__news-image-container">
+            <div className="news__card-header">Региональные соревнования</div>
+            <Link>
               <img
                 src="/news/small/news-1.webp"
                 alt=""
