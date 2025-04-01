@@ -32,7 +32,7 @@ const News = () => {
         }}
       >
         <SwiperSlide>
-          <div className="news__news-wrapper">
+          <div className="news__news-card">
             <div className="news__news-header">Региональные соревнования</div>
             <Link className="news__news-image-container">
               <img
@@ -50,7 +50,7 @@ const News = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="news__news-wrapper">
+          <div className="news__news-card">
             <div className="news__news-header">Региональные соревнования</div>
             <Link className="news__news-image-container">
               <img
@@ -68,7 +68,7 @@ const News = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="news__news-wrapper">
+          <div className="news__news-card">
             <div className="news__news-header">Региональные соревнования</div>
             <Link className="news__news-image-container">
               <img
@@ -86,7 +86,7 @@ const News = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="news__news-wrapper">
+          <div className="news__news-card">
             <div className="news__news-header">Региональные соревнования</div>
             <Link className="news__news-image-container">
               <img
