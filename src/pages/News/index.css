@@ -92,13 +92,13 @@
   height: 11vw;
 }
 
-.news__news-date {
+.news__card-date {
   color: #f00;
   font-size: 20px;
   font-weight: bold;
 }
 
-.news__news-announce {
+.news__card-announce {
   font-family: var(--montserrat);
   text-align: center;
   color: var(--medium-blue);
@@ -116,7 +116,7 @@
   white-space: normal;
 }
 
-.news__news-link {
+.news__card-link {
   background-color: #f00;
   border-radius: 20px;
   color: #fff;

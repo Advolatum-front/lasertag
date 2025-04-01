@@ -41,12 +41,12 @@ const News = () => {
                 className="news__card-image"
               />
             </Link>
-            <div className="news__news-date">21.05</div>
-            <div className="news__news-announce">
+            <div className="news__card-date">21.05</div>
+            <div className="news__card-announce">
               С 20-21 мая прошли отборочные региональные соревнования по
               лазерному бою.
             </div>
-            <Link className="news__news-link">Подробнее</Link>
+            <Link className="news__card-link">Подробнее</Link>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -59,12 +59,12 @@ const News = () => {
                 className="news__card-image"
               />
             </Link>
-            <div className="news__news-date">21.05</div>
-            <div className="news__news-announce">
+            <div className="news__card-date">21.05</div>
+            <div className="news__card-announce">
               С 20-21 мая прошли отборочные региональные соревнования по
               лазерному бою.
             </div>
-            <Link className="news__news-link">Подробнее</Link>
+            <Link className="news__card-link">Подробнее</Link>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -77,12 +77,12 @@ const News = () => {
                 className="news__card-image"
               />
             </Link>
-            <div className="news__news-date">21.05</div>
-            <div className="news__news-announce">
+            <div className="news__card-date">21.05</div>
+            <div className="news__card-announce">
               С 20-21 мая прошли отборочные региональные соревнования по
               лазерному бою.
             </div>
-            <Link className="news__news-link">Подробнее</Link>
+            <Link className="news__card-link">Подробнее</Link>
           </div>
         </SwiperSlide>
         <SwiperSlide>
@@ -95,12 +95,12 @@ const News = () => {
                 className="news__card-image"
               />
             </Link>
-            <div className="news__news-date">21.05</div>
-            <div className="news__news-announce">
+            <div className="news__card-date">21.05</div>
+            <div className="news__card-announce">
               С 20-21 мая прошли отборочные региональные соревнования по
               лазерному бою.
             </div>
-            <Link className="news__news-link">Подробнее</Link>
+            <Link className="news__card-link">Подробнее</Link>
           </div>
         </SwiperSlide>
       </Swiper>
