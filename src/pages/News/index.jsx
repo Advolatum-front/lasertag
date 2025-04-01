@@ -38,7 +38,7 @@ const News = () => {
               <img
                 src="/news/small/news-1.webp"
                 alt=""
-                className="news__news-image"
+                className="news__card-image"
               />
             </Link>
             <div className="news__news-date">21.05</div>
@@ -56,7 +56,7 @@ const News = () => {
               <img
                 src="/news/small/news-1.webp"
                 alt=""
-                className="news__news-image"
+                className="news__card-image"
               />
             </Link>
             <div className="news__news-date">21.05</div>
@@ -74,7 +74,7 @@ const News = () => {
               <img
                 src="/news/small/news-1.webp"
                 alt=""
-                className="news__news-image"
+                className="news__card-image"
               />
             </Link>
             <div className="news__news-date">21.05</div>
@@ -92,7 +92,7 @@ const News = () => {
               <img
                 src="/news/small/news-1.webp"
                 alt=""
-                className="news__news-image"
+                className="news__card-image"
               />
             </Link>
             <div className="news__news-date">21.05</div>
