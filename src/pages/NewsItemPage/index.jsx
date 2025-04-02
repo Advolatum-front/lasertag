@@ -10,13 +10,34 @@ const NewsItemPage = () => {
         <img src="/news/big/photo-1.jpg" alt="" className="news-block__photo" />
         <div className="news-block__info">
           <h1 className="news-block__header">Региональные соревнования</h1>
-          <p className="news-block__text"></p>
+          <div className="news-block__text">
+            <p>
+              С 20-21 мая прошли отборочные региональные соревнования по
+              лазерному бою.
+            </p>
+
+            <p>
+              Десять команд боролись за возможность пройти на уровень региона и
+              защитить свою честь и честь всего состава.
+            </p>
+
+            <p>
+              Полные решимости, участники команд выполняли тактические манёвры,
+              перехватывали соперников, выбивали их с поля.
+            </p>
+
+            <p>
+              Особенно выделилась команда “Лунных зайцев”, которая смогла
+              одолеть противника за кратчайшее время - им понадобилось всего
+              пятнадцать минут.
+            </p>
+          </div>
           <div className="news-block__footer">
             <div className="news-block__additional-text">
               Именно эта команда и пойдёт дальше отстаивать первенство лазерного
               боя. Поздравим «Лунных зайцев»!
             </div>
-            <Link to="/" className="news-block__link-prev"></Link>
+            <Link to="/" className="news-block__link-next"></Link>
           </div>
         </div>
       </div>
