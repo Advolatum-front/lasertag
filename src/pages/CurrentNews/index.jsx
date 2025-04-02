@@ -39,7 +39,9 @@ const CurrentNews = () => {
             <Link to="/" className="news-block__link-next"></Link>
           </div>
         </div>
-        <div className="current-news-date">21.05</div>
+        <div className="current-news-date">
+          <span>21.05</span>
+        </div>
         <Link to="/" className="news-block__link-prev"></Link>
       </div>
     </section>

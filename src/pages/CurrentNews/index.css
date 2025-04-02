@@ -1,4 +1,4 @@
-/*.current-news-section {
+.current-news-section {
   background-image: url("../../img/news/current-news-bg.webp");
   background-size: cover;
   background-position: center 0;
@@ -8,17 +8,112 @@
 }
 
 .news-block {
-  width: 70vw;
+  width: 80vw;
   margin: 0 auto;
   display: flex;
   gap: 15px;
 }
 
 .news-block__photo {
-  height: 20vw;
+  height: 23vw;
+}
+
+.news-block__info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.news-block__header {
+  color: #f00;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 13px;
+}
+
+.news-block__text {
+  color: var(--medium-blue);
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.news-block__text p {
+  margin: 0;
+}
+
+.news-block__footer {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 16px;
+  position: relative;
+}
+
+.news-block__additional-text {
+  background-color: var(--light-blue);
+  padding: 0 20px;
+  flex-grow: 1;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 25px 0 0 0;
+  position: relative;
+  right: 70px;
+}
+
+.news-block__link-prev {
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-right-color: var(--light-blue);
+  position: absolute;
+  bottom: 116px;
+  left: 20px;
+  transition: border-right-color 0.2s ease-in;
+}
+
+.news-block__link-prev:hover {
+  border-right-color: #f00;
+}
+
+.news-block__link-next {
+  width: 0;
+  height: 0;
+  border: 50px solid transparent;
+  border-left-color: var(--light-blue);
+  position: relative;
+  right: 60px;
+  transition: border-left-color 0.2s ease-in;
+}
+
+.news-block__link-next:hover {
+  border-left-color: #f00;
 }
 
 .current-news-date {
-  display: none;
+  position: absolute;
+  display: block;
+  --width: 242px;
+  --height: calc(var(--width) * 0.729);
+  width: var(--width);
+  height: var(--height);
+  background-image: url("../../img/news/date-bg.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 79px;
 }
-*/
+
+.current-news-date span {
+  position: absolute;
+  left: 139px;
+  top: 45px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 22px;
+}
