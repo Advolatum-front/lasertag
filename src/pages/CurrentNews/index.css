@@ -1,0 +1,24 @@
+/*.current-news-section {
+  background-image: url("../../img/news/current-news-bg.webp");
+  background-size: cover;
+  background-position: center 0;
+  padding: 100px 0 50px;
+  position: relative;
+  font-family: var(--open-sans);
+}
+
+.news-block {
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  gap: 15px;
+}
+
+.news-block__photo {
+  height: 20vw;
+}
+
+.current-news-date {
+  display: none;
+}
+*/
