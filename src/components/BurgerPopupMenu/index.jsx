@@ -18,7 +18,7 @@ const BurgerPopupMenu = (props) => {
       <li key={index}>
         <Link
           to={obj.href}
-          className="header__popp-nav-link"
+          className="popup-menu__popp-nav-link"
           onClick={() => onNavigate()}
         >
           {obj.caption}
@@ -28,16 +28,16 @@ const BurgerPopupMenu = (props) => {
   });
 
   const popupMenu = (
-    <nav className="header__burger-popup-menu">
+    <nav className="popup-menu__burger-popup-menu">
       <button
         type="button"
-        className="header__close-popup-menu"
+        className="popup-menu__close-popup-menu"
         onClick={() => onClosePopupMenu()}
       >
         <Cross />
       </button>
-      <ul className="header__popup-nav-list">{navListItemsArray}</ul>
-      <Link className="header__profile-link">
+      <ul className="popup-menu__popup-nav-list">{navListItemsArray}</ul>
+      <Link className="popup-menu__profile-link">
         <Profile />
         <span>Личный кабинет</span>
       </Link>
