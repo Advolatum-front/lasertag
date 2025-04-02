@@ -13,6 +13,7 @@ import AlbumSelector from "./pages/AlbumSelector";
 import AlbumContent from "./pages/AlbumContent";
 import GallerySliderPage from "./pages/GallerySliderPage";
 import News from "./pages/News";
+import CurrentNews from "./pages/CurrentNews";
 
 import "./App.css";
 import "./my-styles.css";
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Page2 />} />
             <Route exact path="/news" element={<News />} />
+            <Route exact path="/news/current" element={<CurrentNews />} />
             <Route exact path="/page2" element={<Page2 />} />
             <Route
               exact
