@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import { mainNavLinks } from "../../utils/main-nav-links.js";
 
-import pathToBigLogo from "../../img/big-logo.webp";
+import logo from "../../img/logo.webp";
 
 import "./index.css";
 
@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__logo-and-menu">
-        <img src={pathToBigLogo} alt="" className="footer__logo" />
+        <img src={logo} alt="" className="footer__logo" />
         <ul className="footer__menu">{navListItemArray}</ul>
       </div>
       <form className="footer__feedback-form">
