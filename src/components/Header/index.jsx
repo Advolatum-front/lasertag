@@ -13,6 +13,16 @@ import "./index.css";
 const Header = () => {
   const [popupMenuOpened, setPopupMenuOpened] = useState(false);
 
+  const openPopupMenu = () => {
+    setPopupMenuOpened(true);
+    document.body.style.overflow = "hidden";
+  };
+
+  const closePopupMenu = () => {
+    setPopupMenuOpened(false);
+    document.body.style.overflow = "auto";
+  };
+
   const navListItemsArray = mainNavLinks.map((obj, index) => {
     return (
       <li key={index}>
@@ -31,10 +41,7 @@ const Header = () => {
       <nav className="header__nav">
         <ul className="header__nav-list">{navListItemsArray}</ul>
       </nav>
-      <button
-        className="header__burger-menu"
-        onClick={() => setPopupMenuOpened(true)}
-      >
+      <button className="header__burger-menu" onClick={() => openPopupMenu()}>
         <i className="header__burger-bar"></i>
         <i className="header__burger-bar"></i>
         <i className="header__burger-bar"></i>
@@ -44,8 +51,8 @@ const Header = () => {
       </Link>
       <BurgerPopupMenu
         open={popupMenuOpened}
-        onClosePopupMenu={() => setPopupMenuOpened(false)}
-        onNavigate={() => setPopupMenuOpened(false)}
+        onClosePopupMenu={() => closePopupMenu()}
+        onNavigate={() => closePopupMenu()}
       />
     </header>
   );

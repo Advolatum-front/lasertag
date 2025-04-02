@@ -54,6 +54,10 @@
   .popup-menu__burger-popup-menu {
     display: none;
   }
+
+  body {
+    overflow: auto !important;
+  }
 }
 
 @media (max-width: 639px) {
