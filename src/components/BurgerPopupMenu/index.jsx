@@ -1,6 +1,8 @@
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 
+import { useLocation } from "react-router";
+
 import { mainNavLinks } from "../../utils/main-nav-links.js";
 
 import { ReactComponent as Cross } from "../../svg/cross-ico.svg";
@@ -11,20 +13,27 @@ import "./index.css";
 const popupContainer = document.getElementById("popup");
 
 const BurgerPopupMenu = (props) => {
+  const pathname = useLocation().pathname.match(/(^\/\w+)/)?.[1];
+  const currentUnitName = pathname || "/";
+
   const { open, onClosePopupMenu, onNavigate } = props;
 
   const navListItemsArray = mainNavLinks.map((obj, index) => {
-    return (
-      <li key={index}>
+    const { href, caption } = obj;
+    const listItem =
+      currentUnitName === href ? (
+        <span className="popup-menu__popp-nav-current">{caption}</span>
+      ) : (
         <Link
-          to={obj.href}
+          to={href}
           className="popup-menu__popp-nav-link"
           onClick={() => onNavigate()}
         >
-          {obj.caption}
+          {caption}
         </Link>
-      </li>
-    );
+      );
+
+    return <li key={index}>{listItem}</li>;
   });
 
   const popupMenu = (

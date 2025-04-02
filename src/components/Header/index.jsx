@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+
 import { useState } from "react";
+import { useLocation } from "react-router";
 
 import BurgerPopupMenu from "../BurgerPopupMenu";
 
@@ -11,6 +13,9 @@ import { ReactComponent as ProfilePic } from "../../svg/profile-link-def.svg";
 import "./index.css";
 
 const Header = () => {
+  const pathname = useLocation().pathname.match(/(^\/\w+)/)?.[1];
+  const currentUnitName = pathname || "/";
+
   const [popupMenuOpened, setPopupMenuOpened] = useState(false);
 
   const openPopupMenu = () => {
@@ -24,13 +29,17 @@ const Header = () => {
   };
 
   const navListItemsArray = mainNavLinks.map((obj, index) => {
-    return (
-      <li key={index}>
-        <Link to={obj.href} className="header__nav-link">
-          {obj.caption}
+    const { href, caption } = obj;
+    const listItem =
+      currentUnitName === href ? (
+        <span className="header__nav-current">{caption}</span>
+      ) : (
+        <Link to={href} className="header__nav-link">
+          {caption}
         </Link>
-      </li>
-    );
+      );
+
+    return <li key={index}>{listItem}</li>;
   });
 
   return (

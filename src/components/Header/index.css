@@ -16,13 +16,22 @@
   padding: 0;
 }
 
-.header__nav-link {
+.header__nav-link,
+.header__nav-current {
   padding: 10px 20px;
   text-decoration: none;
   color: var(--dark-blue);
   font-size: 17px;
   transition: color 0.3s linear;
   font-weight: 500;
+}
+
+.header__nav-current {
+  /*  background-color: var(--medium-blue);*/
+  background: linear-gradient(45deg, var(--dark-blue), var(--light-blue));
+  cursor: default;
+  border-radius: 20px;
+  color: #fff;
 }
 
 .header__nav-link:hover {

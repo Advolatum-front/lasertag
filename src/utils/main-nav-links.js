@@ -5,11 +5,11 @@ export const mainNavLinks = [
   },
   {
     caption: "Новости",
-    href: "/",
+    href: "/news",
   },
   {
     caption: "Мероприятия",
-    href: "/",
+    href: "/actions",
   },
   {
     caption: "Галерея",

@@ -42,12 +42,20 @@
   font-size: 28px;
 }
 
-.popup-menu__popp-nav-link {
+.popup-menu__popp-nav-link,
+.popup-menu__popp-nav-current {
   padding: 17px 37px;
   text-decoration: none;
   color: var(--dark-blue);
   font-size: 30px;
   transition: color 0.3s linear;
+}
+
+.popup-menu__popp-nav-current {
+  background: linear-gradient(45deg, var(--dark-blue), var(--light-blue));
+  cursor: default;
+  border-radius: 20px;
+  color: #fff;
 }
 
 @media (min-width: 959px) {
