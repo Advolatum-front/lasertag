@@ -27,8 +27,7 @@
 }
 
 .header__nav-current {
-  /*  background-color: var(--medium-blue);*/
-  background: linear-gradient(45deg, var(--dark-blue), var(--light-blue));
+  background-color: var(--dark-blue);
   cursor: default;
   border-radius: 20px;
   color: #fff;

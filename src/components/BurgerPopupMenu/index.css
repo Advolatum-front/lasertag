@@ -52,7 +52,7 @@
 }
 
 .popup-menu__popp-nav-current {
-  background: linear-gradient(45deg, var(--dark-blue), var(--light-blue));
+  background-color: var(--dark-blue);
   cursor: default;
   border-radius: 20px;
   color: #fff;
