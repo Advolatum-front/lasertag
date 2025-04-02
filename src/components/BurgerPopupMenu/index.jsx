@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 import { mainNavLinks } from "../../utils/main-nav-links.js";
 
+import { ReactComponent as Cross } from "../../svg/cross-ico.svg";
+import { ReactComponent as Profile } from "../../svg/profile-link-def.svg";
+
 import "./index.css";
 
 const popupContainer = document.getElementById("popup");
@@ -30,8 +33,14 @@ const BurgerPopupMenu = (props) => {
         type="button"
         className="header__close-popup-menu"
         onClick={() => onClosePopupMenu()}
-      ></button>
+      >
+        <Cross />
+      </button>
       <ul className="header__popup-nav-list">{navListItemsArray}</ul>
+      <Link className="header__profile-link">
+        <Profile />
+        <span>Личный кабинет</span>
+      </Link>
     </nav>
   );
 

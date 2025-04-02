@@ -1,7 +1,8 @@
 .header__burger-popup-menu {
-  display: initial;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: fixed;
-  background-color: royalblue;
   left: 0;
   top: 0;
   right: 0;
@@ -24,33 +25,28 @@
   position: absolute;
   background: none;
   border: none;
-  right: 106px;
-  top: 33px;
+  right: 20px;
+  top: 23px;
+  padding: 5px;
 }
 
-.header__close-popup-menu:before,
-.header__close-popup-menu:after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 5px;
-  height: 40px;
-  background-color: var(--dark-blue);
-}
-
-.header__close-popup-menu:before {
-  transform: rotateZ(45deg);
-}
-
-.header__close-popup-menu:after {
-  transform: rotateZ(-45deg);
+.header__profile-link {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  border-top: 2px double var(--dark-blue);
+  padding-top: 20px;
+  gap: 30px;
+  text-decoration: none;
+  color: var(--dark-blue);
+  font-size: 28px;
 }
 
 .header__popp-nav-link {
   padding: 17px 37px;
   text-decoration: none;
   color: var(--dark-blue);
-  font-size: 36px;
+  font-size: 30px;
   transition: color 0.3s linear;
 }
 
