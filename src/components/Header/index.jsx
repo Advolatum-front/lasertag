@@ -5,7 +5,7 @@ import BurgerPopupMenu from "../BurgerPopupMenu";
 
 import { mainNavLinks } from "../../utils/main-nav-links.js";
 
-import pathToSmallLogo from "../../img/small-logo.png";
+import logo from "../../img/logo.webp";
 import { ReactComponent as ProfilePic } from "../../svg/profile-link-def.svg";
 
 import "./index.css";
@@ -25,8 +25,8 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link to="/" className="header__logo">
-        <img src={pathToSmallLogo} alt="" />
+      <Link to="/">
+        <img src={logo} alt="" className="header__logo" />
       </Link>
       <nav className="header__nav">
         <ul className="header__nav-list">{navListItemsArray}</ul>
@@ -39,7 +39,7 @@ const Header = () => {
         <i className="header__burger-bar"></i>
         <i className="header__burger-bar"></i>
       </button>
-      <Link to="/">
+      <Link to="/" className="header__profile-pic-link">
         <ProfilePic className="header__profile-pic" />
       </Link>
       <BurgerPopupMenu
