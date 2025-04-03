@@ -32,16 +32,12 @@ const CurrentNews = () => {
             </p>
           </div>
           <div className="news-block__footer">
-            <Link to="/" className="news-block__link-prev">
-              Предыдущая новость
-            </Link>
+            <Link to="/" className="news-block__link-prev"></Link>
             <div className="news-block__additional-text">
               Именно эта команда и пойдёт дальше отстаивать первенство лазерного
               боя. Поздравим «Лунных зайцев»!
             </div>
-            <Link to="/" className="news-block__link-next">
-              Следующая новость
-            </Link>
+            <Link to="/" className="news-block__link-next"></Link>
           </div>
         </div>
         <div className="current-news-date">
