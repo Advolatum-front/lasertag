@@ -1,7 +1,13 @@
 import "./index.css";
 
 const Hero = () => {
-  return <p>Хиро</p>;
+  return (
+    <section className="hero">
+      <Link to="" className="hero__link">
+        Смотреть проморолик
+      </Link>
+    </section>
+  );
 };
 
 export default Hero;
