@@ -1,0 +1,62 @@
+.hero {
+  position: relative;
+  background-image: url("../../../img/index/hero-bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center -76px;
+  padding-top: 612px;
+}
+
+.hero__link {
+  position: relative;
+  display: block;
+  background-color: #f00;
+  margin-left: 150px;
+  padding: 15px;
+  text-decoration: none;
+  color: #fff;
+  font-family: var(--open-sans);
+}
+
+.hero__link:after {
+  --border-width: 26px;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -52px;
+  display: block;
+  width: 0;
+  height: 0;
+  border: var(--border-width) solid transparent;
+  border-bottom-color: #f00;
+  border-right-color: #f00;
+  transition:
+    border-bottom-color 0.2s linear,
+    border-right-color 0.2s linear;
+}
+
+.hero__link:hover:after {
+  border-bottom-color: var(--medium-blue);
+  border-right-color: var(--medium-blue);
+}
+
+.hero__link:before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background-color: var(--medium-blue);
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: width 0.5s ease-in 0.2s;
+}
+
+.hero__link:hover:before {
+  width: 100%;
+}
+
+.hero__link span {
+  position: relative;
+  z-index: 1;
+}
