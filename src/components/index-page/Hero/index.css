@@ -19,6 +19,11 @@
   text-decoration: none;
   color: #fff;
   font-family: var(--open-sans);
+  transition: background-color 0.2s linear;
+}
+
+.hero__link:hover {
+  background-color: var(--medium-blue);
 }
 
 .hero__link:after {
@@ -40,27 +45,6 @@
 .hero__link:hover:after {
   border-bottom-color: var(--medium-blue);
   border-right-color: var(--medium-blue);
-}
-
-.hero__link:before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 0;
-  background-color: var(--medium-blue);
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: width 0.5s ease-in 0.2s;
-}
-
-.hero__link:hover:before {
-  width: 100%;
-}
-
-.hero__link span {
-  position: relative;
-  z-index: 1;
 }
 
 @media (max-width: 1252px) {

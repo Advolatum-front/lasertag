@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="hero">
       <Link to="/" className="hero__link">
-        <span>Смотреть проморолик</span>
+        Смотреть проморолик
       </Link>
     </section>
   );
