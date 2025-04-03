@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-import Page2 from "./pages/Page2";
+import IndexPage from "./pages/IndexPage";
 import Contacts from "./pages/Contacts";
 import Documents from "./pages/Documents";
 import RestorePassword from "./pages/RestorePassword";
@@ -25,10 +25,9 @@ function App() {
         <Header />
         <main className="main">
           <Routes>
-            <Route exact path="/" element={<Page2 />} />
+            <Route exact path="/" element={<IndexPage />} />
             <Route exact path="/news" element={<News />} />
             <Route exact path="/news/current" element={<CurrentNews />} />
-            <Route exact path="/page2" element={<Page2 />} />
             <Route
               exact
               path="/restorepassword"
