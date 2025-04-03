@@ -215,18 +215,3 @@
     font-size: 18px;
   }
 }
-
-/*@media (max-width: 724px) {
-  .news-block__link-prev,
-  .news-block__link-next {
-    position: absolute;
-    top: 0;
-    right: initial;
-    left: initial;
-  }
-
-  .news-block__link-prev {
-    left: -110px;
-    border-right-width: 6vw;
-  }
-}*/
