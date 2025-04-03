@@ -1,0 +1,30 @@
+.definition {
+  padding: 15px;
+  color: var(--dark-blue);
+  width: 90vw;
+  text-align: center;
+}
+
+.definition__header {
+  font-weight: 600;
+  font-size: 45px;
+  font-family: var(--open-sans);
+}
+
+.definition__features-list {
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.definition__image {
+  width: 16vw;
+  transition: transform 0.2s ease-out;
+}
+
+.definition__image:hover {
+  transform: scale(1.05);
+}
