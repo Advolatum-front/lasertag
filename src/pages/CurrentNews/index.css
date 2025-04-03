@@ -161,7 +161,7 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    padding-bottom: 30px;
+    padding: 93px 0 1vw;
   }
 
   .news-block__photo {
@@ -202,6 +202,17 @@
 
   .current-news-section {
     padding-bottom: 50vw;
+  }
+
+  .current-news-date {
+    --width: 27vw;
+    top: 0;
+  }
+
+  .current-news-date span {
+    left: 9vw;
+    top: 4vw;
+    font-size: 18px;
   }
 }
 
