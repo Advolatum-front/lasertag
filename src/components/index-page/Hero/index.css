@@ -1,10 +1,13 @@
+:root {
+  --triangle-size: 26px;
+}
+
 .hero {
-  position: relative;
   background-image: url("../../../img/index/hero-bg.webp");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center -76px;
-  padding-top: 612px;
+  padding-top: 43vw;
 }
 
 .hero__link {
@@ -12,14 +15,13 @@
   display: block;
   background-color: #f00;
   margin-left: 150px;
-  padding: 15px;
+  padding: 15px 0 15px 25px;
   text-decoration: none;
   color: #fff;
   font-family: var(--open-sans);
 }
 
 .hero__link:after {
-  --border-width: 26px;
   content: "";
   position: absolute;
   top: 0;
@@ -27,7 +29,7 @@
   display: block;
   width: 0;
   height: 0;
-  border: var(--border-width) solid transparent;
+  border: var(--triangle-size) solid transparent;
   border-bottom-color: #f00;
   border-right-color: #f00;
   transition:
@@ -59,4 +61,39 @@
 .hero__link span {
   position: relative;
   z-index: 1;
+}
+
+@media (max-width: 1252px) {
+  .hero {
+    background-position: center -59px;
+    padding-top: 43vw;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    background-position: center -37px;
+    padding-top: 43vw;
+  }
+}
+
+@media (max-width: 460px) {
+  :root {
+    --triangle-size: 17px;
+  }
+
+  .hero {
+    background-position: center -23px;
+    padding-top: 43vw;
+  }
+
+  .hero__link {
+    padding: 6px 0 6px 25px;
+    margin-left: 150px;
+  }
+
+  .hero__link:after {
+    top: 0;
+    left: -34px;
+  }
 }
