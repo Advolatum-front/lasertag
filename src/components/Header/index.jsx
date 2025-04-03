@@ -44,7 +44,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <Link to="/">
+      <Link to="/" className="header__logo-container">
         <img src={logo} alt="" className="header__logo" />
       </Link>
       <nav className="header__nav">
