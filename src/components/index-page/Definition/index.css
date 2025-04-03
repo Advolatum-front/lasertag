@@ -21,10 +21,40 @@
 }
 
 .definition__image {
-  width: 16vw;
+  width: 18vw;
   transition: transform 0.2s ease-out;
 }
 
 .definition__image:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 960px) {
+  .definition__features-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .definition__image {
+    width: 30vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .definition__header {
+    font-weight: 600;
+    font-size: 30px;
+    font-family: var(--open-sans);
+  }
+
+  .definition__features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .definition__image {
+    width: 60vw;
+  }
 }
