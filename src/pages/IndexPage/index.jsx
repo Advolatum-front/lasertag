@@ -1,7 +1,15 @@
+import { Link } from "react-router-dom";
+
+import Hero from "../../components/index-page/Hero";
+
 import "./index.css";
 
 const IndexPage = () => {
-  return <p>самая главная страница</p>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
 export default IndexPage;
