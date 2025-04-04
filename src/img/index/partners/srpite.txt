@@ -1,0 +1,41 @@
+.partners-sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.partners-sprite-assembly {
+    width: 161px;
+    height: 161px;
+    background-position: -1px -1px;
+}
+
+.partners-sprite-bravery {
+    width: 161px;
+    height: 161px;
+    background-position: -164px -1px;
+}
+
+.partners-sprite-gutid {
+    width: 161px;
+    height: 161px;
+    background-position: -1px -164px;
+}
+
+.partners-sprite-kalininsky {
+    width: 161px;
+    height: 161px;
+    background-position: -164px -164px;
+}
+
+.partners-sprite-paarlament {
+    width: 154px;
+    height: 161px;
+    background-position: -327px -1px;
+}
+
+.partners-sprite-valor {
+    width: 161px;
+    height: 161px;
+    background-position: -327px -164px;
+}
