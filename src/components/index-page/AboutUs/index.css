@@ -10,8 +10,8 @@
 
 .about-us__girl,
 .about-us__gun {
-  --width: 20vw;
-  --height: calc(var(--width) * 1.336);
+  --width: 41vw;
+  --height: calc(var(--width) * 0.996);
   width: var(--width);
   height: var(--height);
   position: absolute;
@@ -28,10 +28,11 @@
   background-image: url("../../../img/index/about-us/gun.webp");
   left: 516px;
   top: -72px;
+  display: none;
 }
 
 .about-us__text-block {
-  margin-left: 400px;
+  margin-left: 30vw;
   display: flex;
   flex-direction: column;
 }
