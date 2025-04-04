@@ -12,6 +12,10 @@
   font-family: var(--open-sans);
 }
 
+.definition__text {
+  font-size: 18px;
+}
+
 .definition__features-list {
   display: flex;
   width: auto;
@@ -31,6 +35,10 @@
 }
 
 @media (max-width: 960px) {
+  .definition__text {
+    font-size: 20px;
+  }
+
   .definition__features-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
