@@ -9,7 +9,7 @@ const AboutUs = () => {
         <div className="about-us__gun"></div>
         <ul className="about-us__features-list">
           <li className="about-us__feature-item">
-            <h2 className="about-us__feature-header">Наименование</h2>
+            <h3 className="about-us__feature-header">Наименование</h3>
             <p className="about-us__feature-description">
               Региональное отделение Всероссийской общественной организации
               развития лазерного боя «Федерация Лазертага России» в
@@ -17,7 +17,7 @@ const AboutUs = () => {
             </p>
           </li>
           <li className="about-us__feature-item">
-            <h2 className="about-us__feature-header">Деятельность</h2>
+            <h3 className="about-us__feature-header">Деятельность</h3>
             <p className="about-us__feature-description">
               Занимаемся организацией и проведением турниров, спортивно-массовых
               мероприятий и дружеских встреч на территории Санкт-Петербурга.

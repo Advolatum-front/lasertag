@@ -1,0 +1,71 @@
+.about-us {
+  position: relative;
+  background-image: url("../../../img/index/about-us/bg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center -90px;
+  padding: 80px 0 80px;
+  overflow: hidden;
+}
+
+.about-us__girl,
+.about-us__gun {
+  --width: 20vw;
+  --height: calc(var(--width) * 1.336);
+  width: var(--width);
+  height: var(--height);
+  position: absolute;
+  background-image: url("../../../img/index/about-us/girl.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 0;
+  top: 0;
+}
+
+.about-us__gun {
+  --width: 25vw;
+  --height: calc(var(--width) * 1.024);
+  background-image: url("../../../img/index/about-us/gun.webp");
+  left: 516px;
+  top: -72px;
+}
+
+.about-us__text-block {
+  margin-left: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-us__header {
+  color: #fff;
+  font-size: 45px;
+  margin: 0 0 35px;
+  text-transform: uppercase;
+}
+
+.about-us__features-list {
+  list-style: none;
+  margin: 0;
+  padding: 10px 10px 80px;
+  background-color: #fff;
+  display: flex;
+  gap: 15px;
+  width: 753px;
+  justify-content: center;
+}
+
+.about-us__feature-item {
+  width: 300px;
+}
+
+.about-us__feature-header {
+  text-transform: uppercase;
+  font-family: var(--open-sans);
+  color: var(--medium-blue);
+  font-size: 25px;
+}
+
+.about-us__feature-description {
+  font-size: 18px;
+  color: var(--dark-blue);
+}
