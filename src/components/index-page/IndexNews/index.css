@@ -191,4 +191,8 @@
   .index-news__news-img {
     width: 18vw;
   }
+
+  .index-news__news-date {
+    text-align-last: right;
+  }
 }
