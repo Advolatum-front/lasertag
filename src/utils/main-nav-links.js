@@ -9,7 +9,7 @@ export const mainNavLinks = [
   },
   {
     caption: "Мероприятия",
-    href: "/actions",
+    href: "/activities",
   },
   {
     caption: "Галерея",
