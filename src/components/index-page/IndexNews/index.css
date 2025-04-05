@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center 0;
-  padding-left: 150px;
+  padding: 0 0 50px 150px;
 }
 
 .index-news__header {
@@ -11,7 +11,7 @@
   color: #f00;
   font-size: 45px;
   text-align: right;
-  margin-right: 100px;
+  margin: 0 100px 30px 0;
 }
 
 .index-news__list {
@@ -21,4 +21,91 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 50px;
+}
+
+.index-news__list-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.index-news__news-img {
+  width: 160px;
+}
+
+.index-news__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+}
+
+.index-news__news-header-container {
+  display: flex;
+  justify-content: space-between;
+  color: #f00;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.index-news__news-header {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #f00;
+  white-space: nowrap;
+  width: 350px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: color 0.2s linear;
+}
+
+.index-news__news-header:hover {
+  color: var(--medium-blue);
+}
+
+.index-news__news-announce {
+  color: var(--dark-blue);
+
+  /*Эти строки нужны для того, чтобы текст не превышал двух строк,
+а в случае превышения текст обрывался и в конце ставилось многоточие*/
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.index-news__links-more {
+  --diameter: 20px;
+  width: var(--diameter);
+  height: var(--diameter);
+  margin-left: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--medium-blue);
+  transition: background-color 0.2s linear;
+}
+
+.index-news__links-more:hover {
+  background-color: var(--dark-blue);
+}
+
+.index-news__link-to-all-news {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: var(--medium-blue);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50px;
 }

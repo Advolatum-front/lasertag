@@ -34,45 +34,49 @@ const IndexNews = () => {
           </div>
         </li>
         <li className="index-news__list-item">
-          <img
-            src="/news/small/news-1.webp"
-            alt=""
-            className="index-news__news-img"
-          />
+          <Link to="/" className="index-news__news-img-container">
+            <img
+              src="/news/small/news-1.webp"
+              alt=""
+              className="index-news__news-img"
+            />
+          </Link>
           <div className="index-news__info">
             <div className="index-news__news-header-container">
-              <h3 className="index-news__news-header">
+              <Link to="/" className="index-news__news-header">
                 Региональные соревнования
-              </h3>
+              </Link>
               <div className="index-news__news-date">21.05</div>
             </div>
             <div className="index-news__news-announce">
               С 20-21 мая прошли отборочные региональные соревнования по
               лазерному бою.
             </div>
-            <Link className="index-news__links-more">
+            <Link to="/" className="index-news__links-more">
               <Arrow />
             </Link>
           </div>
         </li>
         <li className="index-news__list-item">
-          <img
-            src="/news/small/news-1.webp"
-            alt=""
-            className="index-news__news-img"
-          />
+          <Link to="/" className="index-news__news-img-container">
+            <img
+              src="/news/small/news-1.webp"
+              alt=""
+              className="index-news__news-img"
+            />
+          </Link>
           <div className="index-news__info">
             <div className="index-news__news-header-container">
-              <h3 className="index-news__news-header">
+              <Link to="/" className="index-news__news-header">
                 Региональные соревнования
-              </h3>
+              </Link>
               <div className="index-news__news-date">21.05</div>
             </div>
             <div className="index-news__news-announce">
               С 20-21 мая прошли отборочные региональные соревнования по
               лазерному бою.
             </div>
-            <Link to="/" className="index-news__link-more">
+            <Link to="/" className="index-news__links-more">
               <Arrow />
             </Link>
           </div>
