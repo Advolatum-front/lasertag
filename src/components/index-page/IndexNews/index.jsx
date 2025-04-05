@@ -83,7 +83,7 @@ const IndexNews = () => {
         </li>
       </ul>
       <Link to="/" className="index-news__link-to-all-news">
-        Все новости
+        <span>Все новости</span>
       </Link>
     </section>
   );
