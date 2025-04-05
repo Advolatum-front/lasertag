@@ -43,3 +43,19 @@
 .media__link:hover:before {
   width: 150%;
 }
+
+@media (max-width: 1024px) {
+  .media {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 32vw;
+  }
+
+  .media__link {
+    margin: 0 auto;
+    height: auto;
+    font-size: 40px;
+    padding: 20px;
+  }
+}
