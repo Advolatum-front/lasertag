@@ -1,5 +1,5 @@
 :root {
-  --rad: 20px;
+  --rad: 30px;
 }
 
 .our-partners {
@@ -21,7 +21,7 @@
   color: #fff;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 15px;
 }
 
 .our-partners__list-item {
@@ -29,6 +29,13 @@
   height: 125px;
   padding: 15px;
   display: flex;
+  /*  grid-template-columns: 161px 1fr;*/
+  gap: 15px;
+  align-items: center;
+}
+
+.our-partners__img {
+  width: 75px;
 }
 
 .our-partners__list-item:nth-child(1) {
@@ -53,4 +60,23 @@
 
 .our-partners__list-item:nth-child(6) {
   border-radius: 0 0 0 var(--rad);
+}
+
+.partners-sprite {
+  background-image: url("../../../img/index/partners/sprite.webp");
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.partners-sprite-assembly {
+  --width: 161px;
+  --height: var(--width);
+  width: var(--width);
+  height: var(--height);
+  background-position: -1px -1px;
+}
+
+.our-partners__partner-name {
+  font-size: 18px;
+  font-weight: 800;
 }
