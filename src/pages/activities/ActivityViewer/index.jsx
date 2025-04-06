@@ -8,6 +8,9 @@ const ActivityViewer = () => {
   return (
     <section className="current-activity">
       <div className="current-activity__panel">
+        <Link to="/" className="current-activity__link-go-back">
+          <Arrow className="current-activity__arrow-ico" />
+        </Link>
         <h1 className="current-activity__header">Тренировочный бой юниоров</h1>
         <div className="current-activity__description">
           <p>
@@ -27,9 +30,6 @@ const ActivityViewer = () => {
         <div className="current-activity__date">03.12</div>
         <Link to="/activities" className="current-activity__link-send-request">
           Подать заявку
-        </Link>
-        <Link className="current-activity__link-go-back">
-          <Arrow />
         </Link>
       </div>
     </section>

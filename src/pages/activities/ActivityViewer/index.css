@@ -1,0 +1,117 @@
+.current-activity {
+  background-image: url("../../../img/activities/bg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.current-activity__panel {
+  background-color: #fff;
+  position: relative;
+  width: 60vw;
+  padding: 40px 70px 130px;
+  font-family: var(--open-sans);
+  color: var(--medium-blue);
+  border-radius: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.current-activity__header {
+  font-size: 30px;
+  text-indent: 50px;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.current-activity__description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.current-activity__description p {
+  margin: 0;
+}
+
+.current-activity__date {
+  position: absolute;
+  color: var(--light-blue);
+  font-size: 18px;
+  font-weight: 600;
+  text-indent: 76px;
+  top: 251px;
+}
+
+.current-activity__date:after,
+.current-activity__panel:before {
+  content: "";
+  position: absolute;
+  --width: 350px;
+  --height: calc(var(--width) * 0.577);
+  display: block;
+  width: var(--width);
+  height: var(--height);
+  background-image: url("../../../img/activities/pistol-bg.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 8px;
+}
+
+.current-activity__panel:before {
+  --width: 70px;
+  --height: calc(var(--width) * 0.649);
+  background-image: url("../../../img/activities/confetti.webp");
+  top: 42px;
+  right: 86px;
+}
+
+.current-activity__link-send-request {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #f00;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 10px;
+  transition: background-color 0.2s linear;
+}
+
+.current-activity__link-send-request:hover {
+  background-color: var(--medium-blue);
+}
+
+.current-activity__link-go-back {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  border-radius: 50% 0 0 50%;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  left: -59px;
+  transition: background-color 0.2s linear;
+}
+
+.current-activity__link-go-back:hover {
+  background-color: var(--medium-blue);
+}
+
+.current-activity__arrow-ico {
+  margin-left: 8px;
+}
+
+.current-activity__arrow-ico path {
+  fill: #f00;
+}
+
+.current-activity__link-go-back:hover path {
+  fill: #fff;
+}
