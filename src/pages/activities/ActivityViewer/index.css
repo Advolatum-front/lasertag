@@ -11,7 +11,7 @@
   background-color: #fff;
   position: relative;
   width: 60vw;
-  padding: 40px 70px 130px;
+  padding: 40px 70px 150px;
   font-family: var(--open-sans);
   color: var(--medium-blue);
   border-radius: 0 20px 20px 20px;
@@ -37,13 +37,18 @@
   margin: 0;
 }
 
+.current-activity__bottom-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .current-activity__date {
-  position: absolute;
+  position: relative;
   color: var(--light-blue);
   font-size: 18px;
   font-weight: 600;
   text-indent: 76px;
-  top: 251px;
 }
 
 .current-activity__date:after,
@@ -81,6 +86,7 @@
   padding: 10px 30px;
   border-radius: 10px;
   transition: background-color 0.2s linear;
+  margin-bottom: -80px;
 }
 
 .current-activity__link-send-request:hover {

@@ -27,10 +27,15 @@ const ActivityViewer = () => {
             остальные спортсмены - сертификат об участии.
           </p>
         </div>
-        <div className="current-activity__date">03.12</div>
-        <Link to="/activities" className="current-activity__link-send-request">
-          Подать заявку
-        </Link>
+        <div className="current-activity__bottom-part">
+          <div className="current-activity__date">03.12</div>
+          <Link
+            to="/activities"
+            className="current-activity__link-send-request"
+          >
+            Подать заявку
+          </Link>
+        </div>
       </div>
     </section>
   );
