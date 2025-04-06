@@ -8,8 +8,8 @@
   background-image: url("../../../img/index/activities/shooter.webp");
   background-repeat: no-repeat;
   background-size: contain;
-  --width: 22vw;
-  --height: calc(var(--width) * 1.749);
+  --height: 35vw;
+  --width: calc(var(--height) * 0.572);
   width: var(--width);
   height: var(--height);
   left: 0;
@@ -29,7 +29,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 25px;
   margin-bottom: 30px;
 }
 
@@ -41,20 +41,21 @@
 }
 
 .activities__date {
-  --width: 120px;
+  --width: 12vw;
   --height: calc(var(--width) * 0.606);
   width: var(--width);
   height: var(--height);
   position: relative;
   display: flex;
   align-items: center;
-  text-indent: 4px;
+  text-indent: 0.5vw;
   background-image: url("../../../img/index/activities/date-bg.webp");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   font-weight: 600;
   color: #fff;
+  font-size: 15px;
 }
 
 .activities__info {
@@ -131,4 +132,67 @@
 
 .activities__link-to-all:hover:before {
   width: 110%;
+}
+
+@media (max-width: 1152px) {
+  .activities {
+    padding: 30px 0;
+    overflow: hidden;
+  }
+
+  .activities__section-header {
+    text-align: center;
+    font-size: 35px;
+  }
+
+  .activities__list {
+    width: 90vw;
+    margin: 0 auto 30px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .activities__shooter {
+    left: 0;
+    top: 10px;
+    opacity: 0.3;
+    --height: 80vh;
+    --width: calc(var(--height) * 0.572);
+    /*    display: none;*/
+  }
+
+  .activities__list-item {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #f1f1f1f0;
+    border: 1px solid var(--medium-blue);
+  }
+
+  .activities__header {
+    width: auto;
+  }
+
+  .activities__date {
+    background: none;
+    background-color: var(--light-blue);
+    margin-bottom: -14px;
+
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    border-radius: 20px;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    text-indent: 0;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .activities__link-to-all {
+    margin: 0 auto;
+  }
 }
