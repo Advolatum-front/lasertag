@@ -15,7 +15,7 @@ const IndexPage = () => {
       <Definition />
       <AboutUs />
       <OurPartners />
-      <IndexNews />
+      <IndexNews className="index-news-mb" />
       <Media />
       <Activities />
     </>

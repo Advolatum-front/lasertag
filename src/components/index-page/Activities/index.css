@@ -158,7 +158,6 @@
     opacity: 0.3;
     --height: 80vh;
     --width: calc(var(--height) * 0.572);
-    /*    display: none;*/
   }
 
   .activities__list-item {

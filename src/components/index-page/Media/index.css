@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center 0;
-  height: 900px;
+  height: 57vw;
   display: flex;
 }
 
@@ -48,8 +48,8 @@
   .media {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 32vw;
+    align-items: center;
+    /*    padding-top: 32vw;*/
   }
 
   .media__link {

@@ -4,9 +4,12 @@ import { ReactComponent as Arrow } from "../../../svg/arrow-triangle.svg";
 
 import "./index.css";
 
-const IndexNews = () => {
+const IndexNews = (props) => {
+  const { className = "" } = props;
+  const sectionClassName = className ? `index-news ${className}` : `index-news`;
+
   return (
-    <section className="index-news">
+    <section className={sectionClassName}>
       <h2 className="index-news__header">Новости</h2>
       <ul className="index-news__list">
         <li className="index-news__list-item">
