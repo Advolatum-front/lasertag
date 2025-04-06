@@ -121,3 +121,59 @@
 .current-activity__link-go-back:hover path {
   fill: #fff;
 }
+
+@media (max-width: 1152px) {
+  .current-activity__panel:before {
+    left: 20px;
+    right: initial;
+  }
+}
+
+@media (max-width: 760px) {
+  .current-activity__panel:before {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    right: initial;
+    pointer-events: none;
+  }
+
+  .current-activity__header {
+    text-indent: 0;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .current-activity__panel {
+    padding: 20px;
+    background-color: var(--light-grey);
+  }
+
+  .current-activity__link-go-back {
+    background-color: var(--light-grey);
+  }
+
+  .current-activity__bottom-part {
+    flex-direction: column;
+  }
+
+  .current-activity__date {
+    background-color: var(--light-blue);
+    color: #fff;
+    text-indent: 0;
+    width: 50%;
+    margin-left: auto;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 5px 0 5px 20px;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .current-activity__date:after {
+    display: none;
+  }
+
+  .current-activity__link-send-request {
+    margin: 0 auto;
+  }
+}
