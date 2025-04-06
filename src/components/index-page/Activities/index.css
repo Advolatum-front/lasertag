@@ -1,0 +1,134 @@
+.activities {
+  position: relative;
+  padding: 50px 20px 20px 40vw;
+}
+
+.activities__shooter {
+  position: absolute;
+  background-image: url("../../../img/index/activities/shooter.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  --width: 22vw;
+  --height: calc(var(--width) * 1.749);
+  width: var(--width);
+  height: var(--height);
+  left: 0;
+  bottom: -20px;
+}
+
+.activities__section-header {
+  text-transform: uppercase;
+  margin-top: 0;
+  color: var(--medium-blue);
+  font-size: 45px;
+}
+
+.activities__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.activities__list-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: var(--open-sans);
+}
+
+.activities__date {
+  --width: 120px;
+  --height: calc(var(--width) * 0.606);
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-indent: 4px;
+  background-image: url("../../../img/index/activities/date-bg.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  font-weight: 600;
+  color: #fff;
+}
+
+.activities__info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.activities__header {
+  text-transform: uppercase;
+  color: var(--medium-blue);
+  white-space: nowrap;
+  width: 350px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.activities__description {
+  color: var(--dark-blue);
+  font-size: 16px;
+  font-family: var(--montserrat);
+}
+
+.activities__link {
+  text-transform: uppercase;
+  text-decoration: none;
+  text-decoration: none;
+  background-color: #f00;
+  color: #fff;
+  align-self: flex-start;
+  padding: 5px 8px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.2s linear;
+}
+
+.activities__link:hover {
+  background-color: var(--medium-blue);
+}
+
+.activities__link-to-all {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  width: 300px;
+  height: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: var(--medium-blue);
+  color: #fff;
+  font-weight: bold;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.activities__link-to-all span {
+  position: relative;
+}
+
+.activities__link-to-all:before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background-color: #f00;
+  transition: width 0.4s ease-out;
+  transform: skewX(45deg);
+}
+
+.activities__link-to-all:hover:before {
+  width: 110%;
+}

@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 
-// import shooter from "../../../img/index/activities/shooter.webp";
-
 import "./index.css";
 
 const Activities = () => {
   return (
     <section className="activities">
       <div className="activities__shooter"></div>
-      <h2 className="activities__header">Мероприятия</h2>
+      <h2 className="activities__section-header">Мероприятия</h2>
       <ul className="activities__list">
         <li className="activities__list-item">
           <div className="activities__date">11.06</div>
@@ -50,7 +48,9 @@ const Activities = () => {
           </div>
         </li>
       </ul>
-      <Link to="/" className="activities__link-to-all"></Link>
+      <Link to="/" className="activities__link-to-all">
+        <span>Все мероприятия</span>
+      </Link>
     </section>
   );
 };
