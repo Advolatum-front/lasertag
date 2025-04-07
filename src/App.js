@@ -16,6 +16,8 @@ import News from "./pages/News";
 import CurrentNews from "./pages/CurrentNews";
 import ActivityViewer from "./pages/activities/ActivityViewer";
 
+import IndexCabinet from "./pages/cabinet/IndexCabinet";
+
 import "./App.css";
 import "./my-styles.css";
 
@@ -46,6 +48,9 @@ function App() {
               path="/gallery/slider"
               element={<GallerySliderPage />}
             />
+            <Route path="/cabinet" element={<IndexCabinet />}>
+              <Route exact path="index" element={<IndexCabinet />} />
+            </Route>
           </Routes>
         </main>
         <Footer />
