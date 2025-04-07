@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
+
+import { useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -22,39 +24,34 @@ import "./App.css";
 import "./my-styles.css";
 
 function App() {
+  const footer = !useLocation().pathname.startsWith("/cabinet") ? (
+    <Footer />
+  ) : null;
+
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <main className="main">
-          <Routes>
-            <Route exact path="/" element={<IndexPage />} />
-            <Route exact path="/news" element={<News />} />
-            <Route exact path="/news/current" element={<CurrentNews />} />
-            <Route
-              exact
-              path="/restorepassword"
-              element={<RestorePassword />}
-            />
-            <Route exact path="/contacts" element={<Contacts />} />
-            <Route exact path="/login" element={<Login />} />
-            <Route exact path="/documents" element={<Documents />} />
-            <Route exact path="/registration" element={<Registration />} />
-            <Route exact path="/gallery" element={<AlbumSelector />} />
-            <Route exact path="/gallery/album" element={<AlbumContent />} />
-            <Route exact path="/activities/id" element={<ActivityViewer />} />
-            <Route
-              exact
-              path="/gallery/slider"
-              element={<GallerySliderPage />}
-            />
-            <Route path="/cabinet" element={<IndexCabinet />}>
-              <Route exact path="index" element={<IndexCabinet />} />
-            </Route>
-          </Routes>
-        </main>
-        <Footer />
-      </BrowserRouter>
+      <Header />
+      {useLocation() && null}
+      <main className="main">
+        <Routes>
+          <Route exact path="/" element={<IndexPage />} />
+          <Route exact path="/news" element={<News />} />
+          <Route exact path="/news/current" element={<CurrentNews />} />
+          <Route exact path="/restorepassword" element={<RestorePassword />} />
+          <Route exact path="/contacts" element={<Contacts />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/documents" element={<Documents />} />
+          <Route exact path="/registration" element={<Registration />} />
+          <Route exact path="/gallery" element={<AlbumSelector />} />
+          <Route exact path="/gallery/album" element={<AlbumContent />} />
+          <Route exact path="/activities/id" element={<ActivityViewer />} />
+          <Route exact path="/gallery/slider" element={<GallerySliderPage />} />
+          <Route path="/cabinet" element={<IndexCabinet />}>
+            <Route exact path="index" element={<IndexCabinet />} />
+          </Route>
+        </Routes>
+      </main>
+      {footer}
     </>
   );
 }
