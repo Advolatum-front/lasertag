@@ -22,6 +22,9 @@ const IndexCabinet = () => {
             </Link>
           </li>
           <li className="cabinet-menu__list-item">
+            <span className="cabinet-menu__active-item">Что-то активное</span>
+          </li>
+          <li className="cabinet-menu__list-item magrin-bottom">
             <Link to="cabinet/favorites" className="cabinet-menu__link">
               Избранное
             </Link>
@@ -36,6 +39,7 @@ const IndexCabinet = () => {
           </li>
         </ul>
       </aside>
+      <div className="index-cabinet__right-part">ююю</div>
     </div>
   );
 };
