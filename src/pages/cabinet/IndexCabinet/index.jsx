@@ -3,12 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import "./index.css";
 
 const IndexCabinet = () => {
-  /*
-<li className="cabinet-menu__list-item">
-  <span className="cabinet-menu__active-item">Что-то активное</span>
-</li>
-  */
-
   const locationPathname = useLocation().pathname;
 
   const menuDataLinks = [
