@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./index.css";
 
@@ -8,6 +8,8 @@ const IndexCabinet = () => {
   <span className="cabinet-menu__active-item">Что-то активное</span>
 </li>
   */
+
+  const locationPathname = useLocation().pathname;
 
   const menuDataLinks = [
     {
@@ -27,11 +29,17 @@ const IndexCabinet = () => {
   const menuLinkItems = menuDataLinks.map((item, index) => {
     const { caption, link } = item;
 
+    const linkOrButton = locationPathname.includes(link) ? (
+      <span className="cabinet-menu__active-item">{caption}</span>
+    ) : (
+      <Link to={link} className="cabinet-menu__link">
+        {caption}
+      </Link>
+    );
+
     return (
       <li className="cabinet-menu__list-item" key={index}>
-        <Link to={link} className="cabinet-menu__link">
-          {caption}
-        </Link>
+        {linkOrButton}
       </li>
     );
   });
