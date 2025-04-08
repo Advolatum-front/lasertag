@@ -12,15 +12,15 @@ const IndexCabinet = () => {
   const menuDataLinks = [
     {
       caption: "Мероприятия",
-      link: "cabinet/activities",
+      link: "/cabinet/activities",
     },
     {
       caption: "Избранное",
-      link: "cabinet/favorites",
+      link: "/cabinet/favorites",
     },
     {
       caption: "Мой профиль",
-      link: "cabinet/myprofile",
+      link: "/cabinet/myprofile",
     },
   ];
 
