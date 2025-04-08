@@ -40,6 +40,13 @@ const IndexCabinet = () => {
 
   return (
     <div className="index-cabinet">
+      <div className="index-cabinet__bugrer-button-menu-container">
+        <button className="index-cabinet__bugrer-button">
+          <i></i>
+          <i></i>
+          <i></i>
+        </button>
+      </div>
       <aside className="cabinet-menu">
         <div className="cabinet-menu__user-card">
           <img
