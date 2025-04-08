@@ -3,6 +3,39 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 const IndexCabinet = () => {
+  /*
+<li className="cabinet-menu__list-item">
+  <span className="cabinet-menu__active-item">Что-то активное</span>
+</li>
+  */
+
+  const menuDataLinks = [
+    {
+      caption: "Мероприятия",
+      link: "cabinet/activities",
+    },
+    {
+      caption: "Избранное",
+      link: "cabinet/favorites",
+    },
+    {
+      caption: "Мой профиль",
+      link: "cabinet/myprofile",
+    },
+  ];
+
+  const menuLinkItems = menuDataLinks.map((item, index) => {
+    const { caption, link } = item;
+
+    return (
+      <li className="cabinet-menu__list-item" key={index}>
+        <Link to={link} className="cabinet-menu__link">
+          {caption}
+        </Link>
+      </li>
+    );
+  });
+
   return (
     <div className="index-cabinet">
       <aside className="cabinet-menu">
@@ -16,24 +49,7 @@ const IndexCabinet = () => {
           <div className="cabinet-menu__user-id">id: 598613245896</div>
         </div>
         <ul className="cabinet-menu__nav-list">
-          <li className="cabinet-menu__list-item">
-            <Link to="cabinet/activities" className="cabinet-menu__link">
-              Мероприятия
-            </Link>
-          </li>
-          <li className="cabinet-menu__list-item">
-            <span className="cabinet-menu__active-item">Что-то активное</span>
-          </li>
-          <li className="cabinet-menu__list-item magrin-bottom">
-            <Link to="cabinet/favorites" className="cabinet-menu__link">
-              Избранное
-            </Link>
-          </li>
-          <li className="cabinet-menu__list-item">
-            <Link to="cabinet/myprofile" className="cabinet-menu__link">
-              Мой профиль
-            </Link>
-          </li>
+          {menuLinkItems}
           <li className="cabinet-menu__list-item">
             <button className="cabinet-menu__button-logout">Выход</button>
           </li>
