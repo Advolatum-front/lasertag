@@ -129,20 +129,22 @@
   }
 
   .cabinet-menu {
-    display: none;
-  }
-
-  .cabinet-menu.opened {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     right: 0;
     z-index: 3;
+    padding: 30px;
     overflow: auto;
+  }
+
+  .cabinet-menu.opened {
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .cabinet-menu__button-close {
