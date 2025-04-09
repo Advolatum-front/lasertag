@@ -56,8 +56,10 @@
   background-color: var(--light-blue);
   border-radius: 20px;
   align-self: flex-start;
-  padding: 16px 13px;
+  padding: 8px 13px;
   transition: background-color 0.2s linear;
+  font-family: var(--open-sans);
+  width: 50%;
 }
 
 .restore-wrapper__submit:hover {

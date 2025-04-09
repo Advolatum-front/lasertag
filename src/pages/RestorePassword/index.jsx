@@ -23,7 +23,7 @@ const RestorePassword = () => {
         <button type="submit" className="restore-wrapper__submit">
           Сбросить пароль
         </button>
-        <Link to="/" className="restore-wrapper__link">
+        <Link to="/login" className="restore-wrapper__link">
           Я вспомнил(а) пароль
         </Link>
       </form>
