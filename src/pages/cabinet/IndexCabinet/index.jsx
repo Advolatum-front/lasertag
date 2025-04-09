@@ -92,9 +92,7 @@ const IndexCabinet = () => {
           </li>
         </ul>
       </aside>
-      <div className="index-cabinet__right-part">
-        <Content pathname={locationPathname} />
-      </div>
+      <Content pathname={locationPathname} />
     </div>
   );
 };

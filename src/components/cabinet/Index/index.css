@@ -1,0 +1,8 @@
+.cabinet-index {
+  padding: 20px 0 0 30px;
+}
+
+.cabinet-index__caption {
+  font-size: 18px;
+  color: var(--medium-blue);
+}

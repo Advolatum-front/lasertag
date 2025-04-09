@@ -20,7 +20,7 @@ const Content = (props) => {
     return <Favorites />;
   }
 
-  if (pathname.startsWith("/cabinet/index")) {
+  if (pathname.startsWith("/cabinet/")) {
     return <Index />;
   }
 };
