@@ -1,9 +1,24 @@
 import { Link, useLocation } from "react-router-dom";
 
+import { useState } from "react";
+
 import "./index.css";
 
 const IndexCabinet = () => {
   const locationPathname = useLocation().pathname;
+  const [cabinetMenuOpened, setCabinetMenuOpened] = useState(false);
+
+  const openCabinetMenu = () => {
+    setCabinetMenuOpened(true);
+  };
+
+  const closeCabinetMenu = () => {
+    setCabinetMenuOpened(false);
+  };
+
+  const cabinetMenuClassName = cabinetMenuOpened
+    ? "cabinet-menu opened"
+    : "cabinet-menu";
 
   const menuDataLinks = [
     {
@@ -41,13 +56,16 @@ const IndexCabinet = () => {
   return (
     <div className="index-cabinet">
       <div className="index-cabinet__bugrer-button-menu-container">
-        <button className="index-cabinet__bugrer-button">
+        <button
+          className="index-cabinet__bugrer-button"
+          onClick={openCabinetMenu}
+        >
           <i></i>
           <i></i>
           <i></i>
         </button>
       </div>
-      <aside className="cabinet-menu">
+      <aside className={cabinetMenuClassName}>
         <div className="cabinet-menu__user-card">
           <img
             src="/userpics/userpic-1.png"
