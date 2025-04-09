@@ -3,19 +3,13 @@ import LabeledInput from "../../../components/controls/LabeledInput";
 import "./index.css";
 
 const MyProfile = () => {
-  /*
- required,
-    type = "text",
-    id,
-    onInput,
-    className,
-    label,
-    tabIndex = 0,
-  */
+  const submitForm = (event) => {
+    event.preventDefault();
+  };
 
   return (
-    <form className="my-profile">
-      <h1>Мой профиль</h1>
+    <form className="my-profile" onSubmit={submitForm}>
+      <h1 className="my-profile__header">Мой профиль</h1>
       <div className="my-profile__colums">
         <div className="my-profile__info">
           <LabeledInput required id="userName" label="Имя" />
@@ -32,13 +26,13 @@ const MyProfile = () => {
           <LabeledInput required id="userPhone" label="Телефон" />
         </div>
         <div className="my-profile__photo-loader">
-          <span className="my-profile__photo-caption">Фотография</span>
+          <span className="my-profile__photo-caption">Фото профиля:</span>
           <img
             src="/userpics/userpic-1.png"
             className="my-profile__photo"
             alt=""
           />
-          <button type="button" className="my-profile__button-load">
+          <button type="button" className="my-profile__button-load_photo">
             Изменить
           </button>
         </div>
