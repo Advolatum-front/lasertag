@@ -31,7 +31,6 @@ function App() {
   return (
     <>
       <Header />
-      {useLocation() && null}
       <main className="main">
         <Routes>
           <Route exact path="/" element={<IndexPage />} />
