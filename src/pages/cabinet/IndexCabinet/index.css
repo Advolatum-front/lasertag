@@ -16,6 +16,10 @@
   flex-direction: column;
 }
 
+.cabinet-menu__button-close {
+  display: none;
+}
+
 .cabinet-menu__user-card {
   display: flex;
   flex-direction: column;
@@ -138,5 +142,17 @@
     bottom: 0;
     right: 0;
     z-index: 3;
+    overflow: auto;
+  }
+
+  .cabinet-menu__button-close {
+    display: block;
+    align-self: flex-end;
+    background: none;
+    border: none;
+  }
+
+  .cabinet-menu__button-close path {
+    stroke: #fff;
   }
 }

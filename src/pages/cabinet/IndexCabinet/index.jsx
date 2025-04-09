@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 
 import { useState } from "react";
 
+import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
+
 import "./index.css";
 
 const IndexCabinet = () => {
@@ -66,6 +68,12 @@ const IndexCabinet = () => {
         </button>
       </div>
       <aside className={cabinetMenuClassName}>
+        <button
+          className="cabinet-menu__button-close"
+          onClick={closeCabinetMenu}
+        >
+          <Cross />
+        </button>
         <div className="cabinet-menu__user-card">
           <img
             src="/userpics/userpic-1.png"
