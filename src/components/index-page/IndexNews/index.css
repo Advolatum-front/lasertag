@@ -4,6 +4,7 @@
   background-size: 100% auto;
   background-position: center -10vw;
   padding: 0 0 50px 10vw;
+  font-family: var(--open-sans);
 }
 
 .index-news__header {
@@ -69,6 +70,7 @@
 
 .index-news__news-announce {
   color: var(--dark-blue);
+  font-family: var(--montserrat);
 
   /*Эти строки нужны для того, чтобы текст не превышал двух строк,
 а в случае превышения текст обрывался и в конце ставилось многоточие*/

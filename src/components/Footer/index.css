@@ -83,6 +83,7 @@
   font-weight: bold;
   margin-left: 17px;
   transition: background-color 0.2s linear;
+  font-family: var(--open-sans);
 }
 
 .footer__submit-form:hover {

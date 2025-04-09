@@ -10,6 +10,8 @@
   font-weight: 600;
   font-size: 45px;
   font-family: var(--open-sans);
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .definition__text {
