@@ -2,6 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 
 import { useState } from "react";
 
+import Content from "./Content";
+
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
 import "./index.css";
@@ -90,7 +92,9 @@ const IndexCabinet = () => {
           </li>
         </ul>
       </aside>
-      <div className="index-cabinet__right-part">ююю</div>
+      <div className="index-cabinet__right-part">
+        <Content pathname={locationPathname} />
+      </div>
     </div>
   );
 };

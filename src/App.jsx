@@ -48,6 +48,9 @@ function App() {
           <Route exact path="/gallery/slider" element={<GallerySliderPage />} />
           <Route path="/cabinet" element={<IndexCabinet />}>
             <Route exact path="index" element={<IndexCabinet />} />
+            <Route exact path="activities" element={<IndexCabinet />} />
+            <Route exact path="myprofile" element={<IndexCabinet />} />
+            <Route exact path="favorites" element={<IndexCabinet />} />
           </Route>
         </Routes>
       </main>
