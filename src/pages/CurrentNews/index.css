@@ -39,6 +39,7 @@
   flex-direction: column;
   gap: 10px;
   margin-bottom: 5vw;
+  font-family: var(--montserrat);
 }
 
 .news-block__text p {
