@@ -14,7 +14,6 @@
 .news__slider {
   width: 80vw;
   margin: 0 auto;
-  /*  outline: 2px solid black;*/
 }
 
 .news__section-header {
@@ -22,6 +21,7 @@
   font-size: 45px;
   text-transform: uppercase;
   margin: 0 0 15px;
+  font-weight: 600;
 }
 
 .custom-navigation {
@@ -106,7 +106,7 @@
 .news__card-announce {
   font-family: var(--montserrat);
   text-align: center;
-  color: var(--medium-blue);
+  color: var(--dark-blue);
   font-size: 14px;
   width: auto;
   height: 82px;
@@ -135,6 +135,7 @@
   justify-content: center;
   height: 40px;
   transition: background-color 0.2s linear;
+  font-weight: 700;
 }
 
 .news__card-link:hover {
