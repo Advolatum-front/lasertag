@@ -30,6 +30,7 @@
   transition:
     background-color 0.2s linear,
     color 0.2s linear;
+  font-family: var(--open-sans);
 }
 
 .back-to-albums-link__arrow {
