@@ -32,7 +32,7 @@ const MyProfile = () => {
             className="my-profile__photo"
             alt=""
           />
-          <button type="button" className="my-profile__button-load_photo">
+          <button type="button" className="my-profile__button-load-photo">
             Изменить
           </button>
         </div>
