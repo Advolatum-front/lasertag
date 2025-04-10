@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Outlet } from "react-router-dom";
 
 import { useState } from "react";
 
@@ -8,7 +8,7 @@ import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
 import "./index.css";
 
-const IndexCabinet = ({ children }) => {
+const IndexCabinet = () => {
   const locationPathname = useLocation().pathname;
   const [cabinetMenuOpened, setCabinetMenuOpened] = useState(false);
 
@@ -42,7 +42,7 @@ const IndexCabinet = ({ children }) => {
   const menuLinkItems = menuDataLinks.map((item, index) => {
     const { caption, link } = item;
 
-    const linkOrButton = locationPathname.includes(link) ? (
+    const linkOrSpan = locationPathname.includes(link) ? (
       <span className="cabinet-menu__active-item">{caption}</span>
     ) : (
       <Link to={link} className="cabinet-menu__link">
@@ -52,7 +52,7 @@ const IndexCabinet = ({ children }) => {
 
     return (
       <li className="cabinet-menu__list-item" key={index}>
-        {linkOrButton}
+        {linkOrSpan}
       </li>
     );
   });
@@ -92,7 +92,7 @@ const IndexCabinet = ({ children }) => {
           </li>
         </ul>
       </aside>
-      {children}
+      <Outlet />
     </div>
   );
 };

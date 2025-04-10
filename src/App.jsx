@@ -56,9 +56,10 @@ function App() {
           <Route exact path="/activities/id" element={<ActivityViewer />} />
           <Route exact path="/gallery/slider" element={<GallerySliderPage />} />
 
-          <Route exact path="/cabinet" element={<p>0</p>}>
-            <Route exact path="index" element={<p>1</p>} />
-            <Route exact path="index2" element={<p>2</p>} />
+          <Route path="/cabinet" element={<IndexCabinet />}>
+            <Route index element={<p>Всё пусто...</p>} />
+            <Route path="index1" element={<p>1</p>} />
+            <Route path="index2" element={<p>Давай что-нибудь крутое</p>} />
           </Route>
         </Routes>
       </main>
