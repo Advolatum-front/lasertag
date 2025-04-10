@@ -4,7 +4,6 @@ import { useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import PrivateRoute from "./components/PrivateRoute";
 
 import IndexPage from "./pages/IndexPage";
 import Contacts from "./pages/Contacts";
@@ -20,6 +19,10 @@ import CurrentNews from "./pages/CurrentNews";
 import ActivityViewer from "./pages/activities/ActivityViewer";
 
 import IndexCabinet from "./pages/cabinet/IndexCabinet";
+import Index from "./components/cabinet/Index";
+import MyProfile from "./components/cabinet/MyProfile";
+import Favorites from "./components/cabinet/Favorites";
+import Activities from "./components/cabinet/Activities";
 
 import "./App.css";
 import "./my-styles.css";
@@ -57,9 +60,10 @@ function App() {
           <Route exact path="/gallery/slider" element={<GallerySliderPage />} />
 
           <Route path="/cabinet" element={<IndexCabinet />}>
-            <Route index element={<p>Всё пусто...</p>} />
-            <Route path="index1" element={<p>1</p>} />
-            <Route path="index2" element={<p>Давай что-нибудь крутое</p>} />
+            <Route index element={<Index />} />
+            <Route path="myprofile" element={<MyProfile />} />
+            <Route path="activities" element={<Activities />} />
+            <Route path="favorites" element={<Favorites />} />
           </Route>
         </Routes>
       </main>

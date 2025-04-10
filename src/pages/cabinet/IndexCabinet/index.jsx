@@ -2,8 +2,6 @@ import { Link, useLocation, Outlet } from "react-router-dom";
 
 import { useState } from "react";
 
-// import Content from "./Content";
-
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
 import "./index.css";
