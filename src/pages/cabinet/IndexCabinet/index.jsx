@@ -11,6 +11,7 @@ import "./index.css";
 const IndexCabinet = () => {
   const locationPathname = useLocation().pathname;
   const [cabinetMenuOpened, setCabinetMenuOpened] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
 
   const openCabinetMenu = () => {
     setCabinetMenuOpened(true);
@@ -18,6 +19,18 @@ const IndexCabinet = () => {
 
   const closeCabinetMenu = () => {
     setCabinetMenuOpened(false);
+  };
+
+  const openConfirm = () => {
+    setConfirmOpen(true);
+  };
+
+  const closeConfirm = () => {
+    setConfirmOpen(false);
+  };
+
+  const comfirmLogout = () => {
+    setConfirmOpen(false);
   };
 
   const cabinetMenuClassName = cabinetMenuOpened
@@ -88,11 +101,22 @@ const IndexCabinet = () => {
         <ul className="cabinet-menu__nav-list">
           {menuLinkItems}
           <li className="cabinet-menu__list-item">
-            <button className="cabinet-menu__button-logout">Выход</button>
+            <button
+              className="cabinet-menu__button-logout"
+              onClick={openConfirm}
+            >
+              Выход
+            </button>
           </li>
         </ul>
       </aside>
-      <Confirm text="Какой-то текст сообщения" />
+      <Confirm
+        text="Вы уверены, что хотите выйти?"
+        open={confirmOpen}
+        onYes={comfirmLogout}
+        onNo={closeConfirm}
+        onClose={closeConfirm}
+      />
       <Outlet />
     </div>
   );
