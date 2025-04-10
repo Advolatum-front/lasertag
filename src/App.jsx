@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import PrivateRoute from "./components/PrivateRoute";
 
 import IndexPage from "./pages/IndexPage";
 import Contacts from "./pages/Contacts";
@@ -28,6 +29,15 @@ function App() {
     <Footer />
   ) : null;
 
+  /*
+<Route path="/cabinet" element={<IndexCabinet />}>
+  <Route exact path="index" element={<IndexCabinet />} />
+  <Route exact path="activities" element={<IndexCabinet />} />
+  <Route exact path="myprofile" element={<IndexCabinet />} />
+  <Route exact path="favorites" element={<IndexCabinet />} />
+</Route>
+  */
+
   return (
     <>
       <Header />
@@ -45,11 +55,10 @@ function App() {
           <Route exact path="/gallery/album" element={<AlbumContent />} />
           <Route exact path="/activities/id" element={<ActivityViewer />} />
           <Route exact path="/gallery/slider" element={<GallerySliderPage />} />
-          <Route path="/cabinet" element={<IndexCabinet />}>
-            <Route exact path="index" element={<IndexCabinet />} />
-            <Route exact path="activities" element={<IndexCabinet />} />
-            <Route exact path="myprofile" element={<IndexCabinet />} />
-            <Route exact path="favorites" element={<IndexCabinet />} />
+
+          <Route exact path="/cabinet" element={<p>0</p>}>
+            <Route exact path="index" element={<p>1</p>} />
+            <Route exact path="index2" element={<p>2</p>} />
           </Route>
         </Routes>
       </main>

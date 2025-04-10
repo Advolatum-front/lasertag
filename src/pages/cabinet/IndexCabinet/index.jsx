@@ -2,13 +2,13 @@ import { Link, useLocation } from "react-router-dom";
 
 import { useState } from "react";
 
-import Content from "./Content";
+// import Content from "./Content";
 
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
 import "./index.css";
 
-const IndexCabinet = () => {
+const IndexCabinet = ({ children }) => {
   const locationPathname = useLocation().pathname;
   const [cabinetMenuOpened, setCabinetMenuOpened] = useState(false);
 
@@ -92,7 +92,7 @@ const IndexCabinet = () => {
           </li>
         </ul>
       </aside>
-      <Content pathname={locationPathname} />
+      {children}
     </div>
   );
 };
