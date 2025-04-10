@@ -13,6 +13,7 @@ body:has(div.confirm-popup-overlay.opened) {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 3;
 }
 
 .confirm-popup {
