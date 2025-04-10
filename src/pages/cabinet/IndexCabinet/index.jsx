@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
+import Confirm from "../../../components/popups/Confirm";
+
 import "./index.css";
 
 const IndexCabinet = () => {
@@ -90,6 +92,7 @@ const IndexCabinet = () => {
           </li>
         </ul>
       </aside>
+      <Confirm />
       <Outlet />
     </div>
   );
