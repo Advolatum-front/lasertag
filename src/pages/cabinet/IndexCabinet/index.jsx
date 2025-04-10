@@ -92,7 +92,7 @@ const IndexCabinet = () => {
           </li>
         </ul>
       </aside>
-      <Confirm />
+      <Confirm text="Какой-то текст сообщения" />
       <Outlet />
     </div>
   );

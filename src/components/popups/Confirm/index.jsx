@@ -6,20 +6,47 @@ import "./index.css";
 
 const popupContainer = document.getElementById("popup");
 
-const Confirm = () => {
+const Confirm = ({ text, onYes, onNo, onClose, open }) => {
+  const handleYes = () => {
+    if (onYes) {
+      onYes();
+    }
+  };
+
+  const handleNo = () => {
+    if (onNo) {
+      onNo();
+    }
+  };
+
+  const handleClose = () => {
+    if (onClose) {
+      onClose();
+    }
+  };
+
+  const overlayClassName = open
+    ? "confirm-popup-overlay open"
+    : "confirm-popup-overlay";
+
   const confirm = (
-    <div className="confirm-popup-overlay opened">
+    <div className={overlayClassName}>
       <div className="confirm-popup">
-        <button type="button" className="confirm-popup__button-close">
+        <button
+          type="button"
+          className="confirm-popup__button-close"
+          onClick={handleClose}
+        >
           <Cross />
         </button>
-        <p className="confirm-popup__text">
-          Вы точно хотите Вы точно хотите Вы точно хотите Вы точно хотите Вы
-          точно хотите Вы точно хотите Вы точно хотите ?
-        </p>
+        <p className="confirm-popup__text">{text}</p>
         <div className="confirm-popup__buttons">
-          <button type="button">Да</button>
-          <button type="button">Нет</button>
+          <button type="button" onClick={handleYes}>
+            Да
+          </button>
+          <button type="button" onClick={handleNo}>
+            Нет
+          </button>
         </div>
       </div>
     </div>

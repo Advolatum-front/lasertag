@@ -1,4 +1,4 @@
-body:has(div.confirm-popup-overlay.opened) {
+body:has(div.confirm-popup-overlay.open) {
   overflow: hidden;
 }
 
