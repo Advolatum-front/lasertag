@@ -91,3 +91,18 @@ body:has(div.confirm-popup-overlay.opened) {
 .confirm-popup__buttons button:hover {
   background-color: var(--dark-blue);
 }
+
+@media (max-width: 760px) {
+  .confirm-popup {
+    width: 90vw;
+  }
+
+  .confirm-popup__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .confirm-popup__buttons button {
+    width: 50%;
+  }
+}
