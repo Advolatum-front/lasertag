@@ -19,10 +19,10 @@ import CurrentNews from "./pages/CurrentNews";
 import CurrentActivityPage from "./pages/activities/CurrentActivityPage";
 
 import IndexCabinet from "./pages/cabinet/IndexCabinet";
-import Index from "./components/cabinet/Index";
-import MyProfile from "./components/cabinet/MyProfile";
-import Favorites from "./components/cabinet/Favorites";
-import Activities from "./components/cabinet/Activities";
+import Index from "./pages/cabinet/cabinet-views/Index";
+import MyProfile from "./pages/cabinet/cabinet-views/MyProfile";
+import Favorites from "./pages/cabinet/cabinet-views/Favorites";
+import Activities from "./pages/cabinet/cabinet-views/Activities";
 
 import "./App.css";
 import "./my-styles.css";

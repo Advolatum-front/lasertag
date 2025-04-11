@@ -1,4 +1,4 @@
-import LabeledInput from "../../../components/controls/LabeledInput";
+import LabeledInput from "../../../../components/controls/LabeledInput";
 
 import "./index.css";
 
