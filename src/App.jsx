@@ -22,7 +22,8 @@ import IndexCabinet from "./pages/cabinet/IndexCabinet";
 import Index from "./pages/cabinet/cabinet-views/Index";
 import MyProfile from "./pages/cabinet/cabinet-views/MyProfile";
 import Favorites from "./pages/cabinet/cabinet-views/Favorites";
-import Activities from "./pages/cabinet/cabinet-views/Activities";
+import ActivitiesList from "./pages/cabinet/cabinet-views/activities/ActivitiesList";
+import CabinetActivityPage from "./pages/cabinet/cabinet-views/activities/CabinetActivityPage";
 
 import "./App.css";
 import "./my-styles.css";
@@ -66,7 +67,8 @@ function App() {
           <Route path="/cabinet" element={<IndexCabinet />}>
             <Route index element={<Index />} />
             <Route path="myprofile" element={<MyProfile />} />
-            <Route path="activities" element={<Activities />} />
+            <Route path="activities" element={<ActivitiesList />} />
+            <Route path="activities/id" element={<CabinetActivityPage />} />
             <Route path="favorites" element={<Favorites />} />
           </Route>
         </Routes>
