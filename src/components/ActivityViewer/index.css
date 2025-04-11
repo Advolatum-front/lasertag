@@ -1,4 +1,4 @@
-.current-activity__panel {
+.activity-viewer {
   background-color: #fff;
   position: relative;
   width: 60vw;
@@ -10,31 +10,31 @@
   flex-direction: column;
 }
 
-.current-activity__header {
+.activity-viewer__header {
   font-size: 30px;
   text-indent: 50px;
   margin-top: 0;
   font-weight: 600;
 }
 
-.current-activity__description {
+.activity-viewer__description {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 40px;
 }
 
-.current-activity__description p {
+.activity-viewer__description p {
   margin: 0;
 }
 
-.current-activity__bottom-part {
+.activity-viewer__bottom-part {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.current-activity__date {
+.activity-viewer__date {
   position: relative;
   color: var(--light-blue);
   font-size: 18px;
@@ -42,8 +42,8 @@
   text-indent: 76px;
 }
 
-.current-activity__date:after,
-.current-activity__panel:before {
+.activity-viewer__date:after,
+.activity-viewer:before {
   content: "";
   position: absolute;
   --width: 350px;
@@ -57,7 +57,7 @@
   top: 8px;
 }
 
-.current-activity__panel:before {
+.activity-viewer:before {
   --width: 70px;
   --height: calc(var(--width) * 0.649);
   background-image: url("./confetti.webp");
@@ -65,7 +65,7 @@
   right: 86px;
 }
 
-.current-activity__link-send-request {
+.activity-viewer__link-send-request {
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -80,11 +80,11 @@
   margin-bottom: -80px;
 }
 
-.current-activity__link-send-request:hover {
+.activity-viewer__link-send-request:hover {
   background-color: var(--medium-blue);
 }
 
-.current-activity__link-go-back {
+.activity-viewer__link-go-back {
   position: absolute;
   top: 0;
   width: 60px;
@@ -97,31 +97,31 @@
   transition: background-color 0.2s linear;
 }
 
-.current-activity__link-go-back:hover {
+.activity-viewer__link-go-back:hover {
   background-color: var(--medium-blue);
 }
 
-.current-activity__arrow-ico {
+.activity-viewer__arrow-ico {
   margin-left: 8px;
 }
 
-.current-activity__arrow-ico path {
+.activity-viewer__arrow-ico path {
   fill: #f00;
 }
 
-.current-activity__link-go-back:hover path {
+.activity-viewer__link-go-back:hover path {
   fill: #fff;
 }
 
 @media (max-width: 1152px) {
-  .current-activity__panel:before {
+  .activity-viewer:before {
     left: 20px;
     right: initial;
   }
 }
 
 @media (max-width: 760px) {
-  .current-activity__panel:before {
+  .activity-viewer:before {
     width: 100%;
     height: 100%;
     opacity: 0.1;
@@ -129,26 +129,26 @@
     pointer-events: none;
   }
 
-  .current-activity__header {
+  .activity-viewer__header {
     text-indent: 0;
     font-size: 25px;
     text-align: center;
   }
 
-  .current-activity__panel {
+  .activity-viewer {
     padding: 20px;
     background-color: var(--light-grey);
   }
 
-  .current-activity__link-go-back {
+  .activity-viewer__link-go-back {
     background-color: var(--light-grey);
   }
 
-  .current-activity__bottom-part {
+  .activity-viewer__bottom-part {
     flex-direction: column;
   }
 
-  .current-activity__date {
+  .activity-viewer__date {
     background-color: var(--light-blue);
     color: #fff;
     text-indent: 0;
@@ -160,11 +160,11 @@
     border-radius: 20px 0 0 20px;
   }
 
-  .current-activity__date:after {
+  .activity-viewer__date:after {
     display: none;
   }
 
-  .current-activity__link-send-request {
+  .activity-viewer__link-send-request {
     margin: 0 auto;
   }
 }

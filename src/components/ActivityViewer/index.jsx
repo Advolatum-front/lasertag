@@ -6,12 +6,12 @@ import "./index.css";
 
 const ActivityViewer = () => {
   return (
-    <div className="current-activity__panel">
-      <Link to="/" className="current-activity__link-go-back">
-        <Arrow className="current-activity__arrow-ico" />
+    <div className="activity-viewer">
+      <Link to="/" className="activity-viewer__link-go-back">
+        <Arrow className="activity-viewer__arrow-ico" />
       </Link>
-      <h1 className="current-activity__header">Тренировочный бой юниоров</h1>
-      <div className="current-activity__description">
+      <h1 className="activity-viewer__header">Тренировочный бой юниоров</h1>
+      <div className="activity-viewer__description">
         <p>
           Соревнование между совершеннолетними (18-25 лет) спортсменами с
           базовым (начальным) уровнем подготовки с малым количеством (не более
@@ -26,9 +26,9 @@ const ActivityViewer = () => {
           - сертификат об участии.
         </p>
       </div>
-      <div className="current-activity__bottom-part">
-        <div className="current-activity__date">03.12</div>
-        <Link to="/activities" className="current-activity__link-send-request">
+      <div className="activity-viewer__bottom-part">
+        <div className="activity-viewer__date">03.12</div>
+        <Link to="/activities" className="activity-viewer__link-send-request">
           Подать заявку
         </Link>
       </div>
