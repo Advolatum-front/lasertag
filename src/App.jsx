@@ -16,7 +16,7 @@ import AlbumContent from "./pages/AlbumContent";
 import GallerySliderPage from "./pages/GallerySliderPage";
 import News from "./pages/News";
 import CurrentNews from "./pages/CurrentNews";
-import ActivityViewer from "./pages/activities/ActivityViewer";
+import CurrentActivityPage from "./pages/activities/CurrentActivityPage";
 
 import IndexCabinet from "./pages/cabinet/IndexCabinet";
 import Index from "./components/cabinet/Index";
@@ -56,7 +56,11 @@ function App() {
           <Route exact path="/registration" element={<Registration />} />
           <Route exact path="/gallery" element={<AlbumSelector />} />
           <Route exact path="/gallery/album" element={<AlbumContent />} />
-          <Route exact path="/activities/id" element={<ActivityViewer />} />
+          <Route
+            exact
+            path="/activities/id"
+            element={<CurrentActivityPage />}
+          />
           <Route exact path="/gallery/slider" element={<GallerySliderPage />} />
 
           <Route path="/cabinet" element={<IndexCabinet />}>
