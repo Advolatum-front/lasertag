@@ -1,7 +1,7 @@
 .activity-viewer {
   background-color: #fff;
   position: relative;
-  width: 60vw;
+  width: 60%;
   padding: 40px 70px 150px;
   font-family: var(--open-sans);
   color: var(--medium-blue);
