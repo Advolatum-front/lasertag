@@ -10,7 +10,7 @@
   color: var(--medium-blue);
   font-weight: 600;
   font-size: 30px;
-  margin-top: 0;
+  margin: 0 0 60px 2vw;
   text-transform: uppercase;
   font-family: var(--open-sans);
   align-self: flex-start;
@@ -19,5 +19,9 @@
 @media (max-width: 760px) {
   .cabinet-activity-page {
     width: auto;
+  }
+
+  .cabinet-activity-page__header {
+    margin: 0 auto 60px;
   }
 }
