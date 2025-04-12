@@ -11,7 +11,7 @@ const ActivityViewer = (props) => {
     description,
     date,
     sendRequestLink,
-    borderAround = true,
+    borderAround,
   } = props;
 
   const activityViewerClassName = borderAround

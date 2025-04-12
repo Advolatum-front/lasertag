@@ -18,6 +18,7 @@ const CabinetActivityPage = () => {
         - сертификат об участии."
         date="03.12"
         sendRequestLink="/"
+        borderAround
       />
     </div>
   );
