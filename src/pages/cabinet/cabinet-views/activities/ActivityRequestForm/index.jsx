@@ -54,7 +54,6 @@ const ActivityRequestForm = () => {
                 <output
                   htmlFor="participator1_birthDate"
                   form="activityRequestForm"
-                  role="status"
                   name="Возраст участника 1"
                   className="activity-request__participator-age"
                 >
@@ -83,7 +82,6 @@ const ActivityRequestForm = () => {
                 <output
                   htmlFor="participator2_birthDate"
                   form="activityRequestForm"
-                  role="status"
                   name="Возраст участника 2"
                   className="activity-request__participator-age"
                 >
