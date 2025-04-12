@@ -103,7 +103,7 @@
   background-color: #fff;
   display: flex;
   align-items: center;
-  left: calc(-1 * var(--width) - 1px);
+  left: calc(-1 * var(--width));
   transition: background-color 0.2s linear;
 }
 
@@ -250,6 +250,6 @@
 
   .activity-viewer__link-go-back {
     --width: 35px;
-    left: calc(-1 * var(--width) - 1px);
+    left: calc(-1 * var(--width));
   }
 }
