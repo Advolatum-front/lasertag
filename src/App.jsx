@@ -24,6 +24,7 @@ import MyProfile from "./pages/cabinet/cabinet-views/MyProfile";
 import Favorites from "./pages/cabinet/cabinet-views/Favorites";
 import ActivitiesList from "./pages/cabinet/cabinet-views/activities/ActivitiesList";
 import CabinetActivityPage from "./pages/cabinet/cabinet-views/activities/CabinetActivityPage";
+import ActivityRequestForm from "./pages/cabinet/cabinet-views/activities/ActivityRequestForm";
 
 import "./App.css";
 import "./my-styles.css";
@@ -70,6 +71,10 @@ function App() {
             <Route path="activities" element={<ActivitiesList />} />
             <Route path="activities/id" element={<CabinetActivityPage />} />
             <Route path="favorites" element={<Favorites />} />
+            <Route
+              path="activities/id/request"
+              element={<ActivityRequestForm />}
+            />
           </Route>
         </Routes>
       </main>
