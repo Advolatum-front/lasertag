@@ -1,0 +1,12 @@
+.cabinet-activity-page {
+  padding: 10px 82px;
+}
+
+.cabinet-activity-page__header {
+  color: var(--medium-blue);
+  font-weight: 600;
+  font-size: 30px;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-family: var(--open-sans);
+}
