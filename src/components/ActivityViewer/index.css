@@ -94,15 +94,16 @@
 }
 
 .activity-viewer__link-go-back {
+  --width: 60px;
   position: absolute;
   top: 0;
-  width: 60px;
+  width: var(--width);
   border-radius: 50% 0 0 50%;
   height: 50px;
   background-color: #fff;
   display: flex;
   align-items: center;
-  left: -59px;
+  left: calc(-1 * var(--width) - 1px);
   transition: background-color 0.2s linear;
 }
 
@@ -110,7 +111,7 @@
   border: var(--border-around);
   border-right: none;
   top: -3px;
-  left: -63px;
+  left: calc(-1 * var(--width) - 3px);
 }
 
 .activity-viewer__link-go-back:hover {
@@ -240,5 +241,15 @@
 
   .activity-viewer__link-send-request {
     margin: 0 auto;
+  }
+
+  .activity-viewer__nav-link {
+    --width: 35px;
+  }
+
+  .activity-viewer__link-go-back {
+    /*    width: 35px;*/
+    --width: 35px;
+    left: calc(-1 * var(--width) - 1px);
   }
 }
