@@ -206,6 +206,7 @@
     text-indent: 0;
     font-size: 25px;
     text-align: center;
+    width: auto;
   }
 
   .activity-viewer {
