@@ -12,6 +12,7 @@ const ActivityViewer = (props) => {
     date,
     sendRequestLink,
     borderAround,
+    navLinks = false,
   } = props;
 
   const activityViewerClassName = borderAround
@@ -21,6 +22,13 @@ const ActivityViewer = (props) => {
   const goBackLinkClassName = borderAround
     ? "activity-viewer__link-go-back border-around"
     : "activity-viewer__link-go-back";
+
+  const prevLink = navLinks && (
+    <Link to="/" className="activity-viewer__nav-link prev"></Link>
+  );
+  const nextLink = navLinks && (
+    <Link to="/" className="activity-viewer__nav-link next"></Link>
+  );
 
   return (
     <div className={activityViewerClassName}>
@@ -38,6 +46,8 @@ const ActivityViewer = (props) => {
           Подать заявку
         </Link>
       </div>
+      {prevLink}
+      {nextLink}
     </div>
   );
 };

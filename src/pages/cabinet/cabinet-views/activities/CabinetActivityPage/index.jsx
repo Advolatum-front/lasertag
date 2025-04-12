@@ -19,6 +19,7 @@ const CabinetActivityPage = () => {
         date="03.12"
         sendRequestLink="/"
         borderAround
+        navLinks
       />
     </div>
   );

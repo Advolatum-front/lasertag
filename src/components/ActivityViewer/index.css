@@ -128,6 +128,63 @@
   fill: #fff;
 }
 
+.activity-viewer__nav-link {
+  --width: 57px;
+  height: 70px;
+  width: var(--width);
+  position: absolute;
+  background-color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  border: var(--border-around);
+}
+
+.prev {
+  border-radius: 20px 0 0 20px;
+  left: calc(-1 * var(--width) - 3px);
+  border-right: none;
+}
+
+.prev:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0%;
+  border: 30px solid transparent;
+  border-right-color: var(--medium-blue);
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  transition: border-right-color 0.2s linear;
+}
+
+.prev:hover:before {
+  border-right-color: var(--dark-blue);
+}
+
+.next {
+  border-radius: 0 20px 20px 0;
+  right: calc(-1 * var(--width) - 3px);
+  border-left: none;
+}
+
+.next:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0%;
+  border: 30px solid transparent;
+  border-left-color: var(--medium-blue);
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  transition: border-left-color 0.2s linear;
+}
+
+.next:hover:before {
+  border-left-color: var(--dark-blue);
+}
+
 @media (max-width: 1152px) {
   .activity-viewer:before {
     left: 20px;
