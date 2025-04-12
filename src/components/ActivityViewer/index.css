@@ -132,6 +132,7 @@
 
 .activity-viewer__nav-link {
   --width: 57px;
+  --triangle-size: 30px;
   height: 70px;
   width: var(--width);
   position: absolute;
@@ -152,7 +153,7 @@
   position: absolute;
   width: 0;
   height: 0%;
-  border: 30px solid transparent;
+  border: var(--triangle-size) solid transparent;
   border-right-color: var(--medium-blue);
   top: 50%;
   left: -20px;
@@ -175,7 +176,7 @@
   position: absolute;
   width: 0;
   height: 0%;
-  border: 30px solid transparent;
+  border: var(--triangle-size) solid transparent;
   border-left-color: var(--medium-blue);
   top: 50%;
   right: -20px;
@@ -244,7 +245,7 @@
   }
 
   .activity-viewer__nav-link {
-    --width: 35px;
+    --width: 30px;
   }
 
   .activity-viewer__link-go-back {
