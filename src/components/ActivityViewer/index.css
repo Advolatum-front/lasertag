@@ -1,3 +1,7 @@
+:root {
+  --border-around: 3px solid var(--light-blue);
+}
+
 .activity-viewer {
   background-color: #fff;
   position: relative;
@@ -8,6 +12,10 @@
   border-radius: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
+}
+
+.activity-viewer.border-around {
+  border: var(--border-around);
 }
 
 .activity-viewer__header {
@@ -95,6 +103,13 @@
   align-items: center;
   left: -59px;
   transition: background-color 0.2s linear;
+}
+
+.activity-viewer__link-go-back.border-around {
+  border: var(--border-around);
+  border-right: none;
+  top: -3px;
+  left: -63px;
 }
 
 .activity-viewer__link-go-back:hover {

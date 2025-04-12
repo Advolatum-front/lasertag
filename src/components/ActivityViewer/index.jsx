@@ -5,11 +5,26 @@ import { ReactComponent as Arrow } from "../../svg/arrow.svg";
 import "./index.css";
 
 const ActivityViewer = (props) => {
-  const { goBackLink, header, description, date, sendRequestLink } = props;
+  const {
+    goBackLink,
+    header,
+    description,
+    date,
+    sendRequestLink,
+    borderAround = true,
+  } = props;
+
+  const activityViewerClassName = borderAround
+    ? "activity-viewer border-around"
+    : "activity-viewer";
+
+  const goBackLinkClassName = borderAround
+    ? "activity-viewer__link-go-back border-around"
+    : "activity-viewer__link-go-back";
 
   return (
-    <div className="activity-viewer">
-      <Link to={goBackLink} className="activity-viewer__link-go-back">
+    <div className={activityViewerClassName}>
+      <Link to={goBackLink} className={goBackLinkClassName}>
         <Arrow className="activity-viewer__arrow-ico" />
       </Link>
       <h1 className="activity-viewer__header">{header}</h1>
