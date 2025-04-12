@@ -1,0 +1,50 @@
+:root {
+  --border: 3px solid var(--light-blue);
+}
+
+.activity-request {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--open-sans);
+  padding: 30px;
+}
+
+.activity-request__header {
+  color: var(--medium-blue);
+  align-self: flex-start;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.activity-request__content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.activity-request__back-link {
+  border: var(--border);
+  border-right: none;
+  background-color: #fff;
+  padding-right: 20px;
+  border-radius: 20px 0 0 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.activity-request__back-link path {
+  transition: fill 0.2s linear;
+}
+
+.activity-request__back-link:hover path {
+  fill: #f00;
+}
+
+.activity-request__form {
+  border: var(--border);
+  margin-left: -3px;
+  position: relative;
+}

@@ -11,7 +11,7 @@ const ActivityRequestForm = () => {
     <div className="activity-request">
       <h1 className="activity-request__header">Заявка</h1>
       <div className="activity-request__content">
-        <Link to="/" className="activity-request__link">
+        <Link to="/" className="activity-request__back-link">
           <Arrow />
         </Link>
         <form className="activity-request__form" id="activityRequestForm">
