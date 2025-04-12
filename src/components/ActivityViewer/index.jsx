@@ -13,6 +13,8 @@ const ActivityViewer = (props) => {
     sendRequestLink,
     borderAround,
     navLinks = false,
+    prevLinkUrl,
+    nextLinkUrl,
   } = props;
 
   const activityViewerClassName = borderAround
@@ -24,10 +26,10 @@ const ActivityViewer = (props) => {
     : "activity-viewer__link-go-back";
 
   const prevLink = navLinks && (
-    <Link to="/" className="activity-viewer__nav-link prev"></Link>
+    <Link to={prevLinkUrl} className="activity-viewer__nav-link prev"></Link>
   );
   const nextLink = navLinks && (
-    <Link to="/" className="activity-viewer__nav-link next"></Link>
+    <Link to={nextLinkUrl} className="activity-viewer__nav-link next"></Link>
   );
 
   return (

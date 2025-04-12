@@ -20,6 +20,8 @@ const CabinetActivityPage = () => {
         sendRequestLink="/"
         borderAround
         navLinks
+        prevLinkUrl="/"
+        nextLinkUrl="/"
       />
     </div>
   );
