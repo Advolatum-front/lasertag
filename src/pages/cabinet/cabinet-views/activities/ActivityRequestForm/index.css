@@ -51,6 +51,22 @@
   gap: 10px;
   flex-grow: 1;
   padding: 15px;
+  position: relative;
+}
+
+.activity-request__form:before {
+  content: "";
+  position: absolute;
+  display: block;
+  --width: 70px;
+  --height: calc(var(--width) * 0.649);
+  width: var(--width);
+  height: var(--height);
+  background-image: url("./confetti.webp");
+  top: 13px;
+  right: 13px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .activity-request__caption {
