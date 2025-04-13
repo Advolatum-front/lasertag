@@ -18,21 +18,29 @@ const ActivityRequestForm = () => {
           <span className="activity-request__caption">
             Основная информация:
           </span>
-          <LabeledInput required label="Название команды" id="squadName" />
+          <LabeledInput
+            required
+            label="Название команды"
+            id="squadName"
+            className="activity-request__shorter-input"
+          />
           <LabeledInput
             required
             label="Адрес командирующей организации"
             id="organizationAddres"
+            className="activity-request__shorter-input"
           />
           <LabeledInput
             required
             label="Телефон командирующей организации"
             id="organizationPhone"
+            className="activity-request__shorter-input"
           />
           <LabeledInput
             required
             label="Возрастная группа команды"
             id="ageGroup"
+            className="activity-request__shorter-input"
           />
           <span className="activity-request__caption">Участники команды:</span>
           <div className="activity-request__participators-container">
@@ -115,24 +123,16 @@ const ActivityRequestForm = () => {
               className="activity-request__squad-agent-phone"
             />
           </div>
-          <span className="activity-request__caption">Участники команды:</span>
+          <span className="activity-request__caption">
+            Сопровождающие команды:
+          </span>
           <div className="activity-request__attendants-container">
             <ul className="activity-request__attendants-list">
               <li className="activity-request__attendant-item">
-                <LabeledInput
-                  required
-                  label="ФИО"
-                  id="attendant1"
-                  className="activity-request__squad-attendant-name"
-                />
+                <LabeledInput required label="ФИО" id="attendant1" />
               </li>
               <li className="activity-request__attendant-item">
-                <LabeledInput
-                  required
-                  label="ФИО"
-                  id="attendant2"
-                  className="activity-request__squad-attendant-name"
-                />
+                <LabeledInput required label="ФИО" id="attendant2" />
               </li>
             </ul>
             <button type="button" className="activity-request__button-add">
