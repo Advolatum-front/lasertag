@@ -124,7 +124,7 @@ const ActivityRequestForm = () => {
             />
           </div>
           <span className="activity-request__caption">
-            Сопровождающие команды:
+            Список сопровождающих:
           </span>
           <div className="activity-request__attendants-container">
             <ul className="activity-request__attendants-list">

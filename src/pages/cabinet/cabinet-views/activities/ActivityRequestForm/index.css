@@ -102,6 +102,7 @@
   color: var(--medium-blue);
   font-size: 14px;
   padding: 12px 9px;
+  background-color: #fff;
 }
 
 .activity-request__button-add {
@@ -162,4 +163,59 @@
 
 .activity-request__button-submit:hover {
   background-color: var(--medium-blue);
+}
+
+@media (max-width: 960px) {
+  .activity-request {
+    padding: 30px 5px;
+  }
+
+  .activity-request__header {
+    align-self: center;
+  }
+
+  .activity-request__content {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .activity-request__back-link {
+    border-radius: 20px 20px 0 0;
+    border: var(--border);
+    border-bottom: none;
+  }
+
+  .activity-request__form {
+    margin-left: 0;
+    width: 90vw;
+  }
+
+  .activity-request__caption {
+    text-indent: 0;
+    align-self: center;
+  }
+
+  .activity-request__shorter-input {
+    width: auto;
+  }
+
+  .activity-request__participators-list {
+    gap: 25px;
+  }
+
+  .activity-request__participator-item {
+    flex-direction: column;
+    background-color: var(--light-grey);
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  .activity-request__squad-agent-container {
+    flex-direction: column;
+  }
+
+  .activity-request__button-submit {
+    width: 150px;
+    align-self: center;
+  }
 }
