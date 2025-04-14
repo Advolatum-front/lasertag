@@ -35,6 +35,7 @@
 .cabinet-activities__filter {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -44,11 +45,15 @@
   display: none;
 }
 
+.cabinet-activities__list-item {
+  flex-grow: 1;
+  width: 125px;
+}
+
 .cabinet-activities__option {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 125px;
   border-radius: 20px;
   padding: 7px 0;
   border: none;
@@ -213,6 +218,7 @@
 .cabinet-activities__activity-status.pending {
   color: var(--status-pending-text);
   background-color: var(--status-pending-bg);
+  font-size: 14px;
 }
 
 .cabinet-activities__activity-status.avaible {
@@ -239,11 +245,37 @@
     gap: 10px;
   }
 
-  .cabinet-activities__option {
+  .cabinet-activities__list-item {
+    flex-grow: 1;
     width: auto;
   }
 
   .cabinet-activities__activity-date:after {
     content: none;
+  }
+
+  .cabinet-activities__filter-block {
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .cabinet-activities__captions-list {
+    display: none;
+  }
+
+  .cabinet-activities__activity-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cabinet-activities__activity-status {
+    width: 60%;
+  }
+
+  .cabinet-activities__activity-status.pending {
+    font-size: initial;
   }
 }
