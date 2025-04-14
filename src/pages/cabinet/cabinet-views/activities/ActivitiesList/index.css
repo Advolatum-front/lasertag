@@ -88,7 +88,10 @@
 }
 
 .cabinet-activities__captions-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: var(--date-col) var(--name-col) var(--description-col) var(
+      --status-col
+    );
   margin: 0 0 10px 10px;
   padding: 0;
   list-style: none;
@@ -102,25 +105,21 @@
 
 .cabinet-activities__caption-item.date {
   text-indent: 8px;
-  width: var(--date-col);
   order: 1;
 }
 
 .cabinet-activities__caption-item.name {
   text-indent: 5px;
-  width: var(--name-col);
   order: 2;
 }
 
 .cabinet-activities__caption-item.description {
   text-indent: -3px;
-  width: var(--description-col);
   order: 3;
 }
 
 .cabinet-activities__caption-item.status {
   text-indent: -9px;
-  width: var(--status-col);
   order: 4;
 }
 
