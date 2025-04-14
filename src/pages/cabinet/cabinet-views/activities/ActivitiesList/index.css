@@ -11,13 +11,18 @@
   font-family: var(--open-sans);
 }
 
-.cabinet-activities__header {
+.cabinet-activities__header,
+.cabinet-activities__list-category {
   color: var(--medium-blue);
   align-self: flex-start;
   font-size: 30px;
   font-weight: 600;
   margin-top: 0;
   text-transform: uppercase;
+}
+
+.cabinet-activities__list-category {
+  font-size: 25px;
 }
 
 .cabinet-activities__filter-block {
@@ -105,6 +110,10 @@
   text-indent: -9px;
 }
 
+.cabinet-activities__activities-list-conainer {
+  margin-bottom: 30px;
+}
+
 .cabinet-activities__activities-list {
   display: flex;
   flex-direction: column;
@@ -112,7 +121,6 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
-  margin-bottom: 30px;
 }
 
 .cabinet-activities__activity-item {
