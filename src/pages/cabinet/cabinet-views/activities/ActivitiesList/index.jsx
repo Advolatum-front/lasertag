@@ -1,10 +1,44 @@
 import { Link } from "react-router-dom";
 
+import { useState } from "react";
+
 import LabeledInput from "../../../../../components/controls/LabeledInput";
+
+import {
+  CAF_ALL,
+  CAF_MY,
+  CAF_AVAIBLE,
+} from "../../../../../utils/cabinet-activities-filter-state.js";
 
 import "./index.css";
 
 const ActivitiesList = () => {
+  const [filterState, setFilterState] = useState(CAF_ALL);
+
+  const filterData = [
+    {
+      caption: "Все",
+      value: CAF_ALL,
+      handler: () => {
+        setFilterState(CAF_ALL);
+      },
+    },
+    {
+      caption: "Мои",
+      value: CAF_MY,
+      handler: () => {
+        setFilterState(CAF_MY);
+      },
+    },
+    {
+      caption: "Доступные",
+      value: CAF_AVAIBLE,
+      handler: () => {
+        setFilterState(CAF_AVAIBLE);
+      },
+    },
+  ];
+
   return (
     <div className="cabinet-activities">
       <h1 className="cabinet-activities__header">Мероприятия</h1>
