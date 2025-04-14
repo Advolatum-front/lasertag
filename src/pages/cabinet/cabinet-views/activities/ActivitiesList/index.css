@@ -20,10 +20,6 @@
   text-transform: uppercase;
 }
 
-.cabinet-activities__page-content {
-  padding-left: 50px;
-}
-
 .cabinet-activities__filter-block {
   display: flex;
   flex-direction: column;
