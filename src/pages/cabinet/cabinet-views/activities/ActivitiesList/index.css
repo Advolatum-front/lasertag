@@ -41,6 +41,10 @@
   list-style: none;
 }
 
+.cabinet-activities__filter-radio {
+  display: none;
+}
+
 .cabinet-activities__option {
   display: flex;
   align-items: center;
@@ -62,16 +66,16 @@
     border-color 0.2s linear;
 }
 
-.cabinet-activities__option:hover {
-  background-color: var(--medium-blue);
-  border-color: var(--medium-blue);
-}
-
-.cabinet-activities__option.current {
+.cabinet-activities__filter-radio:checked + .cabinet-activities__option {
   background-color: #fff;
   color: var(--light-blue);
   border-color: var(--light-blue);
   cursor: default;
+}
+
+.cabinet-activities__option:hover {
+  background-color: var(--medium-blue);
+  border-color: var(--medium-blue);
 }
 
 .cabinet-activities__content {

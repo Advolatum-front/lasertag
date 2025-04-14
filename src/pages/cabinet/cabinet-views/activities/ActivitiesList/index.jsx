@@ -19,44 +19,34 @@ const ActivitiesList = () => {
     {
       caption: "Все",
       value: CAF_ALL,
-      handler: () => {
-        setFilterState(CAF_ALL);
-      },
     },
     {
       caption: "Мои",
       value: CAF_MY,
-      handler: () => {
-        setFilterState(CAF_MY);
-      },
     },
     {
       caption: "Доступные",
       value: CAF_AVAIBLE,
-      handler: () => {
-        setFilterState(CAF_AVAIBLE);
-      },
     },
   ];
 
   const filterListItems = filterData.map((item, index) => {
     const { caption, value, handler } = item;
-    const spanOrButton =
-      filterState === value ? (
-        <span className="cabinet-activities__option current">{caption}</span>
-      ) : (
-        <button
-          type="button"
-          className="cabinet-activities__option"
-          onClick={handler}
-        >
-          {caption}
-        </button>
-      );
 
     return (
       <li className="cabinet-activities__list-item" key={index}>
-        {spanOrButton}
+        <input
+          type="radio"
+          name="activies-filter"
+          id={value}
+          value={value}
+          className="cabinet-activities__filter-radio"
+          onChange={() => setFilterState(value)}
+          checked={filterState === value}
+        />
+        <label className="cabinet-activities__option" htmlFor={value}>
+          {caption}
+        </label>
       </li>
     );
   });
