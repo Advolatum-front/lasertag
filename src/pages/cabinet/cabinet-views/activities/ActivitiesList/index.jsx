@@ -39,25 +39,29 @@ const ActivitiesList = () => {
     },
   ];
 
+  const filterListItems = filterData.map((item, index) => {
+    const { caption, value, handler } = item;
+    const spanOrButton =
+      filterState === value ? (
+        <span className="cabinet-activities__option current">{caption}</span>
+      ) : (
+        <button
+          type="button"
+          className="cabinet-activities__option"
+          onClick={handler}
+        >
+          {caption}
+        </button>
+      );
+
+    return <li className="cabinet-activities__list-item">{spanOrButton}</li>;
+  });
+
   return (
     <div className="cabinet-activities">
       <h1 className="cabinet-activities__header">Мероприятия</h1>
       <div className="cabinet-activities__filter-block">
-        <ul className="cabinet-activities__filter">
-          <li className="cabinet-activities__list-item">
-            <span className="cabinet-activities__option current">Все</span>
-          </li>
-          <li className="cabinet-activities__list-item">
-            <button type="button" className="cabinet-activities__option">
-              Мои
-            </button>
-          </li>
-          <li className="cabinet-activities__list-item">
-            <button type="button" className="cabinet-activities__option">
-              Доступные
-            </button>
-          </li>
-        </ul>
+        <ul className="cabinet-activities__filter">{filterListItems}</ul>
         <form className="cabinet-activities__seacrh-form">
           <LabeledInput id="seacrhInput" label="Поиск по названию" />
         </form>
