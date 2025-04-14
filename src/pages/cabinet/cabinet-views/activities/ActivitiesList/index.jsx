@@ -104,6 +104,22 @@ const ActivitiesList = () => {
                 Подайте заявку
               </Link>
             </li>
+            <li className="cabinet-activities__activity-item">
+              <div className="cabinet-activities__activity-date">12.05</div>
+              <div className="cabinet-activities__activity-name">
+                Длинное название мероприятия, которое не помещается полностью
+              </div>
+              <div className="cabinet-activities__activity-description">
+                Очень длинное описание мероприятия с длиннмы названнием,
+                котороетакже не помещается полностью в указанное поле,
+              </div>
+              <Link
+                to="/"
+                className="cabinet-activities__activity-status avaible"
+              >
+                Подайте заявку
+              </Link>
+            </li>
           </ul>
           <div className="cabinet-activities__tip">
             Список мероприятий постоянно пополняется. Не забывайте почаще

@@ -136,12 +136,17 @@
 .cabinet-activities__activity-name {
   font-weight: 600;
   font-size: 16px;
+  white-space: nowrap;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cabinet-activities__activity-description {
   font-family: var(--montserrat);
   color: var(--light-blue);
   font-size: 14px;
+  width: 90%;
 
   /*Эти строки нужны для того, чтобы текст не превышал двух строк,
 а в случае превышения текст обрывался и в конце ставилось многоточие*/
