@@ -15,7 +15,7 @@ const ActivitiesList = () => {
           </li>
           <li className="cabinet-activities__list-item">
             <button type="button" className="cabinet-activities__option">
-              Активные
+              Мои
             </button>
           </li>
           <li className="cabinet-activities__list-item">
