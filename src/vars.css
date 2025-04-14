@@ -6,4 +6,13 @@
   --medium-blue: #0053f4;
   --light-blue: #00bbff;
   --light-grey: #f1f1f1;
+
+  --status-approved-bg: #d0ffb2;
+  --status-approved-text: #51bb00;
+  --status-declined-bg: #ffb2b2;
+  --status-declined-text: #bb0000;
+  --status-pending-bg: #fff9b2;
+  --status-pending-text: #bbb500;
+  --status-avaible-bg: #e6e6e6;
+  --status-avaible-text: #9f9f9f;
 }

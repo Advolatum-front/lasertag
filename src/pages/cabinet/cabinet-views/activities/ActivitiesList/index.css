@@ -163,3 +163,27 @@
   border-radius: 10px;
   font-weight: 600;
 }
+
+.cabinet-activities__activity-status.approved {
+  color: var(--status-approved-text);
+  background-color: var(--status-approved-bg);
+  border: none;
+}
+
+.cabinet-activities__activity-status.declined {
+  color: var(--status-declined-text);
+  background-color: var(--status-declined-bg);
+  border: none;
+}
+
+.cabinet-activities__activity-status.pending {
+  color: var(--status-pending-text);
+  background-color: var(--status-pending-bg);
+  border: none;
+}
+
+.cabinet-activities__activity-status.avaible {
+  color: var(--status-avaible-text);
+  background-color: var(--status-avaible-bg);
+  border: none;
+}
