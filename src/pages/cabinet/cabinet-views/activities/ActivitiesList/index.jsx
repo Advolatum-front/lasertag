@@ -31,7 +31,7 @@ const ActivitiesList = () => {
   ];
 
   const filterListItems = filterData.map((item, index) => {
-    const { caption, value, handler } = item;
+    const { caption, value } = item;
 
     return (
       <li className="cabinet-activities__list-item" key={index}>
