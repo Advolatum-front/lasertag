@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import LabeledInput from "../../../../../components/controls/LabeledInput";
 
 import "./index.css";
@@ -52,6 +54,55 @@ const ActivitiesList = () => {
               <div className="cabinet-activities__activity-status approved">
                 Одобрена
               </div>
+            </li>
+            <li className="cabinet-activities__activity-item">
+              <div className="cabinet-activities__activity-date">12.05</div>
+              <div className="cabinet-activities__activity-name">
+                Тренировочный бой юноиоров
+              </div>
+              <div className="cabinet-activities__activity-description">
+                Тренировочный матч между молодыми людьми с базовым уровнем
+                подготовки
+              </div>
+              <div className="cabinet-activities__activity-status declined">
+                Отклонена
+              </div>
+            </li>
+            <li className="cabinet-activities__activity-item">
+              <div className="cabinet-activities__activity-date">12.05</div>
+              <div className="cabinet-activities__activity-name">
+                Высшая Лига лазерного боя
+              </div>
+              <div className="cabinet-activities__activity-description">
+                Соревнование между высшими (четвёртыми) эшелонами спортсменов
+              </div>
+            </li>
+            <li className="cabinet-activities__activity-item">
+              <div className="cabinet-activities__activity-date">12.05</div>
+              <div className="cabinet-activities__activity-name">
+                Чемпионат Лунного Лорда
+              </div>
+              <div className="cabinet-activities__activity-description">
+                Группа матчей между вторыми эшелонами разных городов
+              </div>
+              <div className="cabinet-activities__activity-status pending">
+                На рассмотрении
+              </div>
+            </li>
+            <li className="cabinet-activities__activity-item">
+              <div className="cabinet-activities__activity-date">12.05</div>
+              <div className="cabinet-activities__activity-name">
+                Лекция по технике безопасности
+              </div>
+              <div className="cabinet-activities__activity-description">
+                Познавательная лекция о правилах поведения на боевом поле
+              </div>
+              <Link
+                to="/"
+                className="cabinet-activities__activity-status avaible"
+              >
+                Подайте заявку
+              </Link>
             </li>
           </ul>
           <div className="cabinet-activities__tip">
