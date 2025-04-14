@@ -93,6 +93,22 @@
   font-family: var(--montserrat);
 }
 
+.cabinet-activities__caption-item.date {
+  text-indent: 8px;
+}
+
+.cabinet-activities__caption-item.name {
+  text-indent: 5px;
+}
+
+.cabinet-activities__caption-item.description {
+  text-indent: -3px;
+}
+
+.cabinet-activities__caption-item.status {
+  text-indent: -9px;
+}
+
 .cabinet-activities__activities-list {
   display: flex;
   flex-direction: column;
