@@ -54,7 +54,11 @@ const ActivitiesList = () => {
         </button>
       );
 
-    return <li className="cabinet-activities__list-item">{spanOrButton}</li>;
+    return (
+      <li className="cabinet-activities__list-item" key={index}>
+        {spanOrButton}
+      </li>
+    );
   });
 
   return (
