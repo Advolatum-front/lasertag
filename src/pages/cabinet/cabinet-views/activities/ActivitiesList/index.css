@@ -1,5 +1,4 @@
 :root {
-  /*  grid-template-columns: 10% 30% 40% 1fr;*/
   --date-col: 10%;
   --name-col: 30%;
   --description-col: 35%;
@@ -86,10 +85,6 @@
 .cabinet-activities__captions-list {
   display: grid;
   display: flex;
-  /*  grid-template-columns: var(--date-col) var(--name-col) var(--description-col) var(
-      --status-col
-    );*/
-  /*  grid-template-areas: "date name description status";*/
   margin: 0 0 10px 10px;
   padding: 0;
   list-style: none;
@@ -104,28 +99,24 @@
 .cabinet-activities__caption-item.date {
   text-indent: 8px;
   width: var(--date-col);
-  /*  grid-area: date;*/
   order: 1;
 }
 
 .cabinet-activities__caption-item.name {
   text-indent: 5px;
   width: var(--name-col);
-  /*  grid-area: name;*/
   order: 2;
 }
 
 .cabinet-activities__caption-item.description {
   text-indent: -3px;
   width: var(--description-col);
-  /*  grid-area: description;*/
   order: 3;
 }
 
 .cabinet-activities__caption-item.status {
   text-indent: -9px;
   width: var(--status-col);
-  /*  grid-area: status;*/
   order: 4;
 }
 
