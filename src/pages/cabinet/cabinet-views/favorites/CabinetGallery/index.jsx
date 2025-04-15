@@ -20,11 +20,11 @@ const CabinetGallery = () => {
       value: GF_ALL,
     },
     {
-      caption: "Мои",
+      caption: "Фото",
       value: GF_PHOTO,
     },
     {
-      caption: "Доступные",
+      caption: "Видео",
       value: GF_VIDEO,
     },
   ];
@@ -53,9 +53,7 @@ const CabinetGallery = () => {
   return (
     <div className="cabinet-gallery">
       <h1 className="cabinet-gallery__header">Избранное</h1>
-      <div className="cabinet-gallery__filter-wrapper">
-        <ul className="cabinet-gallery__filter">{filterListItems}</ul>
-      </div>
+      <ul className="cabinet-gallery__filter">{filterListItems}</ul>
       <ul className="cabinet-gallery__media-list">
         <li className="cabinet-gallery__media-list-item">
           <img
