@@ -21,7 +21,10 @@ import CurrentActivityPage from "./pages/activities/CurrentActivityPage";
 import IndexCabinet from "./pages/cabinet/IndexCabinet";
 import Index from "./pages/cabinet/cabinet-views/Index";
 import MyProfile from "./pages/cabinet/cabinet-views/MyProfile";
-import Favorites from "./pages/cabinet/cabinet-views/Favorites";
+
+import CabinetSlider from "./pages/cabinet/cabinet-views/favorites/CabinetSlider";
+import CabinetGallery from "./pages/cabinet/cabinet-views/favorites/CabinetGallery";
+
 import ActivitiesList from "./pages/cabinet/cabinet-views/activities/ActivitiesList";
 import CabinetActivityPage from "./pages/cabinet/cabinet-views/activities/CabinetActivityPage";
 import ActivityRequestForm from "./pages/cabinet/cabinet-views/activities/ActivityRequestForm";
@@ -70,7 +73,8 @@ function App() {
             <Route path="myprofile" element={<MyProfile />} />
             <Route path="activities" element={<ActivitiesList />} />
             <Route path="activities/id" element={<CabinetActivityPage />} />
-            <Route path="favorites" element={<Favorites />} />
+            <Route path="favorites" element={<CabinetGallery />} />
+            <Route path="favorites/id" element={<CabinetSlider />} />
             <Route
               path="activities/id/request"
               element={<ActivityRequestForm />}
