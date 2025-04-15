@@ -2,8 +2,9 @@
   --elements-per-row: 5;
   --list-padding-x: 15px;
   --elements-gap: 10px;
-  --element-height: 80px;
-  --elements-list-width: 800px;
+  --element-height: 130px;
+  --cabinet-menu-width: 280px;
+  --elements-list-width: calc(90vw - var(--cabinet-menu-width));
   --element-width: calc(
     (
         var(--elements-list-width) - 2 * var(--list-padding-x) -
@@ -35,7 +36,7 @@
   display: grid;
   grid-template-columns: repeat(var(--elements-per-row), var(--element-width));
   border-radius: 20px;
-  align-items: center;
+  justify-content: center;
   height: 300px;
   overflow: auto;
 }
