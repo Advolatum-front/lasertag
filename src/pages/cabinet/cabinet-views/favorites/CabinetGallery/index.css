@@ -1,14 +1,14 @@
 :root {
-  --thumbnails-per-row: 5;
+  --elements-per-row: 5;
   --list-padding-x: 15px;
-  --thumbnails-gap: 10px;
-  --thumbnail-height: 80px;
-  --thumbnails-list-width: 90%;
-  --thumbnail-width: calc(
+  --elements-gap: 10px;
+  --element-height: 80px;
+  --elements-list-width: 800px;
+  --element-width: calc(
     (
-        var(--thumbnails-list-width) - 2 * var(--list-padding-x) -
-          var(--thumbnails-gap) * (var(--thumbnails-per-row) - 1)
-      ) / var(--thumbnails-per-row)
+        var(--elements-list-width) - 2 * var(--list-padding-x) -
+          var(--elements-gap) * (var(--elements-per-row) - 1)
+      ) / var(--elements-per-row)
   );
 }
 
@@ -28,15 +28,12 @@
 .cabinet-gallery__media-list {
   margin: 0 auto 20px;
   padding: var(--list-padding-x);
-  gap: var(--thumbnails-gap);
+  gap: var(--elements-gap);
   background-color: #f1f1f1;
   list-style: none;
-  width: var(--thumbnails-list-width);
+  width: var(--elements-list-width);
   display: grid;
-  grid-template-columns: repeat(
-    var(--thumbnails-per-row),
-    var(--thumbnail-width)
-  );
+  grid-template-columns: repeat(var(--elements-per-row), var(--element-width));
   border-radius: 20px;
   align-items: center;
   height: 300px;
@@ -45,8 +42,8 @@
 
 .cabinet-gallery__photo,
 .cabinet-gallery__video {
-  width: var(--thumbnail-width);
-  height: var(--thumbnail-height);
+  width: var(--element-width);
+  height: var(--element-height);
   border-radius: 10px;
 }
 

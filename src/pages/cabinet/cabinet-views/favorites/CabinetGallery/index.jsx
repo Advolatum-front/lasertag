@@ -16,6 +16,51 @@ const CabinetGallery = () => {
             />
           </Link>
         </li>
+        <li className="cabinet-gallery__media-list-item">
+          <Link to="/" className="cabinet-gallery__link">
+            <img
+              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              alt=""
+              className="cabinet-gallery__photo"
+            />
+          </Link>
+        </li>
+        <li className="cabinet-gallery__media-list-item">
+          <Link to="/" className="cabinet-gallery__link">
+            <img
+              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              alt=""
+              className="cabinet-gallery__photo"
+            />
+          </Link>
+        </li>
+        <li className="cabinet-gallery__media-list-item">
+          <Link to="/" className="cabinet-gallery__link">
+            <img
+              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              alt=""
+              className="cabinet-gallery__photo"
+            />
+          </Link>
+        </li>
+        <li className="cabinet-gallery__media-list-item">
+          <Link to="/" className="cabinet-gallery__link">
+            <img
+              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              alt=""
+              className="cabinet-gallery__photo"
+            />
+          </Link>
+        </li>
+        <li className="cabinet-gallery__media-list-item">
+          <Link to="/" className="cabinet-gallery__link">
+            <img
+              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              alt=""
+              className="cabinet-gallery__photo"
+            />
+          </Link>
+        </li>
       </ul>
     </div>
   );
