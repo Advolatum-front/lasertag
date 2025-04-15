@@ -26,6 +26,65 @@
   text-transform: uppercase;
 }
 
+.cabinet-gallery__filter-wrapper {
+  width: 50%;
+  margin: 0 0 30px 80px;
+}
+
+/**************************************************************/
+
+.cabinet-gallery__filter {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cabinet-gallery__filter-radio {
+  display: none;
+}
+
+.cabinet-gallery__list-item {
+  flex-grow: 1;
+  width: 125px;
+}
+
+.cabinet-gallery__option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  padding: 7px 0;
+  border: none;
+  border: 3px solid var(--light-blue);
+  background: none;
+  font-family: var(--open-sans);
+  font-size: 20px;
+  background-color: var(--light-blue);
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s linear,
+    border-color 0.2s linear;
+}
+
+.cabinet-gallery__filter-radio:checked + .cabinet-gallery__option {
+  background-color: #fff;
+  color: var(--light-blue);
+  border-color: var(--light-blue);
+  cursor: default;
+}
+
+.cabinet-gallery__option:hover {
+  background-color: var(--medium-blue);
+  border-color: var(--medium-blue);
+}
+
+/**************************************************************/
+
 .cabinet-gallery__media-list {
   margin: 0 auto 20px;
   padding: var(--list-padding-x);
@@ -111,4 +170,11 @@
 .cabinet-gallery__button-unlike .cabinet-gallery__cross-ico {
   width: 100%;
   height: 100%;
+}
+
+@media (max-width: 1152px) {
+  .cabinet-gallery__filter {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
