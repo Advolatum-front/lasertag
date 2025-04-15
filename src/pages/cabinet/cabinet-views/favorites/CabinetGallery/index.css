@@ -37,12 +37,13 @@
   grid-template-columns: repeat(var(--elements-per-row), var(--element-width));
   border-radius: 20px;
   justify-content: center;
-  height: 300px;
+  max-height: 500px;
   overflow: auto;
 }
 
 .cabinet-gallery__media-list-item {
   position: relative;
+  overflow: hidden;
 }
 
 .cabinet-gallery__media-list-item:has(img):after,
@@ -60,6 +61,17 @@
 
 .cabinet-gallery__media-list-item:has(video):after {
   background-image: url("../../../../../svg/video-ico.svg");
+}
+
+.cabinet-gallery__media-list-item:has(video):before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  border-radius: 20px;
 }
 
 .cabinet-gallery__element {
