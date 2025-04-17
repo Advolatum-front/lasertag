@@ -20,6 +20,17 @@ const CabinetSlider = () => {
         navigation={true}
         modules={[Navigation]}
         className="cabinet-slider"
+        navigation={{
+          prevEl: ".cabinet-slider__prev",
+          nextEl: ".cabinet-slider__next",
+        }}
+        onInit={(swiper) => {
+          // Инициализация Swiper
+          swiper.params.navigation.prevEl = ".cabinet-slider__prev";
+          swiper.params.navigation.nextEl = ".cabinet-slider__next";
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
       >
         <SwiperSlide className="cabinet-slider__slide">
           <img
@@ -52,6 +63,10 @@ const CabinetSlider = () => {
           </video>
         </SwiperSlide>
       </Swiper>
+      <div className="custom-navigation cabinet-slider-nav">
+        <button className="cabinet-slider__prev"></button>
+        <button className="cabinet-slider__next"></button>
+      </div>
     </div>
   );
 };
