@@ -17,7 +17,6 @@ const CabinetSlider = () => {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
-        navigation={true}
         modules={[Navigation]}
         className="cabinet-slider"
         navigation={{
