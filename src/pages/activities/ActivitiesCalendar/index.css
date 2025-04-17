@@ -1,0 +1,118 @@
+.calendar-section {
+  background-image: url("../../../img/activities/bg.webp");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding: 25px 20px;
+  font-family: var(--open-sans);
+}
+
+.calendar-section__header,
+.calendar-section__closest-activities-header {
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 45px;
+  text-align: right;
+  margin-top: 0;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.calendar-section__closest-activities-header {
+  text-align: left;
+  font-size: 28px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.calendar-section__closest-activities-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.calendar-section__closest-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 5px;
+  flex-grow: 1;
+}
+
+.calendar-section__closest-activity-date {
+  --width: 145px;
+  --height: calc(var(--width) * 0.588);
+  width: var(--width);
+  height: var(--height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  background-image: url("../../../img/activities/closest-act-date-bg.webp");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.calendar-section__closest-activity-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calendar-section__closest-activity-top-part {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-section__closest-activity-header {
+  margin: 0;
+  width: 80%;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--medium-blue);
+}
+
+.calendar-section__link-more {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f00;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 20px;
+  transition: background-color 0.2s linear;
+}
+
+.calendar-section__link-more:hover {
+  background-color: var(--medium-blue);
+}
+
+.calendar-section__description {
+  font-family: var(--montserrat);
+  color: var(--medium-blue);
+  font-size: 13px;
+
+  /*Эти строки нужны для того, чтобы текст не превышал двух строк,
+а в случае превышения текст обрывался и в конце ставилось многоточие*/
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+}

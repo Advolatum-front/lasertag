@@ -11,10 +11,10 @@ const ActivitiesCalendar = () => {
       </h2>
       <ul className="calendar-section__closest-activities-list">
         <li className="calendar-section__closest-activity-item">
-          <div className="calendar-section__activity-date">03.12</div>
-          <div className="calendar-section__activity-info">
-            <div className="calendar-section__activity-top-part">
-              <h3 className="calendar-section__activity-header">
+          <div className="calendar-section__closest-activity-date">03.12</div>
+          <div className="calendar-section__closest-activity-info">
+            <div className="calendar-section__closest-activity-top-part">
+              <h3 className="calendar-section__closest-activity-header">
                 Тренировочный бой юниоров
               </h3>
               <Link className="calendar-section__link-more">Подробнее</Link>
@@ -26,11 +26,11 @@ const ActivitiesCalendar = () => {
           </div>
         </li>
         <li className="calendar-section__closest-activity-item">
-          <div className="calendar-section__activity-date">03.12</div>
-          <div className="calendar-section__activity-info">
-            <div className="calendar-section__activity-top-part">
-              <h3 className="calendar-section__activity-header">
-                Тренировочный бой юниоров
+          <div className="calendar-section__closest-activity-date">03.12</div>
+          <div className="calendar-section__closest-activity-info">
+            <div className="calendar-section__closest-activity-top-part">
+              <h3 className="calendar-section__closest-activity-header">
+                Турнир полуфинала Запада
               </h3>
               <Link className="calendar-section__link-more">Подробнее</Link>
             </div>
@@ -41,11 +41,11 @@ const ActivitiesCalendar = () => {
           </div>
         </li>
         <li className="calendar-section__closest-activity-item">
-          <div className="calendar-section__activity-date">03.12</div>
-          <div className="calendar-section__activity-info">
-            <div className="calendar-section__activity-top-part">
-              <h3 className="calendar-section__activity-header">
-                Тренировочный бой юниоров
+          <div className="calendar-section__closest-activity-date">03.12</div>
+          <div className="calendar-section__closest-activity-info">
+            <div className="calendar-section__closest-activity-top-part">
+              <h3 className="calendar-section__closest-activity-header">
+                Мировая Лига лазерного боя
               </h3>
               <Link className="calendar-section__link-more">Подробнее</Link>
             </div>
