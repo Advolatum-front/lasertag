@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import YearsSpinner from "../../../components/YearsSpinner";
+
 import "./index.css";
 
 const ActivitiesCalendar = () => {
@@ -56,6 +58,8 @@ const ActivitiesCalendar = () => {
           </div>
         </li>
       </ul>
+
+      <YearsSpinner />
     </section>
   );
 };
