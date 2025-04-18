@@ -116,3 +116,32 @@
   text-overflow: ellipsis;
   white-space: normal;
 }
+
+@media (max-width: 1360px) {
+  .calendar-section__closest-activities-list {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 75vw;
+  }
+
+  .calendar-section__closest-activity-item {
+    background-color: var(--light-grey);
+    border: 1px solid var(--dark-blue);
+  }
+}
+
+@media (max-width: 480px) {
+  .calendar-section__closest-activity-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calendar-section__closest-activity-date {
+    background: var(--light-blue);
+    padding: 3px 5px;
+    align-self: flex-start;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+  }
+}
