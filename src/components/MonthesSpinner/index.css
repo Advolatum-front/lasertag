@@ -1,0 +1,20 @@
+.years-spinner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.years-spinner__prev,
+.years-spinner__next {
+  border: none;
+  padding: 0;
+  font-family: var(--open-sans);
+  background: none;
+  cursor: pointer;
+  opacity: 0.8;
+  font-size: 18px;
+}
+
+.years-spinner__current {
+  font-size: 30px;
+}

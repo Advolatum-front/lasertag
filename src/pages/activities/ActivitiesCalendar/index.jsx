@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+import { monthesNames } from "../../../utils/date/monthesNames.js";
+
 import YearsSpinner from "../../../components/YearsSpinner";
+import MonthesSpinner from "../../../components/MonthesSpinner";
 
 import "./index.css";
 
 const ActivitiesCalendar = () => {
   const [calendarYear, setCalendarYear] = useState(new Date().getFullYear());
+  const [calendarMonth, setCalendarMonth] = useState(new Date().getMonth());
 
   const decreaseYear = () => {
     setCalendarYear(calendarYear - 1);
@@ -14,6 +18,18 @@ const ActivitiesCalendar = () => {
 
   const increaseYear = () => {
     setCalendarYear(calendarYear + 1);
+  };
+
+  const decreaseMonth = () => {
+    const newVal =
+      calendarMonth === 0 ? monthesNames.length - 1 : calendarMonth - 1;
+    setCalendarMonth(newVal);
+  };
+
+  const increaseMonth = () => {
+    const newVal =
+      calendarMonth === monthesNames.length - 1 ? 0 : calendarMonth + 1;
+    setCalendarMonth(newVal);
   };
 
   return (
@@ -74,6 +90,13 @@ const ActivitiesCalendar = () => {
         startValue={calendarYear}
         onIncrease={increaseYear}
         onDecrease={decreaseYear}
+      />
+
+      <MonthesSpinner
+        startValue={calendarMonth}
+        values={monthesNames}
+        onDecrease={decreaseMonth}
+        onIncrease={increaseMonth}
       />
     </section>
   );
