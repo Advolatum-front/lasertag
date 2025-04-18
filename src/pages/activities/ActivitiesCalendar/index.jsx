@@ -59,7 +59,7 @@ const ActivitiesCalendar = () => {
         </li>
       </ul>
 
-      <YearsSpinner />
+      <YearsSpinner startValue={2025} />
     </section>
   );
 };
