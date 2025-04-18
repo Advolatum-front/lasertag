@@ -3,16 +3,18 @@ import { useState } from "react";
 import "./index.css";
 
 const YearsSpinner = (props) => {
-  const { startValue } = props;
+  const { startValue, onDecrease, onIncrease } = props;
 
   const [spinnerValue, setSpinnerValue] = useState(startValue);
 
   const decrease = () => {
     setSpinnerValue(spinnerValue - 1);
+    onDecrease();
   };
 
   const increase = () => {
     setSpinnerValue(spinnerValue + 1);
+    onIncrease();
   };
 
   return (

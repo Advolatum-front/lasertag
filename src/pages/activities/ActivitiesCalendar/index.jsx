@@ -1,10 +1,21 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import YearsSpinner from "../../../components/YearsSpinner";
 
 import "./index.css";
 
 const ActivitiesCalendar = () => {
+  const [calendarYear, setCalendarYear] = useState(new Date().getFullYear());
+
+  const decreaseYear = () => {
+    setCalendarYear(calendarYear - 1);
+  };
+
+  const increaseYear = () => {
+    setCalendarYear(calendarYear + 1);
+  };
+
   return (
     <section className="calendar-section">
       <h1 className="calendar-section__header">Мероприятия</h1>
@@ -59,7 +70,11 @@ const ActivitiesCalendar = () => {
         </li>
       </ul>
 
-      <YearsSpinner startValue={2025} />
+      <YearsSpinner
+        startValue={calendarYear}
+        onIncrease={increaseYear}
+        onDecrease={decreaseYear}
+      />
     </section>
   );
 };
