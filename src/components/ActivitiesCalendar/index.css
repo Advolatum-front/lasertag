@@ -62,7 +62,6 @@
   bottom: 0;
   right: 0;
   border: 1px solid var(--light-blue);
-  border: 1px solid red;
 }
 
 .activities-calendar__calendar-day:first-child .activities-calendar__link {
