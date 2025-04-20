@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./index.css";
 
 const MonthesSpinner = (props) => {
-  const { startValue, values, onDecrease, onIncrease } = props;
+  const { startValue, values, onDecrease, onIncrease, className = "" } = props;
 
   const [spinnerValue, setSpinnerValue] = useState(startValue);
 
@@ -27,8 +27,12 @@ const MonthesSpinner = (props) => {
   const nextCaption =
     values[spinnerValue === values.length - 1 ? 0 : spinnerValue + 1];
 
+  const monthesSpinnerClassName = className
+    ? `monthes-spinner ${className}`
+    : `monthes-spinner`;
+
   return (
-    <div className="monthes-spinner">
+    <div className={monthesSpinnerClassName}>
       <button className="monthes-spinner__prev" onClick={decrease}>
         {prevCaption}
       </button>

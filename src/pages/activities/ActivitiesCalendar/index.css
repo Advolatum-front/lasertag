@@ -6,6 +6,10 @@
   font-family: var(--open-sans);
 }
 
+.lkl {
+  color: red;
+}
+
 .calendar-section__header,
 .calendar-section__closest-activities-header {
   text-transform: uppercase;
