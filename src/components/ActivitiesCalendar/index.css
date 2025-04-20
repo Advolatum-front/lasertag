@@ -27,6 +27,14 @@
   position: relative;
 }
 
+.neighbour-month {
+  background-color: #eaeaea;
+}
+
+.neighbour-month span {
+  opacity: 0.5;
+}
+
 .activities-calendar__day-number {
   align-self: flex-end;
   color: #f00;
