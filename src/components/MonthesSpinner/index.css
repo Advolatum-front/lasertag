@@ -1,11 +1,11 @@
-.years-spinner {
+.monthes-spinner {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.years-spinner__prev,
-.years-spinner__next {
+.monthes-spinner__prev,
+.monthes-spinner__next {
   border: none;
   padding: 0;
   font-family: var(--open-sans);
@@ -15,6 +15,6 @@
   font-size: 18px;
 }
 
-.years-spinner__current {
+.monthes-spinner__current {
   font-size: 30px;
 }

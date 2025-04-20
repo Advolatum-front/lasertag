@@ -28,14 +28,14 @@ const MonthesSpinner = (props) => {
     values[spinnerValue === values.length - 1 ? 0 : spinnerValue + 1];
 
   return (
-    <div className="years-spinner">
-      <button className="years-spinner__prev" onClick={decrease}>
+    <div className="monthes-spinner">
+      <button className="monthes-spinner__prev" onClick={decrease}>
         {prevCaption}
       </button>
 
-      <span className="years-spinner__current">{currCaption}</span>
+      <span className="monthes-spinner__current">{currCaption}</span>
 
-      <button className="years-spinner__next" onClick={increase}>
+      <button className="monthes-spinner__next" onClick={increase}>
         {nextCaption}
       </button>
     </div>
