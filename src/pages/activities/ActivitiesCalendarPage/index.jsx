@@ -5,6 +5,7 @@ import { monthesNames } from "../../../utils/date/monthesNames.js";
 
 import YearsSpinner from "../../../components/YearsSpinner";
 import MonthesSpinner from "../../../components/MonthesSpinner";
+import ActivitiesCalendar from "../../../components/ActivitiesCalendar";
 
 import "./index.css";
 
@@ -92,7 +93,6 @@ const ActivitiesCalendarPage = () => {
         startValue={calendarYear}
         onIncrease={increaseYear}
         onDecrease={decreaseYear}
-        className="lkl"
       />
 
       <MonthesSpinner
@@ -101,6 +101,7 @@ const ActivitiesCalendarPage = () => {
         onDecrease={decreaseMonth}
         onIncrease={increaseMonth}
       />
+      <ActivitiesCalendar />
     </section>
   );
 };
