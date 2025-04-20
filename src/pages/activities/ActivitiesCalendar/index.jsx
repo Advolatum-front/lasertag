@@ -99,7 +99,6 @@ const ActivitiesCalendar = () => {
         values={monthesNames}
         onDecrease={decreaseMonth}
         onIncrease={increaseMonth}
-        className="lkl"
       />
     </section>
   );
