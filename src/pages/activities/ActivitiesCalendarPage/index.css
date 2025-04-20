@@ -127,6 +127,10 @@
   gap: 10px;
 }
 
+.calendar-section__spinner {
+  color: #fff;
+}
+
 @media (max-width: 1152px) {
   .calendar-section__closest-activity-item {
     display: flex;

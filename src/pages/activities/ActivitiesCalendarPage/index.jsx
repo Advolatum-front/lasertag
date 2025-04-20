@@ -94,6 +94,7 @@ const ActivitiesCalendarPage = () => {
           startValue={calendarYear}
           onIncrease={increaseYear}
           onDecrease={decreaseYear}
+          className="calendar-section__spinner"
         />
 
         <MonthesSpinner
@@ -101,6 +102,7 @@ const ActivitiesCalendarPage = () => {
           values={monthesNames}
           onDecrease={decreaseMonth}
           onIncrease={increaseMonth}
+          className="calendar-section__spinner"
         />
         <ActivitiesCalendar />
       </div>
