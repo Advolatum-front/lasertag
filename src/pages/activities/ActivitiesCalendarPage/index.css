@@ -120,6 +120,13 @@
   white-space: normal;
 }
 
+.calendar-section__calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
 @media (max-width: 1152px) {
   .calendar-section__closest-activity-item {
     display: flex;
