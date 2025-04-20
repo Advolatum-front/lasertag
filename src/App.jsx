@@ -17,7 +17,7 @@ import GallerySliderPage from "./pages/GallerySliderPage";
 import News from "./pages/News";
 import CurrentNews from "./pages/CurrentNews";
 import CurrentActivityPage from "./pages/activities/CurrentActivityPage";
-import ActivitiesCalendar from "./pages/activities/ActivitiesCalendar";
+import ActivitiesCalendarPage from "./pages/activities/ActivitiesCalendarPage";
 
 import IndexCabinet from "./pages/cabinet/IndexCabinet";
 import Index from "./pages/cabinet/cabinet-views/Index";
@@ -62,7 +62,11 @@ function App() {
           <Route exact path="/registration" element={<Registration />} />
           <Route exact path="/gallery" element={<AlbumSelector />} />
           <Route exact path="/gallery/album" element={<AlbumContent />} />
-          <Route exact path="/activities" element={<ActivitiesCalendar />} />
+          <Route
+            exact
+            path="/activities"
+            element={<ActivitiesCalendarPage />}
+          />
           <Route
             exact
             path="/activities/id"

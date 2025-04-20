@@ -8,7 +8,7 @@ import MonthesSpinner from "../../../components/MonthesSpinner";
 
 import "./index.css";
 
-const ActivitiesCalendar = () => {
+const ActivitiesCalendarPage = () => {
   const [calendarYear, setCalendarYear] = useState(new Date().getFullYear());
   const [calendarMonth, setCalendarMonth] = useState(new Date().getMonth());
 
@@ -92,6 +92,7 @@ const ActivitiesCalendar = () => {
         startValue={calendarYear}
         onIncrease={increaseYear}
         onDecrease={decreaseYear}
+        className="lkl"
       />
 
       <MonthesSpinner
@@ -104,4 +105,4 @@ const ActivitiesCalendar = () => {
   );
 };
 
-export default ActivitiesCalendar;
+export default ActivitiesCalendarPage;
