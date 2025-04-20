@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: background-color 0.2s linear;
 }
 
 .neighbour-month {
@@ -39,11 +40,13 @@
   align-self: flex-end;
   color: #f00;
   margin-bottom: auto;
+  transition: color 0.2s linear;
 }
 
 .activities-calendar__activity-name {
   color: var(--medium-blue);
   font-size: 14px;
+  transition: color 0.2s linear;
 
   /*Эти строки нужны для того, чтобы текст не превышал двух строк,
 а в случае превышения текст обрывался и в конце ставилось многоточие*/
@@ -62,6 +65,14 @@
   bottom: 0;
   right: 0;
   border: 1px solid var(--light-blue);
+}
+
+.activities-calendar__calendar-day:has(.activities-calendar__link):hover {
+  background-color: var(--medium-blue);
+}
+
+.activities-calendar__calendar-day:has(.activities-calendar__link):hover span {
+  color: #fff;
 }
 
 .activities-calendar__calendar-day:first-child .activities-calendar__link {
