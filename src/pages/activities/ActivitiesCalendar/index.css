@@ -145,3 +145,17 @@
     text-align: center;
   }
 }
+
+@media (max-width: 860px) {
+  .calendar-section__closest-activities-list {
+    flex-direction: column;
+  }
+
+  .calendar-section__closest-activity-item {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: var(--light-grey);
+    border: 1px solid var(--dark-blue);
+  }
+}
