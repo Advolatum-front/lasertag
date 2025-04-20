@@ -44,7 +44,10 @@ const ActivitiesCalendar = () => {
           <div className="calendar-section__closest-activity-info">
             <div className="calendar-section__closest-activity-top-part">
               <h3 className="calendar-section__closest-activity-header">
-                Тренировочный бой юниоров
+                Тренировочный бой юниоров Тренировочный бой юниоров
+                Тренировочный бой юниоров Тренировочный бой юниоров
+                Тренировочный бой юниоров Тренировочный бой юниоров
+                Тренировочный бой юниоров Тренировочный бой юниоров
               </h3>
               <Link className="calendar-section__link-more">Подробнее</Link>
             </div>
