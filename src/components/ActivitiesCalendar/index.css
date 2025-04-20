@@ -1,0 +1,75 @@
+.activities-calendar__days-of-week,
+.activities-calendar__calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 2px;
+}
+
+.activities-calendar__day-caption {
+  color: #fff;
+  text-align: center;
+}
+
+.activities-calendar__calendar {
+  background-color: var(--light-grey);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.activities-calendar__calendar-day {
+  padding: 10px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.activities-calendar__day-number {
+  align-self: flex-end;
+  color: #f00;
+  margin-bottom: auto;
+}
+
+.activities-calendar__activity-name {
+  color: var(--medium-blue);
+  font-size: 14px;
+
+  /*Эти строки нужны для того, чтобы текст не превышал двух строк,
+а в случае превышения текст обрывался и в конце ставилось многоточие*/
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.activities-calendar__link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border: 1px solid var(--light-blue);
+  border: 1px solid red;
+}
+
+.activities-calendar__calendar-day:first-child .activities-calendar__link {
+  border-radius: 20px 0 0 0;
+}
+
+.activities-calendar__calendar-day:nth-child(7) .activities-calendar__link {
+  border-radius: 0 20px 0 0;
+}
+
+.activities-calendar__calendar-day:nth-last-child(7)
+  .activities-calendar__link {
+  border-radius: 0 0 0 20px;
+}
+
+.activities-calendar__calendar-day:last-child .activities-calendar__link {
+  border-radius: 0 0 20px 0;
+}

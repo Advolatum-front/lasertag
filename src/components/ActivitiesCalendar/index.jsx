@@ -21,49 +21,129 @@ const ActivitiesCalendar = () => {
           <span className="activities-calendar__activity-name">
             Тренировочный бой юниоров
           </span>
-          <Link to="/" className="activities-calendar-__link" />
+          <Link to="/" className="activities-calendar__link" />
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
         </li>
         <li className="activities-calendar__calendar-day">
           <span className="activities-calendar__day-number">01</span>
           <span className="activities-calendar__activity-name">
             Тренировочный бой юниоров
           </span>
-          <Link to="/" className="activities-calendar-__link" />
+          <Link to="/" className="activities-calendar__link" />
         </li>
         <li className="activities-calendar__calendar-day">
           <span className="activities-calendar__day-number">01</span>
           <span className="activities-calendar__activity-name">
             Тренировочный бой юниоров
           </span>
-          <Link to="/" className="activities-calendar-__link" />
         </li>
         <li className="activities-calendar__calendar-day">
           <span className="activities-calendar__day-number">01</span>
           <span className="activities-calendar__activity-name">
             Тренировочный бой юниоров
           </span>
-          <Link to="/" className="activities-calendar-__link" />
         </li>
         <li className="activities-calendar__calendar-day">
           <span className="activities-calendar__day-number">01</span>
           <span className="activities-calendar__activity-name">
             Тренировочный бой юниоров
           </span>
-          <Link to="/" className="activities-calendar-__link" />
         </li>
         <li className="activities-calendar__calendar-day">
           <span className="activities-calendar__day-number">01</span>
           <span className="activities-calendar__activity-name">
             Тренировочный бой юниоров
           </span>
-          <Link to="/" className="activities-calendar-__link" />
+          <Link to="/" className="activities-calendar__link" />
         </li>
         <li className="activities-calendar__calendar-day">
           <span className="activities-calendar__day-number">01</span>
           <span className="activities-calendar__activity-name">
             Тренировочный бой юниоров
           </span>
-          <Link to="/" className="activities-calendar-__link" />
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+          <Link to="/" className="activities-calendar__link" />
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+          <Link to="/" className="activities-calendar__link" />
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+        </li>
+        <li className="activities-calendar__calendar-day">
+          <span className="activities-calendar__day-number">01</span>
+          <span className="activities-calendar__activity-name">
+            Тренировочный бой юниоров
+          </span>
+          <Link to="/" className="activities-calendar__link" />
         </li>
       </ul>
     </div>
