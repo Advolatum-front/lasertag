@@ -126,7 +126,7 @@
 }
 
 .calendar-section__calendar {
-  /*  width: auto;*/
+  width: 80vw;
   /*  margin: 0;*/
   max-width: 1152px;
   align-self: center;
@@ -183,7 +183,6 @@
   .calendar-section__calendar {
     width: auto;
     margin: 0;
-    /*    align-self: flex-start;*/
     align-self: initial;
   }
 }
