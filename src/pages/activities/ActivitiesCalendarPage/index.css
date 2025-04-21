@@ -156,6 +156,10 @@
     width: auto;
     text-align: center;
   }
+
+  .calendar-section__spinner {
+    color: #000;
+  }
 }
 
 @media (max-width: 860px) {
