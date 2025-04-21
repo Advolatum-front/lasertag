@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 const ActivitiesCalendar = (props) => {
-  const { month, year } = props;
+  const { month, year, className = "" } = props;
 
   const daysOfWeekCaptions = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
   const daysOfWeekItems = daysOfWeekCaptions.map((item, index) => {
@@ -93,8 +93,12 @@ const ActivitiesCalendar = (props) => {
 
     */
 
+  const calendarWrapperClassName = className
+    ? `activities-calendar-wrapper ${className}`
+    : `activities-calendar-wrapper`;
+
   return (
-    <div className="activities-calendar-wrapper">
+    <div className={calendarWrapperClassName}>
       <ul className="activities-calendar__days-of-week">{daysOfWeekItems}</ul>
       <ul className="activities-calendar__calendar">{calendarDaysItems}</ul>
     </div>

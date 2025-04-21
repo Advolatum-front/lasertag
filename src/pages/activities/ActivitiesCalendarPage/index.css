@@ -130,6 +130,11 @@
   align-self: center;
 }
 
+.calendar-section__calendar {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
 @media (max-width: 1152px) {
   .calendar-section__closest-activity-item {
     display: flex;
@@ -171,5 +176,10 @@
     width: auto;
     background-color: var(--light-grey);
     border: 1px solid var(--dark-blue);
+  }
+
+  .calendar-section__calendar {
+    width: auto;
+    margin: 0;
   }
 }
