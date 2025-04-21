@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 
 import "./index.css";
 
-const ActivitiesCalendar = () => {
+const ActivitiesCalendar = (props) => {
+  const { month, year } = props;
+
   const daysOfWeekCaptions = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
   const daysOfWeekItems = daysOfWeekCaptions.map((item, index) => {
     return (
@@ -32,20 +34,10 @@ const ActivitiesCalendar = () => {
 
   const naturalNumbers = (n) => Array.from({ length: n }).map((_, i) => i + 1);
 
-  const CURRENT_MONTH_NUMBER = 4 - 1; // НАПОМИНАЮ: С НУЛЯ
+  const currentMonthLength = new Date(year, month + 1, 0).getDate();
 
-  const currentMonthLength = new Date(
-    2025,
-    CURRENT_MONTH_NUMBER + 1,
-    0,
-  ).getDate();
-
-  const previousMonthLastDay = new Date(
-    2025,
-    CURRENT_MONTH_NUMBER,
-    0,
-  ).getDate();
-  let weekDayOfMonthBegin = new Date(2025, CURRENT_MONTH_NUMBER, 1).getDay();
+  const previousMonthLastDay = new Date(year, month, 0).getDate();
+  let weekDayOfMonthBegin = new Date(year, month, 1).getDay();
   weekDayOfMonthBegin = weekDayOfMonthBegin === 0 ? 7 : weekDayOfMonthBegin;
 
   let currentMonthDays = naturalNumbers(currentMonthLength);
@@ -67,11 +59,7 @@ const ActivitiesCalendar = () => {
     return calendarDayItem(dayNumber, true);
   });
 
-  let weekDayOfMonthEnd = new Date(
-    2025,
-    CURRENT_MONTH_NUMBER,
-    currentMonthLength,
-  ).getDay();
+  let weekDayOfMonthEnd = new Date(year, month, currentMonthLength).getDay();
 
   weekDayOfMonthEnd = weekDayOfMonthEnd === 0 ? 7 : weekDayOfMonthEnd;
 
