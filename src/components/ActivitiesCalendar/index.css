@@ -1,4 +1,3 @@
-.activities-calendar__days-of-week,
 .activities-calendar__calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -74,14 +73,6 @@
 
 .activities-calendar__calendar-day:has(.activities-calendar__link):hover span {
   color: #fff;
-}
-
-.activities-calendar__calendar-day:first-child .activities-calendar__link {
-  border-radius: 20px 0 0 0;
-}
-
-.activities-calendar__calendar-day:nth-child(7) .activities-calendar__link {
-  border-radius: 0 20px 0 0;
 }
 
 .activities-calendar__calendar-day:nth-last-child(7)

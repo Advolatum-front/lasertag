@@ -106,5 +106,3 @@ const ActivitiesCalendar = (props) => {
 };
 
 export default ActivitiesCalendar;
-
-// <ul className="activities-calendar__days-of-week">{daysOfWeekItems}</ul>
