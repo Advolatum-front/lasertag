@@ -69,6 +69,7 @@ const ActivitiesCalendar = (props) => {
   });
 
   const calendarDaysItems = [
+    ...daysOfWeekItems,
     ...previousMonthDaysItems,
     ...currentMonthDaysItems,
     ...nextMonthDaysItems,
@@ -99,10 +100,11 @@ const ActivitiesCalendar = (props) => {
 
   return (
     <div className={calendarWrapperClassName}>
-      <ul className="activities-calendar__days-of-week">{daysOfWeekItems}</ul>
       <ul className="activities-calendar__calendar">{calendarDaysItems}</ul>
     </div>
   );
 };
 
 export default ActivitiesCalendar;
+
+// <ul className="activities-calendar__days-of-week">{daysOfWeekItems}</ul>

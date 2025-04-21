@@ -17,7 +17,7 @@
 .activities-calendar__calendar {
   background-color: var(--light-grey);
   border-radius: 20px;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .activities-calendar__calendar-day {
