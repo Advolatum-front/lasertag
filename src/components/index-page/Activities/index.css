@@ -9,7 +9,7 @@
   background-image: url("../../../img/index/activities/shooter.webp");
   background-repeat: no-repeat;
   background-size: contain;
-  --height: 35vw;
+  --height: 50vw;
   --width: calc(var(--height) * 0.572);
   width: var(--width);
   height: var(--height);
