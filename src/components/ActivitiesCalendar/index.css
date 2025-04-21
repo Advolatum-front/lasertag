@@ -19,6 +19,11 @@
   overflow: auto;
 }
 
+.activities-calendar__calendar::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 .activities-calendar__calendar-day {
   padding: 10px;
   background-color: #fff;
@@ -26,7 +31,6 @@
   flex-direction: column;
   position: relative;
   transition: background-color 0.2s linear;
-  /*  min-width: 120px;*/
 }
 
 .neighbour-month {
