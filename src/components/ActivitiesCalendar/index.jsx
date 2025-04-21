@@ -21,9 +21,13 @@ const ActivitiesCalendar = (props) => {
 
     const key = neighbour ? `neighbour${dayNumber}` : `current${dayNumber}`;
 
+    const dayNumberPadded = dayNumber.toString().padStart(2, "0");
+
     return (
       <li className={itemClassName} key={key}>
-        <span className="activities-calendar__day-number">{dayNumber}</span>
+        <span className="activities-calendar__day-number">
+          {dayNumberPadded}
+        </span>
         <span className="activities-calendar__activity-name">
           Тренировочный бой юниоров
         </span>
