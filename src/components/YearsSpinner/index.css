@@ -14,6 +14,12 @@
   opacity: 0.8;
   font-size: 18px;
   color: inherit;
+  transition: opacity 0.2s linear;
+}
+
+.years-spinner__prev:hover,
+.years-spinner__next:hover {
+  opacity: 1;
 }
 
 .years-spinner__current {

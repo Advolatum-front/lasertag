@@ -14,6 +14,12 @@
   opacity: 0.8;
   font-size: 18px;
   color: inherit;
+  transition: opacity 0.2s linear;
+}
+
+.monthes-spinner__prev:hover,
+.monthes-spinner__next:hover {
+  opacity: 1;
 }
 
 .monthes-spinner__current {
