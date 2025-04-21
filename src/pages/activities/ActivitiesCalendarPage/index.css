@@ -125,14 +125,16 @@
   gap: 10px;
 }
 
-.calendar-section__spinner {
-  color: #fff;
+.calendar-section__calendar {
+  /*  width: auto;*/
+  /*  margin: 0;*/
+  max-width: 1152px;
   align-self: center;
 }
 
-.calendar-section__calendar {
-  max-width: 1152px;
-  margin: 0 auto;
+.calendar-section__spinner {
+  color: #fff;
+  align-self: center;
 }
 
 @media (max-width: 1152px) {
@@ -181,5 +183,7 @@
   .calendar-section__calendar {
     width: auto;
     margin: 0;
+    /*    align-self: flex-start;*/
+    align-self: initial;
   }
 }

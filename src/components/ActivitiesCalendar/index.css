@@ -26,6 +26,7 @@
   flex-direction: column;
   position: relative;
   transition: background-color 0.2s linear;
+  /*  min-width: 120px;*/
 }
 
 .neighbour-month {
@@ -47,6 +48,8 @@
   color: var(--medium-blue);
   font-size: 14px;
   transition: color 0.2s linear;
+  min-height: 14px;
+  display: block;
 
   /*Эти строки нужны для того, чтобы текст не превышал двух строк,
 а в случае превышения текст обрывался и в конце ставилось многоточие*/

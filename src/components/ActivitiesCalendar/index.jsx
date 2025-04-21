@@ -29,7 +29,7 @@ const ActivitiesCalendar = (props) => {
           {dayNumberPadded}
         </span>
         <span className="activities-calendar__activity-name">
-          Тренировочный бой юниоров
+          {/*тренировочный бой юниоров*/}
         </span>
         <Link to="/" className="activities-calendar__link" />
       </li>
