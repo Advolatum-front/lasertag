@@ -28,10 +28,6 @@ const ActivitiesCalendar = (props) => {
         <span className="activities-calendar__day-number">
           {dayNumberPadded}
         </span>
-        <span className="activities-calendar__activity-name">
-          тренировочный бой юниоров
-        </span>
-        <Link to="/" className="activities-calendar__link" />
       </li>
     );
   };
