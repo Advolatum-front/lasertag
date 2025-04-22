@@ -93,6 +93,5 @@
   bottom: 0;
   right: 0;
   z-index: -1;
-  transform: scale(4);
-  filter: blur(25px);
+  filter: blur(50px);
 }
