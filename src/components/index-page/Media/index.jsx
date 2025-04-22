@@ -10,9 +10,13 @@ import "./index.css";
 
 const Media = () => {
   const slides = mediaSliderData.map((item, index) => {
+    const divBgStyle = {
+      backgroundImage: `url(${item})`,
+    };
+
     return (
       <SwiperSlide className="media__slide-item" key={`media-slide_${index}`}>
-        <img src={item} alt="" className="media__image-bg" />
+        <div className="media__image-bg" style={divBgStyle} />
         <img src={item} alt="" className="media__slide-item-picture" />
       </SwiperSlide>
     );
