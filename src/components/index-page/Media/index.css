@@ -81,13 +81,10 @@
   border-radius: 20px;
 }
 
-.media__slide-item {
-  position: relative;
-  overflow: hidden;
-}
-
 .media__image-bg {
   position: absolute;
+  background-size: cover;
+  background-repeat: repeat;
   left: 0;
   top: 0;
   bottom: 0;
