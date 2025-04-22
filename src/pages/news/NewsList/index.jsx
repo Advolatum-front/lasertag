@@ -121,10 +121,10 @@ const NewsList = () => {
         {slides}
       </Swiper>
       <div className="custom-navigation">
-        <button className="custom-prev">
+        <button className="custom-prev prev-news">
           <Arrow className="arrow" />
         </button>
-        <button className="custom-next">
+        <button className="custom-next next-news">
           <Arrow className="arrow" />
         </button>
       </div>
