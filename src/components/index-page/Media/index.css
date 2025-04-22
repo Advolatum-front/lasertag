@@ -92,3 +92,22 @@
   z-index: -1;
   filter: blur(50px);
 }
+
+.media__slide-item-picture {
+  position: relative;
+  max-width: 100%;
+  height: var(--media-slider-content-height);
+  border-radius: 20px;
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --media-slider-content-height: 50vw;
+  }
+}
+
+@media (max-width: 960px) {
+  :root {
+    --media-slider-content-height: 70vw;
+  }
+}
