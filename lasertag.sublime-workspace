@@ -611,6 +611,7 @@
 		"/D/lasertag/lasertag",
 		"/D/lasertag/lasertag/src",
 		"/D/lasertag/lasertag/src/components",
+		"/D/lasertag/lasertag/src/components/index-page",
 		"/D/lasertag/lasertag/src/pages",
 		"/D/lasertag/lasertag/src/pages/activities",
 		"/D/lasertag/lasertag/src/pages/AlbumSelector",
@@ -618,6 +619,10 @@
 	],
 	"file_history":
 	[
+		"/D/lasertag/lasertag/src/components/index-page/AboutUs/index.css",
+		"/D/lasertag/lasertag/src/components/index-page/Media/index.css",
+		"/D/lasertag/lasertag/src/components/index-page/Activities/index.css",
+		"/D/lasertag/lasertag/src/components/index-page/Activities/index.jsx",
 		"/D/lasertag/lasertag/src/components/ActivitiesCalendar/index.css",
 		"/D/lasertag/lasertag/src/components/ActivitiesCalendar/index.jsx",
 		"/D/lasertag/lasertag/src/pages/activities/ActivitiesCalendarPage/index.css",
@@ -693,14 +698,11 @@
 		"/D/lasertag/lasertag/src/pages/Documents/index.css",
 		"/D/lasertag/lasertag/src/components/DocumentBlock/index.jsx",
 		"/D/lasertag/lasertag/src/components/Footer/index.css",
-		"/D/lasertag/lasertag/src/components/index-page/Activities/index.css",
-		"/D/lasertag/lasertag/src/components/index-page/Media/index.css",
 		"/D/lasertag/lasertag/src/components/index-page/IndexNews/index.jsx",
 		"/D/lasertag/lasertag/src/components/index-page/IndexNews/index.css",
 		"/D/lasertag/lasertag/src/components/index-page/OurPartners/index.jsx",
 		"/D/lasertag/lasertag/src/components/index-page/OurPartners/index.css",
 		"/D/lasertag/lasertag/src/components/index-page/AboutUs/index.jsx",
-		"/D/lasertag/lasertag/src/components/index-page/AboutUs/index.css",
 		"/D/lasertag/lasertag/src/components/index-page/Definition/index.css",
 		"/D/lasertag/lasertag/src/components/index-page/Definition/index.jsx",
 		"/D/lasertag/lasertag/src/components/index-page/Hero/index.jsx",
@@ -722,7 +724,6 @@
 		"/D/lasertag/lasertag/src/App.js",
 		"/D/lasertag/lasertag/src/components/index-page/Media/index.jsx",
 		"/D/lasertag/lasertag/src/pages/IndexPage/index.css",
-		"/D/lasertag/lasertag/src/components/index-page/Activities/index.jsx",
 		"/D/lasertag/lasertag/src/pages/IndexPage/index.jsx",
 		"/D/lasertag/lasertag/src/utils/main-nav-links.js",
 		"/D/lasertag/lasertag/src/components/index-page/OurPartners/partners-data.js",
@@ -763,6 +764,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"activities__shooter",
 			"calendar-section__calendar",
 			"лазетагеров",
 			"activities-calendar__days-of-week",
@@ -889,8 +891,7 @@
 			"cabiner",
 			"aside",
 			"Index",
-			"current-activity__panel",
-			"current-activity__link-send-request"
+			"current-activity__panel"
 		],
 		"highlight": true,
 		"in_selection": false,
