@@ -1,5 +1,5 @@
 .current-news-section {
-  background-image: url("../../img/news/current-news-bg.webp");
+  background-image: url("../../../img/news/current-news-bg.webp");
   background-size: cover;
   background-position: center 0;
   padding: 8vw 0 10vw;
@@ -109,7 +109,7 @@
   --height: calc(var(--width) * 0.729);
   width: var(--width);
   height: var(--height);
-  background-image: url("../../img/news/date-bg.webp");
+  background-image: url("../../../img/news/date-bg.webp");
   background-size: contain;
   background-repeat: no-repeat;
   left: 0;

@@ -15,7 +15,7 @@ import AlbumSelector from "./pages/AlbumSelector";
 import AlbumContent from "./pages/AlbumContent";
 import GallerySliderPage from "./pages/GallerySliderPage";
 import NewsList from "./pages/news/NewsList";
-import CurrentNews from "./pages/CurrentNews";
+import CurrentNews from "./pages/news/CurrentNews";
 import CurrentActivityPage from "./pages/activities/CurrentActivityPage";
 import ActivitiesCalendarPage from "./pages/activities/ActivitiesCalendarPage";
 
