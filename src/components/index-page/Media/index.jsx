@@ -3,10 +3,21 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
+import { mediaSliderData } from "./mediaSliderData.js";
+
 import "swiper/css";
 import "./index.css";
 
 const Media = () => {
+  const slides = mediaSliderData.map((item, index) => {
+    return (
+      <SwiperSlide className="media__slide-item" key={`media-slide_${index}`}>
+        <img src={item} alt="" className="media__image-bg" />
+        <img src={item} alt="" className="media__slide-item-picture" />
+      </SwiperSlide>
+    );
+  });
+
   return (
     <article className="media">
       <header className="media__header">
@@ -30,30 +41,7 @@ const Media = () => {
         }}
         className="media__slider"
       >
-        <SwiperSlide className="media__slide-item">
-          <img
-            src="/gallery/index-slider/1.webp"
-            alt=""
-            className="media__image-bg"
-          />
-          <img
-            src="/gallery/index-slider/1.webp"
-            alt=""
-            className="media__slide-item-picture"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="media__slide-item">
-          <img
-            src="/gallery/index-slider/2.webp"
-            alt=""
-            className="media__image-bg"
-          />
-          <img
-            src="/gallery/index-slider/3.webp"
-            alt=""
-            className="media__slide-item-picture"
-          />
-        </SwiperSlide>
+        {slides}
       </Swiper>
     </article>
   );
