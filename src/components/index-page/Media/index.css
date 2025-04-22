@@ -8,7 +8,6 @@
 
 .media__header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding-left: 30px;
   margin-bottom: 30px;
@@ -17,7 +16,9 @@
 .media__logo {
   --width: 295px;
   --height: calc(var(--width) * 0.495);
+  background-size: contain;
   width: var(--width);
+  max-width: 300px;
   height: var(--height);
   background-image: url("../../../img/index/media/media-logo.webp");
   background-repeat: no-repeat;
@@ -27,6 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-left: auto;
 }
 
 .media__link {
@@ -109,5 +111,15 @@
 @media (max-width: 960px) {
   :root {
     --media-slider-content-height: 70vw;
+  }
+}
+
+@media (max-width: 640px) {
+  .media__logo {
+    display: none;
+  }
+
+  .media__blue-bar {
+    width: 90vw;
   }
 }
