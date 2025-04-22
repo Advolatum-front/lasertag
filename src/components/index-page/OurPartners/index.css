@@ -1,5 +1,6 @@
 :root {
-  --rad: 30px;
+  --partner-item-radius: 100px;
+  --partners-items-gap: 30px;
 }
 
 .our-partners {
@@ -22,7 +23,7 @@
   color: #fff;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: var(--partners-items-gap);
 }
 
 .our-partners__list-item {
@@ -30,7 +31,6 @@
   height: 125px;
   padding: 35px 15px;
   display: flex;
-  /*  grid-template-columns: 161px 1fr;*/
   gap: 15px;
   align-items: center;
 }
@@ -40,27 +40,38 @@
 }
 
 .our-partners__list-item:nth-child(1) {
-  border-radius: 0 var(--rad) 0 0;
+  border-radius: 0 var(--partner-item-radius) 0 0;
+  position: relative;
+}
+
+.our-partners__list-item:nth-child(1):after {
+  content: "";
+  position: absolute;
+  background-color: #f00;
+  border-radius: var(--partner-item-radius) 0 0 var(--partner-item-radius);
+  display: block;
+  height: var(--partners-items-gap);
+  width: 20px;
+  right: 0;
+  bottom: calc(-1 * var(--partners-items-gap));
 }
 
 .our-partners__list-item:nth-child(2) {
-  border-radius: var(--rad) var(--rad) 0 0;
+  border-radius: 0 var(--partner-item-radius) var(--partner-item-radius)
+    var(--partner-item-radius);
 }
 
-.our-partners__list-item:nth-child(3) {
-  border-radius: var(--rad) 0 0 0;
+.our-partners__list-item:nth-child(3),
+.our-partners__list-item:nth-child(5) {
+  border-radius: var(--partner-item-radius) 0 0 0;
 }
 
 .our-partners__list-item:nth-child(4) {
-  border-radius: 0 0 var(--rad) 0;
-}
-
-.our-partners__list-item:nth-child(5) {
-  border-radius: 0 0 var(--rad) var(--rad);
+  border-radius: 0 0 var(--partner-item-radius) 0;
 }
 
 .our-partners__list-item:nth-child(6) {
-  border-radius: 0 0 0 var(--rad);
+  border-radius: 0 0 0 var(--partner-item-radius);
 }
 
 .our-partners__partner-name {
@@ -70,7 +81,11 @@
 
 @media (max-width: 1152px) {
   :root {
-    --rad: 50px;
+    --partner-item-radius: 50px;
+  }
+
+  .our-partners__list-item:nth-child(1):after {
+    content: none;
   }
 
   .our-partners__list {
@@ -89,10 +104,10 @@
   }
 
   .our-partners__list-item:first-child {
-    border-radius: var(--rad) var(--rad) 0 0;
+    border-radius: var(--partner-item-radius) var(--partner-item-radius) 0 0;
   }
 
   .our-partners__list-item:last-child {
-    border-radius: 0 0 var(--rad) var(--rad);
+    border-radius: 0 0 var(--partner-item-radius) var(--partner-item-radius);
   }
 }
