@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 
 import "./index.css";
 
-const News = () => {
+const NewsList = () => {
   const newsData = [
     {
       id: 1,
@@ -133,4 +133,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default NewsList;

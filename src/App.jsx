@@ -14,7 +14,7 @@ import Registration from "./pages/Registration";
 import AlbumSelector from "./pages/AlbumSelector";
 import AlbumContent from "./pages/AlbumContent";
 import GallerySliderPage from "./pages/GallerySliderPage";
-import News from "./pages/News";
+import NewsList from "./pages/NewsList";
 import CurrentNews from "./pages/CurrentNews";
 import CurrentActivityPage from "./pages/activities/CurrentActivityPage";
 import ActivitiesCalendarPage from "./pages/activities/ActivitiesCalendarPage";
@@ -53,7 +53,7 @@ function App() {
       <main className="main">
         <Routes>
           <Route exact path="/" element={<IndexPage />} />
-          <Route exact path="/news" element={<News />} />
+          <Route exact path="/news" element={<NewsList />} />
           <Route exact path="/news/current" element={<CurrentNews />} />
           <Route exact path="/restorepassword" element={<RestorePassword />} />
           <Route exact path="/contacts" element={<Contacts />} />
