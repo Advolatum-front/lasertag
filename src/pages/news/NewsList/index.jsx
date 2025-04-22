@@ -105,7 +105,6 @@ const NewsList = () => {
         spaceBetween={10}
         loop={false}
         modules={[Navigation]}
-        navigation={true}
         className="news__slider"
         breakpoints={breakpoints}
         navigation={{
