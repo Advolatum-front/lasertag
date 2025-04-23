@@ -95,6 +95,14 @@
   filter: blur(50px);
 }
 
+.media__slide-item {
+  cursor: grab;
+}
+
+.media__slide-item:active {
+  cursor: grabbing;
+}
+
 .media__slide-item-picture {
   position: relative;
   max-width: 100%;

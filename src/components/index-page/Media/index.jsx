@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
 import { mediaSliderData } from "./mediaSliderData.js";
 
@@ -38,11 +38,8 @@ const Media = () => {
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
-        modules={[Autoplay]}
-        autoplay={{
-          delay: 1500,
-          disableOnInteraction: false,
-        }}
+        modules={[Navigation]}
+        navigation={true}
         className="media__slider"
       >
         {slides}
