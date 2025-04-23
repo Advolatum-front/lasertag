@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
-import { ReactComponent as Arrow } from "../../../svg/arrow.svg";
-
 import { mediaSliderData } from "./mediaSliderData.js";
 
 import "swiper/css";
@@ -41,29 +39,11 @@ const Media = () => {
         spaceBetween={30}
         loop={true}
         modules={[Navigation]}
-        navigation={{
-          nextEl: ".custom-next",
-          prevEl: ".custom-prev",
-        }}
+        navigation={true}
         className="media__slider"
-        onInit={(swiper) => {
-          // Инициализация Swiper
-          swiper.params.navigation.nextEl = ".custom-next";
-          swiper.params.navigation.prevEl = ".custom-prev";
-          swiper.navigation.init();
-          swiper.navigation.update();
-        }}
       >
         {slides}
       </Swiper>
-      <div className="custom-navigation">
-        <button className="custom-prev prev-media-img">
-          <Arrow className="arrow" />
-        </button>
-        <button className="custom-next next-media-img">
-          <Arrow className="arrow" />
-        </button>
-      </div>
     </article>
   );
 };
