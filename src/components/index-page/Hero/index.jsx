@@ -1,13 +1,9 @@
-import { Link } from "react-router-dom";
-
 import "./index.css";
 
 const Hero = () => {
   return (
     <section className="hero">
-      <Link to="/" className="hero__link">
-        Смотреть проморолик
-      </Link>
+      <button className="hero__button-watch-promo">Смотреть проморолик</button>
     </section>
   );
 };
