@@ -1,0 +1,49 @@
+body:has(div.popup-container-overlay.open) {
+  overflow: hidden;
+}
+
+.popup-container-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: opacity 0.5s ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup-container-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--light-grey);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.popup-container__button-close {
+  align-self: flex-end;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.popup-container__button-close path {
+  transition: stroke 0.2s linear;
+}
+
+.popup-container__button-close:hover path {
+  stroke: var(--dark-blue);
+}

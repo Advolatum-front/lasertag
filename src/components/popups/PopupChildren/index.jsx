@@ -14,10 +14,12 @@ const PopupChildren = (props) => {
 
   const popup = (
     <div className={overlayClass}>
-      <button className="popup-container__button-close">
-        <Cross />
-      </button>
-      <div className="popup-container">{children}</div>
+      <div className="popup-container">
+        <button className="popup-container__button-close">
+          <Cross />
+        </button>
+        <div className="popup-container__children-container">{children}</div>
+      </div>
     </div>
   );
 
