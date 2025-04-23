@@ -5,20 +5,14 @@
 }
 
 .contacts__baddge {
+  background-position: 15vw center;
   display: flex;
   position: relative;
   align-items: flex-end;
   width: 65vw;
-  background-image: url("../../img/contacts/contacts-bg.webp");
+  background-image: url("../../img/contacts/president-with-bg.webp");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 112px center;
-}
-
-.contacts__photo {
-  position: absolute;
-  left: 43%;
-  height: 257px;
 }
 
 .contacts__info {
@@ -36,7 +30,7 @@
 }
 
 .contacts__status {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   width: 27vw;
 }
@@ -44,7 +38,7 @@
 .contacts__fullname {
   text-transform: uppercase;
   font-family: var(--open-sans);
-  font-size: 25px;
+  font-size: 22px;
 }
 
 .contacts__list {
@@ -75,33 +69,9 @@
   height: 25px;
 }
 
-@media (max-width: 1366px) {
-  .contacts__photo {
-    position: absolute;
-    left: 33%;
-    height: 257px;
-  }
-
-  .contacts__baddge {
-    background-position: 60px center;
-  }
-
-  .contacts__status {
-    font-size: 13px;
-  }
-
-  .contacts__fullname {
-    font-size: 22px;
-  }
-}
-
-@media (max-width: 1151px) {
+@media (max-width: 1152px) {
   .contacts__baddge {
     background-position: 0 center;
-  }
-
-  .contacts__photo {
-    left: 27%;
   }
 
   .contacts__fullname {
@@ -116,14 +86,9 @@
 
   .contacts__baddge {
     width: 90vw;
-    padding-top: 200px;
-  }
-
-  .contacts__photo {
-    left: 50%;
-    transform: translateX(-50%);
-    height: 255px;
-    top: -55px;
+    padding-top: 4vw;
+    height: 454px;
+    background-position: center 0;
   }
 
   .contacts__info {

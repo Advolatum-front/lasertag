@@ -1,8 +1,6 @@
 import { ReactComponent as PhoneIco } from "../../svg/phone-ico.svg";
 import { ReactComponent as MailIco } from "../../svg/mail-ico.svg";
 
-import presidentPhoto from "../../img/contacts/president.webp";
-
 import "./index.css";
 
 const Contacts = () => {
@@ -10,7 +8,6 @@ const Contacts = () => {
     <>
       <article className="contacts">
         <div className="contacts__baddge">
-          <img src={presidentPhoto} alt="" className="contacts__photo" />
           <div className="contacts__info">
             <div className="contacts__status">
               Председатель Регионального отделения Всероссийской общественной
