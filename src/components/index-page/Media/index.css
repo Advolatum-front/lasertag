@@ -14,7 +14,7 @@
 }
 
 .media__logo {
-  --width: 295px;
+  --width: 160px;
   --height: calc(var(--width) * 0.495);
   background-size: contain;
   width: var(--width);
