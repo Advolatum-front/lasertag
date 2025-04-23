@@ -29,6 +29,10 @@
   cursor: pointer;
 }
 
+.hero__promo {
+  width: 90vw;
+}
+
 .hero__button-watch-promo:hover {
   background-color: var(--medium-blue);
 }

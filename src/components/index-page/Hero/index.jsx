@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   const video = (
-    <video controls ref={videoRef}>
+    <video controls ref={videoRef} className="hero__promo">
       <source src="/index-page/promo.mp4" type="video/mp4" />
     </video>
   );
