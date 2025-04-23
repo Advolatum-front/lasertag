@@ -30,7 +30,7 @@
 }
 
 .hero__promo {
-  width: 90vw;
+  width: 50vw;
 }
 
 .hero__button-watch-promo:hover {
@@ -63,12 +63,20 @@
     background-position: center -59px;
     padding-top: 43vw;
   }
+
+  .hero__promo {
+    width: 60vw;
+  }
 }
 
 @media (max-width: 720px) {
   .hero {
     background-position: center -37px;
     padding-top: 43vw;
+  }
+
+  .hero__promo {
+    width: 90vw;
   }
 }
 
