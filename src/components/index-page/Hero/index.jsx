@@ -1,9 +1,13 @@
 import "./index.css";
 
 const Hero = () => {
+  const showPopup = () => {};
+
   return (
     <section className="hero">
-      <button className="hero__button-watch-promo">Смотреть проморолик</button>
+      <button className="hero__button-watch-promo" onClick={showPopup}>
+        Смотреть проморолик
+      </button>
     </section>
   );
 };
