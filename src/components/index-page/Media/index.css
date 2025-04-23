@@ -119,6 +119,7 @@
   border-radius: 50%;
   transition: background-color 0.2s linear;
   opacity: 0.6;
+  padding: 15px;
 }
 
 .media .swiper-button-prev:hover,
