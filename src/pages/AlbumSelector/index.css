@@ -8,15 +8,16 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   width: 87vw;
 }
 
 .albums-list__item {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   width: 20vw;
   align-items: center;
+  justify-content: space-between;
 }
 
 .albums-list__cover {
