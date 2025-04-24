@@ -4,6 +4,8 @@ import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
+import GalleryNavigator from "../../../components/GalleryNavigator";
+
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -12,6 +14,7 @@ import "./index.css";
 const GallerySliderPage = () => {
   return (
     <>
+      <GalleryNavigator className="favorites__gallery-navigator-mb" />
       <Swiper
         autoHeight={false}
         slidesPerView={1}
