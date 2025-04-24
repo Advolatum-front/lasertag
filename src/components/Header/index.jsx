@@ -13,7 +13,9 @@ import { ReactComponent as ProfilePic } from "../../svg/profile-link-def.svg";
 import "./index.css";
 
 const Header = () => {
-  const pathname = useLocation().pathname;
+  const pathname = useLocation().pathname.match(/(^\/\w+)/)?.[1];
+  const currentUnitName = pathname || "/";
+
   const [popupMenuOpened, setPopupMenuOpened] = useState(false);
 
   const openPopupMenu = () => {
@@ -28,7 +30,7 @@ const Header = () => {
 
   const navListItemsArray = mainNavLinks.map((obj, index) => {
     const { href, caption } = obj;
-    const listItem = pathname.includes(href) ? (
+    const listItem = href.includes(currentUnitName) ? (
       <span className="header__nav-current">{caption}</span>
     ) : (
       <Link to={href} className="header__nav-link">
