@@ -60,7 +60,11 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/documents" element={<Documents />} />
           <Route exact path="/registration" element={<Registration />} />
-          <Route exact path="/gallery" element={<AlbumSelector />} />
+
+          <Route exact path="/gallery/photo" element={<AlbumSelector />} />
+          <Route exact path="/gallery/video" element={<AlbumSelector />} />
+          <Route exact path="/gallery/favorites" element={<AlbumSelector />} />
+
           <Route exact path="/gallery/album" element={<AlbumContent />} />
           <Route
             exact

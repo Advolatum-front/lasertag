@@ -13,7 +13,7 @@ export const mainNavLinks = [
   },
   {
     caption: "Галерея",
-    href: "/gallery",
+    href: "/gallery/photo",
   },
   {
     caption: "Контакты",
