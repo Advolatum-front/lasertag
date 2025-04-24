@@ -1,7 +1,7 @@
 // import { Link } from "react-router-dom";
 
-import { ReactComponent as Heart } from "../../svg/heart-ico.svg";
-import { ReactComponent as Cross } from "../../svg/cross-ico.svg";
+import { ReactComponent as Heart } from "../../../svg/heart-ico.svg";
+import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
 // import GalleryNavigator from "../../components/GalleryNavigator";
 
