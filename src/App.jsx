@@ -11,7 +11,7 @@ import Documents from "./pages/Documents";
 import RestorePassword from "./pages/RestorePassword";
 import Login from "./pages/Login";
 import Registration from "./pages/Registration";
-import AlbumSelector from "./pages/AlbumSelector";
+import AlbumSelector from "./pages/gallery/AlbumSelector";
 import AlbumContent from "./pages/AlbumContent";
 import GallerySliderPage from "./pages/GallerySliderPage";
 import NewsList from "./pages/news/NewsList";

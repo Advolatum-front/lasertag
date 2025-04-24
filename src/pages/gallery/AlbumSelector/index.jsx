@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import GalleryNavigator from "../../components/GalleryNavigator";
+import GalleryNavigator from "../../../components/GalleryNavigator";
 
 import "./index.css";
 
