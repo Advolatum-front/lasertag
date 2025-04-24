@@ -32,7 +32,7 @@ const GalleryNavigator = (props) => {
       : "gallery-navigator__link";
 
     return (
-      <li className="gallery-navigator__list-item">
+      <li className="gallery-navigator__list-item" key={index}>
         <Link to={link} className={linkClassName}>
           {caption}
         </Link>
