@@ -1,9 +1,5 @@
-// import { Link } from "react-router-dom";
-
 import { ReactComponent as Heart } from "../../../svg/heart-ico.svg";
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
-
-// import GalleryNavigator from "../../components/GalleryNavigator";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
