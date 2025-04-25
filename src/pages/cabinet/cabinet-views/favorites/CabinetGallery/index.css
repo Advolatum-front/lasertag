@@ -101,6 +101,25 @@
   width: var(--element-width);
   height: var(--element-height);
   overflow: hidden;
+  position: relative;
+  display: block;
+}
+
+.elements-list__list-item:has(img) .elements-list__element-container:before,
+.elements-list__list-item:has(video) .elements-list__element-container:before {
+  content: "";
+  position: absolute;
+  background-image: url("../../../../../svg/photo-ico.svg");
+  background-repeat: no-repeat;
+  display: block;
+  width: 27px;
+  height: 27px;
+  left: 3px;
+  top: 3px;
+}
+
+.elements-list__list-item:has(video) .elements-list__element-container:before {
+  background-image: url("../../../../../svg/video-ico.svg");
 }
 
 .elements-list__element {
