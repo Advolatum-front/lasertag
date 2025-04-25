@@ -14,7 +14,7 @@ import "./index.css";
 
 const Header = () => {
   const pathname = useLocation().pathname.match(/(^\/\w+)/)?.[1];
-  const currentUnitName = pathname || "/";
+  const currentUnitName = pathname || "/index";
 
   const [popupMenuOpened, setPopupMenuOpened] = useState(false);
 
