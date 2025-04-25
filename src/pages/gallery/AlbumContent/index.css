@@ -93,10 +93,6 @@
     margin-top: 0;
     width: 40vw;
   }
-
-  .thumbnails-list {
-    height: 400px;
-  }
 }
 
 @media (max-width: 640px) {
