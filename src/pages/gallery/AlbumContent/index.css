@@ -66,15 +66,22 @@
     var(--thumbnail-width)
   );
   border-radius: 20px;
-  align-items: center;
-  height: 300px;
+  justify-content: center;
+  max-height: 500px;
   overflow: auto;
 }
 
-.thumbnails-list__thumbnail {
+.thumbnails-list__thumbnail-container {
   width: var(--thumbnail-width);
   height: var(--thumbnail-height);
+  overflow: hidden;
+}
+
+.thumbnails-list__thumbnail {
+  width: inherit;
+  height: inherit;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 @media (max-width: 1024px) {

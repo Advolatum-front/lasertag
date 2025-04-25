@@ -17,11 +17,9 @@ const AlbumContent = () => {
       <ul className="thumbnails-list">
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
-            <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
-              alt=""
-              className="thumbnails-list__thumbnail"
-            />
+            <video className="thumbnails-list__thumbnail">
+              <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
+            </video>
           </Link>
         </li>
         <li className="thumbnails-list__list-item">
