@@ -50,19 +50,6 @@ const CabinetGallery = () => {
     );
   });
 
-  /*
-<li className="cabinet-gallery__media-list-item">
-  <video className="cabinet-gallery__element">
-    <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
-  </video>
-  <Link to="/" className="cabinet-gallery__link" />
-  <button className="cabinet-gallery__button-unlike">
-    <Cross className="cabinet-gallery__cross-ico" />
-  </button>
-</li>
-
-  */
-
   return (
     <div className="cabinet-gallery">
       <h1 className="cabinet-gallery__header">Избранное</h1>
