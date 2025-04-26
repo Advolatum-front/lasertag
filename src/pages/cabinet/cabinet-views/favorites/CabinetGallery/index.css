@@ -176,6 +176,10 @@
   .cabinet-gallery__option {
     width: auto;
   }
+
+  .elements-list__button-remove {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 860px) {
