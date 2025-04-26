@@ -25,13 +25,27 @@ const GallerySliderPage = () => {
         className="gallery-slider"
       >
         <SwiperSlide className="gallery-slider__slide">
+          <div className="gallery-slider__video-bg"></div>
+          <video controls className="gallery-slider__picture  ">
+            <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
+          </video>
+          <div className="gallery-slider__panel">
+            <button className="gallery-slider__button-like">
+              <Heart className="heart" />
+            </button>
+            <button className="gallery-slider__button-close">
+              <Cross className="cross" />
+            </button>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="gallery-slider__slide">
           <img
-            src="/img/gallery/photo/albums/1/big/photo-1.jpg"
+            src="/gallery/photo/region1/1.webp"
             alt=""
             className="gallery-slider__image-bg"
           />
           <img
-            src="/img/gallery/photo/albums/1/big/photo-1.jpg"
+            src="/gallery/photo/region1/1.webp"
             alt=""
             className="gallery-slider__picture"
           />
@@ -46,17 +60,17 @@ const GallerySliderPage = () => {
         </SwiperSlide>
         <SwiperSlide className="gallery-slider__slide">
           <img
-            src="/img/gallery/photo/albums/1/big/photo-2.jpg"
+            src="/gallery/photo/region1/2.webp"
             alt=""
             className="gallery-slider__image-bg"
           />
           <img
-            src="/img/gallery/photo/albums/1/big/photo-2.jpg"
+            src="/gallery/photo/region1/2.webp"
             alt=""
             className="gallery-slider__picture"
           />
           <div className="gallery-slider__panel">
-            <button className="gallery-slider__button-like liked">
+            <button className="gallery-slider__button-like">
               <Heart className="heart" />
             </button>
             <button className="gallery-slider__button-close">
@@ -65,12 +79,38 @@ const GallerySliderPage = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="gallery-slider__slide">
-          <div className="gallery-slider__video-bg"></div>
-          <video controls className="gallery-slider__picture  ">
-            <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
-          </video>
+          <img
+            src="/gallery/photo/region1/3.webp"
+            alt=""
+            className="gallery-slider__image-bg"
+          />
+          <img
+            src="/gallery/photo/region1/3.webp"
+            alt=""
+            className="gallery-slider__picture"
+          />
           <div className="gallery-slider__panel">
-            <button className="gallery-slider__button-like liked">
+            <button className="gallery-slider__button-like">
+              <Heart className="heart" />
+            </button>
+            <button className="gallery-slider__button-close">
+              <Cross className="cross" />
+            </button>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="gallery-slider__slide">
+          <img
+            src="/gallery/photo/region1/4.webp"
+            alt=""
+            className="gallery-slider__image-bg"
+          />
+          <img
+            src="/gallery/photo/region1/4.webp"
+            alt=""
+            className="gallery-slider__picture"
+          />
+          <div className="gallery-slider__panel">
+            <button className="gallery-slider__button-like">
               <Heart className="heart" />
             </button>
             <button className="gallery-slider__button-close">
