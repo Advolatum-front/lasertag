@@ -18,14 +18,14 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <video className="thumbnails-list__thumbnail">
-              <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
+              <source src="/gallery/video/region1/promo.mp4" type="video/mp4" />
             </video>
           </Link>
         </li>
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-2.webp"
+              src="/gallery/photo/region1/2.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -34,7 +34,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-3.webp"
+              src="/gallery/photo/region1/3.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -43,7 +43,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-4.webp"
+              src="/gallery/photo/region1/4.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -52,7 +52,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-5.webp"
+              src="/gallery/photo/region1/5.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -61,7 +61,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-6.webp"
+              src="/gallery/photo/region1/6.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -70,7 +70,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-7.webp"
+              src="/gallery/photo/region1/7.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -79,7 +79,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              src="/gallery/photo/region1/1.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -88,7 +88,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-2.webp"
+              src="/gallery/photo/region1/2.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -97,7 +97,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-3.webp"
+              src="/gallery/photo/region1/3.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -106,7 +106,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-4.webp"
+              src="/gallery/photo/region1/4.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -115,7 +115,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-5.webp"
+              src="/gallery/photo/region1/5.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -124,7 +124,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-6.webp"
+              src="/gallery/photo/region1/6.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -133,7 +133,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-7.webp"
+              src="/gallery/photo/region1/7.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -142,7 +142,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              src="/gallery/photo/region1/1.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -151,7 +151,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-2.webp"
+              src="/gallery/photo/region1/2.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -160,7 +160,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-3.webp"
+              src="/gallery/photo/region1/3.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -169,7 +169,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-4.webp"
+              src="/gallery/photo/region1/4.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -178,7 +178,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-5.webp"
+              src="/gallery/photo/region1/5.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -187,7 +187,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-6.webp"
+              src="/gallery/photo/region1/6.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
@@ -196,7 +196,7 @@ const AlbumContent = () => {
         <li className="thumbnails-list__list-item">
           <Link to="/" className="thumbnails-list__thumbnail-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-7.webp"
+              src="/gallery/photo/region1/7.webp"
               alt=""
               className="thumbnails-list__thumbnail"
             />
