@@ -58,7 +58,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <video className="elements-list__element">
-              <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
+              <source src="/gallery/video/region1/promo.mp4" type="video/mp4" />
             </video>
           </Link>
           <button className="elements-list__button-remove">
@@ -71,7 +71,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-2.webp"
+              src="/gallery/photo/region1/2.webp"
               alt=""
               className="elements-list__element"
             />
@@ -83,7 +83,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-3.webp"
+              src="/gallery/photo/region1/3.webp"
               alt=""
               className="elements-list__element"
             />
@@ -95,7 +95,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-4.webp"
+              src="/gallery/photo/region1/4.webp"
               alt=""
               className="elements-list__element"
             />
@@ -107,7 +107,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-5.webp"
+              src="/gallery/photo/region1/5.webp"
               alt=""
               className="elements-list__element"
             />
@@ -119,7 +119,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-6.webp"
+              src="/gallery/photo/region1/6.webp"
               alt=""
               className="elements-list__element"
             />
@@ -131,7 +131,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-7.webp"
+              src="/gallery/photo/region1/7.webp"
               alt=""
               className="elements-list__element"
             />
@@ -143,7 +143,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              src="/gallery/photo/region1/1.webp"
               alt=""
               className="elements-list__element"
             />
@@ -155,7 +155,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-2.webp"
+              src="/gallery/photo/region1/2.webp"
               alt=""
               className="elements-list__element"
             />
@@ -167,7 +167,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-3.webp"
+              src="/gallery/photo/region1/3.webp"
               alt=""
               className="elements-list__element"
             />
@@ -179,7 +179,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-4.webp"
+              src="/gallery/photo/region1/4.webp"
               alt=""
               className="elements-list__element"
             />
@@ -191,7 +191,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-5.webp"
+              src="/gallery/photo/region1/5.webp"
               alt=""
               className="elements-list__element"
             />
@@ -203,7 +203,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-6.webp"
+              src="/gallery/photo/region1/6.webp"
               alt=""
               className="elements-list__element"
             />
@@ -215,7 +215,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-7.webp"
+              src="/gallery/photo/region1/7.webp"
               alt=""
               className="elements-list__element"
             />
@@ -227,7 +227,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-1.webp"
+              src="/gallery/photo/region1/1.webp"
               alt=""
               className="elements-list__element"
             />
@@ -239,7 +239,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-2.webp"
+              src="/gallery/photo/region1/2.webp"
               alt=""
               className="elements-list__element"
             />
@@ -251,7 +251,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-3.webp"
+              src="/gallery/photo/region1/3.webp"
               alt=""
               className="elements-list__element"
             />
@@ -263,7 +263,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-4.webp"
+              src="/gallery/photo/region1/4.webp"
               alt=""
               className="elements-list__element"
             />
@@ -275,7 +275,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-5.webp"
+              src="/gallery/photo/region1/5.webp"
               alt=""
               className="elements-list__element"
             />
@@ -287,7 +287,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-6.webp"
+              src="/gallery/photo/region1/6.webp"
               alt=""
               className="elements-list__element"
             />
@@ -299,7 +299,7 @@ const CabinetGallery = () => {
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
             <img
-              src="/img/gallery/photo/albums/1/thumbnails/thumbnail-7.webp"
+              src="/gallery/photo/region1/7.webp"
               alt=""
               className="elements-list__element"
             />
