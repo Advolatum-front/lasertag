@@ -59,6 +59,26 @@
   z-index: 2;
 }
 
+.cabinet-slider__button-unlike {
+  position: absolute;
+  background-color: var(--light-grey);
+  padding: 3px;
+  right: 5px;
+  top: 5px;
+  border: none;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabinet-slider__cross-ico {
+  width: 25px;
+  height: 25px;
+}
+
 .custom-navigation.cabinet-slider-nav {
   position: relative;
   z-index: 2;

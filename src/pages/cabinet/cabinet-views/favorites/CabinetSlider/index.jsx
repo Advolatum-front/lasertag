@@ -1,10 +1,10 @@
-// import { Link } from "react-router-dom";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+
+import { ReactComponent as Cross } from "../../../../../svg/cross-ico.svg";
 
 import "./index.css";
 
@@ -36,6 +36,9 @@ const CabinetSlider = () => {
           <video controls className="cabinet-slider__picture  ">
             <source src="/gallery/video/region1/promo.mp4" type="video/mp4" />
           </video>
+          <button className="cabinet-slider__button-unlike">
+            <Cross className="cabinet-slider__cross-ico" />
+          </button>
         </SwiperSlide>
         <SwiperSlide className="cabinet-slider__slide">
           <img
@@ -48,6 +51,9 @@ const CabinetSlider = () => {
             alt=""
             className="cabinet-slider__picture"
           />
+          <button className="cabinet-slider__button-unlike">
+            <Cross className="cabinet-slider__cross-ico" />
+          </button>
         </SwiperSlide>
         <SwiperSlide className="cabinet-slider__slide">
           <img
@@ -60,6 +66,9 @@ const CabinetSlider = () => {
             alt=""
             className="cabinet-slider__picture"
           />
+          <button className="cabinet-slider__button-unlike">
+            <Cross className="cabinet-slider__cross-ico" />
+          </button>
         </SwiperSlide>
       </Swiper>
       <div className="custom-navigation cabinet-slider-nav">
