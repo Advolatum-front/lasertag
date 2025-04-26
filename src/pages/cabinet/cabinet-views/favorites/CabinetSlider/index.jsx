@@ -32,34 +32,34 @@ const CabinetSlider = () => {
         }}
       >
         <SwiperSlide className="cabinet-slider__slide">
-          <img
-            src="/img/gallery/photo/albums/1/big/photo-1.jpg"
-            alt=""
-            className="cabinet-slider__image-bg"
-          />
-          <img
-            src="/img/gallery/photo/albums/1/big/photo-1.jpg"
-            alt=""
-            className="cabinet-slider__picture"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cabinet-slider__slide">
-          <img
-            src="/img/gallery/photo/albums/1/big/photo-2.jpg"
-            alt=""
-            className="cabinet-slider__image-bg"
-          />
-          <img
-            src="/img/gallery/photo/albums/1/big/photo-2.jpg"
-            alt=""
-            className="cabinet-slider__picture"
-          />
-        </SwiperSlide>
-        <SwiperSlide className="cabinet-slider__slide">
           <div className="cabinet-slider__video-bg"></div>
           <video controls className="cabinet-slider__picture  ">
-            <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
+            <source src="/gallery/video/region1/promo.mp4" type="video/mp4" />
           </video>
+        </SwiperSlide>
+        <SwiperSlide className="cabinet-slider__slide">
+          <img
+            src="/gallery/photo/region1/1.webp"
+            alt=""
+            className="cabinet-slider__image-bg"
+          />
+          <img
+            src="/gallery/photo/region1/1.webp"
+            alt=""
+            className="cabinet-slider__picture"
+          />
+        </SwiperSlide>
+        <SwiperSlide className="cabinet-slider__slide">
+          <img
+            src="/gallery/photo/region1/2.webp"
+            alt=""
+            className="cabinet-slider__image-bg"
+          />
+          <img
+            src="/gallery/photo/region1/2.webp"
+            alt=""
+            className="cabinet-slider__picture"
+          />
         </SwiperSlide>
       </Swiper>
       <div className="custom-navigation cabinet-slider-nav">
