@@ -87,6 +87,41 @@
   stroke: var(--dark-blue);
 }
 
+.gallery-slider .swiper-button-prev,
+.gallery-slider .swiper-button-next {
+  --diameter: 40px;
+  width: var(--diameter);
+  height: var(--diameter);
+  background-color: #fff;
+  border-radius: 50%;
+  transition: background-color 0.2s linear;
+  opacity: 0.6;
+  padding: 15px;
+}
+
+.gallery-slider .swiper-button-prev:hover,
+.gallery-slider .swiper-button-next:hover {
+  background-color: var(--light-grey);
+}
+
+.gallery-slider .swiper-button-prev:after,
+.gallery-slider .swiper-button-next:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 37px;
+  height: 30px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("../../../svg/arrow.svg");
+  background-repeat: no-repeat;
+}
+
+.gallery-slider .swiper-button-next:after {
+  transform: translate(-50%, -50%) rotateZ(180deg);
+}
+
 @media (max-width: 1280px) {
   :root {
     --content-height: 50vw;
@@ -96,5 +131,10 @@
 @media (max-width: 960px) {
   :root {
     --content-height: 70vw;
+  }
+
+  .gallery-slider .swiper-button-prev,
+  .gallery-slider .swiper-button-next {
+    --diameter: 20px;
   }
 }
