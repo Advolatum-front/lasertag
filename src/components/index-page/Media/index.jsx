@@ -27,7 +27,7 @@ const Media = () => {
       <header className="media__header">
         <div className="media__logo"></div>
         <div className="media__link-container">
-          <Link to="/gallery" className="media__link">
+          <Link to="/gallery/photo" className="media__link">
             <span>Все медиа</span>
           </Link>
           <div className="media__blue-bar"></div>
