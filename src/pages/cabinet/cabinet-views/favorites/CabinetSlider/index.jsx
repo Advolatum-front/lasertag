@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -9,6 +11,14 @@ import { ReactComponent as Cross } from "../../../../../svg/cross-ico.svg";
 import "./index.css";
 
 const CabinetSlider = () => {
+  const refs = useRef([]);
+
+  const addToRefs = (el) => {
+    if (el && !refs.current.includes(el)) {
+      refs.current.push(el);
+    }
+  };
+
   return (
     <div className="cabinet-slider">
       <h1 className="cabinet-slider__header">Избранное</h1>
@@ -23,6 +33,11 @@ const CabinetSlider = () => {
           prevEl: ".cabinet-slider__prev",
           nextEl: ".cabinet-slider__next",
         }}
+        onSlideChange={() => {
+          refs.current.forEach((video) => {
+            video.pause();
+          });
+        }}
         onInit={(swiper) => {
           // Инициализация Swiper
           swiper.params.navigation.prevEl = ".cabinet-slider__prev";
@@ -33,7 +48,7 @@ const CabinetSlider = () => {
       >
         <SwiperSlide className="cabinet-slider__slide">
           <div className="cabinet-slider__video-bg"></div>
-          <video controls className="cabinet-slider__picture  ">
+          <video controls className="cabinet-slider__picture" ref={addToRefs}>
             <source src="/gallery/video/region1/promo.mp4" type="video/mp4" />
           </video>
           <button className="cabinet-slider__button-unlike">
@@ -66,6 +81,15 @@ const CabinetSlider = () => {
             alt=""
             className="cabinet-slider__picture"
           />
+          <button className="cabinet-slider__button-unlike">
+            <Cross className="cabinet-slider__cross-ico" />
+          </button>
+        </SwiperSlide>
+        <SwiperSlide className="cabinet-slider__slide">
+          <div className="cabinet-slider__video-bg"></div>
+          <video controls className="cabinet-slider__picture" ref={addToRefs}>
+            <source src="/gallery/video/region1/tnt.mp4" type="video/mp4" />
+          </video>
           <button className="cabinet-slider__button-unlike">
             <Cross className="cabinet-slider__cross-ico" />
           </button>

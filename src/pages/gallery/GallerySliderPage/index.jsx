@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import { ReactComponent as Heart } from "../../../svg/heart-ico.svg";
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
@@ -12,6 +14,14 @@ import "swiper/css/navigation";
 import "./index.css";
 
 const GallerySliderPage = () => {
+  const refs = useRef([]);
+
+  const addToRefs = (el) => {
+    if (el && !refs.current.includes(el)) {
+      refs.current.push(el);
+    }
+  };
+
   return (
     <>
       <GalleryNavigator className="favorites__gallery-navigator-mb" />
@@ -23,11 +33,16 @@ const GallerySliderPage = () => {
         navigation={true}
         modules={[Navigation]}
         className="gallery-slider"
+        onSlideChange={() => {
+          refs.current.forEach((video) => {
+            video.pause();
+          });
+        }}
       >
         <SwiperSlide className="gallery-slider__slide">
           <div className="gallery-slider__video-bg"></div>
-          <video controls className="gallery-slider__picture  ">
-            <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
+          <video controls className="gallery-slider__picture" ref={addToRefs}>
+            <source src="/gallery/video/region1/promo.mp4" type="video/mp4" />
           </video>
           <div className="gallery-slider__panel">
             <button className="gallery-slider__button-like">
@@ -109,6 +124,20 @@ const GallerySliderPage = () => {
             alt=""
             className="gallery-slider__picture"
           />
+          <div className="gallery-slider__panel">
+            <button className="gallery-slider__button-like">
+              <Heart className="heart" />
+            </button>
+            <button className="gallery-slider__button-close">
+              <Cross className="cross" />
+            </button>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="gallery-slider__slide">
+          <div className="gallery-slider__video-bg"></div>
+          <video controls className="gallery-slider__picture" ref={addToRefs}>
+            <source src="/gallery/video/region1/tnt.mp4" type="video/mp4" />
+          </video>
           <div className="gallery-slider__panel">
             <button className="gallery-slider__button-like">
               <Heart className="heart" />
