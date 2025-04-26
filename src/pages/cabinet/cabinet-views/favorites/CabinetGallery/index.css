@@ -105,6 +105,10 @@
   display: block;
 }
 
+.elements-list__list-item {
+  position: relative;
+}
+
 .elements-list__list-item:has(img) .elements-list__element-container:before,
 .elements-list__list-item:has(video) .elements-list__element-container:before {
   content: "";
@@ -127,6 +131,30 @@
   height: inherit;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.elements-list__button-remove {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  cursor: pointer;
+  padding: 0;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.2s linear;
+}
+
+.elements-list__button-remove:hover {
+  opacity: 1;
+}
+
+.elements-list__cross-ico {
+  width: 90%;
+  height: 90%;
 }
 
 @media (max-width: 1152px) {

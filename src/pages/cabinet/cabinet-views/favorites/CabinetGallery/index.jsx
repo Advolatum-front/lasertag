@@ -61,6 +61,12 @@ const CabinetGallery = () => {
               <source src="/img/gallery/video/1/radio.mp4" type="video/mp4" />
             </video>
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -70,6 +76,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -79,6 +88,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -88,6 +100,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -97,6 +112,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -106,6 +124,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -115,6 +136,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -124,6 +148,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -133,6 +160,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -142,6 +172,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -151,6 +184,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -160,6 +196,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -169,6 +208,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -178,6 +220,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -187,6 +232,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -196,6 +244,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -205,6 +256,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -214,6 +268,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -223,6 +280,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -232,6 +292,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
         <li className="elements-list__list-item">
           <Link to="/" className="elements-list__element-container">
@@ -241,6 +304,9 @@ const CabinetGallery = () => {
               className="elements-list__element"
             />
           </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
         </li>
       </ul>
     </div>
