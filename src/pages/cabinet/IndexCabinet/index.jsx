@@ -31,6 +31,7 @@ const IndexCabinet = () => {
 
   const comfirmLogout = () => {
     setConfirmOpen(false);
+    setCabinetMenuOpened(false);
   };
 
   const cabinetMenuClassName = cabinetMenuOpened
@@ -58,7 +59,7 @@ const IndexCabinet = () => {
     const linkOrSpan = locationPathname.includes(link) ? (
       <span className="cabinet-menu__active-item">{caption}</span>
     ) : (
-      <Link to={link} className="cabinet-menu__link">
+      <Link to={link} className="cabinet-menu__link" onClick={closeCabinetMenu}>
         {caption}
       </Link>
     );
