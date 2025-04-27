@@ -102,6 +102,10 @@
 }
 
 @media (max-width: 860px) {
+  body:has(aside.cabinet-menu.opened) {
+    overflow: hidden;
+  }
+
   .index-cabinet {
     display: flex;
     flex-direction: column;
