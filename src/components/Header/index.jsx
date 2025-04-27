@@ -27,15 +27,17 @@ const Header = () => {
 
   const navListItemsArray = mainNavLinks.map((obj, index) => {
     const { href, caption } = obj;
-    const listItem = href.includes(currentUnitName) ? (
-      <span className="header__nav-current">{caption}</span>
-    ) : (
-      <Link to={href} className="header__nav-link" onClick={closeBurgerMenu}>
-        {caption}
-      </Link>
-    );
+    const linkClassName = href.includes(currentUnitName)
+      ? "header__nav-link-active"
+      : "header__nav-link";
 
-    return <li key={index}>{listItem}</li>;
+    return (
+      <li key={index}>
+        <Link to={href} className={linkClassName} onClick={closeBurgerMenu}>
+          {caption}
+        </Link>
+      </li>
+    );
   });
 
   const headerNavClassName = burgerMenuOpened
