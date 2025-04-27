@@ -98,6 +98,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease-out;
+    overflow: auto;
   }
 
   .header__nav.opened {
@@ -108,6 +109,9 @@
   .header__button-close-burger-menu {
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 5px;
+    left: 30px;
     justify-content: center;
     align-self: flex-end;
     padding: 0;
