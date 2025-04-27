@@ -5,18 +5,21 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { Provider } from "mobx-react";
-import { createBrowserHistory } from "history";
+import stores from "./stores/index";
+
+// import { createBrowserHistory } from "history";
 // import { syncHistoryWithStore } from "mobx-react-router";
-import { Switch, Router, Route } from "react-router-dom";
 
 import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider {...stores}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
 );
 
