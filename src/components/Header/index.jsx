@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useLocation } from "react-router";
 
-// import BurgerPopupMenu from "../BurgerPopupMenu";
-
 import { mainNavLinks } from "../../utils/main-nav-links.js";
 
 import logo from "../../img/logo.webp";
