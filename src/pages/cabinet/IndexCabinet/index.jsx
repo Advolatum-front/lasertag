@@ -55,18 +55,15 @@ const IndexCabinet = () => {
 
   const menuLinkItems = menuDataLinks.map((item, index) => {
     const { caption, link } = item;
-
-    const linkOrSpan = locationPathname.includes(link) ? (
-      <span className="cabinet-menu__active-item">{caption}</span>
-    ) : (
-      <Link to={link} className="cabinet-menu__link" onClick={closeCabinetMenu}>
-        {caption}
-      </Link>
-    );
+    const linkClassName = locationPathname.includes(link)
+      ? "cabinet-menu__link-active"
+      : "cabinet-menu__link";
 
     return (
       <li className="cabinet-menu__list-item" key={index}>
-        {linkOrSpan}
+        <Link to={link} className={linkClassName} onClick={closeCabinetMenu}>
+          {caption}
+        </Link>
       </li>
     );
   });
