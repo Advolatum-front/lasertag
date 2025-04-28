@@ -24,62 +24,64 @@ const NewsList = inject("NewsStore")(
 
     console.log(toJS(newsList[1]?.title));
 
-    const newsData = [
-      {
-        id: 1,
-        title: "Региональные совренования",
-        photo: "/news/small/news-1.webp",
-        date: "21.05",
-        announce:
-          "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-        link: "/",
-      },
-      {
-        id: 2,
-        title: "Региональные совренования",
-        photo: "/news/small/news-2.webp",
-        date: "21.05",
-        announce:
-          "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-        link: "/",
-      },
-      {
-        id: 3,
-        title: "Региональные совренования",
-        photo: "/news/small/news-3.webp",
-        date: "21.05",
-        announce:
-          "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-        link: "/",
-      },
-      {
-        id: 4,
-        title: "Региональные совренования",
-        photo: "/news/small/news-4.webp",
-        date: "21.05",
-        announce:
-          "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-        link: "/",
-      },
-      {
-        id: 5,
-        title: "Региональные совренования",
-        photo: "/news/small/news-5.webp",
-        date: "21.05",
-        announce:
-          "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-        link: "/",
-      },
-    ];
+    // const newsData = [
+    //   {
+    //     id: 1,
+    //     title: "Региональные совренования",
+    //     photo: "/news/small/news-1.webp",
+    //     date: "21.05",
+    //     announce:
+    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
+    //     link: "/",
+    //   },
+    //   {
+    //     id: 2,
+    //     title: "Региональные совренования",
+    //     photo: "/news/small/news-2.webp",
+    //     date: "21.05",
+    //     announce:
+    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
+    //     link: "/",
+    //   },
+    //   {
+    //     id: 3,
+    //     title: "Региональные совренования",
+    //     photo: "/news/small/news-3.webp",
+    //     date: "21.05",
+    //     announce:
+    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
+    //     link: "/",
+    //   },
+    //   {
+    //     id: 4,
+    //     title: "Региональные совренования",
+    //     photo: "/news/small/news-4.webp",
+    //     date: "21.05",
+    //     announce:
+    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
+    //     link: "/",
+    //   },
+    //   {
+    //     id: 5,
+    //     title: "Региональные совренования",
+    //     photo: "/news/small/news-5.webp",
+    //     date: "21.05",
+    //     announce:
+    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
+    //     link: "/",
+    //   },
+    // ];
 
-    const newsCards = newsData.map((newsItem) => {
-      const { id, title, photo, date, announce, link } = newsItem;
+    const newsData = toJS(newsList);
+
+    const newsCards = newsData.map((item) => {
+      const { id, title, img, date, announce } = item;
 
       return (
         <div className="news__news-card" key={id}>
           <div className="news__card-header">{title}</div>
-          <Link to={link}>
-            <img src={photo} alt="" className="news__card-image" />
+          <Link to="/">
+            <img src={img} alt="" className="news__card-image" />
           </Link>
           <div className="news__card-date">{date}</div>
           <div className="news__card-announce">{announce}</div>
