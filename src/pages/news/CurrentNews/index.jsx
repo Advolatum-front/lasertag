@@ -1,51 +1,65 @@
+import { inject, observer } from "mobx-react";
+import { toJS } from "mobx";
+
 import { Link } from "react-router-dom";
 
 import "./index.css";
+// если надо что-то достать из стора, то пиши так:
+// const { x, y } = NewsStore;
+// полученные данные оборачивать в toJS
 
-const CurrentNews = () => {
-  return (
-    <section className="current-news-section">
-      <div className="news-block">
-        <img src="/news/big/photo-1.jpg" alt="" className="news-block__photo" />
-        <div className="news-block__info">
-          <h1 className="news-block__header">Региональные соревнования</h1>
-          <div className="news-block__text">
-            <p>
-              С 20-21 мая прошли отборочные региональные соревнования по
-              лазерному бою.
-            </p>
+const CurrentNews = inject("NewsStore")(
+  observer(({ NewsStore }) => {
+    return (
+      <section className="current-news-section">
+        <div className="news-block">
+          <img
+            src="/news/big/photo-1.jpg"
+            alt=""
+            className="news-block__photo"
+          />
+          <div className="news-block__info">
+            <h1 className="news-block__header">Региональные соревнования</h1>
+            <div className="news-block__text">
+              <p>
+                С 20-21 мая прошли отборочные региональные соревнования по
+                лазерному бою.
+              </p>
 
-            <p>
-              Десять команд боролись за возможность пройти на уровень региона и
-              защитить свою честь и честь всего состава.
-            </p>
+              <p>
+                Десять команд боролись за возможность пройти на уровень региона
+                и защитить свою честь и честь всего состава.
+              </p>
 
-            <p>
-              Полные решимости, участники команд выполняли тактические манёвры,
-              перехватывали соперников, выбивали их с поля.
-            </p>
+              <p>
+                Полные решимости, участники команд выполняли тактические
+                манёвры, перехватывали соперников, выбивали их с поля.
+              </p>
 
-            <p>
-              Особенно выделилась команда “Лунных зайцев”, которая смогла
-              одолеть противника за кратчайшее время - им понадобилось всего
-              пятнадцать минут.
-            </p>
-          </div>
-          <div className="news-block__footer">
-            <Link to="/" className="news-block__link-prev"></Link>
-            <div className="news-block__additional-text">
-              Именно эта команда и пойдёт дальше отстаивать первенство лазерного
-              боя. Поздравим «Лунных зайцев»!
+              <p>
+                Особенно выделилась команда “Лунных зайцев”, которая смогла
+                одолеть противника за кратчайшее время - им понадобилось всего
+                пятнадцать минут.
+              </p>
             </div>
-            <Link to="/" className="news-block__link-next"></Link>
+            <div className="news-block__footer">
+              <Link to="/" className="news-block__link-prev"></Link>
+              <div className="news-block__additional-text">
+                Именно эта команда и пойдёт дальше отстаивать первенство
+                лазерного боя. Поздравим «Лунных зайцев»!
+              </div>
+              <Link to="/" className="news-block__link-next"></Link>
+            </div>
+          </div>
+          <div className="current-news-date">
+            <span>21.05</span>
           </div>
         </div>
-        <div className="current-news-date">
-          <span>21.05</span>
-        </div>
-      </div>
-    </section>
-  );
-};
+      </section>
+    );
+  }),
+);
+
+// const CurrentNews = ;
 
 export default CurrentNews;
