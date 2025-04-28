@@ -8,6 +8,7 @@ class NewsStore {
     makeObservable(this, {
       newsList: observable,
       fetchNews: action,
+      fetchNewsItemById: action,
     });
   }
 
