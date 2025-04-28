@@ -1,5 +1,4 @@
 import { inject, observer } from "mobx-react";
-import { toJS } from "mobx";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { useEffect } from "react";
@@ -7,7 +6,6 @@ import { useEffect } from "react";
 import NoData from "../../../components/NoData";
 
 import "./index.css";
-// полученные данные оборачивать в toJS
 
 const CurrentNews = inject("NewsStore")(
   observer(({ NewsStore }) => {

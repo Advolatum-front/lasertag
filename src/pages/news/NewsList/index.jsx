@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { inject, observer } from "mobx-react";
-import { toJS } from "mobx";
 import { useEffect } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,7 +22,7 @@ const NewsList = inject("NewsStore")(
       fetchNews();
     }, [fetchNews]);
 
-    const newsData = toJS(newsList);
+    const newsData = newsList;
 
     const newsCards = newsData.map((item) => {
       const { id, title, img, date, announce } = item;
