@@ -24,54 +24,6 @@ const NewsList = inject("NewsStore")(
 
     console.log(toJS(newsList[1]?.title));
 
-    // const newsData = [
-    //   {
-    //     id: 1,
-    //     title: "Региональные совренования",
-    //     photo: "/news/small/news-1.webp",
-    //     date: "21.05",
-    //     announce:
-    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-    //     link: "/",
-    //   },
-    //   {
-    //     id: 2,
-    //     title: "Региональные совренования",
-    //     photo: "/news/small/news-2.webp",
-    //     date: "21.05",
-    //     announce:
-    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-    //     link: "/",
-    //   },
-    //   {
-    //     id: 3,
-    //     title: "Региональные совренования",
-    //     photo: "/news/small/news-3.webp",
-    //     date: "21.05",
-    //     announce:
-    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-    //     link: "/",
-    //   },
-    //   {
-    //     id: 4,
-    //     title: "Региональные совренования",
-    //     photo: "/news/small/news-4.webp",
-    //     date: "21.05",
-    //     announce:
-    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-    //     link: "/",
-    //   },
-    //   {
-    //     id: 5,
-    //     title: "Региональные совренования",
-    //     photo: "/news/small/news-5.webp",
-    //     date: "21.05",
-    //     announce:
-    //       "С 20-21 мая прошли отборочные региональные соревнования по лазерному бою.",
-    //     link: "/",
-    //   },
-    // ];
-
     const newsData = toJS(newsList);
 
     const newsCards = newsData.map((item) => {
@@ -93,7 +45,7 @@ const NewsList = inject("NewsStore")(
     });
 
     const slides = newsCards.map((card, index) => {
-      return <SwiperSlide key={-(index + 1)}>{card}</SwiperSlide>;
+      return <SwiperSlide key={index}>{card}</SwiperSlide>;
     });
 
     const breakpoints = {
