@@ -1,0 +1,10 @@
+.no-data__text-container {
+  border-radius: 20px;
+  border: 2px solid var(--medium-blue);
+  padding: 10px 15px;
+  color: var(--dark-blue);
+  font-weight: 600;
+  font-family: var(--open-sans);
+  background-color: var(--light-grey);
+  display: inline-block;
+}

@@ -5,6 +5,8 @@ import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
+import NoData from "../../../components/NoData";
+
 import { ReactComponent as Arrow } from "../../../svg/arrow.svg";
 
 import "swiper/css";
@@ -15,6 +17,8 @@ import "./index.css";
 const NewsList = inject("NewsStore")(
   observer(({ NewsStore }) => {
     {
+      return <NoData />;
+
       const newsData = [
         {
           id: 1,
