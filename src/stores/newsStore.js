@@ -7,6 +7,7 @@ class NewsStore {
   constructor() {
     makeObservable(this, {
       newsList: observable,
+      fetchNews: action,
     });
   }
 
