@@ -15,6 +15,7 @@ const CurrentNews = inject("NewsStore")(
       adjacentNewsIds,
       fetchAdjacentNewsIdsById,
     } = NewsStore;
+
     const newsId = useParams().newsId;
 
     useEffect(() => {
@@ -37,6 +38,8 @@ const CurrentNews = inject("NewsStore")(
       .split("\n")
       .map((paragraph, index) => <p key={index}>{paragraph}</p>);
 
+    const [prevNewsId, nextNewsId] = adjacentNewsIds.map((id) => `/news/${id}`);
+
     return (
       <section className="current-news-section">
         <div className="news-block">
@@ -45,11 +48,11 @@ const CurrentNews = inject("NewsStore")(
             <h1 className="news-block__header">{title}</h1>
             <div className="news-block__text">{paragraphs}</div>
             <div className="news-block__footer">
-              <Link to="/" className="news-block__link-prev" />
+              <Link to={prevNewsId} className="news-block__link-prev" />
               <div className="news-block__additional-text">
                 {additionalText}
               </div>
-              <Link to="/" className="news-block__link-next" />
+              <Link to={nextNewsId} className="news-block__link-next" />
             </div>
           </div>
           <div className="current-news-date">
