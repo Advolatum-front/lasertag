@@ -20,6 +20,7 @@ class NewsStore {
   };
 
   fetchNewsItemById = (id) => {
+    this.fetchNews();
     this.fetchedNewsItem = this.newsList.find((item) => item.id === id);
   };
 }

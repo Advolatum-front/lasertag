@@ -1,58 +1,55 @@
 import { inject, observer } from "mobx-react";
 import { toJS } from "mobx";
-
 import { Link } from "react-router-dom";
+import { useParams } from "react-router";
+import { useEffect } from "react";
+
+import NoData from "../../../components/NoData";
 
 import "./index.css";
-// если надо что-то достать из стора, то пиши так:
-// const { x, y } = NewsStore;
 // полученные данные оборачивать в toJS
 
 const CurrentNews = inject("NewsStore")(
   observer(({ NewsStore }) => {
+    const { fetchedNewsItem, fetchNewsItemById } = NewsStore;
+    const newsId = useParams().newsId;
+
+    useEffect(() => {
+      fetchNewsItemById(newsId);
+    }, [fetchNewsItemById, newsId]);
+
+    if (!fetchedNewsItem) {
+      return (
+        <section className="current-news-section">
+          <div className="news-block">
+            <NoData />
+          </div>
+        </section>
+      );
+    }
+
+    const { id, title, img, fullText, additionalText, date } = fetchedNewsItem;
+    const paragraphs = fullText
+      .split("\n")
+      .map((paragraph, index) => <p key={index}>{paragraph}</p>);
+
     return (
       <section className="current-news-section">
         <div className="news-block">
-          <img
-            src="/news/big/photo-1.jpg"
-            alt=""
-            className="news-block__photo"
-          />
+          <img src={img} alt="" className="news-block__photo" />
           <div className="news-block__info">
-            <h1 className="news-block__header">Региональные соревнования</h1>
-            <div className="news-block__text">
-              <p>
-                С 20-21 мая прошли отборочные региональные соревнования по
-                лазерному бою.
-              </p>
-
-              <p>
-                Десять команд боролись за возможность пройти на уровень региона
-                и защитить свою честь и честь всего состава.
-              </p>
-
-              <p>
-                Полные решимости, участники команд выполняли тактические
-                манёвры, перехватывали соперников, выбивали их с поля.
-              </p>
-
-              <p>
-                Особенно выделилась команда “Лунных зайцев”, которая смогла
-                одолеть противника за кратчайшее время - им понадобилось всего
-                пятнадцать минут.
-              </p>
-            </div>
+            <h1 className="news-block__header">{title}</h1>
+            <div className="news-block__text">{paragraphs}</div>
             <div className="news-block__footer">
-              <Link to="/" className="news-block__link-prev"></Link>
+              <Link to="/" className="news-block__link-prev" />
               <div className="news-block__additional-text">
-                Именно эта команда и пойдёт дальше отстаивать первенство
-                лазерного боя. Поздравим «Лунных зайцев»!
+                {additionalText}
               </div>
-              <Link to="/" className="news-block__link-next"></Link>
+              <Link to="/" className="news-block__link-next" />
             </div>
           </div>
           <div className="current-news-date">
-            <span>21.05</span>
+            <span>{date}</span>
           </div>
         </div>
       </section>
