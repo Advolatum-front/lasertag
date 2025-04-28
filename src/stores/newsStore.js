@@ -37,20 +37,20 @@ class NewsStore {
     this.adjacentNewsIds = getAdjacentByIndex(this.newsList, index).map(
       (item) => item.id,
     );
+  };
 
-    fetchLastNews = (count) => {
-      this.fetchNews();
+  fetchLastNews = (count) => {
+    this.fetchNews();
 
-      this.lastNews = this.newsList
-        .toSorted((a, b) => {
-          const [dateNumA, dateNumB] = [a.date, b.date].map((date) => {
-            return Number(date.replace(".", ""));
-          });
+    this.lastNews = this.newsList
+      .toSorted((a, b) => {
+        const [dateNumA, dateNumB] = [a.date, b.date].map((date) => {
+          return Number(date.replace(".", ""));
+        });
 
-          return dateNumB - dateNumA;
-        })
-        .slice(-count);
-    };
+        return dateNumB - dateNumA;
+      })
+      .slice(-count);
   };
 }
 
