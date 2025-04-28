@@ -27,16 +27,17 @@ const NewsList = inject("NewsStore")(
 
     const newsCards = newsData.map((item) => {
       const { id, title, img, date, announce } = item;
+      const url = `/news/${id}`;
 
       return (
         <div className="news__news-card" key={id}>
           <div className="news__card-header">{title}</div>
-          <Link to="/">
+          <Link to={url}>
             <img src={img} alt="" className="news__card-image" />
           </Link>
           <div className="news__card-date">{date}</div>
           <div className="news__card-announce">{announce}</div>
-          <Link to="/" className="news__card-link">
+          <Link to={url} className="news__card-link">
             Подробнее
           </Link>
         </div>

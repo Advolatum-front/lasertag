@@ -54,7 +54,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<IndexPage />} />
           <Route exact path="/news" element={<NewsList />} />
-          <Route exact path="/news/current" element={<CurrentNews />} />
+          <Route exact path="/news/:newsId" element={<CurrentNews />} />
           <Route exact path="/restorepassword" element={<RestorePassword />} />
           <Route exact path="/contacts" element={<Contacts />} />
           <Route exact path="/login" element={<Login />} />
