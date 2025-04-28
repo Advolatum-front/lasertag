@@ -11,12 +11,18 @@ import "./index.css";
 
 const CurrentNews = inject("NewsStore")(
   observer(({ NewsStore }) => {
-    const { fetchedNewsItem, fetchNewsItemById } = NewsStore;
+    const {
+      fetchedNewsItem,
+      fetchNewsItemById,
+      adjacentNewsIds,
+      fetchAdjacentNewsIdsById,
+    } = NewsStore;
     const newsId = useParams().newsId;
 
     useEffect(() => {
       fetchNewsItemById(newsId);
-    }, [fetchNewsItemById, newsId]);
+      fetchAdjacentNewsIdsById(newsId);
+    }, [fetchNewsItemById, newsId, fetchAdjacentNewsIdsById]);
 
     if (!fetchedNewsItem) {
       return (
