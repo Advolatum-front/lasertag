@@ -63,7 +63,7 @@ const NewsList = inject("NewsStore")(
     };
 
     const pageContent =
-      !newsList || newsList.length === 0 ? (
+      newsList.length === 0 ? (
         <NoData />
       ) : (
         <>
