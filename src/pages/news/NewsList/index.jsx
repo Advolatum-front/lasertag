@@ -18,11 +18,10 @@ import "./index.css";
 const NewsList = inject("NewsStore")(
   observer(({ NewsStore }) => {
     const { newsList, fetchNews } = NewsStore;
+
     useEffect(() => {
       fetchNews();
     }, [fetchNews]);
-
-    console.log(toJS(newsList[1]?.title));
 
     const newsData = toJS(newsList);
 
