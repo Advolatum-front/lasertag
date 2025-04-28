@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { inject, observer } from "mobx-react";
+import { toJS } from "mobx";
 import { useEffect } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -16,7 +17,12 @@ import "./index.css";
 
 const NewsList = inject("NewsStore")(
   observer(({ NewsStore }) => {
-    return <NoData />;
+    const { newsList, fetchNews } = NewsStore;
+    useEffect(() => {
+      fetchNews();
+    }, [fetchNews]);
+
+    console.log(toJS(newsList[1]?.title));
 
     const newsData = [
       {
@@ -103,43 +109,50 @@ const NewsList = inject("NewsStore")(
       },
     };
 
+    const pageContent =
+      !newsList || newsList.length === 0 ? (
+        <NoData />
+      ) : (
+        <>
+          <div className="news__vertical-news-container">{newsCards}</div>
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={10}
+            loop={false}
+            modules={[Navigation]}
+            className="news__slider"
+            breakpoints={breakpoints}
+            navigation={{
+              nextEl: ".custom-next",
+              prevEl: ".custom-prev",
+            }}
+            onInit={(swiper) => {
+              swiper.params.navigation.nextEl = ".custom-next";
+              swiper.params.navigation.prevEl = ".custom-prev";
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }}
+          >
+            {slides}
+          </Swiper>
+          <div className="custom-navigation">
+            <button className="custom-prev prev-news">
+              <Arrow className="arrow" />
+            </button>
+            <button className="custom-next next-news">
+              <Arrow className="arrow" />
+            </button>
+          </div>
+        </>
+      );
+
     return (
       <section className="news">
         <h1 className="news__section-header">Новости</h1>
-        <div className="news__vertical-news-container">{newsCards}</div>
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={10}
-          loop={false}
-          modules={[Navigation]}
-          className="news__slider"
-          breakpoints={breakpoints}
-          navigation={{
-            nextEl: ".custom-next",
-            prevEl: ".custom-prev",
-          }}
-          onInit={(swiper) => {
-            swiper.params.navigation.nextEl = ".custom-next";
-            swiper.params.navigation.prevEl = ".custom-prev";
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-        >
-          {slides}
-        </Swiper>
-        <div className="custom-navigation">
-          <button className="custom-prev prev-news">
-            <Arrow className="arrow" />
-          </button>
-          <button className="custom-next next-news">
-            <Arrow className="arrow" />
-          </button>
-        </div>
+        {pageContent}
       </section>
     );
   }),
 );
-
-// const NewsList = () => ;
 
 export default NewsList;
