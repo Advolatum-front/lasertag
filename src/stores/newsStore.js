@@ -14,6 +14,10 @@ class NewsStore {
   fetchNews = () => {
     this.newsList = this.initialNewsList;
   };
+
+  fetchNewsItemById = (id) => {
+    return this.newsList.find((item) => item.id === id);
+  };
 }
 
 export default new NewsStore();
