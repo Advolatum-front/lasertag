@@ -179,7 +179,6 @@
   }
 
   .index-news__news-header-container {
-    flex-direction: column-reverse;
     gap: 10px;
   }
 
