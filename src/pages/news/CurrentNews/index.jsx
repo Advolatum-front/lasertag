@@ -33,7 +33,7 @@ const CurrentNews = inject("NewsStore")(
       );
     }
 
-    const { id, title, img, fullText, additionalText, date } = fetchedNewsItem;
+    const { title, img, fullText, additionalText, date } = fetchedNewsItem;
     const paragraphs = fullText
       .split("\n")
       .map((paragraph, index) => <p key={index}>{paragraph}</p>);
