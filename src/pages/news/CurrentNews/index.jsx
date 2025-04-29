@@ -64,6 +64,4 @@ const CurrentNews = inject("NewsStore")(
   }),
 );
 
-// const CurrentNews = ;
-
 export default CurrentNews;
