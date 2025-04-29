@@ -48,7 +48,7 @@ class NewsStore {
           return Number(date.replace(".", ""));
         });
 
-        return dateNumB - dateNumA;
+        return dateNumA - dateNumB;
       })
       .slice(-count);
   };
