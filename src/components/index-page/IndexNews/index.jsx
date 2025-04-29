@@ -11,19 +11,16 @@ import "./index.css";
 const LAST_INDEX_NEWS_COUNT = 3;
 
 const IndexNews = inject("NewsStore")(
-  observer(({ NewsStore, props }) => {
+  observer(({ NewsStore, className = "" }) => {
     const { fetchLastNews, lastNews } = NewsStore;
 
     useEffect(() => {
       fetchLastNews(LAST_INDEX_NEWS_COUNT);
     }, [fetchLastNews]);
 
-    // const { className = "" } = props;
-    // const sectionClassName = className
-    //   ? `index-news ${className}`
-    //   : `index-news`;
-
-    const sectionClassName = "index-news";
+    const sectionClassName = className
+      ? `index-news ${className}`
+      : `index-news`;
 
     if (lastNews.length === 0) {
       return (
