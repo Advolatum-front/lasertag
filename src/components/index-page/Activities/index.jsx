@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
+import { activitiesService } from "../../../services/activities.js";
 
 import "./index.css";
 
 const Activities = () => {
+  useEffect(() => {
+    console.log("гет активитес: ", activitiesService.getActivities());
+  }, []);
+
   return (
     <section className="activities">
       <div className="activities__shooter"></div>
