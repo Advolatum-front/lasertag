@@ -1,15 +1,30 @@
 import { Link } from "react-router-dom";
 import { useCallback, useMemo, useState } from "react";
 
+import { Spin } from "@gravity-ui/uikit";
+
+import { activitiesService } from "../../../services/activities";
+
 import { useQuery } from "@tanstack/react-query";
 
 import YearsSpinner from "../../../components/YearsSpinner";
 import MonthesSpinner from "../../../components/MonthesSpinner";
 import ActivitiesCalendar from "../../../components/ActivitiesCalendar";
+import ActivityAnnounce from "./ActivityAnnounce";
 
 import "./index.css";
 
 const CURRENT_DATE = new Date();
+const LIMIT = 3;
+const requestFunction = () =>
+  activitiesService.getActivities({
+    limit: LIMIT,
+    dateFrom: CURRENT_DATE.toISOString(),
+    sort: {
+      column: "date",
+      dir: "asc",
+    },
+  });
 
 const ActivitiesCalendarPage = () => {
   const [selectedDate, setSelectedDate] = useState(CURRENT_DATE);
@@ -43,62 +58,31 @@ const ActivitiesCalendarPage = () => {
     );
   }, [setSelectedDate]);
 
+  const { data: rawActivities, isLoading } = useQuery({
+    queryKey: ["activities", "closestActivities"],
+    queryFn: requestFunction,
+  });
+
+  const closestActivities = useMemo(
+    () => rawActivities?.data || [],
+    [rawActivities],
+  );
+
   return (
     <section className="calendar-section">
       <h1 className="calendar-section__header">Мероприятия</h1>
       <h2 className="calendar-section__closest-activities-header">
         Ближайшие мероприятия
       </h2>
-      <ul className="calendar-section__closest-activities-list">
-        <li className="calendar-section__closest-activity-item">
-          <div className="calendar-section__closest-activity-date">03.12</div>
-          <div className="calendar-section__closest-activity-info">
-            <div className="calendar-section__closest-activity-top-part">
-              <h3 className="calendar-section__closest-activity-header">
-                Тренировочный бой юниоров Тренировочный бой юниоров
-                Тренировочный бой юниоров Тренировочный бой юниоров
-                Тренировочный бой юниоров Тренировочный бой юниоров
-                Тренировочный бой юниоров Тренировочный бой юниоров
-              </h3>
-              <Link className="calendar-section__link-more">Подробнее</Link>
-            </div>
-            <div className="calendar-section__description">
-              Подробное описание мероприятия для полноты картины, но не совсем,
-              чтобы можно было перейти по кнопке и прочитать больше информации
-            </div>
-          </div>
-        </li>
-        <li className="calendar-section__closest-activity-item">
-          <div className="calendar-section__closest-activity-date">03.12</div>
-          <div className="calendar-section__closest-activity-info">
-            <div className="calendar-section__closest-activity-top-part">
-              <h3 className="calendar-section__closest-activity-header">
-                Турнир полуфинала Запада
-              </h3>
-              <Link className="calendar-section__link-more">Подробнее</Link>
-            </div>
-            <div className="calendar-section__description">
-              Подробное описание мероприятия для полноты картины, но не совсем,
-              чтобы можно было перейти по кнопке и прочитать больше информации
-            </div>
-          </div>
-        </li>
-        <li className="calendar-section__closest-activity-item">
-          <div className="calendar-section__closest-activity-date">03.12</div>
-          <div className="calendar-section__closest-activity-info">
-            <div className="calendar-section__closest-activity-top-part">
-              <h3 className="calendar-section__closest-activity-header">
-                Мировая Лига лазерного боя
-              </h3>
-              <Link className="calendar-section__link-more">Подробнее</Link>
-            </div>
-            <div className="calendar-section__description">
-              Подробное описание мероприятия для полноты картины, но не совсем,
-              чтобы можно было перейти по кнопке и прочитать больше информации
-            </div>
-          </div>
-        </li>
-      </ul>
+      {isLoading || !closestActivities ? (
+        <Spin />
+      ) : (
+        <ul className="calendar-section__closest-activities-list">
+          {closestActivities.map((activityItem) => (
+            <ActivityAnnounce key={activityItem.id} {...activityItem} />
+          ))}
+        </ul>
+      )}
       <div className="calendar-section__calendar-container">
         <YearsSpinner
           startValue={calendarYear}
