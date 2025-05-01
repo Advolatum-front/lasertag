@@ -54,4 +54,5 @@ class NewsStore {
   };
 }
 
-export default new NewsStore();
+const newsStore = new NewsStore();
+export default newsStore;

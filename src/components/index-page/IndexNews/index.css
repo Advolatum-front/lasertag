@@ -6,6 +6,7 @@
   padding: 0 0 0 10vw;
   margin-bottom: 60px;
   font-family: var(--open-sans);
+  min-height: 623px;
 }
 
 .index-news__header {
