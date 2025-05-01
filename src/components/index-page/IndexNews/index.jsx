@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import { useEffect } from "react";
 
+import { formatDate } from "../../../utils/date/functions";
+
 import NoData from "../../../components/NoData";
 
 import { ReactComponent as Arrow } from "../../../svg/arrow-triangle.svg";
@@ -34,6 +36,7 @@ const IndexNews = inject("NewsStore")(
     const lastNewsListItems = lastNews.map((item) => {
       const { id, title, announce, img, date } = item;
       const url = `/news/${id}`;
+      const visibleDate = formatDate(date, "MM.DD");
 
       return (
         <li className="index-news__list-item" key={id}>
@@ -45,7 +48,7 @@ const IndexNews = inject("NewsStore")(
               <Link to={url} className="index-news__news-header">
                 {title}
               </Link>
-              <div className="index-news__news-date">{date}</div>
+              <div className="index-news__news-date">{visibleDate}</div>
             </div>
             <div className="index-news__news-announce">{announce}</div>
             <Link to={url} className="index-news__links-more">
