@@ -5,8 +5,11 @@ const sleep = () => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-const simpleRequestExample = (address) => {
+const simpleRequestExample = (address, data) => {
   if (address === "/api/get-activities/") {
+    if (data.limit) {
+      return activities.slice(0, data.limit);
+    }
     return activities;
   }
   return null;
@@ -19,7 +22,7 @@ export const baseRequest = async ({ url, method = "get", data }) => {
       case "get":
         return {
           data:
-            simpleRequestExample(url) ||
+            simpleRequestExample(url, data) ||
             JSON.parse(localStorage.getItem(url) || "null"),
           status: 200,
           statusText: "OK",

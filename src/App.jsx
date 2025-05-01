@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 import { useLocation } from "react-router-dom";
 
@@ -33,6 +34,8 @@ import ActivityRequestForm from "./pages/cabinet/cabinet-views/activities/Activi
 import "./App.css";
 import "./my-styles.css";
 
+const queryClient = new QueryClient();
+
 function App() {
   const footer = !useLocation().pathname.startsWith("/cabinet") ? (
     <Footer />
@@ -47,8 +50,9 @@ function App() {
 </Route>
   */
 
+  console.log(QueryClientProvider);
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Header />
       <main className="main">
         <Routes>
@@ -97,7 +101,7 @@ function App() {
         </Routes>
       </main>
       {footer}
-    </>
+    </QueryClientProvider>
   );
 }
 
