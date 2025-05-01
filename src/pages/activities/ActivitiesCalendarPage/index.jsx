@@ -3,8 +3,6 @@ import { useCallback, useMemo, useState } from "react";
 
 import { useQuery } from "@tanstack/react-query";
 
-import { monthesNames } from "../../../utils/date/monthesNames.js";
-
 import YearsSpinner from "../../../components/YearsSpinner";
 import MonthesSpinner from "../../../components/MonthesSpinner";
 import ActivitiesCalendar from "../../../components/ActivitiesCalendar";
