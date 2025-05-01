@@ -36,7 +36,7 @@ const IndexNews = inject("NewsStore")(
     const lastNewsListItems = lastNews.map((item) => {
       const { id, title, announce, img, date } = item;
       const url = `/news/${id}`;
-      const visibleDate = formatDate(date, "DD.MM");
+      const visibleDate = formatDate(date);
 
       return (
         <li className="index-news__list-item" key={id}>

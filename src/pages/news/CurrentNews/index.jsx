@@ -39,7 +39,7 @@ const CurrentNews = inject("NewsStore")(
     const paragraphs = fullText.map((paragraph, index) => (
       <p key={index}>{paragraph}</p>
     ));
-    const visibleDate = formatDate(date, "DD.MM");
+    const visibleDate = formatDate(date);
 
     const [prevNewsId, nextNewsId] = adjacentNewsIds.map((id) => `/news/${id}`);
 
