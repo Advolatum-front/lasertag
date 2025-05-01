@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
+
+import { useQuery } from "@tanstack/react-query";
 
 import { monthesNames } from "../../../utils/date/monthesNames.js";
 
@@ -9,29 +11,39 @@ import ActivitiesCalendar from "../../../components/ActivitiesCalendar";
 
 import "./index.css";
 
+const CURRENT_DATE = new Date();
+
 const ActivitiesCalendarPage = () => {
-  const [calendarYear, setCalendarYear] = useState(new Date().getFullYear());
-  const [calendarMonth, setCalendarMonth] = useState(new Date().getMonth());
+  const [selectedDate, setSelectedDate] = useState(CURRENT_DATE);
 
-  const decreaseYear = () => {
-    setCalendarYear(calendarYear - 1);
-  };
+  const calendarYear = useMemo(
+    () => selectedDate.getFullYear(),
+    [selectedDate],
+  );
+  const calendarMonth = useMemo(() => selectedDate.getMonth(), [selectedDate]);
 
-  const increaseYear = () => {
-    setCalendarYear(calendarYear + 1);
-  };
+  const handleDecreaseMonth = useCallback(() => {
+    setSelectedDate(
+      (prevDate) => new Date(prevDate.setMonth(prevDate.getMonth() - 1)),
+    );
+  }, [setSelectedDate]);
 
-  const decreaseMonth = () => {
-    const newVal =
-      calendarMonth === 0 ? monthesNames.length - 1 : calendarMonth - 1;
-    setCalendarMonth(newVal);
-  };
+  const handleIncreaseMonth = useCallback(() => {
+    setSelectedDate(
+      (prevDate) => new Date(prevDate.setMonth(prevDate.getMonth() + 1)),
+    );
+  }, [setSelectedDate]);
 
-  const increaseMonth = () => {
-    const newVal =
-      calendarMonth === monthesNames.length - 1 ? 0 : calendarMonth + 1;
-    setCalendarMonth(newVal);
-  };
+  const handleDecreaseYear = useCallback(() => {
+    setSelectedDate(
+      (prevDate) => new Date(prevDate.setFullYear(prevDate.getFullYear() - 1)),
+    );
+  }, [setSelectedDate]);
+  const handleIncreaseYear = useCallback(() => {
+    setSelectedDate(
+      (prevDate) => new Date(prevDate.setFullYear(prevDate.getFullYear() + 1)),
+    );
+  }, [setSelectedDate]);
 
   return (
     <section className="calendar-section">
@@ -92,16 +104,15 @@ const ActivitiesCalendarPage = () => {
       <div className="calendar-section__calendar-container">
         <YearsSpinner
           startValue={calendarYear}
-          onIncrease={increaseYear}
-          onDecrease={decreaseYear}
+          onIncrease={handleIncreaseYear}
+          onDecrease={handleDecreaseYear}
           className="calendar-section__spinner"
         />
 
         <MonthesSpinner
           startValue={calendarMonth}
-          values={monthesNames}
-          onDecrease={decreaseMonth}
-          onIncrease={increaseMonth}
+          onDecrease={handleDecreaseMonth}
+          onIncrease={handleIncreaseMonth}
           className="calendar-section__spinner"
         />
         <ActivitiesCalendar

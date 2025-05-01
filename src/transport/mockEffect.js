@@ -5,12 +5,32 @@ const sleep = () => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
-const simpleRequestExample = (address, data) => {
+const simpleRequestExample = (address, data = {}) => {
   if (address === "/api/get-activities/") {
-    if (data.limit) {
-      return activities.slice(0, data.limit);
+    let result = activities;
+    if (data.sort) {
+      if (data.sort.column === "date") {
+        if (data.sort.dir === "asc") {
+          result = result.sort(
+            (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime(),
+          );
+        } else {
+          result = result.sort(
+            (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+          );
+        }
+      }
     }
-    return activities;
+    if (data.dateFrom) {
+      const startDate = new Date(data.dateFrom).getTime();
+      result = result.filter(
+        ({ date }) => new Date(date).getTime() >= startDate,
+      );
+    }
+    if (data.limit) {
+      return result.slice(0, data.limit);
+    }
+    return result;
   }
   return null;
 };

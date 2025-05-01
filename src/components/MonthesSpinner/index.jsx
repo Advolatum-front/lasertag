@@ -1,31 +1,39 @@
 import { useState } from "react";
 
+import { monthesNames } from "../../utils/date/monthesNames.js";
+
 import "./index.css";
 
 const MonthesSpinner = (props) => {
-  const { startValue, values, onDecrease, onIncrease, className = "" } = props;
+  const { startValue, onDecrease, onIncrease, className = "" } = props;
 
   const [spinnerValue, setSpinnerValue] = useState(startValue);
 
   const decrease = () => {
-    const newVal = spinnerValue === 0 ? values.length - 1 : spinnerValue - 1;
+    const newVal =
+      spinnerValue === 0 ? monthesNames.length - 1 : spinnerValue - 1;
     setSpinnerValue(newVal);
 
     onDecrease();
   };
 
   const increase = () => {
-    const newVal = spinnerValue === values.length - 1 ? 0 : spinnerValue + 1;
+    const newVal =
+      spinnerValue === monthesNames.length - 1 ? 0 : spinnerValue + 1;
     setSpinnerValue(newVal);
 
     onIncrease();
   };
 
   const prevCaption =
-    values[spinnerValue === 0 ? values.length - 1 : spinnerValue - 1];
-  const currCaption = values[spinnerValue];
+    monthesNames[
+      spinnerValue === 0 ? monthesNames.length - 1 : spinnerValue - 1
+    ];
+  const currCaption = monthesNames[spinnerValue];
   const nextCaption =
-    values[spinnerValue === values.length - 1 ? 0 : spinnerValue + 1];
+    monthesNames[
+      spinnerValue === monthesNames.length - 1 ? 0 : spinnerValue + 1
+    ];
 
   const monthesSpinnerClassName = className
     ? `monthes-spinner ${className}`
