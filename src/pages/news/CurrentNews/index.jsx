@@ -34,9 +34,9 @@ const CurrentNews = inject("NewsStore")(
     }
 
     const { title, img, fullText, additionalText, date } = fetchedNewsItem;
-    const paragraphs = fullText
-      .split("\n")
-      .map((paragraph, index) => <p key={index}>{paragraph}</p>);
+    const paragraphs = fullText.map((paragraph, index) => (
+      <p key={index}>{paragraph}</p>
+    ));
 
     const [prevNewsId, nextNewsId] = adjacentNewsIds.map((id) => `/news/${id}`);
 
