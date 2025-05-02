@@ -1,5 +1,6 @@
 import { makeObservable, action, observable } from "mobx";
 import { getAdjacentByIndex } from "../utils/arrays/functions";
+import { parseDate } from "../utils/date/functions";
 
 class ActivitiesStore {
   initialActivitiesList = require("./data/activities.json");
@@ -47,11 +48,6 @@ class ActivitiesStore {
     this.fetchActivities();
 
     const currentDate = new Date();
-
-    const parseDate = (dateString) => {
-      const [day, month, year] = dateString.split(".").map(Number);
-      return new Date(year, month - 1, day);
-    };
 
     const upcomingActivities = this.activitiesList.filter((activity) => {
       const activityDate = parseDate(activity.date);
