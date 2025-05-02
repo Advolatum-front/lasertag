@@ -64,7 +64,7 @@ class ActivitiesStore {
       return dateA - dateB;
     });
 
-    this.upcomingActivities = upcomingActivities.slice(-count);
+    this.upcomingActivities = upcomingActivities.slice(0, count);
   };
 }
 
