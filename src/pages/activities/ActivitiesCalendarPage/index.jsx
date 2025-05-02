@@ -34,11 +34,14 @@ const ActivitiesCalendarPage = () => {
     [selectedDate],
   );
   const calendarMonth = useMemo(() => selectedDate.getMonth(), [selectedDate]);
+  console.log("селектед", calendarYear, calendarMonth, selectedDate);
 
   const handleDecreaseMonth = useCallback(() => {
-    setSelectedDate(
-      (prevDate) => new Date(prevDate.setMonth(prevDate.getMonth() - 1)),
-    );
+    setSelectedDate((prevDate) => {
+      const nextDate = new Date(prevDate.setMonth(prevDate.getMonth() - 1));
+      console.log("nextDate", nextDate);
+      return nextDate;
+    });
   }, [setSelectedDate]);
 
   const handleIncreaseMonth = useCallback(() => {
@@ -98,8 +101,8 @@ const ActivitiesCalendarPage = () => {
           className="calendar-section__spinner"
         />
         <ActivitiesCalendar
-          month={calendarMonth}
-          year={calendarYear}
+          selectedDate={selectedDate}
+          currentDate={CURRENT_DATE}
           className="calendar-section__calendar"
         />
       </div>

@@ -7,33 +7,11 @@ import "./index.css";
 const MonthesSpinner = (props) => {
   const { startValue, onDecrease, onIncrease, className = "" } = props;
 
-  const [spinnerValue, setSpinnerValue] = useState(startValue);
-
-  const decrease = () => {
-    const newVal =
-      spinnerValue === 0 ? monthesNames.length - 1 : spinnerValue - 1;
-    setSpinnerValue(newVal);
-
-    onDecrease();
-  };
-
-  const increase = () => {
-    const newVal =
-      spinnerValue === monthesNames.length - 1 ? 0 : spinnerValue + 1;
-    setSpinnerValue(newVal);
-
-    onIncrease();
-  };
-
+  // TODO: make useMemo
   const prevCaption =
-    monthesNames[
-      spinnerValue === 0 ? monthesNames.length - 1 : spinnerValue - 1
-    ];
-  const currCaption = monthesNames[spinnerValue];
-  const nextCaption =
-    monthesNames[
-      spinnerValue === monthesNames.length - 1 ? 0 : spinnerValue + 1
-    ];
+    monthesNames[(startValue + monthesNames.length - 1) % monthesNames.length];
+  const currCaption = monthesNames[startValue];
+  const nextCaption = monthesNames[(startValue + 1) % monthesNames.length];
 
   const monthesSpinnerClassName = className
     ? `monthes-spinner ${className}`
@@ -41,13 +19,13 @@ const MonthesSpinner = (props) => {
 
   return (
     <div className={monthesSpinnerClassName}>
-      <button className="monthes-spinner__prev" onClick={decrease}>
+      <button className="monthes-spinner__prev" onClick={onDecrease}>
         {prevCaption}
       </button>
 
       <span className="monthes-spinner__current">{currCaption}</span>
 
-      <button className="monthes-spinner__next" onClick={increase}>
+      <button className="monthes-spinner__next" onClick={onIncrease}>
         {nextCaption}
       </button>
     </div>

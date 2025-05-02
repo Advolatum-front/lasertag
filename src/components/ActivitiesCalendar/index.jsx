@@ -1,79 +1,60 @@
 import { Link } from "react-router-dom";
+import { useMemo } from "react";
 
 import "./index.css";
 
+const DAYS_CAPTIONS_LIST = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+
+const WEEK_LENGTH = DAYS_CAPTIONS_LIST.length;
+
+// TODO: вынести в отдельный компонент
+
+const daysOfWeekItems = DAYS_CAPTIONS_LIST.map((item, index) => {
+  return (
+    <li className="activities-calendar__day-caption" key={`caption${item}`}>
+      {item}
+    </li>
+  );
+});
+
+// TODO: вынести в отдельный компонент
+
+const calendarDayItem = (dayNumber, neighbour = false) => {
+  const itemClassName = neighbour
+    ? "activities-calendar__calendar-day neighbour-month"
+    : "activities-calendar__calendar-day";
+
+  const key = neighbour ? `neighbour${dayNumber}` : `current${dayNumber}`;
+
+  const dayNumberPadded = dayNumber.toString().padStart(2, "0");
+
+  return (
+    <li className={itemClassName} key={key}>
+      <span className="activities-calendar__day-number">{dayNumberPadded}</span>
+    </li>
+  );
+};
+
 const ActivitiesCalendar = (props) => {
-  const { month, year, className = "" } = props;
+  const { selectedDate, currentDate, className = "" } = props;
+  console.log("!calendarDate", selectedDate);
+  const startCalendarDate = useMemo(() => {
+    const startDate = new Date(selectedDate);
+    startDate.setDate(1);
+    startDate.setDate(2 - startDate.getDay());
+    return startDate;
+  }, [selectedDate]);
 
-  const daysOfWeekCaptions = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
-  const daysOfWeekItems = daysOfWeekCaptions.map((item, index) => {
-    return (
-      <li className="activities-calendar__day-caption" key={`caption${index}`}>
-        {item}
-      </li>
-    );
-  });
+  const endCalendarDate = useMemo(() => {
+    const endDate = new Date(selectedDate);
+    endDate.setMonth(endDate.getMonth() + 1);
+    endDate.setDate(0);
+    endDate.setDate(endDate.getDate() + WEEK_LENGTH - endDate.getDay());
+    return endDate;
+  }, [selectedDate]);
 
-  const calendarDayItem = (dayNumber, neighbour = false) => {
-    const itemClassName = neighbour
-      ? "activities-calendar__calendar-day neighbour-month"
-      : "activities-calendar__calendar-day";
-
-    const key = neighbour ? `neighbour${dayNumber}` : `current${dayNumber}`;
-
-    const dayNumberPadded = dayNumber.toString().padStart(2, "0");
-
-    return (
-      <li className={itemClassName} key={key}>
-        <span className="activities-calendar__day-number">
-          {dayNumberPadded}
-        </span>
-      </li>
-    );
-  };
-
-  const naturalNumbers = (n) => Array.from({ length: n }).map((_, i) => i + 1);
-
-  const currentMonthLength = new Date(year, month + 1, 0).getDate();
-
-  const previousMonthLastDay = new Date(year, month, 0).getDate();
-  let weekDayOfMonthBegin = new Date(year, month, 1).getDay();
-  weekDayOfMonthBegin = weekDayOfMonthBegin === 0 ? 7 : weekDayOfMonthBegin;
-
-  let currentMonthDays = naturalNumbers(currentMonthLength);
-  const currentMonthDaysItems = currentMonthDays.map((dayNumber) => {
-    return calendarDayItem(dayNumber);
-  });
-
-  const previousMonthDays = [];
-
-  let day = weekDayOfMonthBegin;
-  let lastMonthDay = previousMonthLastDay;
-  while (day > 1) {
-    previousMonthDays.unshift(lastMonthDay);
-    day--;
-    lastMonthDay--;
-  }
-
-  const previousMonthDaysItems = previousMonthDays.map((dayNumber) => {
-    return calendarDayItem(dayNumber, true);
-  });
-
-  let weekDayOfMonthEnd = new Date(year, month, currentMonthLength).getDay();
-
-  weekDayOfMonthEnd = weekDayOfMonthEnd === 0 ? 7 : weekDayOfMonthEnd;
-
-  const nextMonthDays = naturalNumbers(7 - weekDayOfMonthEnd);
-  const nextMonthDaysItems = nextMonthDays.map((dayNumber) => {
-    return calendarDayItem(dayNumber, true);
-  });
-
-  const calendarDaysItems = [
-    ...daysOfWeekItems,
-    ...previousMonthDaysItems,
-    ...currentMonthDaysItems,
-    ...nextMonthDaysItems,
-  ];
+  console.log("начало", startCalendarDate);
+  console.log("конец", endCalendarDate);
 
   // currentMonthDays
   //   .map((el) => mkElem("div", null, null, el))
@@ -93,6 +74,7 @@ const ActivitiesCalendar = (props) => {
 </li>
 
     */
+  const calendarDaysItems = null;
 
   const calendarWrapperClassName = className
     ? `activities-calendar-wrapper ${className}`

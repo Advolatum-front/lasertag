@@ -41,7 +41,7 @@
   gap: 10px;
   background-color: #fff;
   border-radius: 20px;
-  padding: 5px;
+  padding: 8px 12px 8px 5px;
   flex-grow: 1;
   width: 20%;
 }
@@ -95,11 +95,13 @@
   justify-content: center;
   background-color: #f00;
   color: #fff;
-  padding: 2px 5px;
-  border-radius: 20px;
+  padding: 3px 12px 4px;
+  border-radius: 10px;
   transition: background-color 0.2s linear;
+  letter-spacing: -0.3px;
+  line-height: 15px;
+  font-weight: 400;
 }
-
 .calendar-section__link-more:hover {
   background-color: var(--medium-blue);
 }
