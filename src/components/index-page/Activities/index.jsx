@@ -35,7 +35,7 @@ const Activities = inject("ActivitiesStore")(
       const url = `/activities/${id}`;
 
       return (
-        <li className="activities__list-item">
+        <li className="activities__list-item" key={id}>
           <div className="activities__date">{visibleDate}</div>
           <div className="activities__info">
             <div className="activities__header">{title}</div>
