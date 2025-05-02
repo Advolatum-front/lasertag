@@ -9,12 +9,12 @@ class ActivitiesStore {
       activitiesList: observable,
       fetchedActivityItem: observable,
       adjacentActivitiesIds: observable,
-      closestActivities: observable,
+      upcommingActivities: observable,
 
       fetchActivities: action,
       fetchActivityItemById: action,
       fetchAdjacentActivitiesIdsById: action,
-      fetchClosestActivities: action,
+      fetchUpcomingActivities: action,
     });
   }
 
@@ -38,18 +38,42 @@ class ActivitiesStore {
     ).map((item) => item.id);
   };
 
-  fetchLastActivities = (count) => {
+  fetchClosestActivities = (count) => {
     this.fetchActivities();
 
-    this.lastActivities = this.activitiesList
-      .toSorted((a, b) => {
-        const [dateNumA, dateNumB] = [a.date, b.date].map((date) => {
-          return Number(date.replace(".", ""));
-        });
+    const sortedActivitiesArray = this.activitiesList.toSorted((a, b) => {
+      const [dateNumA, dateNumB] = [a.date, b.date].map((date) => {
+        return Number(date.replace(/\./g, ""));
+      });
 
-        return dateNumA - dateNumB;
-      })
-      .slice(-count);
+      return dateNumA - dateNumB;
+    });
+
+    this.upcommingActivities;
+  };
+
+  fetchUpcomingActivities = (count = 3) => {
+    this.fetchActivities();
+
+    const currentDate = new Date();
+
+    const parseDate = (dateString) => {
+      const [day, month, year] = dateString.split(".").map(Number);
+      return new Date(year, month - 1, day);
+    };
+
+    const upcomingActivities = this.activitiesList.filter((activity) => {
+      const activityDate = parseDate(activity.date);
+      return activityDate >= currentDate;
+    });
+
+    upcomingActivities.sort((a, b) => {
+      const dateA = parseDate(a.date);
+      const dateB = parseDate(b.date);
+      return dateA - dateB;
+    });
+
+    this.closestActivities = upcomingActivities.slice(-count);
   };
 }
 
