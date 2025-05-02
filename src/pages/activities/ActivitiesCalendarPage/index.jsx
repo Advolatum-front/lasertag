@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { inject, observer } from "mobx-react";
 
 import { monthesNames } from "../../../utils/date/monthesNames.js";
@@ -7,6 +7,7 @@ import { monthesNames } from "../../../utils/date/monthesNames.js";
 import YearsSpinner from "../../../components/YearsSpinner";
 import MonthesSpinner from "../../../components/MonthesSpinner";
 import ActivitiesCalendar from "../../../components/ActivitiesCalendar";
+import NoData from "../../../components/NoData";
 
 import { stripYear } from "../../../utils/date/functions";
 
@@ -14,6 +15,18 @@ import "./index.css";
 
 const ActivitiesCalendarPage = inject("ActivitiesStore")(
   observer(({ ActivitiesStore }) => {
+    const {
+      activitiesList,
+      fetchActivities,
+      upcomingActivities,
+      fetchUpcomingActivities,
+    } = ActivitiesStore;
+
+    useEffect(() => {
+      fetchActivities();
+      fetchUpcomingActivities();
+    }, [fetchActivities, fetchUpcomingActivities]);
+
     const [calendarYear, setCalendarYear] = useState(new Date().getFullYear());
     const [calendarMonth, setCalendarMonth] = useState(new Date().getMonth());
 
@@ -37,6 +50,38 @@ const ActivitiesCalendarPage = inject("ActivitiesStore")(
       setCalendarMonth(newVal);
     };
 
+    const upcomingActivitiesBlock =
+      upcomingActivities.length === 0 ? (
+        <NoData />
+      ) : (
+        upcomingActivities.map((item) => {
+          const { id, date, title, description } = item;
+          const visibleDate = stripYear(date);
+          const url = `/activities/${id}`;
+
+          return (
+            <li className="calendar-section__closest-activity-item" key={id}>
+              <div className="calendar-section__closest-activity-date">
+                {visibleDate}
+              </div>
+              <div className="calendar-section__closest-activity-info">
+                <div className="calendar-section__closest-activity-top-part">
+                  <h3 className="calendar-section__closest-activity-header">
+                    {title}
+                  </h3>
+                  <Link to={url} className="calendar-section__link-more">
+                    Подробнее
+                  </Link>
+                </div>
+                <div className="calendar-section__description">
+                  {description}
+                </div>
+              </div>
+            </li>
+          );
+        })
+      );
+
     return (
       <section className="calendar-section">
         <h1 className="calendar-section__header">Мероприятия</h1>
@@ -44,57 +89,7 @@ const ActivitiesCalendarPage = inject("ActivitiesStore")(
           Ближайшие мероприятия
         </h2>
         <ul className="calendar-section__closest-activities-list">
-          <li className="calendar-section__closest-activity-item">
-            <div className="calendar-section__closest-activity-date">03.12</div>
-            <div className="calendar-section__closest-activity-info">
-              <div className="calendar-section__closest-activity-top-part">
-                <h3 className="calendar-section__closest-activity-header">
-                  Тренировочный бой юниоров Тренировочный бой юниоров
-                  Тренировочный бой юниоров Тренировочный бой юниоров
-                  Тренировочный бой юниоров Тренировочный бой юниоров
-                  Тренировочный бой юниоров Тренировочный бой юниоров
-                </h3>
-                <Link className="calendar-section__link-more">Подробнее</Link>
-              </div>
-              <div className="calendar-section__description">
-                Подробное описание мероприятия для полноты картины, но не
-                совсем, чтобы можно было перейти по кнопке и прочитать больше
-                информации
-              </div>
-            </div>
-          </li>
-          <li className="calendar-section__closest-activity-item">
-            <div className="calendar-section__closest-activity-date">03.12</div>
-            <div className="calendar-section__closest-activity-info">
-              <div className="calendar-section__closest-activity-top-part">
-                <h3 className="calendar-section__closest-activity-header">
-                  Турнир полуфинала Запада
-                </h3>
-                <Link className="calendar-section__link-more">Подробнее</Link>
-              </div>
-              <div className="calendar-section__description">
-                Подробное описание мероприятия для полноты картины, но не
-                совсем, чтобы можно было перейти по кнопке и прочитать больше
-                информации
-              </div>
-            </div>
-          </li>
-          <li className="calendar-section__closest-activity-item">
-            <div className="calendar-section__closest-activity-date">03.12</div>
-            <div className="calendar-section__closest-activity-info">
-              <div className="calendar-section__closest-activity-top-part">
-                <h3 className="calendar-section__closest-activity-header">
-                  Мировая Лига лазерного боя
-                </h3>
-                <Link className="calendar-section__link-more">Подробнее</Link>
-              </div>
-              <div className="calendar-section__description">
-                Подробное описание мероприятия для полноты картины, но не
-                совсем, чтобы можно было перейти по кнопке и прочитать больше
-                информации
-              </div>
-            </div>
-          </li>
+          {upcomingActivitiesBlock}
         </ul>
         <div className="calendar-section__calendar-container">
           <YearsSpinner
