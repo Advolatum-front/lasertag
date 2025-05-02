@@ -1,4 +1,4 @@
 export const stripYear = (DDMMYYYDate) => {
-  const [d, m, _] = DDMMYYYDate.split(".");
+  const [d, m] = DDMMYYYDate.split(".");
   return `${d}.${m}`;
 };
