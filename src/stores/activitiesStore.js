@@ -4,12 +4,17 @@ import { getAdjacentByIndex } from "../utils/arrays/functions";
 class ActivitiesStore {
   initialActivitiesList = require("./data/activities.json");
 
+  activitiesList = [];
+  fetchedActivityItem = null;
+  adjacentActivitiesIds = [];
+  upcomingActivities = [];
+
   constructor() {
     makeObservable(this, {
       activitiesList: observable,
       fetchedActivityItem: observable,
       adjacentActivitiesIds: observable,
-      upcommingActivities: observable,
+      upcomingActivities: observable,
 
       fetchActivities: action,
       fetchActivityItemById: action,
@@ -59,7 +64,7 @@ class ActivitiesStore {
       return dateA - dateB;
     });
 
-    this.closestActivities = upcomingActivities.slice(-count);
+    this.upcomingActivities = upcomingActivities.slice(-count);
   };
 }
 
