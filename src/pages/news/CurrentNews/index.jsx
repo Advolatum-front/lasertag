@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { useEffect } from "react";
 
-import { formatDate } from "../../../utils/date/functions";
-
 import NoData from "../../../components/NoData";
 
 import "./index.css";
@@ -39,7 +37,6 @@ const CurrentNews = inject("NewsStore")(
     const paragraphs = fullText.map((paragraph, index) => (
       <p key={index}>{paragraph}</p>
     ));
-    const visibleDate = formatDate(date);
 
     const [prevNewsId, nextNewsId] = adjacentNewsIds.map((id) => `/news/${id}`);
 
@@ -59,7 +56,7 @@ const CurrentNews = inject("NewsStore")(
             </div>
           </div>
           <div className="current-news-date">
-            <span>{visibleDate}</span>
+            <span>{date}</span>
           </div>
         </div>
       </section>

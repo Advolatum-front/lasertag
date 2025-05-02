@@ -7,8 +7,6 @@ import { Navigation } from "swiper/modules";
 
 import NoData from "../../../components/NoData";
 
-import { formatDate } from "../../../utils/date/functions";
-
 import { ReactComponent as Arrow } from "../../../svg/arrow.svg";
 
 import "swiper/css";
@@ -29,7 +27,6 @@ const NewsList = inject("NewsStore")(
     const newsCards = newsData.map((item) => {
       const { id, title, img, date, announce } = item;
       const url = `/news/${id}`;
-      const visibleDate = formatDate(date);
 
       return (
         <div className="news__news-card" key={id}>
@@ -37,7 +34,7 @@ const NewsList = inject("NewsStore")(
           <Link to={url}>
             <img src={img} alt="" className="news__card-image" />
           </Link>
-          <div className="news__card-date">{visibleDate}</div>
+          <div className="news__card-date">{date}</div>
           <div className="news__card-announce">{announce}</div>
           <Link to={url} className="news__card-link">
             Подробнее
