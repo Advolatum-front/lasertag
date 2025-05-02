@@ -45,7 +45,7 @@ class NewsStore {
     this.lastNews = this.newsList
       .toSorted((a, b) => {
         const [dateNumA, dateNumB] = [a.date, b.date].map((date) => {
-          return Number(date.replace(".", ""));
+          return Number(date.replace(/\./g, ""));
         });
 
         return dateNumA - dateNumB;
