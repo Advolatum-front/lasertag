@@ -37,7 +37,6 @@ const calendarDayItem = (dayNumber, neighbour = false) => {
 
 const ActivitiesCalendar = (props) => {
   const { selectedDate, currentDate, className = "" } = props;
-  console.log("!calendarDate", selectedDate);
   const startCalendarDate = useMemo(() => {
     const startDate = new Date(selectedDate);
     startDate.setDate(1);
@@ -53,8 +52,24 @@ const ActivitiesCalendar = (props) => {
     return endDate;
   }, [selectedDate]);
 
-  console.log("начало", startCalendarDate);
-  console.log("конец", endCalendarDate);
+  const dayList = useMemo(() => {
+
+    const arr = [];
+
+    let processedDate = new Date(startCalendarDate);
+    while (processedDate <= endCalendarDate) {
+      arr.push({
+        date: processedDate.getDate(),
+        isCurrentMonth: processedDate.getMonth() === selectedDate.getMonth(),
+        isCurrentDate: processedDate.getDate() === currentDate.getDate() &&
+      });
+
+
+
+
+      processedDate.setDate(processedDate.getDate() + 1);
+    };
+  }, [])
 
   // currentMonthDays
   //   .map((el) => mkElem("div", null, null, el))
