@@ -2,6 +2,7 @@
   position: relative;
   padding: 50px 20px 20px 40vw;
   font-family: var(--open-sans);
+  min-height: 300px;
 }
 
 .activities__shooter {

@@ -53,7 +53,7 @@ const Activities = inject("ActivitiesStore")(
             </div>
           </li>
         </ul>
-        <Link to="/" className="activities__link-to-all">
+        <Link to="/activities" className="activities__link-to-all">
           <span>Все мероприятия</span>
         </Link>
       </section>
