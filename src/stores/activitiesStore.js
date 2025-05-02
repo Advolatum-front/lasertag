@@ -38,20 +38,6 @@ class ActivitiesStore {
     ).map((item) => item.id);
   };
 
-  fetchClosestActivities = (count) => {
-    this.fetchActivities();
-
-    const sortedActivitiesArray = this.activitiesList.toSorted((a, b) => {
-      const [dateNumA, dateNumB] = [a.date, b.date].map((date) => {
-        return Number(date.replace(/\./g, ""));
-      });
-
-      return dateNumA - dateNumB;
-    });
-
-    this.upcommingActivities;
-  };
-
   fetchUpcomingActivities = (count = 3) => {
     this.fetchActivities();
 
