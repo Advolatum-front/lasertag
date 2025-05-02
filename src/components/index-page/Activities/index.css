@@ -1,3 +1,7 @@
+:root {
+  --index-activities-date-bg-width: 8vw;
+}
+
 .activities {
   position: relative;
   padding: 50px 20px 20px 40vw;
@@ -34,13 +38,14 @@
 }
 
 .activities__list-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: var(--index-activities-date-bg-width) 1fr;
   gap: 10px;
   align-items: center;
 }
 
 .activities__date {
-  --width: 12vw;
+  --width: var(--index-activities-date-bg-width);
   --height: calc(var(--width) * 0.606);
   width: var(--width);
   height: var(--height);
