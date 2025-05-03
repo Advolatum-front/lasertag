@@ -7,16 +7,17 @@ import { ACTIVITIY_REQUEST_STATUSES } from "../../utils/activities-statuses";
 const ACTIVITY_IS_AVAIBLE = 4;
 
 const ActivityRequestStatus = (props) => {
-  const { code, className = "" } = props;
+  const { code, className = "", activityId } = props;
   const statusBlockClassName = ACTIVITIY_REQUEST_STATUSES[code].className;
   const caption = ACTIVITIY_REQUEST_STATUSES[code].caption;
+  const sendRequestURL = `/cabinet/activities/${activityId}/request`;
 
   const statusClassName =
     `activity-request-status ${statusBlockClassName} ${className}`.trim();
 
   const statusBlock =
     code === ACTIVITY_IS_AVAIBLE ? (
-      <Link to="/" className={statusClassName}>
+      <Link to={sendRequestURL} className={statusClassName}>
         {caption}
       </Link>
     ) : (

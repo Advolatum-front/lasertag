@@ -57,6 +57,7 @@ const ActivityViewer = (props) => {
       <ActivityRequestStatus
         code={status}
         className="activity-viewer__avtivity-status"
+        activityId={id}
       />
     ) : (
       linkToLogin
