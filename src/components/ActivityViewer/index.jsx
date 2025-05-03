@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { stripYear } from "../../utils/date/functions";
+import { stripYear, parseDate } from "../../utils/date/functions";
 
 import { ReactComponent as Arrow } from "../../svg/arrow.svg";
 
@@ -38,6 +38,19 @@ const ActivityViewer = (props) => {
   ));
 
   const visibleDate = stripYear(date);
+  const currentDate = new Date();
+  const activityDate = parseDate(date);
+
+  const sendRequestBlock =
+    activityDate < currentDate ? (
+      <span className="activity-viewer__past-activity-caption">
+        Мероприятие завершено
+      </span>
+    ) : (
+      <Link to="/" className="activity-viewer__link-send-request">
+        Подать заявку
+      </Link>
+    );
 
   return (
     <div className={activityViewerClassName}>
@@ -48,9 +61,7 @@ const ActivityViewer = (props) => {
       <div className="activity-viewer__description">{fullTextParagraphs}</div>
       <div className="activity-viewer__bottom-part">
         <div className="activity-viewer__date">{visibleDate}</div>
-        <Link to="/" className="activity-viewer__link-send-request">
-          Подать заявку
-        </Link>
+        {sendRequestBlock}
       </div>
       {prevLink}
       {nextLink}
