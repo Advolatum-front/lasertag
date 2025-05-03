@@ -74,7 +74,8 @@
   right: 86px;
 }
 
-.activity-viewer__link-send-request {
+.activity-viewer__link-send-request,
+.activity-viewer__past-activity-caption {
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -90,16 +91,9 @@
 }
 
 .activity-viewer__past-activity-caption {
-  display: inline-block;
-  padding: 4px 8px;
   background-color: #f5f5f5;
   color: #757575;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 500;
   border: 3px solid #e0e0e0;
-  text-transform: uppercase;
-  margin-bottom: -80px;
 }
 
 .activity-viewer__link-send-request:hover {
@@ -227,7 +221,8 @@
     display: none;
   }
 
-  .activity-viewer__link-send-request {
+  .activity-viewer__link-send-request,
+  .activity-viewer__past-activity-caption {
     margin: 0 auto;
   }
 }
