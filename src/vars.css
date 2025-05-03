@@ -7,6 +7,8 @@
   --light-blue: #00bbff;
   --light-grey: #f1f1f1;
 
+  --status-no-status-bg: #1c1c1c;
+  --status-no-status-text: #fff;
   --status-approved-bg: #d0ffb2;
   --status-approved-text: #51bb00;
   --status-declined-bg: #ffb2b2;

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { stripYear, parseDate } from "../../utils/date/functions";
+import ActivityRequestStatus from "../../components/ActivityRequestStatus";
 
 import { ReactComponent as Arrow } from "../../svg/arrow.svg";
 
@@ -53,7 +54,10 @@ const ActivityViewer = (props) => {
         Мероприятие завершено
       </span>
     ) : isAuthorized ? (
-      <span className="activity-viewer__avtivity-status">Статус</span>
+      <ActivityRequestStatus
+        code={status}
+        className="activity-viewer__avtivity-status"
+      />
     ) : (
       linkToLogin
     );

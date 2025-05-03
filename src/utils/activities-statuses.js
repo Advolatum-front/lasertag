@@ -1,7 +1,7 @@
-// AS = ACTIVITY STATUS
-
-export const AS_NONE = 0;
-export const AS_APPROVED = 1;
-export const AS_DECLINED = 2;
-export const AS_PENDING = 3;
-export const AS_AVAIBLE = 4;
+export const ACTIVITIY_REQUEST_STATUSES = [
+  { caption: "Нет статуса", className: "no-status" },
+  { caption: "Одобрена", className: "approved" },
+  { caption: "Отклонена", className: "declined" },
+  { caption: "Подана", className: "pending" },
+  { caption: "Подать заявку", className: "avaible" },
+];

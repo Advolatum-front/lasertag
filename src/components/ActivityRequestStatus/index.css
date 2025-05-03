@@ -1,0 +1,33 @@
+.activity-request-status.no-status {
+  color: var(--status-approved-text);
+  background-color: var(--status-approved-bg);
+}
+
+.activity-request-status.approved {
+  color: var(--status-approved-text);
+  background-color: var(--status-approved-bg);
+}
+
+.activity-request-status.declined {
+  color: var(--status-declined-text);
+  background-color: var(--status-declined-bg);
+}
+
+.activity-request-status.pending {
+  color: var(--status-pending-text);
+  background-color: var(--status-pending-bg);
+  font-size: 14px;
+}
+
+.activity-request-status.avaible {
+  color: var(--status-avaible-text);
+  background-color: var(--status-avaible-bg);
+  transition:
+    color 0.2s linear,
+    background-color 0.2s linear;
+}
+
+.activity-request-status.avaible:hover {
+  color: #fff;
+  background-color: var(--medium-blue);
+}
