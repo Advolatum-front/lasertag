@@ -90,7 +90,7 @@ function App() {
             <Route path="favorites" element={<CabinetGallery />} />
             <Route path="favorites/id" element={<CabinetSlider />} />
             <Route
-              path="activities/id/request"
+              path="activities/:id/request"
               element={<ActivityRequestForm />}
             />
           </Route>
