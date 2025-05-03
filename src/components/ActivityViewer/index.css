@@ -75,7 +75,9 @@
 }
 
 .activity-viewer__link-send-request,
-.activity-viewer__past-activity-caption {
+.activity-viewer__past-activity-caption,
+.activity-viewer__link-to-login,
+.activity-viewer__avtivity-status {
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -88,6 +90,14 @@
   border-radius: 10px;
   transition: background-color 0.2s linear;
   margin-bottom: -80px;
+}
+
+.activity-viewer__link-to-login {
+  background-color: var(--medium-blue);
+}
+
+.activity-viewer__link-to-login:hover {
+  background-color: var(--dark-blue);
 }
 
 .activity-viewer__past-activity-caption {
@@ -222,7 +232,9 @@
   }
 
   .activity-viewer__link-send-request,
-  .activity-viewer__past-activity-caption {
+  .activity-viewer__past-activity-caption,
+  .activity-viewer__link-to-login,
+  .activity-viewer__avtivity-status {
     margin: 0 auto;
   }
 }

@@ -16,6 +16,7 @@ const ActivityViewer = (props) => {
     borderAround = false,
     navLinks = false,
     goBackLinkURL,
+    isAuthorized = true,
   } = props;
 
   const activityViewerClassName = borderAround
@@ -41,15 +42,20 @@ const ActivityViewer = (props) => {
   const currentDate = new Date();
   const activityDate = parseDate(date);
 
+  const linkToLogin = (
+    <Link to="/login" className="activity-viewer__link-to-login">
+      Авторизуйтесь
+    </Link>
+  );
   const sendRequestBlock =
     activityDate < currentDate ? (
       <span className="activity-viewer__past-activity-caption">
         Мероприятие завершено
       </span>
+    ) : isAuthorized ? (
+      <span className="activity-viewer__avtivity-status">Статус</span>
     ) : (
-      <Link to="/" className="activity-viewer__link-send-request">
-        Подать заявку
-      </Link>
+      linkToLogin
     );
 
   return (
