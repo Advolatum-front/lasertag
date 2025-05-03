@@ -109,6 +109,7 @@ const ActivitiesCalendarPage = inject("ActivitiesStore")(
           <ActivitiesCalendar
             month={calendarMonth}
             year={calendarYear}
+            activities={activitiesList}
             className="calendar-section__calendar"
           />
         </div>
