@@ -77,7 +77,7 @@ function App() {
           />
           <Route
             exact
-            path="/activities/id"
+            path="/activities/:id"
             element={<CurrentActivityPage />}
           />
           <Route exact path="/gallery/slider" element={<GallerySliderPage />} />

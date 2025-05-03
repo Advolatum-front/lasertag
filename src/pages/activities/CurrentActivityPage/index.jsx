@@ -1,8 +1,12 @@
+import { useParams } from "react-router";
+
 import ActivityViewer from "../../../components/ActivityViewer";
 
 import "./index.css";
 
 const CurrentActivityPage = () => {
+  console.log("param: ", useParams().id);
+
   return (
     <section className="current-activity">
       <ActivityViewer
