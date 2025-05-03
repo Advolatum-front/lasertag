@@ -41,15 +41,16 @@ const ActivityViewer = (props) => {
   const currentDate = new Date();
   const activityDate = parseDate(date);
 
-  const sendRequestBlock = true ? (
-    <Link className="activity-viewer__past-activity-caption">
-      Мероприятие завершено
-    </Link>
-  ) : (
-    <Link to="/" className="activity-viewer__link-send-request">
-      Подать заявку
-    </Link>
-  );
+  const sendRequestBlock =
+    activityDate < currentDate ? (
+      <span className="activity-viewer__past-activity-caption">
+        Мероприятие завершено
+      </span>
+    ) : (
+      <Link to="/" className="activity-viewer__link-send-request">
+        Подать заявку
+      </Link>
+    );
 
   return (
     <div className={activityViewerClassName}>
