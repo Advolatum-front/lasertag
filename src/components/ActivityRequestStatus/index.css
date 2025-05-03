@@ -1,6 +1,6 @@
 .activity-request-status.no-status {
-  color: var(--status-approved-text);
-  background-color: var(--status-approved-bg);
+  color: var(--status-no-status-text);
+  background-color: var(--status-no-status-bg);
 }
 
 .activity-request-status.approved {

@@ -15,6 +15,6 @@
   --status-declined-text: #bb0000;
   --status-pending-bg: #fff9b2;
   --status-pending-text: #bbb500;
-  --status-avaible-bg: #e6e6e6;
-  --status-avaible-text: #9f9f9f;
+  --status-avaible-bg: #f00;
+  --status-avaible-text: #fff;
 }
