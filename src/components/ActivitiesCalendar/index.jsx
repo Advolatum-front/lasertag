@@ -75,12 +75,6 @@ const ActivitiesCalendar = (props) => {
     ...nextMonthDaysItems,
   ];
 
-  // currentMonthDays
-  //   .map((el) => mkElem("div", null, null, el))
-  //   .forEach((div) => {
-  //     calendar.appendChild(div);
-  //   });
-
   /*
 структура дня календаря
 
