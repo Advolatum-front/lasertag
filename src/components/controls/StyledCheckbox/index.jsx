@@ -1,7 +1,19 @@
 import "./index.css";
 
 const StyledCheckbox = (props) => {
-  const { className = "", caption = "", tabIndex = 0 } = props;
+  const {
+    className = "",
+    caption = "",
+    tabIndex = 0,
+    checked = false,
+    onChange,
+    name = "",
+    value = "on",
+  } = props;
+
+  const handleChange = () => {
+    onChange?.();
+  };
 
   return (
     <label className={`styled-checkbox ${className}`}>
@@ -9,6 +21,10 @@ const StyledCheckbox = (props) => {
         type="checkbox"
         className="styled-checkbox__checkbox"
         tabIndex={tabIndex}
+        checked={checked}
+        onChange={handleChange}
+        name={name}
+        value={value}
       />
       <span className="styled-checkbox__fake-checkbox-wrapper">
         <span className="styled-checkbox__fake-checkbox"></span>
