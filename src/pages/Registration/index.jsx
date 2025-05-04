@@ -1,37 +1,93 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { inject, observer } from "mobx-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
 import StyledCheckbox from "../../components/controls/StyledCheckbox";
-
 import "./index.css";
 
 const Registration = inject("UsersStore")(
   observer(({ UsersStore }) => {
     const [GPDRChecked, setGPDRChecked] = useState(false);
+    const [formData, setFormData] = useState({
+      name: "",
+      surname: "",
+      country: "",
+      city: "",
+      birthdate: "",
+      password: "",
+      passwordconfirm: "",
+      phone: "",
+      email: "",
+    });
 
-    const submitForm = (event) => {
-      event.preventDefault();
+    const errorRef = useRef(null);
+    const navigate = useNavigate();
+
+    const handleInputChange = (e) => {
+      const { id, value } = e.target;
+      setFormData((prev) => ({ ...prev, [id]: value }));
     };
 
     const handleGPDRCheck = () => {
       setGPDRChecked(!GPDRChecked);
     };
 
+    const submitForm = (event) => {
+      event.preventDefault();
+      UsersStore.setError(null);
+
+      // Валидация
+      const validationErrors = UsersStore.validateUserData(formData);
+
+      if (!GPDRChecked) {
+        validationErrors.push("Согласие на обработку персональных данных");
+      }
+
+      if (validationErrors.length > 0) {
+        UsersStore.setError(
+          `Не заполнены или содержат ошибки: ${validationErrors.join(", ")}`,
+        );
+        errorRef.current?.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+
+      // Проверка уникальности email
+      if (UsersStore.users.some((user) => user.email === formData.email)) {
+        UsersStore.setError("Пользователь с таким Email уже существует");
+        errorRef.current?.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+
+      // Регистрация
+      const { passwordconfirm, ...userToSave } = formData;
+      UsersStore.users.push(userToSave);
+      localStorage.setItem("users", JSON.stringify(UsersStore.users));
+      UsersStore.setCurrentUser(userToSave);
+      navigate("/");
+    };
+
     return (
       <div className="registration">
         <form className="registration__form" onSubmit={submitForm}>
+          {UsersStore.error && (
+            <div ref={errorRef} className="registration__error">
+              {UsersStore.error}
+            </div>
+          )}
           <div className="registration__form-header">Регистрация</div>
-          <Link className="registration__link-to-login-start">
+          <Link to="/login" className="registration__link-to-login-start">
             Есть аккаунт?
           </Link>
+
           <div className="registration__fields">
             <LabeledInput
               required
               type="text"
               label="Имя"
               id="name"
+              value={formData.name}
+              onChange={handleInputChange}
               tabIndex="1"
               className="name"
             />
@@ -40,6 +96,8 @@ const Registration = inject("UsersStore")(
               type="email"
               label="Email"
               id="email"
+              value={formData.email}
+              onChange={handleInputChange}
               tabIndex="6"
               className="email"
             />
@@ -49,14 +107,19 @@ const Registration = inject("UsersStore")(
               type="text"
               label="Фамилия"
               id="surname"
+              value={formData.surname}
+              onChange={handleInputChange}
               tabIndex="2"
               className="surname"
             />
+
             <LabeledInput
               required
               type="text"
               label="Телефон"
               id="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
               tabIndex="7"
               className="phone"
             />
@@ -66,6 +129,8 @@ const Registration = inject("UsersStore")(
               type="text"
               label="Страна"
               id="country"
+              value={formData.country}
+              onChange={handleInputChange}
               className="country"
               tabIndex="3"
             />
@@ -74,6 +139,8 @@ const Registration = inject("UsersStore")(
               type="password"
               label="Пароль"
               id="password"
+              value={formData.password}
+              onChange={handleInputChange}
               className="password"
               tabIndex="8"
             />
@@ -83,6 +150,8 @@ const Registration = inject("UsersStore")(
               type="text"
               label="Населённый пункт"
               id="city"
+              value={formData.city}
+              onChange={handleInputChange}
               className="city"
               tabIndex="4"
             />
@@ -91,6 +160,8 @@ const Registration = inject("UsersStore")(
               type="password"
               label="Повторите пароль"
               id="passwordconfirm"
+              value={formData.passwordconfirm}
+              onChange={handleInputChange}
               className="passwordconfirm"
               tabIndex="9"
             />
@@ -100,6 +171,8 @@ const Registration = inject("UsersStore")(
               type="date"
               label="Дата рождения"
               id="birthdate"
+              value={formData.birthdate}
+              onChange={handleInputChange}
               className="birthdate"
               tabIndex="5"
             />
@@ -109,8 +182,6 @@ const Registration = inject("UsersStore")(
                 caption="Согласие на обработку персональных данных"
                 className="registration__personal-data"
                 tabIndex="10"
-                value="GPDR"
-                name="yes"
                 onChange={handleGPDRCheck}
                 checked={GPDRChecked}
               />
@@ -119,6 +190,7 @@ const Registration = inject("UsersStore")(
               </Link>
             </div>
           </div>
+
           <button
             type="submit"
             disabled={!GPDRChecked}
