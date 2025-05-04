@@ -12,7 +12,7 @@ const Login = inject("UsersStore")(
 
     useEffect(() => {
       clearError();
-    }, []);
+    }, [clearError]);
 
     const [formData, setFormData] = useState({
       email: "",
