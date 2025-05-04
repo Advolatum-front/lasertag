@@ -24,6 +24,7 @@ const Login = inject("UsersStore")(
 
     const handleInputChange = (e) => {
       const { id, value } = e.target;
+      clearError();
       setFormData((prev) => ({ ...prev, [id]: value }));
     };
 
