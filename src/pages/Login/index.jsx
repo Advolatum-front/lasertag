@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { inject, observer } from "mobx-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
 import "./index.css";
@@ -24,7 +24,6 @@ const Login = inject("UsersStore")(
       event.preventDefault();
       UsersStore.setError(null);
 
-      // Валидация обязательных полей
       const requiredFields = [
         { id: "email", label: "E-mail" },
         { id: "password", label: "Пароль" },
@@ -42,13 +41,16 @@ const Login = inject("UsersStore")(
         return;
       }
 
-      // Попытка авторизации
       if (UsersStore.loginUser(formData)) {
-        navigate("/"); // Переход на главную после успешного входа
+        navigate("/");
       } else {
         errorRef.current?.scrollIntoView({ behavior: "smooth" });
       }
     };
+
+    if (UsersStore.isAuthenticated) {
+      return <Navigate to="/" />;
+    }
 
     return (
       <div className="login-wrapper">
