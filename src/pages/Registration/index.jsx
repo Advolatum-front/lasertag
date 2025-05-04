@@ -65,7 +65,7 @@ const Registration = inject("UsersStore")(
       navigate("/");
     };
 
-    if (UsersStore.isAuthenticated()) {
+    if (UsersStore.isAuthenticated) {
       return <Navigate to="/" />;
     }
 
