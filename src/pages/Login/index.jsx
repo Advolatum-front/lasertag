@@ -7,8 +7,11 @@ import "./index.css";
 
 const Login = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    const { clearError, setError, loginUser, isAuthenticated, error } =
+      UsersStore;
+
     useEffect(() => {
-      UsersStore.clearError();
+      clearError();
     }, []);
 
     const [formData, setFormData] = useState({
@@ -26,7 +29,7 @@ const Login = inject("UsersStore")(
 
     const submitForm = async (event) => {
       event.preventDefault();
-      UsersStore.setError(null);
+      setError(null);
 
       const requiredFields = [
         { id: "email", label: "E-mail" },
@@ -38,30 +41,28 @@ const Login = inject("UsersStore")(
         .map((field) => field.label);
 
       if (missingFields.length > 0) {
-        UsersStore.setError(
-          `Не заполнены обязательные поля: ${missingFields.join(", ")}`,
-        );
+        setError(`Не заполнены обязательные поля: ${missingFields.join(", ")}`);
         errorRef.current?.scrollIntoView({ behavior: "smooth" });
         return;
       }
 
-      if (UsersStore.loginUser(formData)) {
+      if (loginUser(formData)) {
         navigate("/");
       } else {
         errorRef.current?.scrollIntoView({ behavior: "smooth" });
       }
     };
 
-    if (UsersStore.isAuthenticated) {
+    if (isAuthenticated) {
       return <Navigate to="/" />;
     }
 
     return (
       <div className="login-wrapper">
         <form className="login-wrapper__form" onSubmit={submitForm}>
-          {UsersStore.error && (
+          {error && (
             <div ref={errorRef} className="login-wrapper__error">
-              {UsersStore.error}
+              {error}
             </div>
           )}
           <div className="login-wrapper__form-header">Вход</div>
