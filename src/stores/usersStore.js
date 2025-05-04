@@ -154,7 +154,8 @@ class UsersStore {
 
   // Проверка авторизации
   isAuthenticated() {
-    return !!this.currentUser;
+    return !!this?.currentUser;
+    // return this?.currentUser != null;
   }
 }
 

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import {
   Link,
   useLocation,
@@ -18,8 +20,14 @@ import "./index.css";
 
 const IndexCabinet = inject("UsersStore")(
   observer(({ UsersStore }) => {
-    const { logoutUser } = UsersStore;
+    const { logoutUser, isAuthenticated } = UsersStore;
     const navigate = useNavigate();
+
+    useEffect(() => {
+      if (!isAuthenticated) {
+        navigate("/login");
+      }
+    }, [isAuthenticated]);
 
     const locationPathname = useLocation().pathname;
     const [cabinetMenuOpened, setCabinetMenuOpened] = useState(false);
@@ -82,6 +90,11 @@ const IndexCabinet = inject("UsersStore")(
         </li>
       );
     });
+
+    // if (!isAuthenticated()) {
+    //   console.log(isAuthenticated());
+    //   return <Navigate to="/login" />;
+    // }
 
     return (
       <div className="index-cabinet">
