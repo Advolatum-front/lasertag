@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { inject, observer } from "mobx-react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 
@@ -8,6 +8,10 @@ import "./index.css";
 
 const Registration = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    useEffect(() => {
+      UsersStore.clearError();
+    }, []);
+
     const navigate = useNavigate();
 
     const [GPDRChecked, setGPDRChecked] = useState(false);
