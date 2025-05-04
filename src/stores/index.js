@@ -1,6 +1,6 @@
 import NewsStore from "./newsStore";
 import ActivitiesStore from "./activitiesStore";
-import UsersStore from "./UsersStore";
+import UsersStore from "./usersStore";
 
 const stores = {
   NewsStore,
