@@ -1,6 +1,6 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { inject, observer } from "mobx-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
 import StyledCheckbox from "../../components/controls/StyledCheckbox";
@@ -8,6 +8,8 @@ import "./index.css";
 
 const Registration = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    const navigate = useNavigate();
+
     const [GPDRChecked, setGPDRChecked] = useState(false);
     const [formData, setFormData] = useState({
       name: "",
@@ -22,7 +24,6 @@ const Registration = inject("UsersStore")(
     });
 
     const errorRef = useRef(null);
-    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
       const { id, value } = e.target;
@@ -37,7 +38,6 @@ const Registration = inject("UsersStore")(
       event.preventDefault();
       UsersStore.setError(null);
 
-      // Валидация
       const validationErrors = UsersStore.validateUserData(formData);
 
       if (!GPDRChecked) {
@@ -52,20 +52,22 @@ const Registration = inject("UsersStore")(
         return;
       }
 
-      // Проверка уникальности email
       if (UsersStore.users.some((user) => user.email === formData.email)) {
         UsersStore.setError("Пользователь с таким Email уже существует");
         errorRef.current?.scrollIntoView({ behavior: "smooth" });
         return;
       }
 
-      // Регистрация
       const { passwordconfirm, ...userToSave } = formData;
       UsersStore.users.push(userToSave);
       localStorage.setItem("users", JSON.stringify(UsersStore.users));
       UsersStore.setCurrentUser(userToSave);
       navigate("/");
     };
+
+    if (UsersStore.isAuthenticated) {
+      return <Navigate to="/" />;
+    }
 
     return (
       <div className="registration">
