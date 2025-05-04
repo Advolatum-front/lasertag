@@ -60,12 +60,6 @@
   line-height: 1.6;
 }
 
-.registration__error br {
-  display: block;
-  content: "";
-  margin: 8px 0;
-}
-
 .registration__fields {
   display: grid;
   grid-template-columns: 1fr 1fr;
