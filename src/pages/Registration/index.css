@@ -69,12 +69,20 @@
   border-radius: 20px;
   align-self: flex-start;
   padding: 8px 13px;
-  transition: background-color 0.2s linear;
+  transition:
+    background-color 0.2s linear,
+    filter 0.2s linear;
   font-family: var(--open-sans);
   width: 25%;
+  filter: grayscale(0);
 }
 
-.registration__submit-form:hover {
+.registration__submit-form:disabled {
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+.registration__submit-form:not(:disabled):hover {
   background-color: var(--dark-blue);
 }
 

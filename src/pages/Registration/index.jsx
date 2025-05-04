@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { inject, observer } from "mobx-react";
 import { Link } from "react-router-dom";
 
@@ -8,8 +9,14 @@ import "./index.css";
 
 const Registration = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    const [GPDRChecked, setGPDRChecked] = useState(false);
+
     const submitForm = (event) => {
       event.preventDefault();
+    };
+
+    const handleGPDRCheck = () => {
+      setGPDRChecked(!GPDRChecked);
     };
 
     return (
@@ -102,13 +109,21 @@ const Registration = inject("UsersStore")(
                 caption="Согласие на обработку персональных данных"
                 className="registration__personal-data"
                 tabIndex="10"
+                value="GPDR"
+                name="yes"
+                onChange={handleGPDRCheck}
+                checked={GPDRChecked}
               />
               <Link to="/login" className="registration__link-to-login-end">
                 Есть аккаунт?
               </Link>
             </div>
           </div>
-          <button type="submit" className="registration__submit-form">
+          <button
+            type="submit"
+            disabled={!GPDRChecked}
+            className="registration__submit-form"
+          >
             Зарегистрироваться
           </button>
         </form>
