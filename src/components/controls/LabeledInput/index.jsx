@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import "./index.css";
 
 const LabeledInput = (props) => {
@@ -7,17 +6,30 @@ const LabeledInput = (props) => {
     required,
     type = "text",
     id,
-    onInput,
+    onChange,
     className,
     label,
     tabIndex = 0,
+    value: externalValue,
+    defaultValue,
+    ...restProps
   } = props;
 
+  const [internalValue, setInternalValue] = useState(defaultValue || "");
   const [isActive, setIsActive] = useState(false);
-  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    if (externalValue !== undefined) {
+      setInternalValue(externalValue);
+      setIsActive(!!externalValue);
+    }
+  }, [externalValue]);
+
+  const isControlled = externalValue !== undefined;
+  const value = isControlled ? externalValue : internalValue;
 
   const labelClassName =
-    isActive || type === "date"
+    isActive || value || type === "date"
       ? "float-label__label active"
       : "float-label__label";
 
@@ -29,23 +41,13 @@ const LabeledInput = (props) => {
     <span className="float-label__required-marker">*</span>
   );
 
-  const handleTextChange = (text) => {
-    setValue(text);
-
-    if (text !== "") {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    if (!isControlled) {
+      setInternalValue(newValue);
     }
-  };
-
-  const handleTextInput = (text) => {
-    if (!onInput) {
-      return;
-    }
-
-    setValue(text);
-    onInput(text);
+    setIsActive(!!newValue);
+    onChange?.(e);
   };
 
   return (
@@ -54,10 +56,10 @@ const LabeledInput = (props) => {
         type={type}
         id={id}
         value={value}
-        onChange={(e) => handleTextChange(e.target.value)}
-        onInput={(e) => handleTextInput(e.target.value)}
+        onChange={handleChange}
         className="float-label__input"
         tabIndex={tabIndex}
+        {...restProps}
       />
 
       <label className={labelClassName} htmlFor={id}>
