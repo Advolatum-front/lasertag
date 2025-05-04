@@ -1,4 +1,4 @@
-import { makeObservable, action, observable } from "mobx";
+import { makeObservable, action, observable, computed } from "mobx";
 
 class UsersStore {
   users = [];
@@ -10,6 +10,7 @@ class UsersStore {
       users: observable,
       currentUser: observable,
       error: observable,
+
       registerUser: action,
       loginUser: action,
       logoutUser: action,
@@ -17,12 +18,14 @@ class UsersStore {
       setCurrentUser: action,
       setError: action,
       clearError: action,
+
+      isAuthenticated: computed,
     });
     this.loadUsers();
   }
 
   // Загрузка пользователей из localStorage
-  loadUsers() {
+  loadUsers = () => {
     try {
       const storedUsers = localStorage.getItem("users");
       this.users = storedUsers ? JSON.parse(storedUsers) : [];
@@ -34,37 +37,37 @@ class UsersStore {
       this.users = [];
       this.currentUser = null;
     }
-  }
+  };
 
   // Сохранение пользователей в localStorage
-  saveUsers() {
+  saveUsers = () => {
     localStorage.setItem("users", JSON.stringify(this.users));
-  }
+  };
 
   // Установка текущего пользователя
-  setCurrentUser(user) {
+  setCurrentUser = (user) => {
     this.currentUser = user;
     localStorage.setItem("currentUser", JSON.stringify(user));
-  }
+  };
 
   // Очистка текущего пользователя (выход)
-  logoutUser() {
+  logoutUser = () => {
     this.currentUser = null;
     localStorage.removeItem("currentUser");
-  }
+  };
 
   // Установка ошибки
-  setError(error) {
+  setError = (error) => {
     this.error = error;
-  }
+  };
 
   // Очистка ошибки
-  clearError() {
+  clearError = () => {
     this.error = null;
-  }
+  };
 
   // Валидация данных пользователя
-  validateUserData(userData, isLogin = false) {
+  validateUserData = (userData, isLogin = false) => {
     const fieldLabels = {
       name: "Имя",
       surname: "Фамилия",
@@ -103,10 +106,10 @@ class UsersStore {
     }
 
     return errors;
-  }
+  };
 
   // Регистрация пользователя
-  registerUser(userData) {
+  registerUser = (userData) => {
     this.clearError();
     const errors = this.validateUserData(userData);
 
@@ -125,10 +128,10 @@ class UsersStore {
     this.saveUsers();
     this.setCurrentUser(userToSave);
     return true;
-  }
+  };
 
   // Авторизация пользователя
-  loginUser(credentials) {
+  loginUser = (credentials) => {
     this.clearError();
     const errors = this.validateUserData(credentials, true);
 
@@ -150,10 +153,10 @@ class UsersStore {
 
     this.setCurrentUser(user);
     return true;
-  }
+  };
 
   // Проверка авторизации
-  isAuthenticated() {
+  get isAuthenticated() {
     return !!this?.currentUser;
     // return this?.currentUser != null;
   }
