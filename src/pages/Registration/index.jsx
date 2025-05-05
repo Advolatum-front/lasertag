@@ -4,7 +4,11 @@ import { Link, useNavigate, Navigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
 import StyledCheckbox from "../../components/controls/StyledCheckbox";
+import ErrorMessage from "../../components/ErrorMessage";
+
 import "./index.css";
+
+const SCROLL_SETTINGS = { block: "start" };
 
 const Registration = inject("UsersStore")(
   observer(({ UsersStore }) => {
@@ -37,7 +41,7 @@ const Registration = inject("UsersStore")(
       email: "",
     });
 
-    const errorRef = useRef(null);
+    const formRef = useRef(null);
 
     const handleInputChange = (e) => {
       const { id, value } = e.target;
@@ -63,13 +67,13 @@ const Registration = inject("UsersStore")(
         setError(
           `Не заполнены или содержат ошибки: ${validationErrors.join(", ")}`,
         );
-        errorRef.current?.scrollIntoView({ behavior: "smooth" });
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
         return;
       }
 
       if (users.some((user) => user.email === formData.email)) {
         setError("Пользователь с таким Email уже существует");
-        errorRef.current?.scrollIntoView({ behavior: "smooth" });
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
         return;
       }
 
@@ -86,12 +90,12 @@ const Registration = inject("UsersStore")(
 
     return (
       <div className="registration">
-        <form className="registration__form" onSubmit={submitForm}>
-          {error && (
-            <div ref={errorRef} className="registration__error">
-              {error}
-            </div>
-          )}
+        <form
+          ref={formRef}
+          className="registration__form"
+          onSubmit={submitForm}
+        >
+          {error && <ErrorMessage msg={error} />}
           <div className="registration__form-header">Регистрация</div>
           <Link to="/login" className="registration__link-to-login-start">
             Есть аккаунт?
