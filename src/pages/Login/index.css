@@ -23,6 +23,10 @@
   line-height: 1.6;
 }
 
+.login-wrapper__error:empty {
+  display: none;
+}
+
 .login-wrapper__form-header {
   text-transform: uppercase;
   color: var(--medium-blue);

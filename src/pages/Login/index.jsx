@@ -3,7 +3,10 @@ import { inject, observer } from "mobx-react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
+import ErrorMessage from "../../components/ErrorMessage";
 import "./index.css";
+
+const SCROLL_SETTINGS = { block: "start" };
 
 const Login = inject("UsersStore")(
   observer(({ UsersStore }) => {
@@ -19,7 +22,7 @@ const Login = inject("UsersStore")(
       password: "",
     });
 
-    const errorRef = useRef(null);
+    const formRef = useRef(null);
     const navigate = useNavigate();
 
     const handleInputChange = (e) => {
@@ -43,14 +46,14 @@ const Login = inject("UsersStore")(
 
       if (missingFields.length > 0) {
         setError(`Не заполнены обязательные поля: ${missingFields.join(", ")}`);
-        errorRef.current?.scrollIntoView({ behavior: "smooth" });
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
         return;
       }
 
       if (loginUser(formData)) {
         navigate("/");
       } else {
-        errorRef.current?.scrollIntoView({ behavior: "smooth" });
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
       }
     };
 
@@ -60,12 +63,12 @@ const Login = inject("UsersStore")(
 
     return (
       <div className="login-wrapper">
-        <form className="login-wrapper__form" onSubmit={submitForm}>
-          {error && (
-            <div ref={errorRef} className="login-wrapper__error">
-              {error}
-            </div>
-          )}
+        <form
+          ref={formRef}
+          className="login-wrapper__form"
+          onSubmit={submitForm}
+        >
+          {error && <ErrorMessage msg={error} />}
           <div className="login-wrapper__form-header">Вход</div>
 
           <LabeledInput
