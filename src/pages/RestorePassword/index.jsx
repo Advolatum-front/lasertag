@@ -10,6 +10,8 @@ import "./index.css";
 
 const RestorePassword = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    const { users, saveUsers, isAuthenticated } = UsersStore;
+
     const [formData, setFormData] = useState({
       email: "",
       newPassword: "",
@@ -57,7 +59,7 @@ const RestorePassword = inject("UsersStore")(
         return;
       }
 
-      const user = UsersStore.users.find((u) => u.email === formData.email);
+      const user = users.find((u) => u.email === formData.email);
 
       if (!user) {
         setMessageType(MBT_ERROR);
@@ -67,7 +69,7 @@ const RestorePassword = inject("UsersStore")(
       }
 
       user.password = formData.newPassword;
-      UsersStore.saveUsers();
+      saveUsers();
 
       setMessageType(MBT_SUCCESS);
       setMessage(
@@ -85,7 +87,7 @@ const RestorePassword = inject("UsersStore")(
       });
     };
 
-    if (UsersStore.isAuthenticated) {
+    if (isAuthenticated) {
       return <Navigate to="/" />;
     }
 
