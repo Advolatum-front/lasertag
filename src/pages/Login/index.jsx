@@ -4,6 +4,9 @@ import { Link, useNavigate, Navigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
 import MessageBlock from "../../components/MessageBlock";
+
+import { MBT_ERROR } from "../../utils/message-block-types";
+
 import "./index.css";
 
 const SCROLL_SETTINGS = { block: "start" };
@@ -62,7 +65,7 @@ const Login = inject("UsersStore")(
     }
 
     const errorMessage = error && (
-      <MessageBlock>
+      <MessageBlock type={MBT_ERROR}>
         <p>{error}</p>
       </MessageBlock>
     );
