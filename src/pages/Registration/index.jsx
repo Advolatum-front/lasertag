@@ -6,7 +6,7 @@ import LabeledInput from "../../components/controls/LabeledInput";
 import StyledCheckbox from "../../components/controls/StyledCheckbox";
 import MessageBlock from "../../components/MessageBlock";
 
-import { MBT_ERROR, MBT_SUCCESS } from "../../utils/message-block-types";
+import { MBT_ERROR } from "../../utils/message-block-types";
 
 import "./index.css";
 
