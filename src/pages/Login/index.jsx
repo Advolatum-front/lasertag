@@ -112,7 +112,7 @@ const Login = inject("UsersStore")(
           </button>
         </form>
 
-        <div className="login-wrapper__bg"></div>
+        <div className="login-wrapper__bg" />
       </div>
     );
   }),
