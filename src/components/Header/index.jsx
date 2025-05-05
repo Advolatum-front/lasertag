@@ -67,7 +67,7 @@ const Header = () => {
         <i className="header__burger-bar"></i>
         <i className="header__burger-bar"></i>
       </button>
-      <Link to="/" className="header__profile-pic-link">
+      <Link to="/cabinet" className="header__profile-pic-link">
         <ProfilePic className="header__profile-pic" />
       </Link>
     </header>
