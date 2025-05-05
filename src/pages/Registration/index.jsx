@@ -4,7 +4,9 @@ import { Link, useNavigate, Navigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
 import StyledCheckbox from "../../components/controls/StyledCheckbox";
-import ErrorMessage from "../../components/ErrorMessage";
+import MessageBlock from "../../components/MessageBlock";
+
+import { MBT_ERROR, MBT_SUCCESS } from "../../utils/message-block-types";
 
 import "./index.css";
 
@@ -88,6 +90,12 @@ const Registration = inject("UsersStore")(
       return <Navigate to="/" />;
     }
 
+    const errorMessage = error && (
+      <MessageBlock type={MBT_ERROR}>
+        <p>{error}</p>
+      </MessageBlock>
+    );
+
     return (
       <div className="registration">
         <form
@@ -95,7 +103,7 @@ const Registration = inject("UsersStore")(
           className="registration__form"
           onSubmit={submitForm}
         >
-          {error && <ErrorMessage msg={error} />}
+          {errorMessage}
           <div className="registration__form-header">Регистрация</div>
           <Link to="/login" className="registration__link-to-login-start">
             Есть аккаунт?

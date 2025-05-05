@@ -3,7 +3,7 @@ import { inject, observer } from "mobx-react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
-import ErrorMessage from "../../components/ErrorMessage";
+import MessageBlock from "../../components/MessageBlock";
 import "./index.css";
 
 const SCROLL_SETTINGS = { block: "start" };
@@ -61,6 +61,12 @@ const Login = inject("UsersStore")(
       return <Navigate to="/" />;
     }
 
+    const errorMessage = error && (
+      <MessageBlock>
+        <p>{error}</p>
+      </MessageBlock>
+    );
+
     return (
       <div className="login-wrapper">
         <form
@@ -68,7 +74,7 @@ const Login = inject("UsersStore")(
           className="login-wrapper__form"
           onSubmit={submitForm}
         >
-          {error && <ErrorMessage msg={error} />}
+          {errorMessage}
           <div className="login-wrapper__form-header">Вход</div>
 
           <LabeledInput

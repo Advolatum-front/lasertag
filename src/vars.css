@@ -17,4 +17,9 @@
   --status-pending-text: #bbb500;
   --status-avaible-bg: #f00;
   --status-avaible-text: #fff;
+
+  --mbt-success-bg: var(--status-approved-bg);
+  --mbt-success-text: var(--status-approved-text);
+  --mbt-error-bg: var(--status-declined-bg);
+  --mbt-error-text: var(--status-declined-text);
 }

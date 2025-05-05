@@ -1,0 +1,33 @@
+.message-block-wrapper {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0 4px 4px 0;
+  font-weight: 600;
+  /*  line-height: 1.6;*/
+}
+
+.mbt-error,
+.mbt-success {
+  --bg: var(--mbt-error-bg);
+  --text: var(--mbt-error-text);
+  background-color: var(--bg);
+  color: var(--text);
+  border-left: 4px solid var(--text);
+}
+
+.mbt-success {
+  --bg: var(--mbt-success-bg);
+  --text: var(--mbt-success-text);
+}
+
+.message-block-wrapper a {
+  color: inherit;
+}
+
+/*
+
+--mbt-success-bg: var(--status-approved-bg);
+--mbt-success-text: var(--status-approved-text);
+: var(--status-declined-bg);
+: var(--status-declined-text);
+*/
