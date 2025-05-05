@@ -8,8 +8,18 @@ import "./index.css";
 
 const Registration = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    const {
+      clearError,
+      validateUserData,
+      setError,
+      users,
+      setCurrentUser,
+      isAuthenticated,
+      error,
+    } = UsersStore;
+
     useEffect(() => {
-      UsersStore.clearError();
+      clearError();
     }, []);
 
     const navigate = useNavigate();
@@ -40,45 +50,45 @@ const Registration = inject("UsersStore")(
 
     const submitForm = (event) => {
       event.preventDefault();
-      UsersStore.setError(null);
+      setError(null);
 
-      const validationErrors = UsersStore.validateUserData(formData);
+      const validationErrors = validateUserData(formData);
 
       if (!GPDRChecked) {
         validationErrors.push("Согласие на обработку персональных данных");
       }
 
       if (validationErrors.length > 0) {
-        UsersStore.setError(
+        setError(
           `Не заполнены или содержат ошибки: ${validationErrors.join(", ")}`,
         );
         errorRef.current?.scrollIntoView({ behavior: "smooth" });
         return;
       }
 
-      if (UsersStore.users.some((user) => user.email === formData.email)) {
-        UsersStore.setError("Пользователь с таким Email уже существует");
+      if (users.some((user) => user.email === formData.email)) {
+        setError("Пользователь с таким Email уже существует");
         errorRef.current?.scrollIntoView({ behavior: "smooth" });
         return;
       }
 
       const { passwordconfirm, ...userToSave } = formData;
-      UsersStore.users.push(userToSave);
-      localStorage.setItem("users", JSON.stringify(UsersStore.users));
-      UsersStore.setCurrentUser(userToSave);
+      users.push(userToSave);
+      localStorage.setItem("users", JSON.stringify(users));
+      setCurrentUser(userToSave);
       navigate("/");
     };
 
-    if (UsersStore.isAuthenticated) {
+    if (isAuthenticated) {
       return <Navigate to="/" />;
     }
 
     return (
       <div className="registration">
         <form className="registration__form" onSubmit={submitForm}>
-          {UsersStore.error && (
+          {error && (
             <div ref={errorRef} className="registration__error">
-              {UsersStore.error}
+              {error}
             </div>
           )}
           <div className="registration__form-header">Регистрация</div>
