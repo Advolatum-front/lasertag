@@ -20,7 +20,7 @@ const Registration = inject("UsersStore")(
 
     useEffect(() => {
       clearError();
-    }, []);
+    }, [clearError]);
 
     const navigate = useNavigate();
 
