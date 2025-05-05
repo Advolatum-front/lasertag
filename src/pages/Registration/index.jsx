@@ -216,6 +216,7 @@ const Registration = inject("UsersStore")(
             type="submit"
             disabled={!GPDRChecked}
             className="registration__submit-form"
+            tabIndex="11"
           >
             Зарегистрироваться
           </button>
