@@ -16,10 +16,17 @@ const RestorePassword = () => {
           Восстановление пароля
         </div>
         <div className="restore-wrapper__form-tip">
-          Введите адрес электронной почты, связанный с вашим аккаунтом, и мы
-          вышлем вам ссылку для изменения пароля
+          Введите адрес электронной почты, связанный с вашим аккаунтом, а также
+          новый пароль и его подтверждение
         </div>
         <LabeledInput type="email" label="E-mail" required />
+        <LabeledInput type="email" id="email" label="Новый пароль" required />
+        <LabeledInput
+          type="email"
+          id="email"
+          label="Подвержите новый пароль"
+          required
+        />
         <button type="submit" className="restore-wrapper__submit">
           Сбросить пароль
         </button>
