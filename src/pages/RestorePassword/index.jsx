@@ -24,7 +24,7 @@ const RestorePassword = () => {
         <LabeledInput
           type="email"
           id="email"
-          label="Подвержите новый пароль"
+          label="Подтвердите новый пароль"
           required
         />
         <button type="submit" className="restore-wrapper__submit">
