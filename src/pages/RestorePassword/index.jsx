@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { inject, observer } from "mobx-react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 import LabeledInput from "../../components/controls/LabeledInput";
 import MessageBlock from "../../components/MessageBlock";
@@ -84,6 +84,10 @@ const RestorePassword = inject("UsersStore")(
         confirmPassword: "",
       });
     };
+
+    if (UsersStore.isAuthenticated) {
+      return <Navigate to="/" />;
+    }
 
     return (
       <div className="restore-wrapper">
