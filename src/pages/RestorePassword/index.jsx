@@ -8,6 +8,8 @@ import { MBT_ERROR, MBT_SUCCESS } from "../../utils/message-block-types";
 
 import "./index.css";
 
+const SCROLL_SETTINGS = { block: "start" };
+
 const RestorePassword = inject("UsersStore")(
   observer(({ UsersStore }) => {
     const { users, saveUsers, isAuthenticated } = UsersStore;
@@ -55,7 +57,7 @@ const RestorePassword = inject("UsersStore")(
       if (errors.length > 0) {
         setMessageType(MBT_ERROR);
         setMessage(<p>{errors.join(", ")}</p>);
-        formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
         return;
       }
 
@@ -64,7 +66,7 @@ const RestorePassword = inject("UsersStore")(
       if (!user) {
         setMessageType(MBT_ERROR);
         setMessage(<p>Пользователь с таким Email не найден</p>);
-        formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
         return;
       }
 
@@ -78,7 +80,7 @@ const RestorePassword = inject("UsersStore")(
           <Link to="/login">войти с новым паролем</Link>
         </p>,
       );
-      formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      formRef.current?.scrollIntoView(SCROLL_SETTINGS);
 
       setFormData({
         email: "",
