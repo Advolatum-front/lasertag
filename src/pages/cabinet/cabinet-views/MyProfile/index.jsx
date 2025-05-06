@@ -130,7 +130,7 @@ const MyProfile = inject("UsersStore")(
 
       const result = UsersStore.updateUser(formData);
       if (result) {
-        setMessage("Данные успешно сохранены!");
+        setMessage("Данные успешно сохранены");
         setMessageType(MBT_SUCCESS);
         scrollToTop();
       } else {
