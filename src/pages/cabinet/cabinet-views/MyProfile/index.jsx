@@ -2,6 +2,10 @@ import { inject, observer } from "mobx-react";
 
 import LabeledInput from "../../../../components/controls/LabeledInput";
 
+import MessageBlock from "../../../../components/MessageBlock";
+
+import { MBT_ERROR } from "../../../../utils/message-block-types";
+
 import "./index.css";
 
 const MyProfile = inject("UsersStore")(
