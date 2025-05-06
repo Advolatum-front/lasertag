@@ -5,6 +5,8 @@ import MessageBlock from "../../../../components/MessageBlock";
 import { MBT_ERROR, MBT_SUCCESS } from "../../../../utils/message-block-types";
 import "./index.css";
 
+const SCROLL_SETTINGS = { block: "start" };
+
 const MyProfile = inject("UsersStore")(
   observer(({ UsersStore }) => {
     const formRef = useRef(null);
@@ -68,7 +70,7 @@ const MyProfile = inject("UsersStore")(
 
     const scrollToTop = () => {
       if (formRef.current) {
-        formRef.current.scrollIntoView({ behavior: "smooth" });
+        formRef.current.scrollIntoView(SCROLL_SETTINGS);
       }
     };
 
@@ -111,7 +113,9 @@ const MyProfile = inject("UsersStore")(
       const errors = validateForm();
 
       if (errors.length > 0) {
-        setMessage(`Обнаружены ошибки в следующих полях: ${errors.join(", ")}`);
+        setMessage(
+          `Следующие поля не заполнены или содержат ошибки: ${errors.join(", ")}`,
+        );
         setMessageType(MBT_ERROR);
         scrollToTop();
         return;
