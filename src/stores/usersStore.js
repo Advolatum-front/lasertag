@@ -18,6 +18,7 @@ class UsersStore {
       setCurrentUser: action,
       setError: action,
       clearError: action,
+      updateUser: action,
 
       isAuthenticated: computed,
     });
@@ -48,6 +49,29 @@ class UsersStore {
   setCurrentUser = (user) => {
     this.currentUser = user;
     localStorage.setItem("currentUser", JSON.stringify(user));
+  };
+
+  // Обновление данных пользователя
+  updateUser = (updatedData) => {
+    if (!this.currentUser) return false;
+
+    const userIndex = this.users.findIndex(
+      (u) => u.email === this.currentUser.email,
+    );
+    if (userIndex === -1) return false;
+
+    // Обновляем данные, кроме пароля (если он не был передан)
+    const { password, ...dataToUpdate } = updatedData;
+    const updatedUser = {
+      ...this.users[userIndex],
+      ...dataToUpdate,
+    };
+
+    this.users[userIndex] = updatedUser;
+    this.currentUser = updatedUser;
+    this.saveUsers();
+    localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+    return true;
   };
 
   // Очистка текущего пользователя (выход)
@@ -85,7 +109,12 @@ class UsersStore {
     // Проверка заполненности полей
     if (!isLogin) {
       Object.entries(fieldLabels).forEach(([field, label]) => {
-        if (!userData[field] && field !== "passwordconfirm") {
+        if (
+          !userData[field] &&
+          field !== "password" &&
+          field !== "passwordconfirm" &&
+          field !== "photo"
+        ) {
           errors.push(label);
         }
       });
@@ -96,11 +125,11 @@ class UsersStore {
 
     // Специальные проверки для регистрации
     if (!isLogin) {
-      if (userData.password !== userData.passwordconfirm) {
+      if (userData.password && userData.password !== userData.passwordconfirm) {
         errors.push("Пароли не совпадают");
       }
 
-      if (!/^\S+@\S+\.\S+$/.test(userData.email)) {
+      if (userData.email && !/^\S+@\S+\.\S+$/.test(userData.email)) {
         errors.push("Email введен некорректно");
       }
     }
@@ -158,7 +187,6 @@ class UsersStore {
   // Проверка авторизации
   get isAuthenticated() {
     return !!this?.currentUser;
-    // return this?.currentUser != null;
   }
 }
 
