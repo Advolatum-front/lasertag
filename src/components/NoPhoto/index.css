@@ -1,0 +1,8 @@
+.no-photo {
+  --size: 150px;
+  width: var(--size);
+  width: var(--size);
+  background-image: url("./no-photo.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
