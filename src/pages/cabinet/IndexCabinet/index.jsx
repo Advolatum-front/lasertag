@@ -16,9 +16,11 @@ import { inject, observer } from "mobx-react";
 
 import "./index.css";
 
+const NO_PHOTO_URL = "../../../img/cabinet/no-photo.webp";
+
 const IndexCabinet = inject("UsersStore")(
   observer(({ UsersStore }) => {
-    const { logoutUser, isAuthenticated } = UsersStore;
+    const { logoutUser, isAuthenticated, currentUser, users } = UsersStore;
     const navigate = useNavigate();
 
     const locationPathname = useLocation().pathname;
@@ -86,6 +88,12 @@ const IndexCabinet = inject("UsersStore")(
       return <Navigate to="/login" />;
     }
 
+    const { name, surname, photo = NO_PHOTO_URL, email } = currentUser;
+    const userFullName = `${name} ${surname}`;
+
+    const userId = users.findIndex((user) => user.email === email);
+    const visibleId = `id: ${userId}`;
+
     return (
       <div className="index-cabinet">
         <div className="index-cabinet__bugrer-button-menu-container">
@@ -106,13 +114,9 @@ const IndexCabinet = inject("UsersStore")(
             <Cross />
           </button>
           <div className="cabinet-menu__user-card">
-            <img
-              src="/userpics/userpic-1.png"
-              alt=""
-              className="cabinet-menu__user-pic"
-            />
-            <div className="cabinet-menu__user-name">Мария Богуш</div>
-            <div className="cabinet-menu__user-id">id: 598613245896</div>
+            <img src={photo} alt="" className="cabinet-menu__user-pic" />
+            <div className="cabinet-menu__user-name">{userFullName}</div>
+            <div className="cabinet-menu__user-id">{visibleId}</div>
           </div>
           <ul className="cabinet-menu__nav-list">
             {menuLinkItems}
