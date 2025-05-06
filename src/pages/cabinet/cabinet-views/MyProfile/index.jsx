@@ -3,6 +3,9 @@ import { useEffect, useRef, useState } from "react";
 import LabeledInput from "../../../../components/controls/LabeledInput";
 import MessageBlock from "../../../../components/MessageBlock";
 import { MBT_ERROR, MBT_SUCCESS } from "../../../../utils/message-block-types";
+
+import NO_PHOTO_URL from "../../../../img/cabinet/no-photo.webp";
+
 import "./index.css";
 
 const SCROLL_SETTINGS = { block: "start" };
@@ -194,17 +197,11 @@ const MyProfile = inject("UsersStore")(
           </div>
           <div className="my-profile__photo-loader">
             <span className="my-profile__photo-caption">Фото профиля:</span>
-            {formData.photo ? (
-              <img
-                src={formData.photo}
-                className="my-profile__photo"
-                alt="Фото профиля"
-              />
-            ) : (
-              <div className="my-profile__photo my-profile__photo--empty">
-                Нет фотографии
-              </div>
-            )}
+            <img
+              src={formData?.photo || NO_PHOTO_URL}
+              className="my-profile__photo"
+              alt="Фото профиля"
+            />
             <input
               type="file"
               ref={fileInputRef}
