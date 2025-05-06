@@ -1,18 +1,17 @@
 import { useState, useRef } from "react";
 import { inject, observer } from "mobx-react";
-import { Link, Navigate } from "react-router-dom";
-
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import LabeledInput from "../../components/controls/LabeledInput";
 import MessageBlock from "../../components/MessageBlock";
 import { MBT_ERROR, MBT_SUCCESS } from "../../utils/message-block-types";
-
 import "./index.css";
 
 const SCROLL_SETTINGS = { block: "start" };
 
 const RestorePassword = inject("UsersStore")(
   observer(({ UsersStore }) => {
-    const { users, saveUsers, isAuthenticated } = UsersStore;
+    const { isAuthenticated, resetPassword, setError, clearError } = UsersStore;
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
       email: "",
@@ -50,8 +49,9 @@ const RestorePassword = inject("UsersStore")(
       return errors;
     };
 
-    const submitForm = (event) => {
+    const submitForm = async (event) => {
       event.preventDefault();
+      clearError();
       const errors = validateForm();
 
       if (errors.length > 0) {
@@ -61,32 +61,34 @@ const RestorePassword = inject("UsersStore")(
         return;
       }
 
-      const user = users.find((u) => u.email === formData.email);
+      try {
+        const success = await UsersStore.resetPassword(
+          formData.email,
+          formData.newPassword,
+        );
 
-      if (!user) {
+        if (success) {
+          setMessageType(MBT_SUCCESS);
+          setMessage(
+            <p>
+              Пароль успешно изменен! Теперь вы можете{" "}
+              <Link to="/login">войти с новым паролем</Link>
+            </p>,
+          );
+          formRef.current?.scrollIntoView(SCROLL_SETTINGS);
+          setFormData({
+            email: "",
+            newPassword: "",
+            confirmPassword: "",
+          });
+        } else {
+          setMessageType(MBT_ERROR);
+          setMessage(<p>Ошибка при смене пароля</p>);
+        }
+      } catch (error) {
         setMessageType(MBT_ERROR);
-        setMessage(<p>Пользователь с таким Email не найден</p>);
-        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
-        return;
+        setMessage(<p>Произошла ошибка: {error.message}</p>);
       }
-
-      user.password = formData.newPassword;
-      saveUsers();
-
-      setMessageType(MBT_SUCCESS);
-      setMessage(
-        <p>
-          Пароль успешно изменен! Теперь вы можете{" "}
-          <Link to="/login">войти с новым паролем</Link>
-        </p>,
-      );
-      formRef.current?.scrollIntoView(SCROLL_SETTINGS);
-
-      setFormData({
-        email: "",
-        newPassword: "",
-        confirmPassword: "",
-      });
     };
 
     if (isAuthenticated) {

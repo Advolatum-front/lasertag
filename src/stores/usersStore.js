@@ -4,27 +4,71 @@ class UsersStore {
   users = [];
   currentUser = null;
   error = null;
+  iterations = 100000; // Количество итераций PBKDF2
+  keyLength = 32; // Длина ключа в байтах (256 бит)
 
   constructor() {
     makeObservable(this, {
       users: observable,
       currentUser: observable,
       error: observable,
-
       registerUser: action,
       loginUser: action,
       logoutUser: action,
+      resetPassword: action,
       loadUsers: action,
       setCurrentUser: action,
       setError: action,
       clearError: action,
-
       isAuthenticated: computed,
     });
     this.loadUsers();
   }
 
-  // Загрузка пользователей из localStorage
+  // --- Хеширование пароля ---
+  hashPassword = async (password, salt) => {
+    try {
+      const encoder = new TextEncoder();
+
+      // 1. Импорт пароля как ключа
+      const keyMaterial = await crypto.subtle.importKey(
+        "raw",
+        encoder.encode(password),
+        { name: "PBKDF2" },
+        false,
+        ["deriveBits"],
+      );
+
+      // 2. Генерация хеша
+      const derivedBits = await crypto.subtle.deriveBits(
+        {
+          name: "PBKDF2",
+          salt: encoder.encode(salt),
+          iterations: this.iterations,
+          hash: "SHA-256",
+        },
+        keyMaterial,
+        this.keyLength * 8,
+      );
+
+      // 3. Конвертация в hex-строку
+      return Array.from(new Uint8Array(derivedBits))
+        .map((b) => b.toString(16).padStart(2, "0"))
+        .join("");
+    } catch (e) {
+      console.error("Ошибка хеширования:", e);
+      throw new Error("Ошибка при обработке пароля");
+    }
+  };
+
+  // --- Генерация соли ---
+  generateSalt = () => {
+    return crypto
+      .getRandomValues(new Uint8Array(16))
+      .reduce((str, byte) => str + byte.toString(16).padStart(2, "0"), "");
+  };
+
+  // --- Работа с localStorage ---
   loadUsers = () => {
     try {
       const storedUsers = localStorage.getItem("users");
@@ -39,128 +83,113 @@ class UsersStore {
     }
   };
 
-  // Сохранение пользователей в localStorage
   saveUsers = () => {
     localStorage.setItem("users", JSON.stringify(this.users));
   };
 
-  // Установка текущего пользователя
-  setCurrentUser = (user) => {
-    this.currentUser = user;
-    localStorage.setItem("currentUser", JSON.stringify(user));
+  // --- Методы для компонентов ---
+  registerUser = async (userData) => {
+    this.clearError();
+
+    // Валидация
+    if (!userData.email || !userData.password) {
+      this.setError("Email и пароль обязательны");
+      return false;
+    }
+
+    if (this.users.some((u) => u.email === userData.email)) {
+      this.setError("Пользователь с таким email уже существует");
+      return false;
+    }
+
+    try {
+      const salt = this.generateSalt();
+      const hashedPassword = await this.hashPassword(userData.password, salt);
+
+      const user = {
+        email: userData.email,
+        password: hashedPassword,
+        salt,
+        createdAt: new Date().toISOString(),
+      };
+
+      this.users.push(user);
+      this.saveUsers();
+      return true;
+    } catch (e) {
+      this.setError("Ошибка при регистрации");
+      return false;
+    }
   };
 
-  // Очистка текущего пользователя (выход)
+  loginUser = async ({ email, password }) => {
+    this.clearError();
+    const user = this.users.find((u) => u.email === email);
+
+    if (!user) {
+      this.setError("Пользователь не найден");
+      return false;
+    }
+
+    try {
+      const hashedInput = await this.hashPassword(password, user.salt);
+      if (hashedInput !== user.password) {
+        this.setError("Неверный пароль");
+        return false;
+      }
+
+      this.setCurrentUser(user);
+      return true;
+    } catch (e) {
+      this.setError("Ошибка при входе");
+      return false;
+    }
+  };
+
+  resetPassword = async (email, newPassword) => {
+    this.clearError();
+    const user = this.users.find((u) => u.email === email);
+
+    if (!user) {
+      this.setError("Пользователь не найден");
+      return false;
+    }
+
+    try {
+      const hashedPassword = await this.hashPassword(newPassword, user.salt);
+      user.password = hashedPassword;
+      user.updatedAt = new Date().toISOString();
+      this.saveUsers();
+      return true;
+    } catch (e) {
+      this.setError("Ошибка при смене пароля");
+      return false;
+    }
+  };
+
   logoutUser = () => {
     this.currentUser = null;
     localStorage.removeItem("currentUser");
   };
 
-  // Установка ошибки
+  setCurrentUser = (user) => {
+    this.currentUser = user;
+    localStorage.setItem("currentUser", JSON.stringify(user));
+  };
+
   setError = (error) => {
     this.error = error;
   };
 
-  // Очистка ошибки
   clearError = () => {
     this.error = null;
   };
 
-  // Валидация данных пользователя
-  validateUserData = (userData, isLogin = false) => {
-    const fieldLabels = {
-      name: "Имя",
-      surname: "Фамилия",
-      country: "Страна",
-      city: "Населённый пункт",
-      birthdate: "Дата рождения",
-      email: "Email",
-      phone: "Телефон",
-      password: "Пароль",
-      passwordconfirm: "Повторите пароль",
-    };
-
-    const errors = [];
-
-    // Проверка заполненности полей
-    if (!isLogin) {
-      Object.entries(fieldLabels).forEach(([field, label]) => {
-        if (!userData[field] && field !== "passwordconfirm") {
-          errors.push(label);
-        }
-      });
-    } else {
-      if (!userData.email) errors.push(fieldLabels.email);
-      if (!userData.password) errors.push(fieldLabels.password);
-    }
-
-    // Специальные проверки для регистрации
-    if (!isLogin) {
-      if (userData.password !== userData.passwordconfirm) {
-        errors.push("Пароли не совпадают");
-      }
-
-      if (!/^\S+@\S+\.\S+$/.test(userData.email)) {
-        errors.push("Email введен некорректно");
-      }
-    }
-
-    return errors;
-  };
-
-  // Регистрация пользователя
-  registerUser = (userData) => {
-    this.clearError();
-    const errors = this.validateUserData(userData);
-
-    if (errors.length > 0) {
-      this.setError(`Ошибки:<br>${errors.join(",<br>")}`);
-      return false;
-    }
-
-    if (this.users.some((user) => user.email === userData.email)) {
-      this.setError("Пользователь с таким Email уже существует");
-      return false;
-    }
-
-    const { passwordconfirm, ...userToSave } = userData;
-    this.users.push(userToSave);
-    this.saveUsers();
-    this.setCurrentUser(userToSave);
-    return true;
-  };
-
-  // Авторизация пользователя
-  loginUser = (credentials) => {
-    this.clearError();
-    const errors = this.validateUserData(credentials, true);
-
-    if (errors.length > 0) {
-      this.setError(`Ошибки:<br>${errors.join(",<br>")}`);
-      return false;
-    }
-
-    const user = this.users.find((u) => u.email === credentials.email);
-    if (!user) {
-      this.setError("Пользователь с таким Email не найден");
-      return false;
-    }
-
-    if (user.password !== credentials.password) {
-      this.setError("Неверный пароль");
-      return false;
-    }
-
-    this.setCurrentUser(user);
-    return true;
-  };
-
-  // Проверка авторизации
   get isAuthenticated() {
-    return !!this?.currentUser;
-    // return this?.currentUser != null;
+    return !!this.currentUser;
   }
 }
 
+// Создаем и экспортируем singleton стора
 const usersStore = new UsersStore();
 export default usersStore;

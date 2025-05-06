@@ -1,12 +1,9 @@
 import { useState, useRef, useEffect } from "react";
 import { inject, observer } from "mobx-react";
 import { Link, useNavigate, Navigate } from "react-router-dom";
-
 import LabeledInput from "../../components/controls/LabeledInput";
 import MessageBlock from "../../components/MessageBlock";
-
 import { MBT_ERROR } from "../../utils/message-block-types";
-
 import "./index.css";
 
 const SCROLL_SETTINGS = { block: "start" };
@@ -15,18 +12,13 @@ const Login = inject("UsersStore")(
   observer(({ UsersStore }) => {
     const { clearError, setError, loginUser, isAuthenticated, error } =
       UsersStore;
+    const [formData, setFormData] = useState({ email: "", password: "" });
+    const formRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
       clearError();
     }, [clearError]);
-
-    const [formData, setFormData] = useState({
-      email: "",
-      password: "",
-    });
-
-    const formRef = useRef(null);
-    const navigate = useNavigate();
 
     const handleInputChange = (e) => {
       const { id, value } = e.target;
@@ -34,28 +26,33 @@ const Login = inject("UsersStore")(
       setFormData((prev) => ({ ...prev, [id]: value }));
     };
 
+    const validateForm = () => {
+      const errors = [];
+      if (!formData.email) errors.push("Email обязателен");
+      if (!formData.password) errors.push("Пароль обязателен");
+      return errors;
+    };
+
     const submitForm = async (event) => {
       event.preventDefault();
-      setError(null);
+      clearError();
 
-      const requiredFields = [
-        { id: "email", label: "E-mail" },
-        { id: "password", label: "Пароль" },
-      ];
-
-      const missingFields = requiredFields
-        .filter((field) => !formData[field.id])
-        .map((field) => field.label);
-
-      if (missingFields.length > 0) {
-        setError(`Не заполнены обязательные поля: ${missingFields.join(", ")}`);
+      const validationErrors = validateForm();
+      if (validationErrors.length > 0) {
+        setError(validationErrors.join(", "));
         formRef.current?.scrollIntoView(SCROLL_SETTINGS);
         return;
       }
 
-      if (loginUser(formData)) {
-        navigate("/");
-      } else {
+      try {
+        const success = await loginUser(formData);
+        if (success) {
+          navigate("/");
+        } else {
+          formRef.current?.scrollIntoView(SCROLL_SETTINGS);
+        }
+      } catch (e) {
+        setError("Ошибка при входе в систему");
         formRef.current?.scrollIntoView(SCROLL_SETTINGS);
       }
     };
@@ -64,12 +61,6 @@ const Login = inject("UsersStore")(
       return <Navigate to="/" />;
     }
 
-    const errorMessage = error && (
-      <MessageBlock type={MBT_ERROR}>
-        <p>{error}</p>
-      </MessageBlock>
-    );
-
     return (
       <div className="login-wrapper">
         <form
@@ -77,7 +68,12 @@ const Login = inject("UsersStore")(
           className="login-wrapper__form"
           onSubmit={submitForm}
         >
-          {errorMessage}
+          {error && (
+            <MessageBlock type={MBT_ERROR}>
+              <p>{error}</p>
+            </MessageBlock>
+          )}
+
           <div className="login-wrapper__form-header">Вход</div>
 
           <LabeledInput
