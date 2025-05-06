@@ -70,7 +70,12 @@
 }
 
 .header__profile-pic {
+  --size: 30px;
   width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--medium-blue);
 }
 
 .header__profile-pic path {

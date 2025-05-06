@@ -8,11 +8,14 @@ import { mainNavLinks } from "../../utils/main-nav-links.js";
 import logo from "../../img/logo.webp";
 import { ReactComponent as ProfilePic } from "../../svg/profile-link-def.svg";
 import { ReactComponent as Cross } from "../../svg/cross-ico.svg";
+import NO_PHOTO_URL from "../../img/cabinet/no-photo.webp";
 
 import "./index.css";
 
 const Header = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    const { isAuthenticated, currentUser } = UsersStore;
+
     const pathname = useLocation().pathname.match(/(^\/\w+)/)?.[1];
     const currentUnitName = pathname || "/index";
 
@@ -45,6 +48,14 @@ const Header = inject("UsersStore")(
       ? "header__nav opened"
       : "header__nav";
 
+    const src = currentUser?.photo || NO_PHOTO_URL;
+    const userAvatar = <img src={src} alt="" className="header__profile-pic" />;
+    const cabinetLinkContent = isAuthenticated ? (
+      userAvatar
+    ) : (
+      <ProfilePic className="header__profile-pic" />
+    );
+
     return (
       <header className="header">
         <Link to="/" className="header__logo-container">
@@ -59,7 +70,8 @@ const Header = inject("UsersStore")(
           </button>
           <ul className="header__nav-list">{navListItemsArray}</ul>
           <Link className="header__profile-link" onClick={closeBurgerMenu}>
-            <ProfilePic />
+            {cabinetLinkContent}
+
             <span>Личный кабинет</span>
           </Link>
         </nav>
@@ -69,7 +81,7 @@ const Header = inject("UsersStore")(
           <i className="header__burger-bar"></i>
         </button>
         <Link to="/cabinet" className="header__profile-pic-link">
-          <ProfilePic className="header__profile-pic" />
+          {cabinetLinkContent}
         </Link>
       </header>
     );
