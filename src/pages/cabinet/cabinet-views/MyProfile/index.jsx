@@ -77,6 +77,10 @@ const MyProfile = inject("UsersStore")(
       fileInputRef.current.click();
     };
 
+    const handleRemovePhoto = () => {
+      setFormData((prev) => ({ ...prev, photo: null }));
+    };
+
     const scrollToTop = () => {
       formRef.current?.scrollIntoView(SCROLL_SETTINGS);
     };
@@ -215,6 +219,13 @@ const MyProfile = inject("UsersStore")(
               onClick={handleUploadClick}
             >
               Обзор...
+            </button>
+            <button
+              type="button"
+              className="my-profile__button-remove-photo"
+              onClick={handleRemovePhoto}
+            >
+              Удалить фото
             </button>
           </div>
         </div>

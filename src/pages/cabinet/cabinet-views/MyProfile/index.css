@@ -46,7 +46,8 @@
 }
 
 .my-profile__button-load-photo,
-.my-profile__button-submit {
+.my-profile__button-submit,
+.my-profile__button-remove-photo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +64,8 @@
 }
 
 .my-profile__button-load-photo:hover,
-.my-profile__button-submit:hover {
+.my-profile__button-submit:hover,
+.my-profile__button-remove-photo:hover {
   background-color: var(--medium-blue);
 }
 
