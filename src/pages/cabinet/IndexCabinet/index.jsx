@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { inject, observer } from "mobx-react";
 import {
   Link,
   useLocation,
@@ -6,13 +8,9 @@ import {
   Navigate,
 } from "react-router-dom";
 
-import { useState } from "react";
-
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
 import Confirm from "../../../components/popups/Confirm";
-
-import { inject, observer } from "mobx-react";
 
 import NO_PHOTO_URL from "../../../img/cabinet/no-photo.webp";
 
