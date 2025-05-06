@@ -214,7 +214,7 @@ const MyProfile = inject("UsersStore")(
               className="my-profile__button-load-photo"
               onClick={handleUploadClick}
             >
-              Изменить
+              Обзор...
             </button>
           </div>
         </div>
