@@ -60,7 +60,7 @@ const IndexNews = inject("NewsStore")(
       <section className={sectionClassName}>
         <h2 className="index-news__header">Новости</h2>
         <ul className="index-news__list">{lastNewsListItems}</ul>
-        <Link to="/" className="index-news__link-to-all-news">
+        <Link to="/news" className="index-news__link-to-all-news">
           <span>Все новости</span>
         </Link>
       </section>
