@@ -92,6 +92,8 @@ const IndexCabinet = inject("UsersStore")(
     const userId = users.findIndex((user) => user.email === email);
     const visibleId = `id: ${userId}`;
 
+    const pathToPhoto = photo || NO_PHOTO_URL;
+
     return (
       <div className="index-cabinet">
         <div className="index-cabinet__bugrer-button-menu-container">
@@ -112,7 +114,7 @@ const IndexCabinet = inject("UsersStore")(
             <Cross />
           </button>
           <div className="cabinet-menu__user-card">
-            <img src={photo} alt="" className="cabinet-menu__user-pic" />
+            <img src={pathToPhoto} alt="" className="cabinet-menu__user-pic" />
             <div className="cabinet-menu__user-name">{userFullName}</div>
             <div className="cabinet-menu__user-id">{visibleId}</div>
           </div>
