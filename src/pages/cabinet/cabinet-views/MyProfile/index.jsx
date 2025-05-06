@@ -9,6 +9,8 @@ const SCROLL_SETTINGS = { block: "start" };
 
 const MyProfile = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    const { currentUser, updateUser } = UsersStore;
+
     const formRef = useRef(null);
     const [formData, setFormData] = useState({
       name: "",
@@ -26,20 +28,20 @@ const MyProfile = inject("UsersStore")(
 
     // Загрузка данных пользователя при монтировании
     useEffect(() => {
-      if (UsersStore.currentUser) {
+      if (currentUser) {
         // Явно указываем какие поля нужно копировать
         setFormData({
-          name: UsersStore.currentUser.name || "",
-          surname: UsersStore.currentUser.surname || "",
-          country: UsersStore.currentUser.country || "",
-          city: UsersStore.currentUser.city || "",
-          birthdate: UsersStore.currentUser.birthdate || "",
-          email: UsersStore.currentUser.email || "",
-          phone: UsersStore.currentUser.phone || "",
-          photo: UsersStore.currentUser.photo || null,
+          name: currentUser.name || "",
+          surname: currentUser.surname || "",
+          country: currentUser.country || "",
+          city: currentUser.city || "",
+          birthdate: currentUser.birthdate || "",
+          email: currentUser.email || "",
+          phone: currentUser.phone || "",
+          photo: currentUser.photo || null,
         });
       }
-    }, [UsersStore.currentUser]);
+    }, [currentUser]);
 
     const handleInputChange = (e) => {
       const { id, value } = e.target;
@@ -128,7 +130,7 @@ const MyProfile = inject("UsersStore")(
         return;
       }
 
-      const result = UsersStore.updateUser(formData);
+      const result = updateUser(formData);
       if (result) {
         setMessage("Данные успешно сохранены");
         setMessageType(MBT_SUCCESS);
