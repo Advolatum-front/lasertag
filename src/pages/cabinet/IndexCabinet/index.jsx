@@ -14,9 +14,9 @@ import Confirm from "../../../components/popups/Confirm";
 
 import { inject, observer } from "mobx-react";
 
-import "./index.css";
+import NO_PHOTO_URL from "../../../img/cabinet/no-photo.webp";
 
-const NO_PHOTO_URL = "../../../img/cabinet/no-photo.webp";
+import "./index.css";
 
 const IndexCabinet = inject("UsersStore")(
   observer(({ UsersStore }) => {
