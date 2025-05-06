@@ -57,6 +57,13 @@ const MyProfile = inject("UsersStore")(
         return;
       }
 
+      // запрет загрузки файла размером более 2 * 1024 * 1024 байт (2 Мб)
+      if (file.size > 2 * 1024 * 1024) {
+        setMessage("Фото должно быть меньше 2 МБ");
+        setMessageType(MBT_ERROR);
+        return;
+      }
+
       const reader = new FileReader();
       reader.onload = (event) => {
         setFormData((prev) => ({ ...prev, photo: event.target.result }));
