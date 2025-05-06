@@ -9,7 +9,7 @@ const SCROLL_SETTINGS = { block: "start" };
 
 const MyProfile = inject("UsersStore")(
   observer(({ UsersStore }) => {
-    const { currentUser, updateUser } = UsersStore;
+    const { currentUser, updateUser, clearError, setError, error } = UsersStore;
 
     const formRef = useRef(null);
     const [formData, setFormData] = useState({
@@ -22,14 +22,11 @@ const MyProfile = inject("UsersStore")(
       phone: "",
       photo: null,
     });
-    const [message, setMessage] = useState(null);
-    const [messageType, setMessageType] = useState(MBT_ERROR);
+    const [successMessage, setSuccessMessage] = useState(null);
     const fileInputRef = useRef(null);
 
-    // Загрузка данных пользователя при монтировании
     useEffect(() => {
       if (currentUser) {
-        // Явно указываем какие поля нужно копировать
         setFormData({
           name: currentUser.name || "",
           surname: currentUser.surname || "",
@@ -41,10 +38,12 @@ const MyProfile = inject("UsersStore")(
           photo: currentUser.photo || null,
         });
       }
-    }, [currentUser]);
+      clearError();
+    }, [currentUser, clearError]);
 
     const handleInputChange = (e) => {
       const { id, value } = e.target;
+      clearError();
       setFormData((prev) => ({ ...prev, [id]: value }));
     };
 
@@ -53,16 +52,14 @@ const MyProfile = inject("UsersStore")(
       if (!file) return;
 
       if (!file.type.match("image.*")) {
-        setMessage("Пожалуйста, выберите файл изображения");
-        setMessageType(MBT_ERROR);
+        setError("Пожалуйста, выберите файл изображения");
         scrollToTop();
         return;
       }
 
-      // запрет загрузки файла размером более 2 * 1024 * 1024 байт (2 Мб)
       if (file.size > 2 * 1024 * 1024) {
-        setMessage("Фото должно быть меньше 2 МБ");
-        setMessageType(MBT_ERROR);
+        setError("Фото должно быть меньше 2 МБ");
+        scrollToTop();
         return;
       }
 
@@ -78,73 +75,67 @@ const MyProfile = inject("UsersStore")(
     };
 
     const scrollToTop = () => {
-      if (formRef.current) {
-        formRef.current.scrollIntoView(SCROLL_SETTINGS);
-      }
+      formRef.current?.scrollIntoView(SCROLL_SETTINGS);
     };
 
-    const validateForm = () => {
-      const requiredFields = [
-        "name",
-        "surname",
-        "country",
-        "city",
-        "birthdate",
-        "email",
-        "phone",
-      ];
-      const fieldLabels = {
-        name: "Имя",
-        surname: "Фамилия",
-        country: "Страна",
-        city: "Населённый пункт",
-        birthdate: "Дата рождения",
-        email: "Email",
-        phone: "Телефон",
-      };
-
-      const errors = [];
-      requiredFields.forEach((field) => {
-        if (!formData[field]) {
-          errors.push(fieldLabels[field]);
-        }
-      });
-
-      if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
-        if (!errors.includes("Email")) errors.push("Email");
-      }
-
-      return errors;
-    };
-
-    const submitForm = (event) => {
+    const submitForm = async (event) => {
       event.preventDefault();
-      const errors = validateForm();
+      clearError();
+      setSuccessMessage(null);
 
-      if (errors.length > 0) {
-        setMessage(
-          `Следующие поля не заполнены или содержат ошибки: ${errors.join(", ")}`,
-        );
-        setMessageType(MBT_ERROR);
+      const requiredFields = [
+        { id: "name", label: "Имя" },
+        { id: "surname", label: "Фамилия" },
+        { id: "country", label: "Страна" },
+        { id: "city", label: "Населённый пункт" },
+        { id: "birthdate", label: "Дата рождения" },
+        { id: "email", label: "Email" },
+        { id: "phone", label: "Телефон" },
+      ];
+
+      // Проверка на заполненность обязательных полей
+      const missingFields = requiredFields
+        .filter((field) => !formData[field.id])
+        .map((field) => field.label);
+
+      if (missingFields.length > 0) {
+        setError(`Не заполнены обязательные поля: ${missingFields.join(", ")}`);
         scrollToTop();
         return;
       }
 
-      const result = updateUser(formData);
+      // Валидация email
+      if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+        setError("Введите корректный email");
+        scrollToTop();
+        return;
+      }
+
+      const result = await updateUser(formData);
       if (result) {
-        setMessage("Данные успешно сохранены");
-        setMessageType(MBT_SUCCESS);
+        setSuccessMessage("Данные успешно сохранены");
         scrollToTop();
       } else {
-        setMessage("Ошибка при сохранении данных");
-        setMessageType(MBT_ERROR);
         scrollToTop();
       }
     };
 
+    const errorMessage = error && (
+      <MessageBlock type={MBT_ERROR}>
+        <p>{error}</p>
+      </MessageBlock>
+    );
+
+    const successMessageBlock = successMessage && (
+      <MessageBlock type={MBT_SUCCESS}>
+        <p>{successMessage}</p>
+      </MessageBlock>
+    );
+
     return (
       <form className="my-profile" onSubmit={submitForm} ref={formRef}>
-        {message && <MessageBlock type={messageType}>{message}</MessageBlock>}
+        {errorMessage}
+        {successMessageBlock}
 
         <h1 className="my-profile__header">Мой профиль</h1>
         <div className="my-profile__colums">
