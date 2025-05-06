@@ -12,18 +12,18 @@ const MyProfile = () => {
       <h1 className="my-profile__header">Мой профиль</h1>
       <div className="my-profile__colums">
         <div className="my-profile__info">
-          <LabeledInput required id="userName" label="Имя" />
-          <LabeledInput required id="userSurname" label="Фамилия" />
-          <LabeledInput required id="userCountry" label="Страна" />
-          <LabeledInput required id="userCity" label="Населённый пункт" />
+          <LabeledInput required id="name" label="Имя" />
+          <LabeledInput required id="surname" label="Фамилия" />
+          <LabeledInput required id="country" label="Страна" />
+          <LabeledInput required id="city" label="Населённый пункт" />
           <LabeledInput
             type="date"
             required
-            id="userDate"
+            id="birthdate"
             label="Дата рождения"
           />
-          <LabeledInput type="email" required id="userEmail" label="Email" />
-          <LabeledInput required id="userPhone" label="Телефон" />
+          <LabeledInput type="email" required id="email" label="Email" />
+          <LabeledInput required id="phone" label="Телефон" />
         </div>
         <div className="my-profile__photo-loader">
           <span className="my-profile__photo-caption">Фото профиля:</span>
@@ -37,7 +37,9 @@ const MyProfile = () => {
           </button>
         </div>
       </div>
-      <button className="my-profile__button-submit">Сохранить</button>
+      <button type="submit" className="my-profile__button-submit">
+        Сохранить
+      </button>
     </form>
   );
 };
