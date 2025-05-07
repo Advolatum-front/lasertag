@@ -37,11 +37,13 @@ const CurrentActivityPage = inject(
     const { title, date, fullText, status } = fetchedActivityItem;
     const fullTextLines = [...fullText];
 
+    const navLinksURLs = adjacentActivitiesIds.map((id) => `/activities/${id}`);
+
     return (
       <section className="current-activity">
         <ActivityViewer
           id={id}
-          prevNextIds={adjacentActivitiesIds}
+          prevNextIds={navLinksURLs}
           date={date}
           title={title}
           fullTextLines={fullTextLines}

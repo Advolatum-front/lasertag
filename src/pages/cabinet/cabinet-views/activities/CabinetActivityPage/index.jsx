@@ -1,30 +1,59 @@
+import { useParams } from "react-router";
+import { useEffect } from "react";
+import { inject, observer } from "mobx-react";
+
 import ActivityViewer from "../../../../../components/ActivityViewer";
+import NoData from "../../../../../components/NoData";
 
 import "./index.css";
 
-const CabinetActivityPage = () => {
-  return (
-    <div className="cabinet-activity-page">
-      <h1 className="cabinet-activity-page__header">Мероприятия</h1>
+const CabinetActivityPage = inject(
+  "ActivitiesStore",
+  "UsersStore",
+)(
+  observer(({ ActivitiesStore, UsersStore }) => {
+    const id = useParams().id;
+    const {
+      fetchedActivityItem,
+      fetchActivityItemById,
+      fetchAdjacentActivitiesIdsById,
+      adjacentActivitiesIds,
+    } = ActivitiesStore;
+    const { isAuthenticated } = UsersStore;
+
+    useEffect(() => {
+      fetchActivityItemById(id);
+      fetchAdjacentActivitiesIdsById(id);
+    }, [fetchActivityItemById, id, fetchAdjacentActivitiesIdsById]);
+
+    if (!fetchedActivityItem) {
+      return (
+        <section className="current-activity">
+          <NoData />
+        </section>
+      );
+    }
+
+    const { title, date, fullText, status } = fetchedActivityItem;
+    const fullTextLines = [...fullText];
+
+    const navLinksURLs = adjacentActivitiesIds.map(
+      (id) => `/cabinet/activities/${id}`,
+    );
+
+    return (
       <ActivityViewer
-        goBackLink="/"
-        header="Тренировочный бой юниоров"
-        description="Соревнование между совершеннолетними (18-25 лет) спортсменами с
-          базовым (начальным) уровнем подготовки с малым количеством (не более
-          3-ёх матчей, учитывая тренировочные) боевого опыта или полным его
-          отсутствием. Десять команд по пятнадцать человек будут сражаться друг против друга
-          за первенство в нашем тренировочном бою. Победители получат сертификат
-          о прохождении боевой подготовки лазерного боя, а остальные спортсмены
-          - сертификат об участии."
-        date="03.12"
-        sendRequestLink="/"
-        borderAround
-        navLinks
-        prevLinkUrl="/"
-        nextLinkUrl="/"
+        id={id}
+        prevNextIds={navLinksURLs}
+        date={date}
+        title={title}
+        fullTextLines={fullTextLines}
+        status={status}
+        goBackLinkURL="/cabinet/activities/"
+        isAuthenticated={isAuthenticated}
       />
-    </div>
-  );
-};
+    );
+  }),
+);
 
 export default CabinetActivityPage;

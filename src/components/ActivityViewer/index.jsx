@@ -28,7 +28,7 @@ const ActivityViewer = (props) => {
     ? "activity-viewer__link-go-back border-around"
     : "activity-viewer__link-go-back";
 
-  const [prevURL, nextURL] = prevNextIds.map((id) => `/activities/${id}`);
+  const [prevURL, nextURL] = prevNextIds;
   const prevLink = (
     <Link to={prevURL} className="activity-viewer__nav-link prev" />
   );
