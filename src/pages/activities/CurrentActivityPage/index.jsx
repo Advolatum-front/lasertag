@@ -13,12 +13,18 @@ const CurrentActivityPage = inject(
 )(
   observer(({ ActivitiesStore, UsersStore }) => {
     const id = useParams().id;
-    const { fetchedActivityItem, fetchActivityItemById } = ActivitiesStore;
+    const {
+      fetchedActivityItem,
+      fetchActivityItemById,
+      fetchAdjacentActivitiesIdsById,
+      adjacentActivitiesIds,
+    } = ActivitiesStore;
     const { isAuthenticated } = UsersStore;
 
     useEffect(() => {
       fetchActivityItemById(id);
-    }, [fetchActivityItemById, id]);
+      fetchAdjacentActivitiesIdsById(id);
+    }, [fetchActivityItemById, id, fetchAdjacentActivitiesIdsById]);
 
     if (!fetchedActivityItem) {
       return (
@@ -35,6 +41,7 @@ const CurrentActivityPage = inject(
       <section className="current-activity">
         <ActivityViewer
           id={id}
+          prevNextIds={adjacentActivitiesIds}
           date={date}
           title={title}
           fullTextLines={fullTextLines}

@@ -15,7 +15,7 @@ const ActivityViewer = (props) => {
     fullTextLines,
     status,
     borderAround = false,
-    navLinks = false,
+    prevNextIds,
     goBackLinkURL,
     isAuthenticated,
   } = props;
@@ -28,11 +28,12 @@ const ActivityViewer = (props) => {
     ? "activity-viewer__link-go-back border-around"
     : "activity-viewer__link-go-back";
 
-  const prevLink = navLinks && (
-    <Link to="/" className="activity-viewer__nav-link prev" />
+  const [prevURL, nextURL] = prevNextIds.map((id) => `/activities/${id}`);
+  const prevLink = (
+    <Link to={prevURL} className="activity-viewer__nav-link prev" />
   );
-  const nextLink = navLinks && (
-    <Link to="/" className="activity-viewer__nav-link next" />
+  const nextLink = (
+    <Link to={nextURL} className="activity-viewer__nav-link next" />
   );
 
   const fullTextParagraphs = fullTextLines.map((line, index) => (
