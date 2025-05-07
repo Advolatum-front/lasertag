@@ -206,6 +206,12 @@
 }
 
 @media (max-width: 1152px) {
+  .activity-viewer,
+  .activity-viewer__nav-link,
+  .activity-viewer__link-go-back {
+    background-color: var(--light-grey);
+  }
+
   .activity-viewer:before {
     left: 20px;
     right: initial;
@@ -257,7 +263,6 @@
 
   .activity-viewer {
     padding: 20px;
-    background-color: var(--light-grey);
   }
 
   .activity-viewer__link-go-back {
