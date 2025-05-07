@@ -86,7 +86,7 @@ function App() {
             <Route index element={<Index />} />
             <Route path="myprofile" element={<MyProfile />} />
             <Route path="activities" element={<ActivitiesList />} />
-            <Route path="activities/id" element={<CabinetActivityPage />} />
+            <Route path="activities/:id" element={<CabinetActivityPage />} />
             <Route path="favorites" element={<CabinetGallery />} />
             <Route path="favorites/id" element={<CabinetSlider />} />
             <Route
