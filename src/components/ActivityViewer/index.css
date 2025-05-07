@@ -1,6 +1,6 @@
 :root {
   /*  --activity-viewer-border-around: 3px solid var(--light-blue);*/
-  --av-triangle-size: 30px;
+  --av-triangle-size: 25px;
   --av-border-width: 2px;
   --av-border-settings: var(--av-border-width) solid var(--light-blue);
 }
@@ -73,6 +73,31 @@
   border: var(--av-border-settings);
   margin-left: calc(-1 * var(--av-border-width));
   background-color: #fff;
+  border-radius: 0 20px 20px 20px;
+  padding: 20px 30px;
+  font-family: var(--open-sans);
+}
+
+.activity-viewer__header {
+  font-size: 30px;
+  text-indent: 50px;
+  margin-top: 0;
+  font-weight: 600;
+  width: 75%;
+  text-transform: uppercase;
+  color: var(--medium-blue);
+}
+
+.activity-viewer__description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+  color: var(--medium-blue);
+}
+
+.activity-viewer__description p {
+  margin: 0;
 }
 
 /*-----------------------------------------------------------------*/
@@ -96,25 +121,6 @@
 
 .activity-viewer.border-around {
   border: var(--activity-viewer-border-around);
-}
-
-.activity-viewer__header {
-  font-size: 30px;
-  text-indent: 50px;
-  margin-top: 0;
-  font-weight: 600;
-  width: 75%;
-}
-
-.activity-viewer__description {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 40px;
-}
-
-.activity-viewer__description p {
-  margin: 0;
 }
 
 .activity-viewer__bottom-part {
