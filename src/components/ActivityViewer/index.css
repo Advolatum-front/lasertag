@@ -100,6 +100,56 @@
   margin: 0;
 }
 
+.activity-viewer__bottom-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activity-viewer__date {
+  position: relative;
+  color: var(--light-blue);
+  font-size: 18px;
+  font-weight: 600;
+  text-indent: 38px;
+}
+
+.activity-viewer__date:after {
+  content: "";
+  position: relative;
+  --width: 350px;
+  --height: calc(var(--width) * 0.577);
+  display: block;
+  width: var(--width);
+  height: var(--height);
+  background-image: url("./pistol-bg.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -14px;
+}
+
+. .activity-viewer:before {
+  content: "";
+  position: absolute;
+  --width: 350px;
+  --height: calc(var(--width) * 0.577);
+  display: block;
+  width: var(--width);
+  height: var(--height);
+  background-image: url("./pistol-bg.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 8px;
+}
+
+.activity-viewer:before {
+  --width: 70px;
+  --height: calc(var(--width) * 0.649);
+  background-image: url("./confetti.webp");
+  top: 42px;
+  right: 86px;
+}
+
 /*-----------------------------------------------------------------*/
 
 .aa {
@@ -121,43 +171,6 @@
 
 .activity-viewer.border-around {
   border: var(--activity-viewer-border-around);
-}
-
-.activity-viewer__bottom-part {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.activity-viewer__date {
-  position: relative;
-  color: var(--light-blue);
-  font-size: 18px;
-  font-weight: 600;
-  text-indent: 38px;
-}
-
-.activity-viewer__date:after,
-.activity-viewer:before {
-  content: "";
-  position: absolute;
-  --width: 350px;
-  --height: calc(var(--width) * 0.577);
-  display: block;
-  width: var(--width);
-  height: var(--height);
-  background-image: url("./pistol-bg.webp");
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: 8px;
-}
-
-.activity-viewer:before {
-  --width: 70px;
-  --height: calc(var(--width) * 0.649);
-  background-image: url("./confetti.webp");
-  top: 42px;
-  right: 86px;
 }
 
 .activity-viewer__link-send-request,
