@@ -42,16 +42,19 @@ const CabinetActivityPage = inject(
     );
 
     return (
-      <ActivityViewer
-        id={id}
-        prevNextIds={navLinksURLs}
-        date={date}
-        title={title}
-        fullTextLines={fullTextLines}
-        status={status}
-        goBackLinkURL="/cabinet/activities/"
-        isAuthenticated={isAuthenticated}
-      />
+      <div className="cabinet-activity-page">
+        {" "}
+        <ActivityViewer
+          id={id}
+          prevNextIds={navLinksURLs}
+          date={date}
+          title={title}
+          fullTextLines={fullTextLines}
+          status={status}
+          goBackLinkURL="/cabinet/activities/"
+          isAuthenticated={isAuthenticated}
+        />
+      </div>
     );
   }),
 );

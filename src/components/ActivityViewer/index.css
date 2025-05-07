@@ -4,10 +4,6 @@
   --av-border-settings: var(--av-border-width) solid var(--light-blue);
 }
 
-.cabinet-activity-item-page {
-  padding: 0 30px;
-}
-
 .av-wrapper {
   display: flex;
   align-items: stretch;
@@ -67,12 +63,28 @@
 }
 
 .viewer-second-col {
+  position: relative;
   border: var(--av-border-settings);
   margin-left: calc(-1 * var(--av-border-width));
   background-color: #fff;
   border-radius: 0 20px 20px 20px;
   padding: 20px 30px;
   font-family: var(--open-sans);
+  z-index: 2;
+}
+
+.viewer-second-col:before {
+  position: absolute;
+  content: "";
+  --width: 70px;
+  --height: calc(var(--width) * 0.649);
+  width: var(--width);
+  height: var(--height);
+  display: block;
+  background-image: url("./confetti.webp");
+  background-size: contain;
+  top: 16px;
+  right: 16px;
 }
 
 .activity-viewer__header {
@@ -125,29 +137,6 @@
   background-repeat: no-repeat;
   background-size: contain;
   top: -14px;
-}
-
-.activity-viewer:before {
-  content: "";
-  position: absolute;
-  --width: 350px;
-  --height: calc(var(--width) * 0.577);
-  display: block;
-  width: var(--width);
-  height: var(--height);
-  background-image: url("./pistol-bg.webp");
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: 8px;
-}
-
-.viewer-second-col:before {
-  content: "";
-  --width: 70px;
-  --height: calc(var(--width) * 0.649);
-  background-image: url("./confetti.webp");
-  top: 42px;
-  right: 86px;
 }
 
 /*-----------------------------------------------------------------*/

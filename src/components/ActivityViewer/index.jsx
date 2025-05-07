@@ -66,55 +66,28 @@ const ActivityViewer = (props) => {
   //   : "activity-viewer__link-go-back";
 
   return (
-    <div className="cabinet-activity-item-page">
-      <div className="av-wrapper">
-        <div className="viewer-first-col">
-          <Link to={goBackLinkURL} className="av-link-go-back">
-            <Arrow />
-          </Link>
-          <Link to={prevURL} className="av-link-prev" />
-        </div>
+    <div className="av-wrapper">
+      <div className="viewer-first-col">
+        <Link to={goBackLinkURL} className="av-link-go-back">
+          <Arrow />
+        </Link>
+        <Link to={prevURL} className="av-link-prev" />
+      </div>
 
-        <div className="viewer-second-col">
-          <h1 className="activity-viewer__header">{title}</h1>
-          <div className="activity-viewer__description">
-            {fullTextParagraphs}
-          </div>
-          <div className="activity-viewer__bottom-part">
-            <div className="activity-viewer__date">{date}</div>
-            {sendRequestBlock}
-          </div>
+      <div className="viewer-second-col">
+        <h1 className="activity-viewer__header">{title}</h1>
+        <div className="activity-viewer__description">{fullTextParagraphs}</div>
+        <div className="activity-viewer__bottom-part">
+          <div className="activity-viewer__date">{date}</div>
+          {sendRequestBlock}
         </div>
+      </div>
 
-        <div className="viewer-third-col">
-          <Link to={nextURL} className="av-link-next" />
-        </div>
+      <div className="viewer-third-col">
+        <Link to={nextURL} className="av-link-next" />
       </div>
     </div>
   );
 };
 
 export default ActivityViewer;
-
-/*
-
-return (
-  <div className="aa">
-    <div className={activityViewerClassName}>
-      <Link to={goBackLinkURL} className={goBackLinkClassName}>
-        <Arrow className="activity-viewer__arrow-ico" />
-      </Link>
-      <h1 className="activity-viewer__header">{title}</h1>
-      <div className="activity-viewer__description">{fullTextParagraphs}</div>
-      <div className="activity-viewer__bottom-part">
-        <div className="activity-viewer__date">{date}</div>
-        {sendRequestBlock}
-      </div>
-      {prevLink}
-      {nextLink}
-    </div>
-  </div>
-);
-
-
-*/
