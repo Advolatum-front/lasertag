@@ -85,11 +85,11 @@
   background-size: contain;
   top: 16px;
   right: 16px;
+  opacity: 0.1;
 }
 
 .activity-viewer__header {
   font-size: 30px;
-  text-indent: 50px;
   margin-top: 0;
   font-weight: 600;
   width: 75%;
@@ -309,15 +309,10 @@
   }
 
   .activity-viewer__date {
-    background-color: var(--light-blue);
-    color: #fff;
+    color: var(--light-blue);
     text-indent: 0;
-    width: 50%;
-    margin-left: auto;
     font-size: 24px;
     margin-bottom: 20px;
-    padding: 5px 0 5px 20px;
-    border-radius: 20px 0 0 20px;
   }
 
   .activity-viewer__date:after {
