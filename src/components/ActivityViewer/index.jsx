@@ -14,24 +14,12 @@ const ActivityViewer = (props) => {
     title,
     fullTextLines,
     status,
-    borderAround = false,
     prevNextIds,
     goBackLinkURL,
     isAuthenticated,
   } = props;
 
-  const activityViewerClassName = borderAround
-    ? "activity-viewer border-around"
-    : "activity-viewer";
-
   const [prevURL, nextURL] = prevNextIds;
-
-  // const prevLink = (
-  //   <Link to={prevURL} className="activity-viewer__nav-link prev" />
-  // );
-  // const nextLink = (
-  //   <Link to={nextURL} className="activity-viewer__nav-link next" />
-  // );
 
   const fullTextParagraphs = fullTextLines.map((line, index) => (
     <p key={index}>{line}</p>
@@ -60,10 +48,6 @@ const ActivityViewer = (props) => {
 
   const sendRequestBlock =
     activityDate < currentDate ? pastActivityCaption : statusOrLogin;
-
-  // const goBackLinkClassName = borderAround
-  //   ? "activity-viewer__link-go-back border-around"
-  //   : "activity-viewer__link-go-back";
 
   return (
     <div className="av-wrapper">

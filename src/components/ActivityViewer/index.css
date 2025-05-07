@@ -92,8 +92,8 @@
 .activity-viewer__header {
   font-size: 30px;
   margin-top: 0;
+  text-align: center;
   font-weight: 600;
-  width: 75%;
   text-transform: uppercase;
   color: var(--medium-blue);
 }
@@ -142,11 +142,6 @@
 
 /*-----------------------------------------------------------------*/
 
-.aa {
-  display: flex;
-  justify-content: center;
-}
-
 .activity-viewer {
   background-color: #fff;
   position: relative;
@@ -157,10 +152,6 @@
   border-radius: 0 20px 20px 20px;
   display: flex;
   flex-direction: column;
-}
-
-.activity-viewer.border-around {
-  border: var(--activity-viewer-border-around);
 }
 
 .activity-viewer__link-send-request,
@@ -210,13 +201,6 @@
   align-items: center;
   left: calc(-1 * var(--width));
   transition: background-color 0.2s linear;
-}
-
-.activity-viewer__link-go-back.border-around {
-  border: var(--activity-viewer-border-around);
-  border-right: none;
-  top: -3px;
-  left: calc(-1 * var(--width) - 3px);
 }
 
 .activity-viewer__link-go-back:hover {
