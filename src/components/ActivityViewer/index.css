@@ -1,5 +1,5 @@
 :root {
-  --border-around: 3px solid var(--light-blue);
+  --activity-viewer-border-around: 3px solid var(--light-blue);
 }
 
 .activity-viewer {
@@ -15,7 +15,7 @@
 }
 
 .activity-viewer.border-around {
-  border: var(--border-around);
+  border: var(--activity-viewer-border-around);
 }
 
 .activity-viewer__header {
@@ -125,7 +125,7 @@
 }
 
 .activity-viewer__link-go-back.border-around {
-  border: var(--border-around);
+  border: var(--activity-viewer-border-around);
   border-right: none;
   top: -3px;
   left: calc(-1 * var(--width) - 3px);
@@ -156,7 +156,7 @@
   background-color: #fff;
   top: 50%;
   transform: translateY(-50%);
-  border: var(--border-around);
+  border: var(--activity-viewer-border-around);
 }
 
 .prev {
