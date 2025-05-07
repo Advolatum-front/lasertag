@@ -13,6 +13,11 @@ import "./index.css";
 
 const Footer = () => {
   const [alertOpen, setAlertOpen] = useState(false);
+  const initialFormData = {
+    name: "",
+    email: "",
+  };
+  const [formData, setFormData] = useState(initialFormData);
 
   const navListItemArray = mainNavLinks.map((obj, index) => {
     return (
@@ -26,7 +31,18 @@ const Footer = () => {
 
   const submitForm = (event) => {
     event.preventDefault();
+    setFormData(initialFormData);
     setAlertOpen(true);
+  };
+
+  const handleInputChange = (event) => {
+    const { id, value } = event.target;
+    setFormData((prev) => {
+      return {
+        ...prev,
+        [id]: value,
+      };
+    });
   };
 
   const closeAlert = () => {
@@ -48,12 +64,18 @@ const Footer = () => {
           className="footer__form-text-field"
           placeholder="Ваше имя"
           required
+          id="name"
+          value={formData.name}
+          onChange={handleInputChange}
         />
         <input
           type="email"
           className="footer__form-text-field"
           placeholder="Ваш e-mail"
           required
+          id="email"
+          value={formData.email}
+          onChange={handleInputChange}
         />
         <button type="submit" className="footer__submit-form">
           <span>Отправить</span>
