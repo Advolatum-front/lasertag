@@ -13,6 +13,7 @@
 .viewer-third-col {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .av-link-go-back {
