@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { stripYear, parseDate } from "../../utils/date/functions";
+import { parseDate } from "../../utils/date/functions";
 import ActivityRequestStatus from "../../components/ActivityRequestStatus";
 
 import { ReactComponent as Arrow } from "../../svg/arrow.svg";
@@ -39,7 +39,6 @@ const ActivityViewer = (props) => {
     <p key={index}>{line}</p>
   ));
 
-  const visibleDate = stripYear(date);
   const currentDate = new Date();
   const activityDate = parseDate(date);
 
@@ -71,7 +70,7 @@ const ActivityViewer = (props) => {
       <h1 className="activity-viewer__header">{title}</h1>
       <div className="activity-viewer__description">{fullTextParagraphs}</div>
       <div className="activity-viewer__bottom-part">
-        <div className="activity-viewer__date">{visibleDate}</div>
+        <div className="activity-viewer__date">{date}</div>
         {sendRequestBlock}
       </div>
       {prevLink}
