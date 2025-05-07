@@ -9,10 +9,11 @@ import {
 } from "react-router-dom";
 
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
-
-import Confirm from "../../../components/popups/Confirm";
-
 import NO_PHOTO_URL from "../../../img/cabinet/no-photo.webp";
+
+import MessageDlg from "../../../components/popups/MessageDlg";
+
+import { PDT_CONFIRM } from "../../../utils/popup-dialog-types";
 
 import "./index.css";
 
@@ -130,7 +131,8 @@ const IndexCabinet = inject("UsersStore")(
             </li>
           </ul>
         </aside>
-        <Confirm
+        <MessageDlg
+          type={PDT_CONFIRM}
           text="Вы уверены, что хотите выйти?"
           open={confirmOpen}
           onYes={comfirmLogout}
