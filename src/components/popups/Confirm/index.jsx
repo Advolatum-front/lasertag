@@ -2,28 +2,41 @@ import { createPortal } from "react-dom";
 
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
 
+import { PDT_ALERT, PDT_CONFIRM } from "../../../utils/popup-dialog-types";
+
 import "./index.css";
 
 const popupContainer = document.getElementById("popup");
 
-const Confirm = ({ text, onYes, onNo, onClose, open }) => {
+const Confirm = ({ text, onYes, onNo, onClose, open, type }) => {
   const handleYes = () => {
-    if (onYes) {
-      onYes();
-    }
+    onYes?.();
   };
 
   const handleNo = () => {
-    if (onNo) {
-      onNo();
-    }
+    onNo?.();
   };
 
   const handleClose = () => {
-    if (onClose) {
-      onClose();
-    }
+    onClose?.();
   };
+
+  const buttonYesNo = type === PDT_CONFIRM && (
+    <>
+      <button type="button" onClick={handleYes}>
+        Да
+      </button>
+      <button type="button" onClick={handleNo}>
+        Нет
+      </button>
+    </>
+  );
+
+  const buttonOk = type === PDT_ALERT && (
+    <button type="button" onClick={handleClose}>
+      OK
+    </button>
+  );
 
   const overlayClassName = open
     ? "confirm-popup-overlay open"
@@ -41,12 +54,8 @@ const Confirm = ({ text, onYes, onNo, onClose, open }) => {
         </button>
         <p className="confirm-popup__text">{text}</p>
         <div className="confirm-popup__buttons">
-          <button type="button" onClick={handleYes}>
-            Да
-          </button>
-          <button type="button" onClick={handleNo}>
-            Нет
-          </button>
+          {buttonYesNo}
+          {buttonOk}
         </div>
       </div>
     </div>
