@@ -48,20 +48,21 @@ const ActivityViewer = (props) => {
       Авторизуйтесь
     </Link>
   );
+
+  const pastClass = "activity-viewer__past-activity-caption";
+  const pastActivityCaption = <span className={pastClass}>Завершено</span>;
+  const statusOrLogin = isAuthenticated ? (
+    <ActivityRequestStatus
+      code={status}
+      className="activity-viewer__avtivity-status"
+      activityId={id}
+    />
+  ) : (
+    linkToLogin
+  );
+
   const sendRequestBlock =
-    activityDate < currentDate ? (
-      <span className="activity-viewer__past-activity-caption">
-        Мероприятие завершено
-      </span>
-    ) : isAuthenticated ? (
-      <ActivityRequestStatus
-        code={status}
-        className="activity-viewer__avtivity-status"
-        activityId={id}
-      />
-    ) : (
-      linkToLogin
-    );
+    activityDate < currentDate ? pastActivityCaption : statusOrLogin;
 
   return (
     <div className={activityViewerClassName}>
