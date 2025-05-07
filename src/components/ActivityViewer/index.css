@@ -1,5 +1,4 @@
 :root {
-  /*  --activity-viewer-border-around: 3px solid var(--light-blue);*/
   --av-triangle-size: 25px;
   --av-border-width: 2px;
   --av-border-settings: var(--av-border-width) solid var(--light-blue);
@@ -23,7 +22,6 @@
   border-radius: 20px 0 0 20px;
   background-color: #fff;
   position: relative;
-  /*  display: none;*/
 }
 
 .av-link-prev,
@@ -34,7 +32,6 @@
   border: 2px solid var(--light-blue);
   border-right: none;
   margin: auto 0;
-  /*  align-self: center;*/
   border-radius: 20px 0 0 20px;
   background-color: #fff;
   padding: 2px 0;
@@ -45,13 +42,11 @@
   border: 2px solid var(--light-blue);
   border-left: none;
   border-radius: 0 20px 20px 0;
-  /*  margin-left: calc(-1 * var(--av-border-width));*/
 }
 
 .av-link-prev:before {
   content: "";
   position: relative;
-  /*  margin-left: -10px;*/
   width: 0;
   height: 0;
   border: var(--av-triangle-size) solid transparent;
@@ -60,8 +55,6 @@
 
 .av-link-next:before {
   content: "";
-  /*  margin-left: -5px;*/
-  /*  margin-right: -5px;*/
   position: relative;
   width: 0;
   height: 0;
