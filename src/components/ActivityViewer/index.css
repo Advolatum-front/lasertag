@@ -129,7 +129,7 @@
 .activity-viewer__date:after {
   content: "";
   position: relative;
-  --width: 280px;
+  --width: 210px;
   --height: calc(var(--width) * 0.577);
   display: block;
   width: var(--width);
@@ -137,7 +137,7 @@
   background-image: url("./pistol-bg.webp");
   background-repeat: no-repeat;
   background-size: contain;
-  top: -14px;
+  top: -9px;
 }
 
 /*-----------------------------------------------------------------*/
