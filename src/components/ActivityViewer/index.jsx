@@ -17,7 +17,7 @@ const ActivityViewer = (props) => {
     borderAround = false,
     navLinks = false,
     goBackLinkURL,
-    isAuthorized = true,
+    isAuthenticated,
   } = props;
 
   const activityViewerClassName = borderAround
@@ -53,7 +53,7 @@ const ActivityViewer = (props) => {
       <span className="activity-viewer__past-activity-caption">
         Мероприятие завершено
       </span>
-    ) : isAuthorized ? (
+    ) : isAuthenticated ? (
       <ActivityRequestStatus
         code={status}
         className="activity-viewer__avtivity-status"

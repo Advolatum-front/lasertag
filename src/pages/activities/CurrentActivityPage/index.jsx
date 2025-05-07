@@ -7,10 +7,14 @@ import NoData from "../../../components/NoData";
 
 import "./index.css";
 
-const CurrentActivityPage = inject("ActivitiesStore")(
-  observer(({ ActivitiesStore }) => {
+const CurrentActivityPage = inject(
+  "ActivitiesStore",
+  "UsersStore",
+)(
+  observer(({ ActivitiesStore, UsersStore }) => {
     const id = useParams().id;
     const { fetchedActivityItem, fetchActivityItemById } = ActivitiesStore;
+    const { isAuthenticated } = UsersStore;
 
     useEffect(() => {
       fetchActivityItemById(id);
@@ -36,6 +40,7 @@ const CurrentActivityPage = inject("ActivitiesStore")(
           fullTextLines={fullTextLines}
           status={status}
           goBackLinkURL="/activities"
+          isAuthenticated={isAuthenticated}
         />
       </section>
     );
