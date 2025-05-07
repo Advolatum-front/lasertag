@@ -104,6 +104,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .activity-viewer__date {
@@ -128,7 +130,7 @@
   top: -14px;
 }
 
-. .activity-viewer:before {
+.activity-viewer:before {
   content: "";
   position: absolute;
   --width: 350px;
@@ -142,7 +144,8 @@
   top: 8px;
 }
 
-.activity-viewer:before {
+.viewer-second-col:before {
+  content: "";
   --width: 70px;
   --height: calc(var(--width) * 0.649);
   background-image: url("./confetti.webp");
@@ -188,7 +191,6 @@
   padding: 10px 30px;
   border-radius: 10px;
   transition: background-color 0.2s linear;
-  margin-bottom: -80px;
 }
 
 .activity-viewer__link-to-login {
