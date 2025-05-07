@@ -1,8 +1,8 @@
-body:has(div.confirm-popup-overlay.open) {
+body:has(div.message-dlg-popup-overlay.open) {
   overflow: hidden;
 }
 
-.confirm-popup-overlay {
+.message-dlg-popup-overlay {
   position: fixed;
   left: 0;
   right: 0;
@@ -19,12 +19,12 @@ body:has(div.confirm-popup-overlay.open) {
   pointer-events: none;
 }
 
-.confirm-popup-overlay.open {
+.message-dlg-popup-overlay.open {
   opacity: 1;
   pointer-events: auto;
 }
 
-.confirm-popup {
+.message-dlg-popup {
   width: 40vw;
   background-color: #fff;
   font-family: var(--open-sans);
@@ -36,7 +36,7 @@ body:has(div.confirm-popup-overlay.open) {
   position: relative;
 }
 
-.confirm-popup:before {
+.message-dlg-popup:before {
   --width: 160px;
   --height: calc(var(--width) * 0.951);
   content: "";
@@ -52,33 +52,33 @@ body:has(div.confirm-popup-overlay.open) {
   opacity: 0.3;
 }
 
-.confirm-popup__button-close {
+.message-dlg-popup__button-close {
   align-self: flex-end;
   cursor: pointer;
   background: none;
   border: none;
 }
 
-.confirm-popup__button-close path {
+.message-dlg-popup__button-close path {
   transition: stroke 0.2s linear;
 }
 
-.confirm-popup__button-close:hover path {
+.message-dlg-popup__button-close:hover path {
   stroke: var(--dark-blue);
 }
 
-.confirm-popup__text {
+.message-dlg-popup__text {
   color: var(--medium-blue);
   font-size: 20px;
   margin-bottom: 100px;
 }
 
-.confirm-popup__buttons {
+.message-dlg-popup__buttons {
   display: flex;
   gap: 20px;
 }
 
-.confirm-popup__buttons button {
+.message-dlg-popup__buttons button {
   width: 80px;
   display: flex;
   align-items: center;
@@ -96,21 +96,21 @@ body:has(div.confirm-popup-overlay.open) {
   font-weight: 600;
 }
 
-.confirm-popup__buttons button:hover {
+.message-dlg-popup__buttons button:hover {
   background-color: var(--dark-blue);
 }
 
 @media (max-width: 760px) {
-  .confirm-popup {
+  .message-dlg-popup {
     width: 90vw;
   }
 
-  .confirm-popup__buttons {
+  .message-dlg-popup__buttons {
     flex-direction: column;
     align-items: center;
   }
 
-  .confirm-popup__buttons button {
+  .message-dlg-popup__buttons button {
     width: 50%;
   }
 }

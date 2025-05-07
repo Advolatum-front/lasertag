@@ -8,7 +8,7 @@ import "./index.css";
 
 const popupContainer = document.getElementById("popup");
 
-const Confirm = ({ text, onYes, onNo, onClose, open, type }) => {
+const MessageDlg = ({ text, onYes, onNo, onClose, open, type }) => {
   const handleYes = () => {
     onYes?.();
   };
@@ -39,21 +39,21 @@ const Confirm = ({ text, onYes, onNo, onClose, open, type }) => {
   );
 
   const overlayClassName = open
-    ? "confirm-popup-overlay open"
-    : "confirm-popup-overlay";
+    ? "message-dlg-popup-overlay open"
+    : "message-dlg-popup-overlay";
 
-  const confirm = (
+  const messageDlg = (
     <div className={overlayClassName}>
-      <div className="confirm-popup">
+      <div className="message-dlg-popup">
         <button
           type="button"
-          className="confirm-popup__button-close"
+          className="message-dlg-popup__button-close"
           onClick={handleClose}
         >
           <Cross />
         </button>
-        <p className="confirm-popup__text">{text}</p>
-        <div className="confirm-popup__buttons">
+        <p className="message-dlg-popup__text">{text}</p>
+        <div className="message-dlg-popup__buttons">
           {buttonYesNo}
           {buttonOk}
         </div>
@@ -61,7 +61,7 @@ const Confirm = ({ text, onYes, onNo, onClose, open, type }) => {
     </div>
   );
 
-  return createPortal(confirm, popupContainer);
+  return createPortal(messageDlg, popupContainer);
 };
 
-export default Confirm;
+export default MessageDlg;
