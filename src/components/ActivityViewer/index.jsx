@@ -66,7 +66,7 @@ const ActivityViewer = (props) => {
   //   : "activity-viewer__link-go-back";
 
   return (
-    <div>
+    <div className="cabinet-activity-item-page">
       <div className="av-wrapper">
         <div className="viewer-first-col">
           <Link to={goBackLinkURL} className="av-link-go-back">

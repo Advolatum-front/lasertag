@@ -4,6 +4,10 @@
   --av-border-settings: var(--av-border-width) solid var(--light-blue);
 }
 
+.cabinet-activity-item-page {
+  padding: 0 30px;
+}
+
 .av-wrapper {
   display: flex;
   align-items: stretch;
