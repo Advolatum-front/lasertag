@@ -1,5 +1,85 @@
 :root {
-  --activity-viewer-border-around: 3px solid var(--light-blue);
+  /*  --activity-viewer-border-around: 3px solid var(--light-blue);*/
+  --av-triangle-size: 30px;
+  --av-border-width: 2px;
+  --av-border-settings: var(--av-border-width) solid var(--light-blue);
+}
+
+.av-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.viewer-first-col,
+.viewer-third-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.av-link-go-back {
+  border: 2px solid var(--light-blue);
+  border-right: none;
+  padding: 2px 10px 2px 5px;
+  border-radius: 20px 0 0 20px;
+  background-color: #fff;
+  position: relative;
+  /*  display: none;*/
+}
+
+.av-link-prev,
+.av-link-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--light-blue);
+  border-right: none;
+  margin: auto 0;
+  /*  align-self: center;*/
+  border-radius: 20px 0 0 20px;
+  background-color: #fff;
+  padding: 2px 0;
+  position: relative;
+}
+
+.av-link-next {
+  border: 2px solid var(--light-blue);
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  /*  margin-left: calc(-1 * var(--av-border-width));*/
+}
+
+.av-link-prev:before {
+  content: "";
+  position: relative;
+  /*  margin-left: -10px;*/
+  width: 0;
+  height: 0;
+  border: var(--av-triangle-size) solid transparent;
+  border-right-color: var(--medium-blue);
+}
+
+.av-link-next:before {
+  content: "";
+  /*  margin-left: -5px;*/
+  /*  margin-right: -5px;*/
+  position: relative;
+  width: 0;
+  height: 0;
+  border: var(--av-triangle-size) solid transparent;
+  border-left-color: var(--medium-blue);
+}
+
+.viewer-second-col {
+  border: var(--av-border-settings);
+  margin-left: calc(-1 * var(--av-border-width));
+  background-color: #fff;
+}
+
+/*-----------------------------------------------------------------*/
+
+.aa {
+  display: flex;
+  justify-content: center;
 }
 
 .activity-viewer {
@@ -149,7 +229,7 @@
 
 .activity-viewer__nav-link {
   --width: 57px;
-  --triangle-size: 30px;
+
   height: 70px;
   width: var(--width);
   position: absolute;
