@@ -265,6 +265,10 @@
     padding: 20px;
   }
 
+  .activity-viewer__date {
+    padding: 5px 15px 5px 20px;
+  }
+
   .activity-viewer__link-go-back {
     background-color: var(--light-grey);
   }
