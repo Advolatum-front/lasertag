@@ -123,7 +123,7 @@
   color: var(--light-blue);
   font-size: 18px;
   font-weight: 600;
-  text-indent: 38px;
+  text-indent: 0;
 }
 
 .activity-viewer__date:after {
