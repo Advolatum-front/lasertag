@@ -28,7 +28,7 @@ const CabinetActivityPage = inject(
 
     if (!fetchedActivityItem) {
       return (
-        <section className="current-activity">
+        <section className="cabinet-activity-page">
           <NoData />
         </section>
       );
@@ -43,7 +43,6 @@ const CabinetActivityPage = inject(
 
     return (
       <div className="cabinet-activity-page">
-        {" "}
         <ActivityViewer
           id={id}
           prevNextIds={navLinksURLs}

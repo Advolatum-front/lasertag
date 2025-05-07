@@ -129,7 +129,7 @@
 .activity-viewer__date:after {
   content: "";
   position: relative;
-  --width: 350px;
+  --width: 280px;
   --height: calc(var(--width) * 0.577);
   display: block;
   width: var(--width);
