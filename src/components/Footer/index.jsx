@@ -14,8 +14,8 @@ import "./index.css";
 const Footer = () => {
   const [alertOpen, setAlertOpen] = useState(false);
   const initialFormData = {
-    name: "",
-    email: "",
+    footerFormName: "",
+    footerFormEmail: "",
   };
   const [formData, setFormData] = useState(initialFormData);
 
@@ -64,8 +64,8 @@ const Footer = () => {
           className="footer__form-text-field"
           placeholder="Ваше имя"
           required
-          id="name"
-          value={formData.name}
+          id="footerFormName"
+          value={formData.footerFormName}
           onChange={handleInputChange}
         />
         <input
@@ -73,8 +73,8 @@ const Footer = () => {
           className="footer__form-text-field"
           placeholder="Ваш e-mail"
           required
-          id="email"
-          value={formData.email}
+          id="footerFormEmail"
+          value={formData.footerFormEmail}
           onChange={handleInputChange}
         />
         <button type="submit" className="footer__submit-form">
