@@ -7,6 +7,8 @@ import NoData from "../../../components/NoData";
 
 import "./index.css";
 
+const REQUEST_SENT_STATUS = 3;
+
 const CurrentActivityPage = inject(
   "ActivitiesStore",
   "UsersStore",
@@ -19,7 +21,8 @@ const CurrentActivityPage = inject(
       fetchAdjacentActivitiesIdsById,
       adjacentActivitiesIds,
     } = ActivitiesStore;
-    const { isAuthenticated } = UsersStore;
+
+    const { isAuthenticated, currentUser } = UsersStore;
 
     useEffect(() => {
       fetchActivityItemById(id);
@@ -39,6 +42,12 @@ const CurrentActivityPage = inject(
 
     const navLinksURLs = adjacentActivitiesIds.map((id) => `/activities/${id}`);
 
+    const currentUserActivities = currentUser?.activities || [];
+    const isRequestSent = currentUserActivities.some(
+      (activity) => activity.id === id,
+    );
+    const statusToPass = isRequestSent ? REQUEST_SENT_STATUS : status;
+
     return (
       <section className="current-activity">
         <ActivityViewer
@@ -47,7 +56,7 @@ const CurrentActivityPage = inject(
           date={date}
           title={title}
           fullTextLines={fullTextLines}
-          status={status}
+          status={statusToPass}
           goBackLinkURL="/activities"
           isAuthenticated={isAuthenticated}
         />
