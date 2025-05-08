@@ -167,7 +167,7 @@ const ActivityRequestForm = inject(
       const errors = validateForm();
       if (errors.length > 0) {
         setError(
-          `Следующие поля не заполнены или содержат ошибки:<br>${errors.join(",<br>")}`,
+          `Следующие поля не заполнены или содержат ошибки: ${errors.join("\n")}`,
         );
         formRef.current?.scrollIntoView(SCROLL_SETTINGS);
         return;
