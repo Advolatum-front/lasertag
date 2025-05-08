@@ -15,7 +15,7 @@ import { ReactComponent as Arrow } from "../../../../../svg/arrow.svg";
 
 import "./index.css";
 
-const SCROLL_SETTINGS = { block: "start" };
+const SCROLL_SETTINGS = { block: "start", behavior: "smooth" };
 
 const ActivityRequestForm = inject(
   "UsersStore",
@@ -43,6 +43,12 @@ const ActivityRequestForm = inject(
     useEffect(() => {
       UsersStore.clearError();
     }, [UsersStore]);
+
+    useEffect(() => {
+      if (isSubmitted) {
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
+      }
+    }, [isSubmitted]);
 
     const handleInputChange = (e) => {
       const { id, value } = e.target;
@@ -119,7 +125,6 @@ const ActivityRequestForm = inject(
     const validateForm = () => {
       const errors = [];
 
-      // Проверка основных полей
       const requiredFields = {
         squadName: "Название команды",
         organizationAddres: "Адрес командирующей организации",
@@ -135,7 +140,6 @@ const ActivityRequestForm = inject(
         }
       });
 
-      // Проверка участников
       participators.forEach((participator, index) => {
         if (!participator.name) {
           errors.push(`ФИО участника ${index + 1}`);
@@ -147,7 +151,6 @@ const ActivityRequestForm = inject(
         }
       });
 
-      // Проверка сопровождающих
       attendants.forEach((attendant, index) => {
         if (!attendant) {
           errors.push(`ФИО сопровождающего ${index + 1}`);
@@ -190,9 +193,9 @@ const ActivityRequestForm = inject(
       const success = UsersStore.addActivityRequest(activityRequest);
       if (success) {
         setIsSubmitted(true);
-        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
       } else {
         setError("Ошибка при сохранении заявки");
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
       }
     };
 
@@ -204,7 +207,7 @@ const ActivityRequestForm = inject(
 
     const errorMessage = error && (
       <MessageBlock type={MBT_ERROR}>
-        <p dangerouslySetInnerHTML={{ __html: error }} />
+        <p>{error}</p>
       </MessageBlock>
     );
 
