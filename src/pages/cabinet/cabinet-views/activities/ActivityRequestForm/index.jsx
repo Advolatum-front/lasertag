@@ -15,6 +15,8 @@ import { ReactComponent as Arrow } from "../../../../../svg/arrow.svg";
 
 import "./index.css";
 
+const SCROLL_SETTINGS = { block: "start" };
+
 const ActivityRequestForm = inject(
   "UsersStore",
   "ActivitiesStore",
@@ -161,8 +163,10 @@ const ActivityRequestForm = inject(
 
       const errors = validateForm();
       if (errors.length > 0) {
-        setError(`Ошибки:<br>${errors.join(",<br>")}`);
-        formRef.current?.scrollIntoView({ block: "start" });
+        setError(
+          `Следующие поля не заполнены или содержат ошибки:<br>${errors.join(",<br>")}`,
+        );
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
         return;
       }
 
@@ -186,6 +190,7 @@ const ActivityRequestForm = inject(
       const success = UsersStore.addActivityRequest(activityRequest);
       if (success) {
         setIsSubmitted(true);
+        formRef.current?.scrollIntoView(SCROLL_SETTINGS);
       } else {
         setError("Ошибка при сохранении заявки");
       }
