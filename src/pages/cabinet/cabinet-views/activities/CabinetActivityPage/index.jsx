@@ -7,6 +7,8 @@ import NoData from "../../../../../components/NoData";
 
 import "./index.css";
 
+const REQUEST_SENT_STATUS = 3;
+
 const CabinetActivityPage = inject(
   "ActivitiesStore",
   "UsersStore",
@@ -19,7 +21,7 @@ const CabinetActivityPage = inject(
       fetchAdjacentActivitiesIdsById,
       adjacentActivitiesIds,
     } = ActivitiesStore;
-    const { isAuthenticated } = UsersStore;
+    const { isAuthenticated, currentUser } = UsersStore;
 
     useEffect(() => {
       fetchActivityItemById(id);
@@ -41,6 +43,12 @@ const CabinetActivityPage = inject(
       (id) => `/cabinet/activities/${id}`,
     );
 
+    const currentUserActivities = currentUser?.activities || [];
+    const isRequestSent = currentUserActivities.some(
+      (activity) => activity.id === id,
+    );
+    const statusToPass = isRequestSent ? REQUEST_SENT_STATUS : status;
+
     return (
       <div className="cabinet-activity-page">
         <ActivityViewer
@@ -49,7 +57,7 @@ const CabinetActivityPage = inject(
           date={date}
           title={title}
           fullTextLines={fullTextLines}
-          status={status}
+          status={statusToPass}
           goBackLinkURL="/cabinet/activities/"
           isAuthenticated={isAuthenticated}
         />
