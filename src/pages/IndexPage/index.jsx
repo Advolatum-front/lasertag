@@ -6,9 +6,13 @@ import IndexNews from "../../components/index-page/IndexNews";
 import Media from "../../components/index-page/Media";
 import Activities from "../../components/index-page/Activities";
 
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const IndexPage = () => {
+  useDocumentTitle();
+
   return (
     <>
       <Hero />

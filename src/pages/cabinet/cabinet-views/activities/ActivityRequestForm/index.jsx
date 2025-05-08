@@ -6,6 +6,8 @@ import { useParams } from "react-router";
 import LabeledInput from "../../../../../components/controls/LabeledInput";
 import MessageBlock from "../../../../../components/MessageBlock";
 
+import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
+
 import {
   MBT_SUCCESS,
   MBT_ERROR,
@@ -39,6 +41,8 @@ const ActivityRequestForm = inject(
       squadAgentName: "",
       squadAgentPhone: "",
     });
+
+    useDocumentTitle("Подать заявку на мероприятие");
 
     useEffect(() => {
       UsersStore.clearError();

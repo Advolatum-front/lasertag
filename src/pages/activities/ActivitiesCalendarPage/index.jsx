@@ -9,6 +9,9 @@ import MonthesSpinner from "../../../components/MonthesSpinner";
 import ActivitiesCalendar from "../../../components/ActivitiesCalendar";
 import NoData from "../../../components/NoData";
 
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
+
+import { SITE_NAME } from "../../../utils/site-name";
 import { stripYear } from "../../../utils/date/functions";
 
 import "./index.css";
@@ -26,6 +29,7 @@ const ActivitiesCalendarPage = inject("ActivitiesStore")(
       fetchActivities();
       fetchUpcomingActivities();
     }, [fetchActivities, fetchUpcomingActivities]);
+    useDocumentTitle("Мероприятия");
 
     const [calendarYear, setCalendarYear] = useState(new Date().getFullYear());
     const [calendarMonth, setCalendarMonth] = useState(new Date().getMonth());

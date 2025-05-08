@@ -5,6 +5,8 @@ import { inject, observer } from "mobx-react";
 import ActivityViewer from "../../../../../components/ActivityViewer";
 import NoData from "../../../../../components/NoData";
 
+import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const REQUEST_SENT_STATUS = 3;
@@ -38,6 +40,8 @@ const CabinetActivityPage = inject(
 
     const { title, date, fullText, status } = fetchedActivityItem;
     const fullTextLines = [...fullText];
+
+    useDocumentTitle(`Личный кабинет, ${title}`);
 
     const navLinksURLs = adjacentActivitiesIds.map(
       (id) => `/cabinet/activities/${id}`,

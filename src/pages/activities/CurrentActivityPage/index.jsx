@@ -5,6 +5,8 @@ import { inject, observer } from "mobx-react";
 import ActivityViewer from "../../../components/ActivityViewer";
 import NoData from "../../../components/NoData";
 
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const REQUEST_SENT_STATUS = 3;
@@ -28,6 +30,9 @@ const CurrentActivityPage = inject(
       fetchActivityItemById(id);
       fetchAdjacentActivitiesIdsById(id);
     }, [fetchActivityItemById, id, fetchAdjacentActivitiesIdsById]);
+
+    const currentActivityName = fetchedActivityItem?.title || "";
+    useDocumentTitle(currentActivityName);
 
     if (!fetchedActivityItem) {
       return (

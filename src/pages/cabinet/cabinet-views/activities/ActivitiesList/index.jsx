@@ -10,6 +10,8 @@ import {
   CAF_AVAIBLE,
 } from "../../../../../utils/cabinet-activities-filter-state.js";
 
+import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const ActivitiesList = () => {
@@ -29,6 +31,8 @@ const ActivitiesList = () => {
       value: CAF_AVAIBLE,
     },
   ];
+
+  useDocumentTitle("Личный кабинет, мероприятия");
 
   const filterListItems = filterData.map((item, index) => {
     const { caption, value } = item;
