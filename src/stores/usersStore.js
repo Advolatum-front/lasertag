@@ -19,6 +19,7 @@ class UsersStore {
       setError: action,
       clearError: action,
       updateUser: action,
+      addActivityRequest: action,
 
       isAuthenticated: computed,
     });
@@ -71,6 +72,31 @@ class UsersStore {
     this.currentUser = updatedUser;
     this.saveUsers();
     localStorage.setItem("currentUser", JSON.stringify(updatedUser));
+    return true;
+  };
+
+  // Добавление заявки на мероприятие
+  addActivityRequest = (activityRequest) => {
+    if (!this.currentUser) return false;
+
+    const userIndex = this.users.findIndex(
+      (u) => u.email === this.currentUser.email,
+    );
+    if (userIndex === -1) return false;
+
+    // Инициализируем поле activities, если его нет
+    if (!this.users[userIndex].activities) {
+      this.users[userIndex].activities = [];
+    }
+
+    // Добавляем новую заявку
+    this.users[userIndex].activities.push(activityRequest);
+
+    // Обновляем текущего пользователя
+    this.currentUser = this.users[userIndex];
+
+    this.saveUsers();
+    localStorage.setItem("currentUser", JSON.stringify(this.currentUser));
     return true;
   };
 
