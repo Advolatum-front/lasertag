@@ -30,6 +30,9 @@ const CabinetActivityPage = inject(
       fetchAdjacentActivitiesIdsById(id);
     }, [fetchActivityItemById, id, fetchAdjacentActivitiesIdsById]);
 
+    const titleToPass = fetchedActivityItem?.title || "";
+    useDocumentTitle(`Личный кабинет, ${titleToPass}`);
+
     if (!fetchedActivityItem) {
       return (
         <section className="cabinet-activity-page">
@@ -38,10 +41,8 @@ const CabinetActivityPage = inject(
       );
     }
 
-    const { title, date, fullText, status } = fetchedActivityItem;
+    const { date, fullText, status } = fetchedActivityItem;
     const fullTextLines = [...fullText];
-
-    useDocumentTitle(`Личный кабинет, ${title}`);
 
     const navLinksURLs = adjacentActivitiesIds.map(
       (id) => `/cabinet/activities/${id}`,
@@ -59,7 +60,7 @@ const CabinetActivityPage = inject(
           id={id}
           prevNextIds={navLinksURLs}
           date={date}
-          title={title}
+          title={titleToPass}
           fullTextLines={fullTextLines}
           status={statusToPass}
           goBackLinkURL="/cabinet/activities/"
