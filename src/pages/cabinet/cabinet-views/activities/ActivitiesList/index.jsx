@@ -70,21 +70,6 @@ const ActivitiesList = inject(
       );
     });
 
-    // if (activitiesList.length === 0) {
-    //   return (
-    //     <div className="cabinet-activities">
-    //       <h1 className="cabinet-activities__header">Мероприятия</h1>
-    //       <div className="cabinet-activities__filter-block">
-    //         <ul className="cabinet-activities__filter">{filterListItems}</ul>
-    //         <form className="cabinet-activities__seacrh-form">
-    //           <LabeledInput id="seacrhInput" label="Поиск по названию" />
-    //         </form>
-    //         <NoData />
-    //       </div>
-    //     </div>
-    //   );
-    // }
-
     const activitiesData = toJS(activitiesList).map((activity) => {
       const { id, date, status, title, description } = activity;
       const requestIsSent = currentUserActivivities.some((userActivity) => {
