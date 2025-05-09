@@ -22,4 +22,7 @@
   --mbt-success-text: var(--status-approved-text);
   --mbt-error-bg: var(--status-declined-bg);
   --mbt-error-text: var(--status-declined-text);
+
+  --expired-activity-bg: #e6e6e6;
+  --expired-activity-text: #9f9f9f;
 }

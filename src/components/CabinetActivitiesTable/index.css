@@ -128,7 +128,8 @@
   white-space: normal;
 }
 
-.cabinet-activities-table__activity-status {
+.cabinet-activities-table__activity-status,
+.cabinet-activities-table__status-expired {
   padding: 5px;
   display: flex;
   align-items: center;
@@ -137,6 +138,11 @@
   text-decoration: none;
   border-radius: 10px;
   font-weight: 600;
+}
+
+.cabinet-activities-table__status-expired {
+  background-color: var(--expired-activity-bg);
+  color: var(--expired-activity-text);
 }
 
 @media (max-width: 1152px) {
@@ -156,7 +162,8 @@
     gap: 15px;
   }
 
-  .cabinet-activities-table__activity-status {
+  .cabinet-activities-table__activity-status,
+  .cabinet-activities-table__status-expired {
     width: 60%;
   }
 }

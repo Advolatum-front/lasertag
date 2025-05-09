@@ -39,7 +39,7 @@ const CabinetActivitiesTable = ({ activitiesData, listHeader }) => {
       activityDate < currentDate;
 
     const statusBlock = notProcessedActivityIsOver ? (
-      <span className="cabinet-activities-table__activity-status">
+      <span className="cabinet-activities-table__status-expired">
         Завершено
       </span>
     ) : (
