@@ -102,6 +102,7 @@
 .cabinet-activities__tip {
   color: var(--medium-blue);
   font-weight: 600;
+  margin-top: 30px;
 }
 
 @media (max-width: 1152px) {

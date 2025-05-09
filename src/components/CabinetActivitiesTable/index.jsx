@@ -66,19 +66,26 @@ const CabinetActivitiesTable = ({ activitiesData, tableHeader }) => {
     );
   });
 
-  const visibleTableHeader = `${tableHeader} (${activitiesData.length})`;
-
-  return (
-    <div className="cabinet-activities-table__content">
-      <h2 className="cabinet-activities-table__list-category">
-        {visibleTableHeader}
-      </h2>
+  const count = activitiesData.length;
+  const visibleTableHeader = `${tableHeader} (${count})`;
+  const tableBody =
+    count > 0 ? (
       <div className="cabinet-activities-table__activities-list-conainer">
         {TABLE_CAPTIONS_LIST}
         <ul className="cabinet-activities-table__activities-list">
           {cabinetActivityItems}
         </ul>
       </div>
+    ) : (
+      <NoData />
+    );
+
+  return (
+    <div className="cabinet-activities-table__content">
+      <h2 className="cabinet-activities-table__list-category">
+        {visibleTableHeader}
+      </h2>
+      {tableBody}
     </div>
   );
 };
