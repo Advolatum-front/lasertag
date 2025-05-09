@@ -24,7 +24,7 @@ const TABLE_CAPTIONS_LIST = (
   </ul>
 );
 
-const CabinetActivitiesTable = ({ activitiesData, listHeader }) => {
+const CabinetActivitiesTable = ({ activitiesData, tableHeader }) => {
   const cabinetActivityItems = activitiesData.map((activity) => {
     const { id, date, status, title, description } = activity;
     const urlLink = `/cabinet/activities/${id}`;
@@ -66,9 +66,13 @@ const CabinetActivitiesTable = ({ activitiesData, listHeader }) => {
     );
   });
 
+  const visibleTableHeader = `${tableHeader} (${activitiesData.length})`;
+
   return (
     <div className="cabinet-activities-table__content">
-      <h2 className="cabinet-activities-table__list-category">Прошедшие</h2>
+      <h2 className="cabinet-activities-table__list-category">
+        {visibleTableHeader}
+      </h2>
       <div className="cabinet-activities-table__activities-list-conainer">
         {TABLE_CAPTIONS_LIST}
         <ul className="cabinet-activities-table__activities-list">

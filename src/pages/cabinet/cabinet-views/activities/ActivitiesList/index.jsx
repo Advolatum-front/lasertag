@@ -88,7 +88,10 @@ const ActivitiesList = inject(
             <LabeledInput id="searchInput" label="Поиск по названию" />
           </form>
         </div>
-        <CabinetActivitiesTable activitiesData={activitiesData} />
+        <CabinetActivitiesTable
+          activitiesData={activitiesData}
+          tableHeader="Все мероприятия"
+        />
         <div className="cabinet-activities__tip">
           Список мероприятий постоянно пополняется. Не забывайте почаще навещать
           нас.
