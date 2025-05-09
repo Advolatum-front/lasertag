@@ -1,23 +1,22 @@
+import { toJS } from "mobx";
 import { inject, observer } from "mobx-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import LabeledInput from "../../../../../components/controls/LabeledInput";
-import NoData from "../../../../../components/NoData";
-import ActivityRequestStatus from "../../../../../components/ActivityRequestStatus";
+import CabinetActivitiesTable from "../../../../../components/CabinetActivitiesTable";
 
 import {
   CAF_ALL,
   CAF_MY,
   CAF_AVAIBLE,
 } from "../../../../../utils/cabinet-activities-filter-state.js";
-import { stripYear, parseDate } from "../../../../../utils/date/functions";
 
 import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
 
 import "./index.css";
 
-const ACTIVITY_AVAIBLE_STATUS = 4;
+const ACTIVITY_PENDING_STATUS = 3;
 
 const ActivitiesList = inject(
   "UsersStore",
@@ -27,6 +26,8 @@ const ActivitiesList = inject(
     useDocumentTitle("Личный кабинет, мероприятия");
 
     const { fetchActivities, activitiesList } = ActivitiesStore;
+    const { currentUser } = UsersStore;
+    const currentUserActivivities = currentUser?.activities || [];
 
     useEffect(() => {
       fetchActivities();
@@ -69,54 +70,29 @@ const ActivitiesList = inject(
       );
     });
 
-    if (activitiesList.length === 0) {
-      return (
-        <div className="cabinet-activities">
-          <h1 className="cabinet-activities__header">Мероприятия</h1>
-          <div className="cabinet-activities__filter-block">
-            <ul className="cabinet-activities__filter">{filterListItems}</ul>
-            <form className="cabinet-activities__seacrh-form">
-              <LabeledInput id="seacrhInput" label="Поиск по названию" />
-            </form>
-            <NoData />
-          </div>
-        </div>
-      );
-    }
+    // if (activitiesList.length === 0) {
+    //   return (
+    //     <div className="cabinet-activities">
+    //       <h1 className="cabinet-activities__header">Мероприятия</h1>
+    //       <div className="cabinet-activities__filter-block">
+    //         <ul className="cabinet-activities__filter">{filterListItems}</ul>
+    //         <form className="cabinet-activities__seacrh-form">
+    //           <LabeledInput id="seacrhInput" label="Поиск по названию" />
+    //         </form>
+    //         <NoData />
+    //       </div>
+    //     </div>
+    //   );
+    // }
 
-    const cabinetActivityItems = activitiesList.map((activity) => {
+    const activitiesData = toJS(activitiesList).map((activity) => {
       const { id, date, status, title, description } = activity;
-      const urlLink = `/cabinet/activities/${id}`;
-      const visibleDate = stripYear(date);
+      const requestIsSent = currentUserActivivities.some((userActivity) => {
+        return userActivity.id === id;
+      });
+      const newStatus = requestIsSent ? ACTIVITY_PENDING_STATUS : status;
 
-      const currentDate = new Date();
-      const activityDate = parseDate(date);
-
-      const avaibleActivityIsOver =
-        status === ACTIVITY_AVAIBLE_STATUS && activityDate < currentDate;
-
-      const statusBlock = avaibleActivityIsOver ? (
-        <span className="cabinet-activities__activity-status">Завершено</span>
-      ) : (
-        <ActivityRequestStatus
-          code={status}
-          className="cabinet-activities__activity-status"
-          activityId={id}
-        />
-      );
-
-      return (
-        <li className="cabinet-activities__activity-item" key={id}>
-          <div className="cabinet-activities__activity-date">{visibleDate}</div>
-          <Link to={urlLink} className="cabinet-activities__activity-name">
-            {title}
-          </Link>
-          <div className="cabinet-activities__activity-description">
-            {description}
-          </div>
-          {statusBlock}
-        </li>
-      );
+      return { id, date, status: newStatus, title, description };
     });
 
     return (
@@ -128,30 +104,10 @@ const ActivitiesList = inject(
             <LabeledInput id="seacrhInput" label="Поиск по названию" />
           </form>
         </div>
-        <div className="cabinet-activities__content">
-          <h2 className="cabinet-activities__list-category">Прошедшие</h2>
-          <div className="cabinet-activities__activities-list-conainer">
-            <ul className="cabinet-activities__captions-list">
-              <li className="cabinet-activities__caption-item date">Дата</li>
-              <li className="cabinet-activities__caption-item name">
-                Наименование
-              </li>
-              <li className="cabinet-activities__caption-item description">
-                Описание
-              </li>
-              <li className="cabinet-activities__caption-item status">
-                Статус заявки
-              </li>
-            </ul>
-            <ul className="cabinet-activities__activities-list">
-              {cabinetActivityItems}
-            </ul>
-          </div>
-
-          <div className="cabinet-activities__tip">
-            Список мероприятий постоянно пополняется. Не забывайте почаще
-            навещать нас.
-          </div>
+        <CabinetActivitiesTable activitiesData={activitiesData} />
+        <div className="cabinet-activities__tip">
+          Список мероприятий постоянно пополняется. Не забывайте почаще навещать
+          нас.
         </div>
       </div>
     );
