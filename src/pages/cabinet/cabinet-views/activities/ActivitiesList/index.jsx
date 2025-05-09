@@ -1,7 +1,6 @@
 import { toJS } from "mobx";
 import { inject, observer } from "mobx-react";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import LabeledInput from "../../../../../components/controls/LabeledInput";
 import CabinetActivitiesTable from "../../../../../components/CabinetActivitiesTable";
