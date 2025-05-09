@@ -11,11 +11,13 @@ import {
   CAF_MY,
   CAF_AVAIBLE,
 } from "../../../../../utils/cabinet-activities-filter-state.js";
-import { stripYear } from "../../../../../utils/date/functions";
+import { stripYear, parseDate } from "../../../../../utils/date/functions";
 
 import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
 
 import "./index.css";
+
+const ACTIVITY_AVAIBLE_STATUS = 4;
 
 const ActivitiesList = inject(
   "UsersStore",
@@ -87,6 +89,22 @@ const ActivitiesList = inject(
       const urlLink = `/cabinet/activities/${id}`;
       const visibleDate = stripYear(date);
 
+      const currentDate = new Date();
+      const activityDate = parseDate(date);
+
+      const avaibleActivityIsOver =
+        status === ACTIVITY_AVAIBLE_STATUS && activityDate < currentDate;
+
+      const statusBlock = avaibleActivityIsOver ? (
+        <span className="cabinet-activities__activity-status">Завершено</span>
+      ) : (
+        <ActivityRequestStatus
+          code={status}
+          className="cabinet-activities__activity-status"
+          activityId={id}
+        />
+      );
+
       return (
         <li className="cabinet-activities__activity-item" key={id}>
           <div className="cabinet-activities__activity-date">{visibleDate}</div>
@@ -96,11 +114,7 @@ const ActivitiesList = inject(
           <div className="cabinet-activities__activity-description">
             {description}
           </div>
-          <ActivityRequestStatus
-            code={status}
-            className="cabinet-activities__activity-status"
-            activityId={id}
-          />
+          {statusBlock}
         </li>
       );
     });
