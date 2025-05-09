@@ -15,7 +15,7 @@
   --status-declined-text: #bb0000;
   --status-pending-bg: #fff9b2;
   --status-pending-text: #bbb500;
-  --status-avaible-bg: #f00;
+  --status-avaible-bg: var(--light-blue);
   --status-avaible-text: #fff;
 
   --mbt-success-bg: var(--status-approved-bg);
