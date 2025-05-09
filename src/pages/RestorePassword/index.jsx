@@ -6,12 +6,16 @@ import LabeledInput from "../../components/controls/LabeledInput";
 import MessageBlock from "../../components/MessageBlock";
 import { MBT_ERROR, MBT_SUCCESS } from "../../utils/message-block-types";
 
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const SCROLL_SETTINGS = { block: "start" };
 
 const RestorePassword = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    useDocumentTitle("Восстановление пароля");
+
     const { users, saveUsers, isAuthenticated } = UsersStore;
 
     const [formData, setFormData] = useState({

@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import { ReactComponent as Cross } from "../../../../../svg/cross-ico.svg";
 
+import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
+
 import {
   GF_ALL,
   GF_PHOTO,
@@ -12,6 +14,8 @@ import {
 import "./index.css";
 
 const CabinetGallery = () => {
+  useDocumentTitle("Личный кабинет, избранное");
+
   const [filterState, setFilterState] = useState(GF_ALL);
 
   const filterData = [

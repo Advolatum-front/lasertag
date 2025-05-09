@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 
 import GalleryNavigator from "../../../components/GalleryNavigator";
 
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const AlbumSelector = () => {
+  useDocumentTitle("Галерея, альбомы");
+
   return (
     <>
       <GalleryNavigator className="gallery-navigator-mb" />

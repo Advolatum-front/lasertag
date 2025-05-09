@@ -4,9 +4,13 @@ import { ReactComponent as Arrow } from "../../../svg/arrow.svg";
 
 import GalleryNavigator from "../../../components/GalleryNavigator";
 
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const AlbumContent = () => {
+  useDocumentTitle("Галерея, просмотр альбома");
+
   return (
     <>
       <GalleryNavigator className="gallery-navigator-mb" />

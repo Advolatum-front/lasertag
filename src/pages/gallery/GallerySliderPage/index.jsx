@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 import { ReactComponent as Heart } from "../../../svg/heart-ico.svg";
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
@@ -11,9 +12,18 @@ import GalleryNavigator from "../../../components/GalleryNavigator";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const GallerySliderPage = () => {
+  const location = useLocation().pathname;
+  const documentTitle = location.endsWith("favorites")
+    ? "Избранное"
+    : "Галерея, просмотр альбома";
+
+  useDocumentTitle(documentTitle);
+
   const refs = useRef([]);
 
   const addToRefs = (el) => {

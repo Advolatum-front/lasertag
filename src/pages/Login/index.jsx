@@ -7,12 +7,16 @@ import MessageBlock from "../../components/MessageBlock";
 
 import { MBT_ERROR } from "../../utils/message-block-types";
 
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const SCROLL_SETTINGS = { block: "start" };
 
 const Login = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    useDocumentTitle("Авторизация");
+
     const { clearError, setError, loginUser, isAuthenticated, error } =
       UsersStore;
 

@@ -11,7 +11,6 @@ import NoData from "../../../components/NoData";
 
 import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
-import { SITE_NAME } from "../../../utils/site-name";
 import { stripYear } from "../../../utils/date/functions";
 
 import "./index.css";

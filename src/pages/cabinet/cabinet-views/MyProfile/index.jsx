@@ -6,12 +6,15 @@ import { MBT_ERROR, MBT_SUCCESS } from "../../../../utils/message-block-types";
 
 import NO_PHOTO_URL from "../../../../img/cabinet/no-photo.webp";
 
+import { useDocumentTitle } from "../../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const SCROLL_SETTINGS = { block: "start" };
 
 const MyProfile = inject("UsersStore")(
   observer(({ UsersStore }) => {
+    useDocumentTitle("Личный кабинет, мой профиль");
     const { currentUser, updateUser, clearError, setError, error } = UsersStore;
 
     const formRef = useRef(null);

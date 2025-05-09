@@ -42,7 +42,7 @@ const CurrentActivityPage = inject(
       );
     }
 
-    const { title, date, fullText, status } = fetchedActivityItem;
+    const { date, fullText, status } = fetchedActivityItem;
     const fullTextLines = [...fullText];
 
     const navLinksURLs = adjacentActivitiesIds.map((id) => `/activities/${id}`);
@@ -59,7 +59,7 @@ const CurrentActivityPage = inject(
           id={id}
           prevNextIds={navLinksURLs}
           date={date}
-          title={title}
+          title={currentActivityName}
           fullTextLines={fullTextLines}
           status={statusToPass}
           goBackLinkURL="/activities"

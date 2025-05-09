@@ -1,8 +1,12 @@
 import DocumentBlock from "../../components/DocumentBlock";
 
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const Documents = () => {
+  useDocumentTitle("Документы");
+
   return (
     <article className="documents-container">
       <div className="documents-container__bg"></div>

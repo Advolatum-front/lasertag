@@ -12,10 +12,14 @@ import { ReactComponent as Arrow } from "../../../svg/arrow.svg";
 import "swiper/css";
 import "swiper/css/navigation";
 
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const NewsList = inject("NewsStore")(
   observer(({ NewsStore }) => {
+    useDocumentTitle("Новости");
+
     const { newsList, fetchNews } = NewsStore;
 
     useEffect(() => {

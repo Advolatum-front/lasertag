@@ -1,9 +1,13 @@
 import { ReactComponent as PhoneIco } from "../../svg/phone-ico.svg";
 import { ReactComponent as MailIco } from "../../svg/mail-ico.svg";
 
+import { useDocumentTitle } from "../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const Contacts = () => {
+  useDocumentTitle("Контакты");
+
   return (
     <>
       <article className="contacts">

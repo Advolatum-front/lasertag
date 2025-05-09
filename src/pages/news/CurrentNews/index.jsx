@@ -5,6 +5,8 @@ import { useEffect } from "react";
 
 import NoData from "../../../components/NoData";
 
+import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
+
 import "./index.css";
 
 const CurrentNews = inject("NewsStore")(
@@ -23,6 +25,9 @@ const CurrentNews = inject("NewsStore")(
       fetchAdjacentNewsIdsById(newsId);
     }, [fetchNewsItemById, newsId, fetchAdjacentNewsIdsById]);
 
+    const newsTitle = fetchedNewsItem?.title || "";
+    useDocumentTitle(newsTitle);
+
     if (!fetchedNewsItem) {
       return (
         <section className="current-news-section">
@@ -33,7 +38,7 @@ const CurrentNews = inject("NewsStore")(
       );
     }
 
-    const { title, img, fullText, additionalText, date } = fetchedNewsItem;
+    const { img, fullText, additionalText, date } = fetchedNewsItem;
     const paragraphs = fullText.map((paragraph, index) => (
       <p key={index}>{paragraph}</p>
     ));
@@ -45,7 +50,7 @@ const CurrentNews = inject("NewsStore")(
         <div className="news-block">
           <img src={img} alt="" className="news-block__photo" />
           <div className="news-block__info">
-            <h1 className="news-block__header">{title}</h1>
+            <h1 className="news-block__header">{newsTitle}</h1>
             <div className="news-block__text">{paragraphs}</div>
             <div className="news-block__footer">
               <Link to={prevNewsId} className="news-block__link-prev" />

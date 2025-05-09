@@ -7,10 +7,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { ReactComponent as Cross } from "../../../../../svg/cross-ico.svg";
+import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
 
 import "./index.css";
 
 const CabinetSlider = () => {
+  useDocumentTitle("Личный кабинет, избранное");
   const refs = useRef([]);
 
   const addToRefs = (el) => {
