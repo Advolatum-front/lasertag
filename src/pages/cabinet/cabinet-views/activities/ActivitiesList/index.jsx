@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 
 import LabeledInput from "../../../../../components/controls/LabeledInput";
 import NoData from "../../../../../components/NoData";
+import ActivityRequestStatus from "../../../../../components/ActivityRequestStatus";
 
 import {
   CAF_ALL,
   CAF_MY,
   CAF_AVAIBLE,
 } from "../../../../../utils/cabinet-activities-filter-state.js";
+import { stripYear } from "../../../../../utils/date/functions";
 
 import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
 
@@ -83,6 +85,24 @@ const ActivitiesList = inject(
     const cabinetActivityItems = activitiesList.map((activity) => {
       const { id, date, status, title, description } = activity;
       const urlLink = `/cabinet/activities/${id}`;
+      const visibleDate = stripYear(date);
+
+      return (
+        <li className="cabinet-activities__activity-item" key={id}>
+          <div className="cabinet-activities__activity-date">{visibleDate}</div>
+          <Link to={urlLink} className="cabinet-activities__activity-name">
+            {title}
+          </Link>
+          <div className="cabinet-activities__activity-description">
+            {description}
+          </div>
+          <ActivityRequestStatus
+            code={status}
+            className="cabinet-activities__activity-status"
+            activityId={id}
+          />
+        </li>
+      );
     });
 
     return (
@@ -110,83 +130,7 @@ const ActivitiesList = inject(
               </li>
             </ul>
             <ul className="cabinet-activities__activities-list">
-              <li className="cabinet-activities__activity-item">
-                <div className="cabinet-activities__activity-date">12.05</div>
-                <div className="cabinet-activities__activity-name">
-                  Кубок мира по лазерному бою
-                </div>
-                <div className="cabinet-activities__activity-description">
-                  Долгожданная борьба за мировое чемпионство по лазерному бою
-                </div>
-                <div className="cabinet-activities__activity-status approved">
-                  Одобрена
-                </div>
-              </li>
-              <li className="cabinet-activities__activity-item">
-                <div className="cabinet-activities__activity-date">12.05</div>
-                <div className="cabinet-activities__activity-name">
-                  Тренировочный бой юноиоров
-                </div>
-                <div className="cabinet-activities__activity-description">
-                  Тренировочный матч между молодыми людьми с базовым уровнем
-                  подготовки
-                </div>
-                <div className="cabinet-activities__activity-status declined">
-                  Отклонена
-                </div>
-              </li>
-              <li className="cabinet-activities__activity-item">
-                <div className="cabinet-activities__activity-date">12.05</div>
-                <div className="cabinet-activities__activity-name">
-                  Высшая Лига лазерного боя
-                </div>
-                <div className="cabinet-activities__activity-description">
-                  Соревнование между высшими (четвёртыми) эшелонами спортсменов
-                </div>
-              </li>
-              <li className="cabinet-activities__activity-item">
-                <div className="cabinet-activities__activity-date">12.05</div>
-                <div className="cabinet-activities__activity-name">
-                  Чемпионат Лунного Лорда
-                </div>
-                <div className="cabinet-activities__activity-description">
-                  Группа матчей между вторыми эшелонами разных городов
-                </div>
-                <div className="cabinet-activities__activity-status pending">
-                  На рассмотрении
-                </div>
-              </li>
-              <li className="cabinet-activities__activity-item">
-                <div className="cabinet-activities__activity-date">12.05</div>
-                <div className="cabinet-activities__activity-name">
-                  Лекция по технике безопасности
-                </div>
-                <div className="cabinet-activities__activity-description">
-                  Познавательная лекция о правилах поведения на боевом поле
-                </div>
-                <Link
-                  to="/"
-                  className="cabinet-activities__activity-status avaible"
-                >
-                  Подайте заявку
-                </Link>
-              </li>
-              <li className="cabinet-activities__activity-item">
-                <div className="cabinet-activities__activity-date">12.05</div>
-                <div className="cabinet-activities__activity-name">
-                  Длинное название мероприятия, которое не помещается полностью
-                </div>
-                <div className="cabinet-activities__activity-description">
-                  Очень длинное описание мероприятия с длиннмы названнием,
-                  котороетакже не помещается полностью в указанное поле,
-                </div>
-                <Link
-                  to="/"
-                  className="cabinet-activities__activity-status avaible"
-                >
-                  Подайте заявку
-                </Link>
-              </li>
+              {cabinetActivityItems}
             </ul>
           </div>
 
