@@ -101,7 +101,7 @@ const ActivitiesList = inject(
         <div className="cabinet-activities__filter-block">
           <ul className="cabinet-activities__filter">{filterListItems}</ul>
           <form className="cabinet-activities__seacrh-form">
-            <LabeledInput id="seacrhInput" label="Поиск по названию" />
+            <LabeledInput id="searchInput" label="Поиск по названию" />
           </form>
         </div>
         <CabinetActivitiesTable activitiesData={activitiesData} />
