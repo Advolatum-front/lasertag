@@ -16,7 +16,6 @@
 .activity-request-status.pending {
   color: var(--status-pending-text);
   background-color: var(--status-pending-bg);
-  font-size: 14px;
 }
 
 .activity-request-status.avaible {
