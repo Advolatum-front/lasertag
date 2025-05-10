@@ -86,6 +86,10 @@ const ActivitiesList = inject(
           <ul className="cabinet-activities__filter">{filterListItems}</ul>
           <form className="cabinet-activities__seacrh-form">
             <LabeledInput id="searchInput" label="Поиск по названию" />
+            <div className="cabinet-activities__form-buttons">
+              <button type="submit">Найти</button>
+              <button type="reset">Очистить</button>
+            </div>
           </form>
         </div>
         <CabinetActivitiesTable

@@ -70,6 +70,26 @@
   border-color: var(--medium-blue);
 }
 
+.cabinet-activities__form-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cabinet-activities__form-buttons button {
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--medium-blue);
+  font-size: 16px;
+  transition: color 0.2s linear;
+}
+
+.cabinet-activities__form-buttons button:hover {
+  color: var(--dark-blue);
+}
+
 .cabinet-activities__activity-status.approved {
   color: var(--status-approved-text);
   background-color: var(--status-approved-bg);
