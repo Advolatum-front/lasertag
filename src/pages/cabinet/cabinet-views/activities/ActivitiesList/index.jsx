@@ -35,8 +35,6 @@ const ActivitiesList = inject(
     const currentUserActivivities = currentUser?.activities || [];
 
     const handleInput = (event) => {
-      const { value } = event.target;
-
       setSearchString(event.target.value);
     };
 
