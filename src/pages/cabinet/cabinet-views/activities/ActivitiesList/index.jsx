@@ -108,13 +108,18 @@ const ActivitiesList = inject(
       });
 
     const [future, past] = futureAndPast(activitiesData);
+    const pastActivitiesTable = filterState !== CAF_AVAIBLE && (
+      <CabinetActivitiesTable activitiesData={past} tableHeader="Прошедшие" />
+    );
+    const upcomingActivitiesTableHeader =
+      filterState === CAF_AVAIBLE ? "Доступные мероприятия" : "Предстоящие";
     const pageMainContent = (
       <div className="activities-tables-container">
         <CabinetActivitiesTable
           activitiesData={future}
-          tableHeader="Предстоящие"
+          tableHeader={upcomingActivitiesTableHeader}
         />
-        <CabinetActivitiesTable activitiesData={past} tableHeader="Прошедшие" />
+        {pastActivitiesTable}
       </div>
     );
 
