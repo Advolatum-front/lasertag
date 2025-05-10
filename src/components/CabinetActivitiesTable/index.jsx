@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 
 import { parseDate } from "../../utils/date/functions";
+import { ARS_PENDING, ARS_AVAIBLE } from "../../utils/activities-statuses";
+
 import ActivityRequestStatus from "../../components/ActivityRequestStatus";
 import NoData from "../../components/NoData";
 
 import "./index.css";
-
-const ACTIVITY_AVAIBLE_STATUS = 4;
-const ACTIVITY_PENDING_STATUS = 3;
 
 const TABLE_CAPTIONS_LIST = (
   <ul className="cabinet-activities-table__captions-list">
@@ -33,8 +32,7 @@ const CabinetActivitiesTable = ({ activitiesData, tableHeader }) => {
     const activityDate = parseDate(date);
 
     const notProcessedActivityIsOver =
-      (status === ACTIVITY_AVAIBLE_STATUS ||
-        status === ACTIVITY_PENDING_STATUS) &&
+      (status === ARS_AVAIBLE || status === ARS_PENDING) &&
       activityDate < currentDate;
 
     const statusBlock = notProcessedActivityIsOver ? (
