@@ -32,8 +32,7 @@ const CabinetActivitiesTable = ({ activitiesData, tableHeader }) => {
     const activityDate = parseDate(date);
 
     const notProcessedActivityIsOver =
-      (status === ARS_AVAIBLE || status === ARS_PENDING) &&
-      activityDate < currentDate;
+      [ARS_AVAIBLE, ARS_PENDING].includes(status) && activityDate < currentDate;
 
     const statusBlock = notProcessedActivityIsOver ? (
       <span className="cabinet-activities-table__status-expired">
