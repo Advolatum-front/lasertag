@@ -11,12 +11,11 @@ import {
   CAF_AVAIBLE,
 } from "../../../../../utils/cabinet-activities-filter-state.js";
 import { futureAndPast } from "./future-and-past";
+import { ARS_PENDING } from "../../../../../utils/activities-statuses";
 
 import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
 
 import "./index.css";
-
-const ACTIVITY_PENDING_STATUS = 3;
 
 const ActivitiesList = inject(
   "UsersStore",
@@ -86,7 +85,7 @@ const ActivitiesList = inject(
       const requestIsSent = currentUserActivivities.some((userActivity) => {
         return userActivity.id === id;
       });
-      const newStatus = requestIsSent ? ACTIVITY_PENDING_STATUS : status;
+      const newStatus = requestIsSent ? ARS_PENDING : status;
 
       return { id, date, status: newStatus, title, description };
     });
