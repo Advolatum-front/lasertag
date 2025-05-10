@@ -11,7 +11,12 @@ import {
   CAF_AVAIBLE,
 } from "../../../../../utils/cabinet-activities-filter-state.js";
 import { futureAndPast } from "./future-and-past";
-import { ARS_PENDING } from "../../../../../utils/activities-statuses";
+import {
+  ARS_PENDING,
+  ARS_DECLINED,
+  ARS_APPROVED,
+  ARS_AVAIBLE,
+} from "../../../../../utils/activities-statuses";
 
 import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
 
@@ -80,15 +85,27 @@ const ActivitiesList = inject(
       );
     });
 
-    const activitiesData = toJS(activitiesList).map((activity) => {
-      const { id, date, status, title, description } = activity;
-      const requestIsSent = currentUserActivivities.some((userActivity) => {
-        return userActivity.id === id;
-      });
-      const newStatus = requestIsSent ? ARS_PENDING : status;
+    const activitiesData = toJS(activitiesList)
+      .map((activity) => {
+        const { id, date, status, title, description } = activity;
+        const requestIsSent = currentUserActivivities.some((userActivity) => {
+          return userActivity.id === id;
+        });
+        const newStatus = requestIsSent ? ARS_PENDING : status;
 
-      return { id, date, status: newStatus, title, description };
-    });
+        return { id, date, status: newStatus, title, description };
+      })
+      .filter((activity) => {
+        const { status } = activity;
+
+        if (filterState === CAF_ALL) {
+          return true;
+        } else if (filterState === CAF_MY) {
+          return [ARS_APPROVED, ARS_PENDING, ARS_DECLINED].includes(status);
+        } else {
+          return status === ARS_AVAIBLE;
+        }
+      });
 
     const [future, past] = futureAndPast(activitiesData);
     const pageMainContent = (
