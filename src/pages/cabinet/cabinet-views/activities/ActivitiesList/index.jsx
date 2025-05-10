@@ -10,6 +10,7 @@ import {
   CAF_MY,
   CAF_AVAIBLE,
 } from "../../../../../utils/cabinet-activities-filter-state.js";
+import { futureAndPast } from "./future-and-past";
 
 import { useDocumentTitle } from "../../../../../hooks/useDocumentTitle";
 
@@ -90,6 +91,17 @@ const ActivitiesList = inject(
       return { id, date, status: newStatus, title, description };
     });
 
+    const [future, past] = futureAndPast(activitiesData);
+    const pageMainContent = (
+      <>
+        <CabinetActivitiesTable
+          activitiesData={future}
+          tableHeader="Предстоящие"
+        />
+        <CabinetActivitiesTable activitiesData={past} tableHeader="Прошедшие" />
+      </>
+    );
+
     return (
       <div className="cabinet-activities">
         <h1 className="cabinet-activities__header">Мероприятия</h1>
@@ -109,10 +121,7 @@ const ActivitiesList = inject(
             </div>
           </form>
         </div>
-        <CabinetActivitiesTable
-          activitiesData={activitiesData}
-          tableHeader="Все мероприятия"
-        />
+        {pageMainContent}
         <div className="cabinet-activities__tip">
           Список мероприятий постоянно пополняется. Не забывайте почаще навещать
           нас.
