@@ -29,10 +29,6 @@ const ActivitiesList = inject(
     const { currentUser } = UsersStore;
     const currentUserActivivities = currentUser?.activities || [];
 
-    const submitSearchForm = (event) => {
-      event.preventDefault();
-    };
-
     const handleInput = (event) => {
       const { value } = event.target;
 
@@ -99,10 +95,7 @@ const ActivitiesList = inject(
         <h1 className="cabinet-activities__header">Мероприятия</h1>
         <div className="cabinet-activities__filter-block">
           <ul className="cabinet-activities__filter">{filterListItems}</ul>
-          <form
-            className="cabinet-activities__seacrh-form"
-            onSubmit={submitSearchForm}
-          >
+          <form className="cabinet-activities__seacrh-form">
             <LabeledInput
               id="searchInput"
               label="Поиск по названию"
@@ -110,9 +103,8 @@ const ActivitiesList = inject(
               onInput={handleInput}
             />
             <div className="cabinet-activities__form-buttons">
-              <button type="submit">Найти</button>
               <button type="reset" onClick={handleReset}>
-                Очистить
+                Очистить поиск
               </button>
             </div>
           </form>
