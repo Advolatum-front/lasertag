@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import "./index.css";
 
 import { ACTIVITIY_REQUEST_STATUSES } from "../../utils/activities-statuses";
-
-const ACTIVITY_IS_AVAIBLE = 4;
+import {
+  ARS_NO_STATUS,
+  ARS_APPROVED,
+  ARS_DECLINED,
+  ARS_PENDING,
+  ARS_AVAIBLE,
+} from "../../utils/activities-statuses";
 
 const ActivityRequestStatus = (props) => {
   const { code, className = "", activityId } = props;
@@ -16,7 +21,7 @@ const ActivityRequestStatus = (props) => {
     `activity-request-status ${statusBlockClassName} ${className}`.trim();
 
   const statusBlock =
-    code === ACTIVITY_IS_AVAIBLE ? (
+    code === ARS_AVAIBLE ? (
       <Link to={sendRequestURL} className={statusClassName}>
         {caption}
       </Link>
