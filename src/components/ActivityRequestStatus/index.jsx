@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 import "./index.css";
 
-import { ACTIVITIY_REQUEST_STATUSES } from "../../utils/activities-statuses";
 import {
   ARS_NO_STATUS,
   ARS_APPROVED,
@@ -11,10 +10,17 @@ import {
   ARS_AVAIBLE,
 } from "../../utils/activities-statuses";
 
+const ARS_DICT = new Map();
+ARS_DICT.set(ARS_NO_STATUS, { caption: "Нет статуса", className: "no-status" })
+  .set(ARS_APPROVED, { caption: "Одобрена", className: "approved" })
+  .set(ARS_DECLINED, { caption: "Отклонена", className: "declined" })
+  .set(ARS_PENDING, { caption: "Подана", className: "pending" })
+  .set(ARS_AVAIBLE, { caption: "Подать заявку", className: "avaible" });
+
 const ActivityRequestStatus = (props) => {
   const { code, className = "", activityId } = props;
-  const statusBlockClassName = ACTIVITIY_REQUEST_STATUSES[code].className;
-  const caption = ACTIVITIY_REQUEST_STATUSES[code].caption;
+  const { className: statusBlockClassName, caption } = ARS_DICT.get(code);
+
   const sendRequestURL = `/cabinet/activities/${activityId}/request`;
 
   const statusClassName =
