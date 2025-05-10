@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import { stripYear, parseDate } from "../../utils/date/functions";
+import { parseDate } from "../../utils/date/functions";
 import ActivityRequestStatus from "../../components/ActivityRequestStatus";
 import NoData from "../../components/NoData";
 
@@ -28,7 +28,6 @@ const CabinetActivitiesTable = ({ activitiesData, tableHeader }) => {
   const cabinetActivityItems = activitiesData.map((activity) => {
     const { id, date, status, title, description } = activity;
     const urlLink = `/cabinet/activities/${id}`;
-    const visibleDate = stripYear(date);
 
     const currentDate = new Date();
     const activityDate = parseDate(date);
@@ -52,9 +51,7 @@ const CabinetActivitiesTable = ({ activitiesData, tableHeader }) => {
 
     return (
       <li className="cabinet-activities-table__activity-item" key={id}>
-        <div className="cabinet-activities-table__activity-date">
-          {visibleDate}
-        </div>
+        <div className="cabinet-activities-table__activity-date">{date}</div>
         <Link to={urlLink} className="cabinet-activities-table__activity-name">
           {title}
         </Link>

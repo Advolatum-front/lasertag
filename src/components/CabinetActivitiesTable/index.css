@@ -1,7 +1,7 @@
 :root {
-  --date-col: 10%;
+  --date-col: 20%;
   --name-col: 30%;
-  --description-col: 35%;
+  --description-col: 25%;
   --status-col: 25%;
 }
 
@@ -89,7 +89,7 @@
 .cabinet-activities-table__activity-date:after {
   content: "";
   position: absolute;
-  left: 55px;
+  left: 95px;
   top: 50%;
   transform: translateY(-50%);
   display: block;
