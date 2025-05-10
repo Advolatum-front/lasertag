@@ -25,13 +25,12 @@ const ActivitiesList = inject(
     useDocumentTitle("Личный кабинет, мероприятия");
     const [searchString, setSearchString] = useState("");
 
-    const { fetchActivities, activitiesList } = ActivitiesStore;
+    const { fetchActivitiesBySubstring, activitiesList } = ActivitiesStore;
     const { currentUser } = UsersStore;
     const currentUserActivivities = currentUser?.activities || [];
 
     const submitSearchForm = (event) => {
       event.preventDefault();
-      alert("Ты типо написал " + searchString);
     };
 
     const handleInput = (event) => {
@@ -42,12 +41,11 @@ const ActivitiesList = inject(
 
     const handleReset = () => {
       setSearchString("");
-      alert("теперь чиста и какрентно " + searchString);
     };
 
     useEffect(() => {
-      fetchActivities();
-    }, [fetchActivities]);
+      fetchActivitiesBySubstring(searchString);
+    }, [fetchActivitiesBySubstring, searchString]);
 
     const [filterState, setFilterState] = useState(CAF_ALL);
     const filterData = [

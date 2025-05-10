@@ -18,6 +18,7 @@ class ActivitiesStore {
       upcomingActivities: observable,
 
       fetchActivities: action,
+      fetchActivitiesBySubstring: action,
       fetchActivityItemById: action,
       fetchAdjacentActivitiesIdsById: action,
       fetchUpcomingActivities: action,
@@ -61,6 +62,15 @@ class ActivitiesStore {
     });
 
     this.upcomingActivities = upcomingActivities.slice(0, count);
+  };
+
+  fetchActivitiesBySubstring = (substring) => {
+    const initialActivitiesList = this.initialActivitiesList;
+
+    this.activitiesList = initialActivitiesList.filter((activity) => {
+      const lc = activity.title.toLowerCase();
+      return lc.includes(substring);
+    });
   };
 }
 
