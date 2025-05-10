@@ -90,35 +90,6 @@
   color: var(--dark-blue);
 }
 
-.cabinet-activities__activity-status.approved {
-  color: var(--status-approved-text);
-  background-color: var(--status-approved-bg);
-}
-
-.cabinet-activities__activity-status.declined {
-  color: var(--status-declined-text);
-  background-color: var(--status-declined-bg);
-}
-
-.cabinet-activities__activity-status.pending {
-  color: var(--status-pending-text);
-  background-color: var(--status-pending-bg);
-  font-size: 14px;
-}
-
-.cabinet-activities__activity-status.avaible {
-  color: var(--status-avaible-text);
-  background-color: var(--status-avaible-bg);
-  transition:
-    color 0.2s linear,
-    background-color 0.2s linear;
-}
-
-.cabinet-activities__activity-status.avaible:hover {
-  color: #fff;
-  background-color: var(--medium-blue);
-}
-
 .activities-tables-container {
   display: flex;
   flex-direction: column;
@@ -145,11 +116,5 @@
   .cabinet-activities__filter-block {
     width: 90%;
     margin: 0 auto 20px;
-  }
-}
-
-@media (max-width: 580px) {
-  .cabinet-activities__activity-status.pending {
-    font-size: initial;
   }
 }
