@@ -93,13 +93,13 @@ const ActivitiesList = inject(
 
     const [future, past] = futureAndPast(activitiesData);
     const pageMainContent = (
-      <>
+      <div className="activities-tables-container">
         <CabinetActivitiesTable
           activitiesData={future}
           tableHeader="Предстоящие"
         />
         <CabinetActivitiesTable activitiesData={past} tableHeader="Прошедшие" />
-      </>
+      </div>
     );
 
     return (
