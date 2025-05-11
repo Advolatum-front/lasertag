@@ -69,7 +69,11 @@ function App() {
             element={<GallerySliderPage />}
           />
 
-          <Route exact path="/gallery/album" element={<AlbumContent />} />
+          <Route
+            exact
+            path="/gallery/album/:albumId"
+            element={<AlbumContent />}
+          />
           <Route
             exact
             path="/activities"
