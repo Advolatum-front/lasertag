@@ -1,4 +1,4 @@
-import { makeObservable, action, observable, toJS } from "mobx";
+import { makeObservable, action, observable } from "mobx";
 
 class GalleryStore {
   initialAlbumsList = require("./data/gallery.json");
