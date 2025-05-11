@@ -3,14 +3,14 @@ import { makeObservable, action, observable } from "mobx";
 class GalleryStore {
   initialAlbumsList = require("./data/gallery.json");
 
-  items = [];
-  albumsList = [];
+  fetchedAlbum = null;
 
   constructor() {
     makeObservable(this, {
-      albumsList: observable,
+      fetchedAlbum: observable,
 
       fetchAlbumsByType: action,
+      fetchAlbumById: action,
     });
   }
 
@@ -20,9 +20,9 @@ class GalleryStore {
       .slice(0, limit);
   };
 
-  fetchAlbumItems = (albumId) => {
-    this.items =
-      this.initialAlbumsList.find((album) => album.id === albumId)?.items || [];
+  fetchAlbumById = (albumId) => {
+    this.fetchedAlbum =
+      this.initialAlbumsList.find((album) => album.id === albumId) || null;
   };
 }
 

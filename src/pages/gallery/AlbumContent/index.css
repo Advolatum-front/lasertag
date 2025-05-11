@@ -53,6 +53,11 @@
   left: -5px;
 }
 
+.album-content-wrapper {
+  margin: 0 auto 20px;
+  width: var(--thumbnails-list-width);
+}
+
 .thumbnails-list {
   margin: 0 auto 20px;
   padding: var(--list-padding-x);
