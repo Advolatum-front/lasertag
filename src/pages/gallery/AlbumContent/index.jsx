@@ -34,6 +34,26 @@ const AlbumContent = inject("GalleryStore")(
       );
     }
 
+    const thumnbnailList = fetchedAlbum.items.map((item) => {
+      const { id, type, src } = item;
+      const linkContent =
+        type === "photo" ? (
+          <img src={src} alt="" className="thumbnails-list__thumbnail" />
+        ) : (
+          <video className="thumbnails-list__thumbnail">
+            <source src={src} type="video/mp4" />
+          </video>
+        );
+
+      return (
+        <li className="thumbnails-list__list-item" key={id}>
+          <Link to="/" className="thumbnails-list__thumbnail-container">
+            {linkContent}
+          </Link>
+        </li>
+      );
+    });
+
     return (
       <>
         <GalleryNavigator className="gallery-navigator-mb" />
@@ -42,198 +62,7 @@ const AlbumContent = inject("GalleryStore")(
           <span>{`${albumTitle}:`}</span>
         </Link>
         <div className="album-content-wrapper">
-          <ul className="thumbnails-list">
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <video className="thumbnails-list__thumbnail">
-                  <source
-                    src="/gallery/video/region1/promo.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/2.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/3.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/4.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/5.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/6.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/7.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/1.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/2.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/3.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/4.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/5.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/6.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/7.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/1.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/2.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/3.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/4.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/5.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/6.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-            <li className="thumbnails-list__list-item">
-              <Link to="/" className="thumbnails-list__thumbnail-container">
-                <img
-                  src="/gallery/photo/region1/7.webp"
-                  alt=""
-                  className="thumbnails-list__thumbnail"
-                />
-              </Link>
-            </li>
-          </ul>
+          <ul className="thumbnails-list">{thumnbnailList}</ul>
         </div>
       </>
     );
