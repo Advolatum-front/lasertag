@@ -54,10 +54,12 @@ const AlbumContent = inject("GalleryStore")(
       );
     });
 
+    const backLink = `/gallery/${fetchedAlbum.type}`;
+
     return (
       <>
         <GalleryNavigator className="gallery-navigator-mb" />
-        <Link to="/" className="back-to-albums-link">
+        <Link to={backLink} className="back-to-albums-link">
           <Arrow className="back-to-albums-link__arrow" />
           <span>{`${albumTitle}:`}</span>
         </Link>
