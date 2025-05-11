@@ -3,6 +3,7 @@ import { makeObservable, action, observable } from "mobx";
 class GalleryStore {
   initialAlbumsList = require("./data/gallery.json");
 
+  albumsList = [];
   fetchedAlbum = null;
 
   constructor() {
