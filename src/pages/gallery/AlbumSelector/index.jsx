@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { inject, observer } from "mobx-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import GalleryNavigator from "../../../components/GalleryNavigator";
+import NoData from "../../../components/NoData";
 
 import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
@@ -10,6 +12,24 @@ import "./index.css";
 const AlbumSelector = inject("GalleryStore")(
   observer(({ GalleryStore }) => {
     useDocumentTitle("Галерея, альбомы");
+
+    const pathname = useLocation().pathname;
+    const albumType = pathname.includes("photo") ? "photo" : "video";
+
+    const { albumsList, fetchAlbumsByType } = GalleryStore;
+
+    useEffect(() => {
+      fetchAlbumsByType(albumType);
+    }, [fetchAlbumsByType, albumType]);
+
+    if (albumsList.length === 0) {
+      return (
+        <>
+          <GalleryNavigator className="gallery-navigator-mb" />
+          <NoData />
+        </>
+      );
+    }
 
     return (
       <>

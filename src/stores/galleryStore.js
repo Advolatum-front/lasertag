@@ -1,7 +1,7 @@
-import { makeObservable, action, observable } from "mobx";
+import { makeObservable, action, observable, toJS } from "mobx";
 
 class GalleryStore {
-  initialMediaList = require("./data/gallery.json");
+  initialAlbumsList = require("./data/gallery.json");
 
   mediaList = [];
   albumsList = [];
@@ -9,12 +9,14 @@ class GalleryStore {
   constructor() {
     makeObservable(this, {
       albumsList: observable,
+
+      fetchAlbumsByType: action,
     });
   }
 
   fetchAlbumsByType = (type, limit = 3) => {
-    this.albumsList = this.initialMediaList
-      .filter((album) => album.type === type)
+    this.albumsList = this.initialAlbumsList
+      .filter((album, index) => album.type === type)
       .slice(0, limit);
   };
 }

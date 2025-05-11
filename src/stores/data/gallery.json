@@ -2,7 +2,7 @@
   {
     "id": "photoAlbum1",
     "title": "Фото с региона",
-    "type:": "photo",
+    "type": "photo",
     "cover": "/gallery/photo/region1/album-cover.webp",
     "items": [
       {
@@ -55,7 +55,7 @@
   {
     "id": "photoAlbum2",
     "title": "Фото с области",
-    "type:": "photo",
+    "type": "photo",
     "cover": "/gallery/photo/region2/album-cover.webp",
     "items": [
       {
@@ -83,7 +83,7 @@
   {
     "id": "photoAlbum3",
     "title": "Фото с области",
-    "type:": "photo",
+    "type": "photo",
     "cover": "/gallery/photo/region3/album-cover.webp",
     "items": [
       {
@@ -106,7 +106,7 @@
   {
     "id": "videoAlbum1",
     "title": "Видео с выступлений",
-    "type:": "video",
+    "type": "video",
     "cover": "/gallery/video/album-1/cover.webp",
     "items": [
       {
@@ -139,7 +139,7 @@
   {
     "id": "videoAlbum2",
     "title": "Соревнования",
-    "type:": "video",
+    "type": "video",
     "cover": "/gallery/video/album-2/cover.webp",
     "items": [
       {
@@ -157,7 +157,7 @@
   {
     "id": "videoAlbum3",
     "title": "Соревнования",
-    "type:": "video",
+    "type": "video",
     "cover": "/gallery/video/album-3/cover.webp",
     "items": [
       {
