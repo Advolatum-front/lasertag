@@ -8,6 +8,7 @@ class GalleryStore {
 
   constructor() {
     makeObservable(this, {
+      albumsList: observable,
       fetchedAlbum: observable,
 
       fetchAlbumsByType: action,
