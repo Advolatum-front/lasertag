@@ -56,6 +56,38 @@ const GallerySliderPage = inject(
       );
     }
 
+    const swiperSlides = fetchedAlbum.items.map((item) => {
+      const { id, type, src } = item;
+      const slideContent =
+        type === "photo" ? (
+          <>
+            <img src={src} alt="" className="gallery-slider__image-bg" />
+            <img src={src} alt="" className="gallery-slider__picture" />
+          </>
+        ) : (
+          <>
+            <div className="gallery-slider__video-bg" />
+            <video controls className="gallery-slider__picture" ref={addToRefs}>
+              <source src={src} type="video/mp4" />
+            </video>
+          </>
+        );
+
+      return (
+        <SwiperSlide className="gallery-slider__slide" key={id}>
+          {slideContent}
+          <div className="gallery-slider__panel">
+            <button className="gallery-slider__button-like">
+              <Heart className="heart" />
+            </button>
+            <button className="gallery-slider__button-close">
+              <Cross className="cross" />
+            </button>
+          </div>
+        </SwiperSlide>
+      );
+    });
+
     return (
       <>
         <GalleryNavigator className="favorites__gallery-navigator-mb" />
@@ -74,125 +106,7 @@ const GallerySliderPage = inject(
               });
             }}
           >
-            <SwiperSlide className="gallery-slider__slide">
-              <div className="gallery-slider__video-bg"></div>
-              <video
-                controls
-                className="gallery-slider__picture"
-                ref={addToRefs}
-              >
-                <source
-                  src="/gallery/video/region1/promo.mp4"
-                  type="video/mp4"
-                />
-              </video>
-              <div className="gallery-slider__panel">
-                <button className="gallery-slider__button-like">
-                  <Heart className="heart" />
-                </button>
-                <button className="gallery-slider__button-close">
-                  <Cross className="cross" />
-                </button>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="gallery-slider__slide">
-              <img
-                src="/gallery/photo/region1/1.webp"
-                alt=""
-                className="gallery-slider__image-bg"
-              />
-              <img
-                src="/gallery/photo/region1/1.webp"
-                alt=""
-                className="gallery-slider__picture"
-              />
-              <div className="gallery-slider__panel">
-                <button className="gallery-slider__button-like">
-                  <Heart className="heart" />
-                </button>
-                <button className="gallery-slider__button-close">
-                  <Cross className="cross" />
-                </button>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="gallery-slider__slide">
-              <img
-                src="/gallery/photo/region1/2.webp"
-                alt=""
-                className="gallery-slider__image-bg"
-              />
-              <img
-                src="/gallery/photo/region1/2.webp"
-                alt=""
-                className="gallery-slider__picture"
-              />
-              <div className="gallery-slider__panel">
-                <button className="gallery-slider__button-like">
-                  <Heart className="heart" />
-                </button>
-                <button className="gallery-slider__button-close">
-                  <Cross className="cross" />
-                </button>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="gallery-slider__slide">
-              <img
-                src="/gallery/photo/region1/3.webp"
-                alt=""
-                className="gallery-slider__image-bg"
-              />
-              <img
-                src="/gallery/photo/region1/3.webp"
-                alt=""
-                className="gallery-slider__picture"
-              />
-              <div className="gallery-slider__panel">
-                <button className="gallery-slider__button-like">
-                  <Heart className="heart" />
-                </button>
-                <button className="gallery-slider__button-close">
-                  <Cross className="cross" />
-                </button>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="gallery-slider__slide">
-              <img
-                src="/gallery/photo/region1/4.webp"
-                alt=""
-                className="gallery-slider__image-bg"
-              />
-              <img
-                src="/gallery/photo/region1/4.webp"
-                alt=""
-                className="gallery-slider__picture"
-              />
-              <div className="gallery-slider__panel">
-                <button className="gallery-slider__button-like">
-                  <Heart className="heart" />
-                </button>
-                <button className="gallery-slider__button-close">
-                  <Cross className="cross" />
-                </button>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="gallery-slider__slide">
-              <div className="gallery-slider__video-bg"></div>
-              <video
-                controls
-                className="gallery-slider__picture"
-                ref={addToRefs}
-              >
-                <source src="/gallery/video/region1/tnt.mp4" type="video/mp4" />
-              </video>
-              <div className="gallery-slider__panel">
-                <button className="gallery-slider__button-like">
-                  <Heart className="heart" />
-                </button>
-                <button className="gallery-slider__button-close">
-                  <Cross className="cross" />
-                </button>
-              </div>
-            </SwiperSlide>
+            {swiperSlides}
           </Swiper>
         </div>
       </>

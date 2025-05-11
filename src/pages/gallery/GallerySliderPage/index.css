@@ -85,7 +85,7 @@
   transform: scale(1.1);
 }
 
-.gallery-slider__button-like .heart-liked path {
+.gallery-slider__button-like.heart-liked path {
   fill: var(--dark-blue);
   stroke: var(--dark-blue);
 }
