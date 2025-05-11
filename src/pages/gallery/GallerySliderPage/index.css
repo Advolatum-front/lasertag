@@ -2,10 +2,13 @@
   --content-height: 30vw;
 }
 
-.gallery-slider {
+.gallery-page-wrapper {
   width: 95vw;
+  margin: 0 auto 30px;
+}
+
+.gallery-slider {
   height: var(--content-height);
-  margin-bottom: 30px;
   text-align: center;
   border-radius: 20px;
 }
