@@ -1,0 +1,175 @@
+[
+  {
+    "id": "photoAlbum1",
+    "title": "Фото с региона",
+    "type:": "photo",
+    "cover": "/gallery/photo/region1/album-cover.webp",
+    "items": [
+      {
+        "id": "photo1",
+        "type": "photo",
+        "src": "/gallery/photo/region1/1.webp"
+      },
+      {
+        "id": "photo2",
+        "type": "photo",
+        "src": "/gallery/photo/region1/1.webp"
+      },
+      {
+        "id": "photo3",
+        "type": "photo",
+        "src": "/gallery/photo/region1/2.webp"
+      },
+      {
+        "id": "photo4",
+        "type": "photo",
+        "src": "/gallery/photo/region1/3.webp"
+      },
+      {
+        "id": "photo5",
+        "type": "photo",
+        "src": "/gallery/photo/region1/4.webp"
+      },
+      {
+        "id": "photo6",
+        "type": "photo",
+        "src": "/gallery/photo/region1/5.webp"
+      },
+      {
+        "id": "photo7",
+        "type": "photo",
+        "src": "/gallery/photo/region1/6.webp"
+      },
+      {
+        "id": "photo8",
+        "type": "photo",
+        "src": "/gallery/photo/region1/7.webp"
+      },
+      {
+        "id": "photo9",
+        "type": "photo",
+        "src": "/gallery/photo/region1/8.webp"
+      }
+    ]
+  },
+  {
+    "id": "photoAlbum2",
+    "title": "Фото с области",
+    "type:": "photo",
+    "cover": "/gallery/photo/region2/album-cover.webp",
+    "items": [
+      {
+        "id": "photo10",
+        "type": "photo",
+        "src": "/gallery/photo/region2/1.webp"
+      },
+      {
+        "id": "photo11",
+        "type": "photo",
+        "src": "/gallery/photo/region2/2.webp"
+      },
+      {
+        "id": "photo12",
+        "type": "photo",
+        "src": "/gallery/photo/region2/3.webp"
+      },
+      {
+        "id": "photo13",
+        "type": "photo",
+        "src": "/gallery/photo/region2/4.webp"
+      }
+    ]
+  },
+  {
+    "id": "photoAlbum3",
+    "title": "Фото с области",
+    "type:": "photo",
+    "cover": "/gallery/photo/region3/album-cover.webp",
+    "items": [
+      {
+        "id": "photo14",
+        "type": "photo",
+        "src": "/gallery/photo/region3/1.webp"
+      },
+      {
+        "id": "photo15",
+        "type": "photo",
+        "src": "/gallery/photo/region3/2.webp"
+      },
+      {
+        "id": "photo16",
+        "type": "photo",
+        "src": "/gallery/photo/region3/3.webp"
+      }
+    ]
+  },
+  {
+    "id": "videoAlbum1",
+    "title": "Видео с выступлений",
+    "type:": "video",
+    "cover": "/gallery/video/album-1/cover.webp",
+    "items": [
+      {
+        "id": "arenalazertag",
+        "type": "video",
+        "src": "/gallery/video/album-1/arena-lazertag.mp4"
+      },
+      {
+        "id": "howtoplay",
+        "type": "video",
+        "src": "/gallery/video/album-1/how-to-play-lazertag.mp4"
+      },
+      {
+        "id": "lazertag",
+        "type": "video",
+        "src": "/gallery/video/album-1/lazertag.mp4"
+      },
+      {
+        "id": "promo",
+        "type": "video",
+        "src": "/gallery/video/album-1/promo.mp4"
+      },
+      {
+        "id": "tnt",
+        "type": "video",
+        "src": "/gallery/video/album-1/tnt.mp4"
+      }
+    ]
+  },
+  {
+    "id": "videoAlbum2",
+    "title": "Соревнования",
+    "type:": "video",
+    "cover": "/gallery/video/album-2/cover.webp",
+    "items": [
+      {
+        "id": "promoAlb2",
+        "type": "video",
+        "src": "/gallery/video/album-2/promo.mp4"
+      },
+      {
+        "id": "tntAlb2",
+        "type": "video",
+        "src": "/gallery/video/album-2/tnt.mp4"
+      }
+    ]
+  },
+  {
+    "id": "videoAlbum3",
+    "title": "Соревнования",
+    "type:": "video",
+    "cover": "/gallery/video/album-3/cover.webp",
+    "items": [
+      {
+        "id": "howtoplayAlb3",
+        "type": "video",
+        "src": "/gallery/video/album-3/how-to-play-lazertag.mp4"
+      },
+      {
+        "id": "lazertagAlb3",
+        "type": "video",
+        "src": "/gallery/video/album-3/lazertag.mp4"
+      }
+    ]
+  }
+]
