@@ -21,7 +21,9 @@ const GallerySliderPage = inject(
   "GalleryStore",
   "UsersStore",
 )(
-  observer(({ GalleryStore }) => {
+  observer(({ GalleryStore, UsersStore }) => {
+    // const
+
     const location = useLocation().pathname;
     const documentTitle = location.endsWith("favorites")
       ? "Избранное"
