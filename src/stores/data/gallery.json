@@ -3,7 +3,7 @@
     "id": "photoAlbum1",
     "title": "Фото с региона",
     "type": "photo",
-    "cover": "/gallery/photo/region1/album-cover.webp",
+    "cover": "/gallery/photo/region1/cover.webp",
     "items": [
       {
         "id": "photo1",
@@ -56,7 +56,7 @@
     "id": "photoAlbum2",
     "title": "Фото с области",
     "type": "photo",
-    "cover": "/gallery/photo/region2/album-cover.webp",
+    "cover": "/gallery/photo/region2/cover.webp",
     "items": [
       {
         "id": "photo10",
@@ -84,7 +84,7 @@
     "id": "photoAlbum3",
     "title": "Фото с области",
     "type": "photo",
-    "cover": "/gallery/photo/region3/album-cover.webp",
+    "cover": "/gallery/photo/region3/cover.webp",
     "items": [
       {
         "id": "photo14",
