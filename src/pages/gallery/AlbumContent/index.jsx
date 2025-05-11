@@ -36,6 +36,8 @@ const AlbumContent = inject("GalleryStore")(
 
     const thumnbnailList = fetchedAlbum.items.map((item) => {
       const { id, type, src } = item;
+      const urlLink = `/gallery/album/${albumId}/${id}`;
+
       const linkContent =
         type === "photo" ? (
           <img src={src} alt="" className="thumbnails-list__thumbnail" />
@@ -47,7 +49,7 @@ const AlbumContent = inject("GalleryStore")(
 
       return (
         <li className="thumbnails-list__list-item" key={id}>
-          <Link to="/" className="thumbnails-list__thumbnail-container">
+          <Link to={urlLink} className="thumbnails-list__thumbnail-container">
             {linkContent}
           </Link>
         </li>

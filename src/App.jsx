@@ -76,6 +76,11 @@ function App() {
           />
           <Route
             exact
+            path="/gallery/album/:albumId/:startFrom"
+            element={<GallerySliderPage />}
+          />
+          <Route
+            exact
             path="/activities"
             element={<ActivitiesCalendarPage />}
           />
@@ -84,7 +89,6 @@ function App() {
             path="/activities/:id"
             element={<CurrentActivityPage />}
           />
-          <Route exact path="/gallery/slider" element={<GallerySliderPage />} />
 
           <Route path="/cabinet" element={<IndexCabinet />}>
             <Route index element={<Index />} />
