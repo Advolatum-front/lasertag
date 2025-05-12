@@ -1,8 +1,11 @@
 import { inject, observer } from "mobx-react";
 import { useRef } from "react";
+import { useParams } from "react-router";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+
+import NoData from "../../../../../components/NoData";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,6 +18,30 @@ import "./index.css";
 const CabinetSlider = inject("UsersStore")(
   observer(({ UsersStore }) => {
     useDocumentTitle("Личный кабинет, избранное");
+    const { currentUser, removeMediaFromFavorites } = UsersStore;
+    const { itemsType, startFrom } = useParams();
+
+    const handleButonUnlikeClick = (itemId) => {
+      removeMediaFromFavorites(itemId);
+    };
+
+    const dataArray = (currentUser?.favorites || []).filter((item) => {
+      if (itemsType === "all") {
+        return true;
+      } else {
+        return item.type === itemsType;
+      }
+    });
+
+    if (dataArray.length === 0) {
+      return (
+        <div className="cabinet-slider">
+          <h1 className="cabinet-slider__header">Избранное</h1>
+          <NoData />
+        </div>
+      );
+    }
+
     const refs = useRef([]);
 
     const addToRefs = (el) => {
@@ -23,14 +50,51 @@ const CabinetSlider = inject("UsersStore")(
       }
     };
 
+    /*const urlLink = `/cabiet/favorites/${filterValue}/${id}`;*/
+
+    const swiperSlides = dataArray.map((item) => {
+      const { id, type, src } = item;
+      const slideContent = (itemsType = "photo" ? (
+        <>
+          <img src={src} alt="" className="cabinet-slider__image-bg" />
+          <img src={src} alt="" className="cabinet-slider__picture" />
+        </>
+      ) : (
+        <>
+          <div className="cabinet-slider__video-bg" />
+          <video controls className="cabinet-slider__picture" ref={addToRefs}>
+            <source src={src} type="video/mp4" />
+          </video>
+        </>
+      ));
+
+      return (
+        <SwiperSlide className="cabinet-slider__slide">
+          {slideContent}
+          <button
+            className="cabinet-slider__button-unlike"
+            onClick={() => handleButonUnlikeClick(id)}
+          >
+            <Cross className="cabinet-slider__cross-ico" />
+          </button>
+        </SwiperSlide>
+      );
+    });
+
+    const itemIndex = dataArray.findIndex((item) => item.id === startFrom);
+    const initialSlide = itemIndex !== -1 ? itemIndex : 0;
+
+    const isLoopModeOn = dataArray.length > 1;
+
     return (
       <div className="cabinet-slider">
         <h1 className="cabinet-slider__header">Избранное</h1>
         <Swiper
+          initialSlide={initialSlide}
           autoHeight={false}
           slidesPerView={1}
           spaceBetween={30}
-          loop={true}
+          loop={isLoopModeOn}
           modules={[Navigation]}
           className="cabinet-slider"
           navigation={{
