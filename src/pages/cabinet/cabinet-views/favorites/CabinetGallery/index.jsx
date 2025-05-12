@@ -21,7 +21,7 @@ const CabinetGallery = inject("UsersStore")(
     const { currentUser } = UsersStore;
     useDocumentTitle("Личный кабинет, избранное");
 
-    const dataArray = currentUser.favorites;
+    const dataArray = currentUser?.favorites || [];
 
     if (dataArray.length === 0) {
       return (
@@ -70,268 +70,36 @@ const CabinetGallery = inject("UsersStore")(
       );
     });
 
+    const cabinetGalleryListItems = dataArray.map((item) => {
+      const { id, type, src } = item;
+      const urlLink = `/cabiet/favorites/itemtype/${id}`;
+
+      const linkContent =
+        type === "photo" ? (
+          <img src={src} alt="" className="elements-list__element" />
+        ) : (
+          <video className="elements-list__element">
+            <source src={src} type="video/mp4" />
+          </video>
+        );
+
+      return (
+        <li className="elements-list__list-item" key={id}>
+          <Link to={urlLink} className="elements-list__element-container">
+            {linkContent}
+          </Link>
+          <button className="elements-list__button-remove">
+            <Cross className="elements-list__cross-ico" />
+          </button>
+        </li>
+      );
+    });
+
     return (
       <div className="cabinet-gallery">
         <h1 className="cabinet-gallery__header">Избранное</h1>
         <ul className="cabinet-gallery__filter">{filterListItems}</ul>
-        <ul className="elements-list">
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <video className="elements-list__element">
-                <source
-                  src="/gallery/video/region1/promo.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/2.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/3.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/4.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/5.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/6.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/7.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/1.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/2.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/3.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/4.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/5.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/6.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/7.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/1.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/2.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/3.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/4.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/5.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/6.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-          <li className="elements-list__list-item">
-            <Link to="/" className="elements-list__element-container">
-              <img
-                src="/gallery/photo/region1/7.webp"
-                alt=""
-                className="elements-list__element"
-              />
-            </Link>
-            <button className="elements-list__button-remove">
-              <Cross className="elements-list__cross-ico" />
-            </button>
-          </li>
-        </ul>
+        <ul className="elements-list">{cabinetGalleryListItems}</ul>
       </div>
     );
   }),
