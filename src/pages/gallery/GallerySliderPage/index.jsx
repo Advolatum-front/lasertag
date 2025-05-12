@@ -26,12 +26,17 @@ const GallerySliderPage = inject(
 )(
   observer(({ GalleryStore, UsersStore }) => {
     const { fetchedAlbum, fetchAlbumById } = GalleryStore;
-    const { currentUser, isAuthenticated } = UsersStore;
+    const { currentUser, isAuthenticated, addMediaToFavorites } = UsersStore;
     const { albumId, startFrom } = useParams();
 
     useEffect(() => {
       fetchAlbumById(albumId);
     }, [fetchAlbumById, albumId]);
+
+    const handleButtonLikeClick = (itemId) => {
+      addMediaToFavorites(itemId);
+      alert("ты типо нажал " + itemId);
+    };
 
     const location = useLocation().pathname;
     const documentTitle = location.endsWith("favorites")
@@ -78,13 +83,22 @@ const GallerySliderPage = inject(
           </>
         );
 
+      const buttonLike = isAuthenticated && (
+        <button
+          className="gallery-slider__button-like"
+          onClick={() => {
+            handleButtonLikeClick(id);
+          }}
+        >
+          <Heart className="heart" />
+        </button>
+      );
+
       return (
         <SwiperSlide className="gallery-slider__slide" key={id}>
           {slideContent}
           <div className="gallery-slider__panel">
-            <button className="gallery-slider__button-like">
-              <Heart className="heart" />
-            </button>
+            {buttonLike}
             <Link to={backLinkUrl} className="gallery-slider__button-close">
               <Cross className="cross" />
             </Link>

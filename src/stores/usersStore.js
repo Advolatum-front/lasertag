@@ -20,6 +20,7 @@ class UsersStore {
       clearError: action,
       updateUser: action,
       addActivityRequest: action,
+      addMediaToFavorites: action,
 
       isAuthenticated: computed,
     });
@@ -93,6 +94,36 @@ class UsersStore {
     this.users[userIndex].activities.push(activityRequest);
 
     // Обновляем текущего пользователя
+    this.currentUser = this.users[userIndex];
+
+    this.saveUsers();
+    localStorage.setItem("currentUser", JSON.stringify(this.currentUser));
+    return true;
+  };
+
+  // Добавление фото/видео в избранное (добавляется id фото/видео)
+  addMediaToFavorites = (itemId) => {
+    if (!this.currentUser) {
+      return false;
+    }
+
+    const userIndex = this.users.findIndex(
+      (user) => user.email === this.currentUser.email,
+    );
+
+    if (userIndex === -1) {
+      return false;
+    }
+
+    // Инициализируем поле activities, если его нет
+    if (!this.users[userIndex].favorites) {
+      this.users[userIndex].favorites = [];
+    }
+
+    // Добавляем новый id
+    this.users[userIndex].favorites.push(itemId);
+
+    // обновить текущего пользователя
     this.currentUser = this.users[userIndex];
 
     this.saveUsers();
