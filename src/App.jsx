@@ -96,7 +96,10 @@ function App() {
             <Route path="activities" element={<ActivitiesList />} />
             <Route path="activities/:id" element={<CabinetActivityPage />} />
             <Route path="favorites" element={<CabinetGallery />} />
-            <Route path="favorites/id" element={<CabinetSlider />} />
+            <Route
+              path="favorites/:itemsType/:startFrom"
+              element={<CabinetSlider />}
+            />
             <Route
               path="activities/:id/request"
               element={<ActivityRequestForm />}
