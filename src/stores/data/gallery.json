@@ -13,42 +13,42 @@
       {
         "id": "photo2",
         "type": "photo",
-        "src": "/gallery/photo/region1/1.webp"
+        "src": "/gallery/photo/region1/2.webp"
       },
       {
         "id": "photo3",
         "type": "photo",
-        "src": "/gallery/photo/region1/2.webp"
+        "src": "/gallery/photo/region1/3.webp"
       },
       {
         "id": "photo4",
         "type": "photo",
-        "src": "/gallery/photo/region1/3.webp"
+        "src": "/gallery/photo/region1/4.webp"
       },
       {
         "id": "photo5",
         "type": "photo",
-        "src": "/gallery/photo/region1/4.webp"
+        "src": "/gallery/photo/region1/5.webp"
       },
       {
         "id": "photo6",
         "type": "photo",
-        "src": "/gallery/photo/region1/5.webp"
+        "src": "/gallery/photo/region1/6.webp"
       },
       {
         "id": "photo7",
         "type": "photo",
-        "src": "/gallery/photo/region1/6.webp"
+        "src": "/gallery/photo/region1/7.webp"
       },
       {
         "id": "photo8",
         "type": "photo",
-        "src": "/gallery/photo/region1/7.webp"
+        "src": "/gallery/photo/region1/8.webp"
       },
       {
         "id": "photo9",
         "type": "photo",
-        "src": "/gallery/photo/region1/8.webp"
+        "src": "/gallery/photo/region1/9.webp"
       }
     ]
   },
