@@ -23,6 +23,9 @@
   --mbt-error-bg: var(--status-declined-bg);
   --mbt-error-text: var(--status-declined-text);
 
+  --mbt-notification-bg: var(--light-blue);
+  --mbt-notification-text: var(--dark-blue);
+
   --expired-activity-bg: #e6e6e6;
   --expired-activity-text: #9f9f9f;
 }

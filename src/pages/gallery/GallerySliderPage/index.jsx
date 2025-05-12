@@ -1,6 +1,6 @@
 import { inject, observer } from "mobx-react";
 import { useRef, useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, Link } from "react-router-dom";
 
 import { ReactComponent as Heart } from "../../../svg/heart-ico.svg";
 import { ReactComponent as Cross } from "../../../svg/cross-ico.svg";
@@ -10,10 +10,12 @@ import { Navigation } from "swiper/modules";
 
 import GalleryNavigator from "../../../components/GalleryNavigator";
 import NoData from "../../../components/NoData";
+import MessageBlock from "../../../components/MessageBlock";
 
 import "swiper/css";
 import "swiper/css/navigation";
 
+import { MBT_NOTIFICATION } from "../../../utils/message-block-types";
 import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 import "./index.css";
@@ -24,6 +26,7 @@ const GallerySliderPage = inject(
 )(
   observer(({ GalleryStore, UsersStore }) => {
     const { fetchedAlbum, fetchAlbumById } = GalleryStore;
+    const { currentUser, isAuthenticated } = UsersStore;
     const { albumId, startFrom } = useParams();
 
     useEffect(() => {
@@ -92,11 +95,20 @@ const GallerySliderPage = inject(
       (item) => item.id === startFrom,
     );
     const initialSlide = itemIndex !== -1 ? itemIndex : 0;
+    const nonAuthorizedMessage = !isAuthenticated && (
+      <MessageBlock type={MBT_NOTIFICATION}>
+        <p>
+          Вы неавторизованы. <Link to="/login">Авторизуйтесь</Link>, чтобы
+          добавлять фотографии в избранное
+        </p>
+      </MessageBlock>
+    );
 
     return (
       <>
         <GalleryNavigator className="favorites__gallery-navigator-mb" />
         <div className="gallery-page-wrapper">
+          {nonAuthorizedMessage}
           <Swiper
             initialSlide={initialSlide}
             autoHeight={false}

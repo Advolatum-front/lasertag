@@ -7,7 +7,8 @@
 }
 
 .mbt-error,
-.mbt-success {
+.mbt-success,
+.mbt-notification {
   --bg: var(--mbt-error-bg);
   --text: var(--mbt-error-text);
   background-color: var(--bg);
@@ -20,14 +21,11 @@
   --text: var(--mbt-success-text);
 }
 
+.mbt-notification {
+  --bg: var(--mbt-notification-bg);
+  --text: var(--mbt-notification-text);
+}
+
 .message-block-wrapper a {
   color: inherit;
 }
-
-/*
-
---mbt-success-bg: var(--status-approved-bg);
---mbt-success-text: var(--status-approved-text);
-: var(--status-declined-bg);
-: var(--status-declined-text);
-*/
