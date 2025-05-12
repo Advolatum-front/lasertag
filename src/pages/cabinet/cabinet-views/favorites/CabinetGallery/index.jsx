@@ -16,21 +16,13 @@ import {
 
 import "./index.css";
 
+const FILTER_DICT = new Map();
+FILTER_DICT.set(GF_ALL, "all").set(GF_PHOTO, "photo").set(GF_VIDEO, "video");
+
 const CabinetGallery = inject("UsersStore")(
   observer(({ UsersStore }) => {
     const { currentUser } = UsersStore;
     useDocumentTitle("Личный кабинет, избранное");
-
-    const dataArray = currentUser?.favorites || [];
-
-    if (dataArray.length === 0) {
-      return (
-        <div className="cabinet-gallery">
-          <h1 className="cabinet-gallery__header">Избранное</h1>
-          <NoData />
-        </div>
-      );
-    }
 
     const [filterState, setFilterState] = useState(GF_ALL);
 
@@ -70,9 +62,28 @@ const CabinetGallery = inject("UsersStore")(
       );
     });
 
+    const dataArray = (currentUser?.favorites || []).filter((item) => {
+      if (filterState === GF_ALL) {
+        return true;
+      } else {
+        return item.type === FILTER_DICT.get(filterState);
+      }
+    });
+
+    if (dataArray.length === 0) {
+      return (
+        <div className="cabinet-gallery">
+          <h1 className="cabinet-gallery__header">Избранное</h1>
+          <ul className="cabinet-gallery__filter">{filterListItems}</ul>
+          <NoData />
+        </div>
+      );
+    }
+
     const cabinetGalleryListItems = dataArray.map((item) => {
       const { id, type, src } = item;
-      const urlLink = `/cabiet/favorites/itemtype/${id}`;
+      const filterValue = FILTER_DICT.get(filterState);
+      const urlLink = `/cabiet/favorites/${filterValue}/${id}`;
 
       const linkContent =
         type === "photo" ? (
