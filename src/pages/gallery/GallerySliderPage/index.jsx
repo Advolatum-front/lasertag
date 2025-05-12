@@ -38,11 +38,13 @@ const GallerySliderPage = inject(
       fetchAlbumById(albumId);
     }, [fetchAlbumById, albumId]);
 
-    const handleButtonLikeClick = (itemId, isLiked) => {
+    const handleButtonLikeClick = (itemObj, isLiked) => {
+      const { id: itemId } = itemObj;
+
       if (isLiked) {
         removeMediaFromFavorites(itemId);
       } else {
-        addMediaToFavorites(itemId);
+        addMediaToFavorites(itemObj);
       }
     };
 
@@ -91,7 +93,10 @@ const GallerySliderPage = inject(
           </>
         );
 
-      const isLiked = !!currentUser?.favorites?.includes(id);
+      const currUserFav = currentUser?.favorites || [];
+      const itemIndex = currUserFav.findIndex((item) => item.id === id);
+
+      const isLiked = itemIndex !== -1;
       const buttonLikeClass = isLiked
         ? "gallery-slider__button-like heart-liked"
         : "gallery-slider__button-like";
@@ -100,7 +105,7 @@ const GallerySliderPage = inject(
         <button
           className={buttonLikeClass}
           onClick={() => {
-            handleButtonLikeClick(id, isLiked);
+            handleButtonLikeClick(item, isLiked);
           }}
         >
           <Heart className="heart" />

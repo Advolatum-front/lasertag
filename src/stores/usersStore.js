@@ -102,8 +102,8 @@ class UsersStore {
     return true;
   };
 
-  // Добавление фото/видео в избранное (добавляется id фото/видео)
-  addMediaToFavorites = (itemId) => {
+  // Добавление фото/видео в избранное
+  addMediaToFavorites = (itemObj) => {
     if (!this.currentUser) {
       return false;
     }
@@ -121,8 +121,8 @@ class UsersStore {
       this.users[userIndex].favorites = [];
     }
 
-    // Добавляем новый id
-    this.users[userIndex].favorites.push(itemId);
+    // Добавляем объект
+    this.users[userIndex].favorites.push(itemObj);
 
     // обновить текущего пользователя
     this.currentUser = this.users[userIndex];
@@ -132,7 +132,7 @@ class UsersStore {
     return true;
   };
 
-  // удаление фото/видео из избранного
+  // удаление фото/видео из избранного (удаление по id)
   removeMediaFromFavorites = (itemId) => {
     if (!this.currentUser) {
       return false;
@@ -146,9 +146,9 @@ class UsersStore {
       return false;
     }
 
-    // Удаляем заданный id
+    // Удаляем объекта по заданному id
     this.users[userIndex].favorites = this.users[userIndex].favorites.filter(
-      (id) => id !== itemId,
+      (item) => item.id !== itemId,
     );
 
     // обновить текущего пользователя
