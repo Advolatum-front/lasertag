@@ -88,11 +88,17 @@ const GallerySliderPage = inject(
       );
     });
 
+    const itemIndex = fetchedAlbum.items.findIndex(
+      (item) => item.id === startFrom,
+    );
+    const initialSlide = itemIndex !== -1 ? itemIndex : 0;
+
     return (
       <>
         <GalleryNavigator className="favorites__gallery-navigator-mb" />
         <div className="gallery-page-wrapper">
           <Swiper
+            initialSlide={initialSlide}
             autoHeight={false}
             slidesPerView={1}
             spaceBetween={30}
