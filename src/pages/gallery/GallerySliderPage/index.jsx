@@ -154,9 +154,10 @@ const GallerySliderPage = inject(
       );
     });
 
-    const itemIndex = fetchedAlbum.items.findIndex(
-      (item) => item.id === startFrom,
-    );
+    const itemIndex = !isFavoritePage
+      ? arrayToDisplay.findIndex((item) => item.id === startFrom)
+      : -1;
+
     const initialSlide = itemIndex !== -1 ? itemIndex : 0;
 
     const nonAuthorizedMessage = !isAuthenticated && (
