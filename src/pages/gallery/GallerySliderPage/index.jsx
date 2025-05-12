@@ -59,6 +59,8 @@ const GallerySliderPage = inject(
       );
     }
 
+    const backLinkUrl = `/gallery/album/${albumId}`;
+
     const swiperSlides = fetchedAlbum.items.map((item) => {
       const { id, type, src } = item;
       const slideContent =
@@ -83,9 +85,9 @@ const GallerySliderPage = inject(
             <button className="gallery-slider__button-like">
               <Heart className="heart" />
             </button>
-            <button className="gallery-slider__button-close">
+            <Link to={backLinkUrl} className="gallery-slider__button-close">
               <Cross className="cross" />
-            </button>
+            </Link>
           </div>
         </SwiperSlide>
       );
