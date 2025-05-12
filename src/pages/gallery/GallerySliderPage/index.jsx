@@ -35,7 +35,6 @@ const GallerySliderPage = inject(
 
     const handleButtonLikeClick = (itemId) => {
       addMediaToFavorites(itemId);
-      alert("ты типо нажал " + itemId);
     };
 
     const location = useLocation().pathname;
@@ -83,9 +82,13 @@ const GallerySliderPage = inject(
           </>
         );
 
+      const buttonLikeClass = currentUser.favorites.includes(id)
+        ? "gallery-slider__button-like heart-liked"
+        : "gallery-slider__button-like";
+
       const buttonLike = isAuthenticated && (
         <button
-          className="gallery-slider__button-like"
+          className={buttonLikeClass}
           onClick={() => {
             handleButtonLikeClick(id);
           }}
@@ -111,6 +114,7 @@ const GallerySliderPage = inject(
       (item) => item.id === startFrom,
     );
     const initialSlide = itemIndex !== -1 ? itemIndex : 0;
+
     const nonAuthorizedMessage = !isAuthenticated && (
       <MessageBlock type={MBT_NOTIFICATION}>
         <p>
