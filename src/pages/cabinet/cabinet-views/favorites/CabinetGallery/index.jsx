@@ -21,8 +21,12 @@ FILTER_DICT.set(GF_ALL, "all").set(GF_PHOTO, "photo").set(GF_VIDEO, "video");
 
 const CabinetGallery = inject("UsersStore")(
   observer(({ UsersStore }) => {
-    const { currentUser } = UsersStore;
+    const { currentUser, removeMediaFromFavorites } = UsersStore;
     useDocumentTitle("Личный кабинет, избранное");
+
+    const handleButtonRemoveClick = (itemId) => {
+      removeMediaFromFavorites(itemId);
+    };
 
     const [filterState, setFilterState] = useState(GF_ALL);
 
@@ -99,7 +103,10 @@ const CabinetGallery = inject("UsersStore")(
           <Link to={urlLink} className="elements-list__element-container">
             {linkContent}
           </Link>
-          <button className="elements-list__button-remove">
+          <button
+            className="elements-list__button-remove"
+            onClick={() => handleButtonRemoveClick(id)}
+          >
             <Cross className="elements-list__cross-ico" />
           </button>
         </li>
