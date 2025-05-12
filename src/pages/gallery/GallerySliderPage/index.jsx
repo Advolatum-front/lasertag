@@ -168,6 +168,8 @@ const GallerySliderPage = inject(
       </MessageBlock>
     );
 
+    const isLoopModeOn = arrayToDisplay.length > 1;
+
     return (
       <>
         <GalleryNavigator className="favorites__gallery-navigator-mb" />
@@ -178,7 +180,7 @@ const GallerySliderPage = inject(
             autoHeight={false}
             slidesPerView={1}
             spaceBetween={30}
-            loop={true}
+            loop={isLoopModeOn}
             navigation={true}
             modules={[Navigation]}
             className="gallery-slider"
