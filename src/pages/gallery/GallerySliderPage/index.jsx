@@ -15,7 +15,10 @@ import MessageBlock from "../../../components/MessageBlock";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { MBT_NOTIFICATION } from "../../../utils/message-block-types";
+import {
+  MBT_NOTIFICATION,
+  MBT_ERROR,
+} from "../../../utils/message-block-types";
 import { useDocumentTitle } from "../../../hooks/useDocumentTitle";
 
 import "./index.css";
@@ -32,11 +35,26 @@ const GallerySliderPage = inject(
       addMediaToFavorites,
       removeMediaFromFavorites,
     } = UsersStore;
+
     const { albumId, startFrom } = useParams();
 
+    const location = useLocation().pathname;
+    const isFavoritePage = location.endsWith("favorites");
+    const documentTitle = isFavoritePage
+      ? "Избранное"
+      : "Галерея, просмотр альбома";
+
+    useDocumentTitle(documentTitle);
+
     useEffect(() => {
-      fetchAlbumById(albumId);
-    }, [fetchAlbumById, albumId]);
+      if (!isFavoritePage) {
+        fetchAlbumById(albumId);
+      }
+    }, [fetchAlbumById, albumId, isFavoritePage]);
+
+    const arrayToDisplay = isFavoritePage
+      ? currentUser?.favorites || []
+      : fetchedAlbum?.items || [];
 
     const handleButtonLikeClick = (itemObj, isLiked) => {
       const { id: itemId } = itemObj;
@@ -48,13 +66,6 @@ const GallerySliderPage = inject(
       }
     };
 
-    const location = useLocation().pathname;
-    const documentTitle = location.endsWith("favorites")
-      ? "Избранное"
-      : "Галерея, просмотр альбома";
-
-    useDocumentTitle(documentTitle);
-
     const refs = useRef([]);
 
     const addToRefs = (el) => {
@@ -63,7 +74,23 @@ const GallerySliderPage = inject(
       }
     };
 
-    if (fetchedAlbum === null) {
+    if (!isAuthenticated && isFavoritePage) {
+      return (
+        <>
+          <GalleryNavigator className="favorites__gallery-navigator-mb" />
+          <div className="gallery-page-wrapper">
+            <MessageBlock type={MBT_ERROR}>
+              <p>
+                Для просмотра этой страницы требуется{" "}
+                <Link to="/login">авторизация</Link>
+              </p>
+            </MessageBlock>
+          </div>
+        </>
+      );
+    }
+
+    if (arrayToDisplay.length === 0) {
       return (
         <>
           <GalleryNavigator className="favorites__gallery-navigator-mb" />
@@ -74,9 +101,11 @@ const GallerySliderPage = inject(
       );
     }
 
-    const backLinkUrl = `/gallery/album/${albumId}`;
+    const backLinkUrl = isFavoritePage
+      ? "/gallery/photo/"
+      : `/gallery/album/${albumId}`;
 
-    const swiperSlides = fetchedAlbum.items.map((item) => {
+    const swiperSlides = arrayToDisplay.map((item) => {
       const { id, type, src } = item;
       const slideContent =
         type === "photo" ? (
