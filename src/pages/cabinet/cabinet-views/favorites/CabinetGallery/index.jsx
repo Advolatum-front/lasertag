@@ -87,7 +87,7 @@ const CabinetGallery = inject("UsersStore")(
     const cabinetGalleryListItems = dataArray.map((item) => {
       const { id, type, src } = item;
       const filterValue = FILTER_DICT.get(filterState);
-      const urlLink = `/cabiet/favorites/${filterValue}/${id}`;
+      const urlLink = `/cabinet/favorites/${filterValue}/${id}`;
 
       const linkContent =
         type === "photo" ? (
