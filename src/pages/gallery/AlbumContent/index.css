@@ -105,6 +105,10 @@
     --thumbnails-per-row: 2;
   }
 
+  .album-content-wrapper {
+    width: auto;
+  }
+
   .back-to-albums-link {
     width: 80vw;
     margin: 0 auto 20px;
