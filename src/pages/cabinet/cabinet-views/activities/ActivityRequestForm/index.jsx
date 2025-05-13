@@ -215,11 +215,13 @@ const ActivityRequestForm = inject(
       </MessageBlock>
     );
 
+    const backLinkUrl = `/cabinet/activities/${activityId}`;
+
     return (
       <div className="activity-request" ref={formRef}>
         <h1 className="activity-request__header">Заявка</h1>
         <div className="activity-request__content">
-          <Link to="/" className="activity-request__back-link">
+          <Link to={backLinkUrl} className="activity-request__back-link">
             <Arrow />
           </Link>
           <form
