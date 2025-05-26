@@ -69,7 +69,7 @@ const Header = inject("UsersStore")(
             <Cross />
           </button>
           <ul className="header__nav-list">{navListItemsArray}</ul>
-          <Link className="header__profile-link" onClick={closeBurgerMenu}>
+          <Link to="/cabinet" className="header__profile-link" onClick={closeBurgerMenu}>
             {cabinetLinkContent}
 
             <span>Личный кабинет</span>
